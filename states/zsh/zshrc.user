@@ -1,0 +1,24 @@
+export TERM=xterm-256color
+
+alias dc='docker-compose'
+
+antigen use oh-my-zsh
+
+# Bundles
+antigen bundle git
+antigen bundle pip
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle felixr/docker-zsh-completion
+antigen bundle git-flow
+antigen bundle osx
+antigen bundle brew
+
+#antigen theme https://gist.github.com/rawkode/4c9ac5e4acaf9f4557de rawkode
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( time)
+
+antigen theme bhilburn/powerlevel9k powerlevel9k
+
+antigen apply

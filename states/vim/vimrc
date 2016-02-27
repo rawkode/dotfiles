@@ -1,0 +1,139 @@
+" Rawkode's vimrc
+
+" Basics
+set nocompatible
+
+filetype off
+filetype plugin indent on
+
+syntax on
+
+set number
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
+set autoread
+set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+set wildmenu
+set expandtab
+
+" Remove trailing spaces
+au FileType vim,php,c,python,html,javascript,twig,yml,xml,js,md,sls au BufWritePre *.* :%s/\s\+$//e
+
+set laststatus=2
+set ruler
+set showcmd
+set wildmenu
+
+let mapleader = ","
+
+" Keymap
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>r :TagbarToggle<CR>
+nnoremap <leader>g :GitGutterToggle<CR>
+nnoremap <leader>p :CtrlP<CR>
+
+" Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-commentary'
+
+Plugin 'chriskempson/base16-vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'jonathanfilip/lucius'
+
+Plugin 'majutsushi/tagbar'
+
+Plugin 'tagbar-phpctags'
+Plugin 'arnaud-lb/vim-php-namespace'
+
+Plugin 'fatih/vim-go'
+
+Plugin 'saltstack/salt-vim'
+
+call vundle#end()            " required
+
+" User interface
+set background=dark
+let base16colorspace=256
+colorscheme base16-eighties
+
+set cursorline
+highlight CursorLineNr ctermbg=236 ctermfg=240
+highlight CursorLine   ctermbg=236
+
+set vb
+set wildmenu
+set wildmode=list:longest,full
+set relativenumber
+
+" Airline
+let g:airline_powerline_fonts = 1
+set laststatus=2
+
+" Lucius
+let g:lucius_style='dark'
+
+" PHP Namespace
+inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+noremap <Leader>u :call PhpInsertUse()<CR>
+inoremap <Leader>e <C-O>:call PhpExpandClass()<CR>
+noremap <Leader>e :call PhpExpandClass()<CR>
+
+" tagbar-phpctags
+let g:tagbar_phpctags_bin='/usr/local/bin/phpctags'
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_sort = 0
+let g:tagbar_iconchars = ['+', '-']
+
+" NERD Tree
+"autocmd vimenter * NERDTree
+
+" CtrlP
+let g:ctrlp_custom_ignore = { 'dir': '\v[\/](report|cache|vendor|node_modules|dist|bower_components|build)$', }
+
+" Syntastic
+let g:syntastic_c_checkers=['c']
+let g:syntastic_html_checkers=['jshint']
+let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_css_checkers=['csslint']
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_style_error_symbol = '✠'
+let g:syntastic_warning_symbol = '∆'
+let g:syntastic_style_warning_symbol = '≈'
+let g:syntastic_cursor_column = 0
+
+" Git shortcuts
+map <Leader>gs :Gstatus<CR>
+map <Leader>gd :Gdiff<CR>
+map <Leader>ge :Gedit<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>ga :Gcommit -a<CR>
+map <Leader>gw :Gwrite<CR>
+map <Leader>gl :Gitv<CR>
+
+" highlight trailing spaces in annoying red
+highlight ExtraWhitespace ctermbg=1 guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()

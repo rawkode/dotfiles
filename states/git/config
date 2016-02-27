@@ -1,0 +1,5 @@
+[user]
+	name = David McKay
+	email = david@rawkode.com
+[push]
+    default = simple
