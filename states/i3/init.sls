@@ -22,12 +22,12 @@ i3-dependencies:
             - libxinerama-dev
             - autoconf
             - ruby-ronn
+            - libyajl-dev
 
 i3-gaps:
     git.latest:
         - name: https://github.com/Airblader/i3.git
         - target: /opt/i3-gaps
-        - depth: 1
         - require:
             - pkg: i3-dependencies
 
@@ -51,11 +51,18 @@ rofi:
         - target: /opt/rofi
         - depth: 1
 
+rofi-autoreconf:
+    cmd.run:
+        - name: autoreconf -i
+        - cwd: /opt/rofi
+        - require:
+            - git: rofi
+
 rofi-build-dir:
     file.directory:
         - name: /opt/rofi/build
         - require:
-            - git: rofi
+            - cmd: rofi-autoreconf
 
 rofi-configure:
     cmd.run:

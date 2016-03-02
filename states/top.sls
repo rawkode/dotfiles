@@ -7,7 +7,7 @@ base:
         - chrome
         - fonts
 
-    'G@os:Ubuntu':
+    'G@os_family:Debian':
         - i3
 
     'G@os:MacOS':

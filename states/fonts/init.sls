@@ -1,4 +1,4 @@
-{% if grains.os == 'Ubuntu' %}
+{% if grains.os_family == 'Debian' %}
 fonts-hack-clone:
     git.latest:
         - name: https://github.com/chrissimpkins/Hack.git
