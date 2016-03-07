@@ -14,6 +14,7 @@ i3-dependencies:
             - libxcb-randr0-dev
             - libev-dev
             - libxcb-cursor-dev
+            - libxcb-ewmh-dev
             - libxcb-xinerama0-dev
             - libxcb-xkb-dev
             - libxcb-icccm4-dev
@@ -28,6 +29,8 @@ i3-gaps:
     git.latest:
         - name: https://github.com/Airblader/i3.git
         - target: /opt/i3-gaps
+        - rev: 4.12
+        - force_reset: True
         - require:
             - pkg: i3-dependencies
 
@@ -49,7 +52,8 @@ rofi:
     git.latest:
         - name: https://github.com/DaveDavenport/rofi.git
         - target: /opt/rofi
-        - depth: 1
+        - rev: 0.15.12
+        - force_reset: True
 
 rofi-autoreconf:
     cmd.run:
