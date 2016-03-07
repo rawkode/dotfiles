@@ -1,6 +1,7 @@
 export TERM=xterm-256color
 
 alias dc='docker-compose'
+alias tree='tree '
 
 antigen use oh-my-zsh
 
@@ -16,8 +17,11 @@ antigen bundle brew
 
 #antigen theme https://gist.github.com/rawkode/4c9ac5e4acaf9f4557de rawkode
 
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load battery)
 
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
