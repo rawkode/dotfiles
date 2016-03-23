@@ -1,3 +1,8 @@
+zsh-install:
+    pkg.installed:
+        - pkgs:
+            - zsh
+
 zsh-antigen-clone:
     git.latest:
         - name: https://github.com/zsh-users/antigen.git
@@ -13,17 +18,17 @@ zsh-base16-clone:
         - depth: 1
 
 zsh-zshrc:
-    file.symlink:
+    file.managed:
         - name:     {{ grains.homedir }}/.zshrc
-        - target:   {{ grains.stateroot }}/zsh/zshrc
+        - source:   {{ grains.stateroot }}/zsh/zshrc
         - user:     {{ grains.user }}
         - group:    {{ grains.user }}
         - template: jinja
 
 zsh-zshrc.user:
-    file.symlink:
+    file.managed:
         - name: {{ grains.homedir }}/.zshrc.user
-        - target:   {{ grains.stateroot }}/zsh/zshrc.user
+        - source:   {{ grains.stateroot }}/zsh/zshrc.user
         - user:     {{ grains.user }}
         - group:    {{ grains.user }}
 

@@ -5,4 +5,3 @@ chrome-install:
 {% else %}
     {# OSX will come later #}
 {% endif %}
-

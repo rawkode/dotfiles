@@ -39,4 +39,3 @@ sudo salt-call --local --file-root=$DIR/states/ --output=highstate --state-outpu
 
 # Apply the high state
 sudo salt-call --local --file-root=$DIR/states/ --output=highstate --state-output=changes  --log-level=quiet state.highstate
-

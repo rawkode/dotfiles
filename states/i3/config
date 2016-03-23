@@ -61,7 +61,9 @@ font pango:Hack 10
 floating_modifier Mod4
 
 # Keybindings
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec xfce4-terminal
+#bindsym $mod+Return exec urxvt
 bindsym $mod+q kill
 
 bindsym $mod+space exec --no-startup-id rofi -show run
@@ -174,8 +176,8 @@ exec --no-startup-id xfce4-clipman
 
 # i3 gaps only
 ##
-set $default_gaps_inner 20
-set $default_gaps_outer 10
+set $default_gaps_inner 10
+set $default_gaps_outer 5
 
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer

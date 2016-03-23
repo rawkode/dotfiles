@@ -1,3 +1,8 @@
+vim-install:
+    pkg.installed:
+        - pkgs:
+            - vim
+
 vim-vundle-checkout:
     git.latest:
         - name: https://github.com/VundleVim/Vundle.vim.git
@@ -6,10 +11,12 @@ vim-vundle-checkout:
         - target: {{ grains.homedir }}/.vim/bundle/Vundle.vim
 
 vim-vimrc:
-    file.symlink:
+    file.managed:
         - name: {{ grains.homedir }}/.vimrc
-        - target:   {{ grains.stateroot }}/vim/vimrc
+        - source:   {{ grains.stateroot }}/vim/vimrc
         - user:     {{ grains.username }}
+        - group:    {{ grains.username }}
+        - template: jinja
         - require:
             - git: vim-vundle-checkout
 

@@ -1,7 +1,12 @@
 # Load antigen
-source /opt/zsh-antigen/antigen.zsh
-source /opt/base16-shell/base16-eighties.dark.sh
-source /home/rawkode/.zshrc.user
-
 export PATH=$PATH:~/.composer/vendor/bin
 
+source /opt/zsh-antigen/antigen.zsh
+source ~/.zshrc.user
+
+if [[ -f ~/.zshrc.local ]];
+then
+    source ~/.zshrc.local
+fi
+
+source /opt/base16-shell/base16-eighties.dark.sh

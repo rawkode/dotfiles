@@ -1,0 +1,131 @@
+! urxvt
+Xft.dpi: 96
+Xft.lcdfilter: lcddefault
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.autohint: 0
+Xft.rgba: rgb
+Xft.antialias: 1
+
+URxvt.perl-ext-common: default,url-select,font-size
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+URxvt.keysym.M-Up:     perl:font-size:increase
+URxvt.keysym.M-Down:   perl:font-size:decrease
+URxvt.keysym.M-S-Up:   perl:font-size:incglobal
+URxvt.keysym.M-S-Down: perl:font-size:decglobal
+
+URxvt.colorUL: #98971a
+URxvt.matcher.button: 1
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.keysym.M-u: perl:url-select:select_next
+
+URxvt.font:         xft:Hack-Regular:pixelsize=14,xft:Symbola
+URxvt.boldFont:     xft:Hack-Bold:pixelsize=14:weight=bold,xft:Symbola
+URxvt.italicFont:   xft:Hack-RegularOblique:pixelsize=14:slant=italic,xft:Symbola
+
+URxvt.urgentOnBell: true
+URxvt.cursorBlink: false
+URxvt.scrollBar:        false
+URxvt.saveLines:        4096
+URxvt.mouseWheelScrollPage: true
+
+urxvt*background:       rgba:0000/0000/0000/cccc
+
+URxvt.transparent:   true
+URxvt.tintColor:     white
+URxvt.shading:       20
+
+ratmenu.style: dreary
+ratmenu.font: fixed
+ratmenu.bgcolor: #222222
+ratmenu.fgcolor: #99ff00
+/* dzen2 */
+dzen2.font: xft:M+ 1m regular:size=11
+! Base16 Eighties
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #2d2d2d
+#define base01 #393939
+#define base02 #515151
+#define base03 #747369
+#define base04 #a09f93
+#define base05 #d3d0c8
+#define base06 #e8e6df
+#define base07 #f2f0ec
+#define base08 #f2777a
+#define base09 #f99157
+#define base0A #ffcc66
+#define base0B #99cc99
+#define base0C #66cccc
+#define base0D #6699cc
+#define base0E #cc99cc
+#define base0F #d27b53
+
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+*.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled:                  true
+rofi.color-normal:                   #ffffff,#525d76,#f5f5f5,#5294e2,#ffffff
+rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
+rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
+rofi.color-window:                   #ffffff,#f5f5f5
+rofi.separator-style:                solid
+
+! rofi.sidebar-mode: true
+rofi.bw: 1
+rofi.columns: 1
+rofi.padding: 16
+
+rofi.yoffset: 0
+rofi.opacity: 80
+rofi.fake-transparency: false
+rofi.location: 0
+rofi.width: 50
+rofi.font: Hack-Regular 12
+rofi.lines: 15
+
+xscreensaver.splash: false
+xscreensaver.Dialog.foreground: r_fg
+xscreensaver.Dialog.background: r_bg
+xscreensaver.Dialog.topShadowColor: #0a0a0a
+xscreensaver.Dialog.bottomShadowColor: #161616
+xscreensaver.Dialog.Button.foreground: r_fg
+xscreensaver.Dialog.Button.background: r_bg
+xscreensaver.Dialog.borderWidth: 0
+xscreensaver.Dialog.internalBorderWidth: 0
+xscreensaver.passwd.thermometer.background: r_bg
+xscreensaver.passwd.thermometer.foreground: r_hlfg
+xscreensaver.passwd.thermometer.width: 8

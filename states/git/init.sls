@@ -2,8 +2,8 @@ git:
     pkg.installed
 
 git-config:
-    file.symlink:
+    file.managed:
         - name: {{ grains.homedir }}/.gitconfig
-        - target: {{ grains.stateroot }}/git/config
+        - source: {{ grains.stateroot }}/git/config
         - user: {{ grains.user }}
         - force: True
