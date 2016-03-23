@@ -1,12 +1,31 @@
+## Don't store these commands in history
 alias ls=' ls'
 alias cd=' cd'
 
+# Useful aliases
 alias dc='docker-compose'
 alias dps='docker ps --format="table {{ .ID }}\t{{ .Names }}\t{{ .Image }}\t{{ .Status }}\t{{ .Command }}"'
 
 alias tree='tree -d -I "vendor|cache|log|logs"'
 alias xterm='xterm -fn 7x13 -fa "Hack:size=13:antialias=true"'
 
+# Globbing history searches
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
+
+#
+setopt AUTO_PUSHD
+DIRSTACKSIZE=9
+DIRSTACKFILE=~/.zdirs
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+  [[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
+fi
+chpwd() {
+  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
+
+#
 antigen use oh-my-zsh
 
 # Bundles
