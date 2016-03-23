@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 ## Don't store these commands in history
 alias ls=' ls'
 alias cd=' cd'
@@ -10,11 +12,13 @@ alias tree='tree -d -I "vendor|cache|log|logs"'
 alias xterm='xterm -fn 7x13 -fa "Hack:size=13:antialias=true"'
 
 # Globbing history searches
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^S" history-incremental-pattern-search-forward
+bindkey -M vicmd '?' history-incremental-pattern-search-backward
+bindkey -M vicmd '/' history-incremental-pattern-search-forward
 
 #
 setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+
 DIRSTACKSIZE=9
 DIRSTACKFILE=~/.zdirs
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -25,10 +29,13 @@ chpwd() {
   print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
 }
 
-#
+# Remove 0.4 second delay between vi modes and have a 0.1 delay
+export KEYTIMEOUT=1
+
+# Antigen
 antigen use oh-my-zsh
 
-# Bundles
+antigen-bundle vi-mode
 antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
@@ -42,7 +49,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load battery)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vi_mode load battery)
 
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
