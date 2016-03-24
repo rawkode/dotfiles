@@ -15,6 +15,9 @@ alias xterm='xterm -fn 7x13 -fa "Hack:size=13:antialias=true"'
 bindkey -M vicmd '?' history-incremental-pattern-search-backward
 bindkey -M vicmd '/' history-incremental-pattern-search-forward
 
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
 #
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
