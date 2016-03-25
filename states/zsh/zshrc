@@ -1,5 +1,5 @@
 # Load antigen
-export PATH=$PATH:~/.composer/vendor/bin
+export PATH=$PATH:~/.config/composer/vendor/bin
 
 source /opt/zsh-antigen/antigen.zsh
 source ~/.zshrc.user
