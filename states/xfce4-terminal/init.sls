@@ -7,5 +7,6 @@ xfce4-terminal-config:
       - source:   {{ grains.stateroot }}/xfce4-terminal/terminalrc
       - user:     {{ grains.username }}
       - group:    {{ grains.username }}
+      - makedirs: True
       - require:
           - pkg: xfce4-terminal
