@@ -21,6 +21,8 @@
       <property name="plugin-ids" type="array">
         <value type="int" value="10"/>
         <value type="int" value="6"/>
+        <value type="int" value="12"/>
+        <value type="int" value="11"/>
         <value type="int" value="2"/>
       </property>
       <property name="autohide-behavior" type="uint" value="0"/>
@@ -32,6 +34,7 @@
     <property name="plugin-2" type="string" value="systray">
       <property name="names-visible" type="array">
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="shutter"/>
       </property>
     </property>
     <property name="plugin-6" type="string" value="separator">
@@ -43,5 +46,7 @@
       <property name="miniature-view" type="bool" value="false"/>
       <property name="workspace-scrolling" type="bool" value="false"/>
     </property>
+    <property name="plugin-11" type="string" value="xfce4-notes-plugin"/>
+    <property name="plugin-12" type="string" value="messenger"/>
   </property>
 </channel>
