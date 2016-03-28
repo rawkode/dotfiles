@@ -1,15 +1,16 @@
 base:
     '*':
         - setup
-        - git
         - zsh
+	    - vim
+        - git
         - php
         - composer
-        - chrome
 
     'G@os_family:Debian':
         - i3
         - X11
+        - chrome
         - xfce4-terminal
         - fonts
 

@@ -1,4 +1,9 @@
 {% if grains.os_family == 'Debian' %}
+fonts-requirements:
+    pkg.installed:
+        - pkgs:
+            - xfonts-utils
+
 fonts-hack-clone:
     git.latest:
         - name: https://github.com/chrissimpkins/Hack.git
@@ -12,6 +17,8 @@ fonts-hack-copy-files:
 fonts-hack-install:
     cmd.run:
         - name: fc-cache -s; mkfontscale /usr/share/fonts/truetype/hack; mkfontdir /usr/share/fonts/truetype/hack
+        - require:
+            - pkg: fonts-requirements
 {% else %}
 {% endif %}
 
