@@ -36,12 +36,12 @@ focus_follows_mouse no
 ##
 bar {
     i3bar_command i3bar -t
-    status_command i3blocks -c ~/.config/i3/blocks.conf
+#    status_command i3blocks -c ~/.config/i3/blocks.conf
     position top
     height 20
     font pango:Hack 12
 
-    colors {
+     colors {
         background         $black
         statusline         $white
         separator          $darkred
@@ -167,6 +167,7 @@ bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5- unmute"
 
 # Autostart
 ##
+exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id compton -b --config ~/.config/.i3/compton.conf
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/.i3/dunstrc
