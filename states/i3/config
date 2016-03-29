@@ -36,9 +36,8 @@ focus_follows_mouse no
 ##
 bar {
     i3bar_command i3bar -t
-#    status_command i3blocks -c ~/.config/i3/blocks.conf
-    position top
-    height 20
+    position bottom
+    height 25
     font pango:Hack 12
 
      colors {
