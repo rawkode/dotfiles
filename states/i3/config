@@ -170,7 +170,6 @@ exec --no-startup-id xfce4-panel --disable-wm-check
 exec --no-startup-id compton -b --config ~/.config/.i3/compton.conf
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/.i3/dunstrc
-exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-clipman
 
