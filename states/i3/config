@@ -36,9 +36,9 @@ focus_follows_mouse no
 ##
 bar {
     i3bar_command i3bar -t
-    position bottom
+    position top
     height 25
-    font pango:Hack 12
+    font pango:Hack 13
 
      colors {
         background         $black
