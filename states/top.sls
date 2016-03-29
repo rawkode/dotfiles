@@ -2,7 +2,7 @@ base:
     '*':
         - setup
         - zsh
-	    - vim
+        - vim
         - git
         - php
         - composer
