@@ -19,6 +19,19 @@ fonts-hack-install:
         - name: fc-cache -s; mkfontscale /usr/share/fonts/truetype/hack; mkfontdir /usr/share/fonts/truetype/hack
         - require:
             - pkg: fonts-requirements
+
+fonts-nerd-fonts:
+    git.latest:
+        - name: https://github.com/ryanoasis/nerd-fonts.git
+        - target: /opt/fonts-nerd-fonts
+        - depth: 1
+
+foints-nerd-fonts-install:
+    cmd.run:
+        - name: ./install.sh
+        - cwd: /opt/fonts-nerd-fonts
+        - require:
+            - git: fonts-nerd-fonts
 {% else %}
 {% endif %}
 

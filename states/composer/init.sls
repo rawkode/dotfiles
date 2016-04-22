@@ -16,4 +16,3 @@ composer-install-phpcs:
         - user: {{ grains.user }}
         - require:
             - cmd: composer-install
-            
