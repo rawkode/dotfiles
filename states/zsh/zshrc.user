@@ -40,7 +40,6 @@ export KEYTIMEOUT=1
 # Antigen
 antigen use oh-my-zsh
 
-antigen-bundle vi-mode
 antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
