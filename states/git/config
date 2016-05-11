@@ -24,5 +24,3 @@
 
 [rerere]
 	enabled = true
-[core]
-	editor = atom --wait
