@@ -185,7 +185,7 @@ exec --no-startup-id xfce4-clipman
 
 # i3 gaps only
 ##
-set $default_gaps_inner 10
+set $default_gaps_inner 5
 set $default_gaps_outer 5
 
 gaps inner $default_gaps_inner
