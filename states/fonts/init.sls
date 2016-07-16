@@ -28,7 +28,7 @@ fonts-nerd-fonts:
 
 foints-nerd-fonts-install:
     cmd.run:
-        - name: ./install.sh
+        - name: ./install.sh Hack
         - cwd: /opt/fonts-nerd-fonts
         - require:
             - git: fonts-nerd-fonts

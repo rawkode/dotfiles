@@ -13,6 +13,6 @@ composer-selfupdate:
 composer-install-phpcs:
     cmd.run:
         - name: composer global require "squizlabs/php_codesniffer=*"
-        - user: {{ grains.user }}
+        - runas: {{ grains.user }}
         - require:
             - cmd: composer-install

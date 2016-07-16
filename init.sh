@@ -33,9 +33,9 @@ HOMEDIR=$HOME
 USERNAME=$(whoami)
 
 # Set the user, home-directory, and state root
-sudo salt-call --local --file-root=$DIR/states/ --state-output=changes --log-level=quiet grains.setval user "$USERNAME"
-sudo salt-call --local --file-root=$DIR/states/ --state-output=changes --log-level=quiet grains.setval homedir "$HOMEDIR"
-sudo salt-call --local --file-root=$DIR/states/ --state-output=changes --log-level=quiet grains.setval stateroot "$DIR/states"
+sudo salt-call --local --file-root=$DIR/states/ --state-output=changes grains.setval user "$USERNAME"
+sudo salt-call --local --file-root=$DIR/states/ --state-output=changes grains.setval homedir "$HOMEDIR"
+sudo salt-call --local --file-root=$DIR/states/ --state-output=changes grains.setval stateroot "$DIR/states"
 
 # Apply the high state
 if [[ ! $1 ]];
