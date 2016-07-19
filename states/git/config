@@ -23,4 +23,10 @@
     st = status
 
 [rerere]
-	enabled = true
+    enabled = true
+
+[diff]
+    algorithm = minimal
+    compactionHeuristic = true
+    renames = true
+

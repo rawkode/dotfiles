@@ -4,30 +4,27 @@ set $mod Mod4
 # Editor
 set $editor atom
 
-# Colours
-set $realblack   #000000
-set $black       #333333
-set $white       #f9f9f9
-set $gray        #9f9f9f
+set $base00 #2d2d2d
+set $base01 #393939
+set $base02 #515151
+set $base03 #747369
+set $base04 #a09f93
+set $base05 #d3d0c8
+set $base06 #e8e6df
+set $base07 #f2f0ec
+set $base08 #f2777a
+set $base09 #f99157
+set $base0A #ffcc66
+set $base0B #99cc99
+set $base0C #66cccc
+set $base0D #6699cc
+set $base0E #cc99cc
+set $base0F #d27b53
 
-set $red         #f70000
-set $darkred     #7f0000
-set $green       #00f700
-set $darkgreen   #007f00
-set $blue        #0000f7
-set $darkblue    #00007f
-
-set $yellow      #ffb30f
-set $magenta     #f700f7
-set $cyan        #00f7f7
-
-client.background       $black
-
-#                       BORDER      BACKGROUND  TEXT   INDICATOR   CHILD_BORDER
-client.focused          $darkred    $darkred    $white $yellow     $black
-client.focused_inactive $gray       $black      $yellow $yellow     $black
-client.unfocused        $black      $black      $gray $black      $black
-client.urgent           $yellow     $yellow     $white $black      $black
+client.focused $base0D $base0D $base00 $base01
+client.focused_inactive $base02 $base02 $base03 $base01
+client.unfocused $base01 $base01 $base03 $base01
+client.urgent $base02 $base08 $base07 $base08
 
 # Mouse
 focus_follows_mouse no
@@ -38,24 +35,23 @@ bar {
     i3bar_command i3bar -t
     position top
     height 25
-    font pango:Hack 13
+    font pango:Roboto 13
     tray_output none
 
-     colors {
-        background         $black
-        statusline         $white
-        separator          $darkred
-
-        #                  BORDER       BACKGROUND   TEXT
-        focused_workspace  $darkred     $darkred     $white
-        inactive_workspace $black       $black       $white
-        active_workspace   $black       $darkred     $white
-        urgent_workspace   $darkred     $white       $darkred
-        binding_mode       $yellow      $black       $yellow
-    }
+    colors {
+    separator $base03
+    background $base01
+    statusline $base05
+    focused_workspace $base0C $base0D $base00
+    active_workspace $base02 $base02 $base07
+    inactive_workspace $base01 $base01 $base03
+    urgent_workspace $base08 $base08 $base07
+}
 
 }
 
+# No window titles
+new_window 1pixel
 
 font pango:Hack 10
 floating_modifier Mod4
@@ -185,56 +181,12 @@ exec --no-startup-id xfce4-clipman
 
 # i3 gaps only
 ##
-set $default_gaps_inner 5
+set $default_gaps_inner 10
 set $default_gaps_outer 5
 
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
-set $mode_gaps <span>        </span><span background='#fabd2f' foreground='#000000'> gaps </span> <span foreground='#ebdbb2'>i</span>nner <span foreground='#ebdbb2'>o</span>uter <span foreground='#ebdbb2'>0 d</span>
-set $mode_gaps_outer <span>        </span><spand background='#fabd2f' foreground='#000000'> outer gaps </span> <span foreground='#ebdbb2'>+ - 0 d</span>
-set $mode_gaps_inner <span>        </span><span background='#fabd2f' foreground='#000000'> inner gaps </span> <span foreground='#ebdbb2'>+ - 0 d</span>
-
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode --pango_markup "$mode_gaps" {
-    bindsym o      mode "$mode_gaps_outer"
-    bindsym i      mode "$mode_gaps_inner"
-
-    bindsym 0      mode "default", exec --no-startup-id i3-msg "gaps inner current set 0" && i3-msg "gaps outer current set 0"
-    bindsym d      mode "default", exec --no-startup-id i3-msg "gaps inner current set $default_gaps_inner" && i3-msg "gaps outer current set $default_gaps_outer"
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-mode --pango_markup "$mode_gaps_inner" {
-    bindsym plus  gaps inner current plus 5
-    bindsym minus gaps inner current minus 5
-    bindsym 0     mode "default", gaps inner current set 0
-    bindsym d     mode "default", gaps inner current set $default_gaps_inner
-
-    bindsym Shift+plus  gaps inner all plus 5
-    bindsym Shift+minus gaps inner all minus 5
-    bindsym Shift+0     mode "default", gaps inner all set 0
-    bindsym Shift+d     mode "default", gaps inner all set $default_gaps_inner
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-mode --pango_markup "$mode_gaps_outer" {
-    bindsym plus  gaps outer current plus 5
-    bindsym minus gaps outer current minus 5
-    bindsym 0     mode "default", gaps outer current set 0
-    bindsym d     mode "default", gaps outer current set $default_gaps_outer
-
-    bindsym Shift+plus  gaps outer all plus 5
-    bindsym Shift+minus gaps outer all minus 5
-    bindsym Shift+0     mode "default", gaps outer all set 0
-    bindsym Shift+d     mode "default", gaps outer all set $default_gaps_outer
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+smart_gaps on
 
 exec notify-send -a i3 "loaded" "Welcome to i3."

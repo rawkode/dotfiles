@@ -38,4 +38,9 @@ sudo salt-call --local --file-root=$DIR/states/ --state-output=changes --log-lev
 sudo salt-call --local --file-root=$DIR/states/ --state-output=changes --log-level=quiet grains.setval stateroot "$DIR/states"
 
 # Apply the high state
-sudo salt-call --local --file-root=$DIR/states/ --state-output=changes  --log-level=quiet state.highstate
+if [[ ! $1 ]];
+then
+	sudo salt-call --local --file-root=$DIR/states/ --state-output=changes  --log-level=quiet state.highstate
+else
+	sudo salt-call --local --file-root=$DIR/states/ --state-output=changes  --log-level=quiet state.sls $1
+fi
