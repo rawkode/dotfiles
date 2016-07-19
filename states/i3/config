@@ -34,8 +34,8 @@ focus_follows_mouse no
 bar {
     i3bar_command i3bar -t
     position top
-    height 25
-    font pango:Roboto 13
+    height 42
+    font pango:Roboto 8
     tray_output none
 
     colors {
