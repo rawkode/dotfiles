@@ -7,6 +7,7 @@ composer-install:
 composer-selfupdate:
     cmd.run:
         - name: composer self-update
+        - runas: {{ grains.user }}
         - onfail:
             - cmd: composer-install
 

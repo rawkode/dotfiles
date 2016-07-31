@@ -26,12 +26,12 @@ fonts-nerd-fonts:
         - target: /opt/fonts-nerd-fonts
         - depth: 1
 
-foints-nerd-fonts-install:
-    cmd.run:
-        - name: ./install.sh Hack
-        - cwd: /opt/fonts-nerd-fonts
-        - require:
-            - git: fonts-nerd-fonts
+#foints-nerd-fonts-install:
+#    cmd.run:
+#        - name: ./install.sh Hack
+#        - cwd: /opt/fonts-nerd-fonts
+#        - require:
+#            - git: fonts-nerd-fonts
 {% else %}
 {% endif %}
 

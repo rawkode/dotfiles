@@ -24,7 +24,7 @@ else
 	if [ $? -ne 0 ];
 	then
 		# Linux (Hopefully ...): SaltStack Bootstrap one-liner
-		curl -L https://bootstrap.saltstack.com | sudo sh -s -- -P git develop
+		wget -qO- https://bootstrap.saltstack.com | sudo sh -s -- -P git develop
 	fi
 fi
 

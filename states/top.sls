@@ -1,7 +1,7 @@
 base:
     '*':
-        - setup
         - zsh
+        - setup
         - vim
         - git
         - php
@@ -10,9 +10,12 @@ base:
     'G@os_family:Debian':
         - i3
         - X11
-        - chrome
         - xfce4-terminal
-        - fonts
+        - xfce4-panel
+        - GTK
+        - keybase
+        - htop
 
     'G@os:MacOS':
         - osx
+

@@ -9,4 +9,5 @@ then
     source ~/.zshrc.local
 fi
 
-source /opt/base16-shell/base16-eighties.dark.sh
+source /opt/base16-shell/scripts/base16-eighties.sh
+
