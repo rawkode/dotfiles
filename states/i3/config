@@ -51,7 +51,7 @@ bar {
 }
 
 # No window titles
-new_window 1pixel
+# new_window 1pixel
 
 font pango:Roboto Regular 10
 floating_modifier Mod4
@@ -181,12 +181,11 @@ exec --no-startup-id xfce4-clipman
 
 # i3 gaps only
 ##
-set $default_gaps_inner 10
-set $default_gaps_outer 5
+#smart_gaps on
+#smart_borders on
 
-gaps inner $default_gaps_inner
-gaps outer $default_gaps_outer
+gaps inner 10
+gaps outer 10
 
-smart_gaps on
 
 exec notify-send -a i3 "loaded" "Welcome to i3."
