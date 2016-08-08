@@ -8,6 +8,7 @@ base:
         - composer
 
     'G@os_family:Debian':
+        - docker
         - X11
         - i3
         - xfce4
