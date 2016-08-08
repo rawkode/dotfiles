@@ -3,6 +3,7 @@ fonts-requirements:
     pkg.installed:
         - pkgs:
             - xfonts-utils
+            - fonts-roboto
 
 fonts-hack-clone:
     git.latest:

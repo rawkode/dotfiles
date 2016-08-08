@@ -1,6 +1,8 @@
-gtk3-dev:
+gtk-dependencies:
     pkg.installed:
-        - name: libgtk-3-dev
+        - pkgs:
+            - libgtk-3-dev
+            - lxappearance
 
 iris-theme:
     git.latest:
