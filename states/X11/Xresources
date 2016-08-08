@@ -1,5 +1,7 @@
 ! urxvt
+! 4kFilter
 Xft.dpi: 96
+! /4kFilter
 Xft.lcdfilter: lcddefault
 Xft.hinting: 1
 Xft.hintstyle: hintfull
