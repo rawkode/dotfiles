@@ -181,8 +181,8 @@ exec --no-startup-id xfce4-clipman
 
 # i3 gaps only
 ##
-#smart_gaps on
-#smart_borders on
+smart_gaps on
+smart_borders on
 
 gaps inner 10
 gaps outer 10
