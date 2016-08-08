@@ -4,7 +4,7 @@ docker-install:
 
 docker-user-mod:
     user.present:
-        - name: rawkode
+        - name: {{ grains.user }}
         - groups:
             - docker
         - require:

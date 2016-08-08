@@ -1,2 +1,0 @@
-us:
-    keyboard.system
