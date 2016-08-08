@@ -79,6 +79,37 @@ rofi:
     git.latest:
         - name: https://github.com/DaveDavenport/rofi.git
         - target: /opt/rofi
+        - submodules: True
+
+rofi-autoreconf:
+    cmd.run:
+        - name: autoreconf -i
+        - cwd: /opt/rofi
+        - depends:
+            - git: rofi
+
+rofi-build-dir:
+    file.directory:
+        - name: /opt/rofi/build
+        - user: root
+        - group: root
+        - mode: 755
+        - depends:
+            - cmd: rofi-autoreconf
+
+rofi-configure:
+    cmd.run:
+        - name: ../configure
+        - cwd: /opt/rofi/build
+        - require:
+            - file: rofi-build-dir
+
+rofi-make:
+    cmd.run:
+        - name: make && make install
+        - cwd: /opt/rofi/build
+        - require:
+            - cmd: rofi-configure
 
 i3-configuration-directory:
     file.directory:
