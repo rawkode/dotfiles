@@ -4,6 +4,7 @@ i3-dependencies:
             - fonts-font-awesome
             - nitrogen
             - dunst
+            - compton
             - volumeicon-alsa
             - libtool
             - libxcb1-dev
