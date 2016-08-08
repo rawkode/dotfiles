@@ -12,7 +12,7 @@ xfce4-panel-config:
     - group:    {{ grains.user }}
     - makedirs: True
     - require:
-      - pkg: xfce4-panel
+      - pkg: xfce4-packages
 
 xfce4-terminal-config:
   file.managed:
@@ -22,4 +22,4 @@ xfce4-terminal-config:
     - group:    {{ grains.user }}
     - makedirs: True
     - require:
-      - pkg: xfce4-terminal
+      - pkg: xfce4-packages
