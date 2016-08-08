@@ -34,8 +34,8 @@ focus_follows_mouse no
 bar {
     i3bar_command i3bar -t
     position top
-    height 42
-    font pango:Roboto 8
+    height 24
+    font pango:Roboto Regular 10
     tray_output none
 
     colors {
@@ -53,7 +53,7 @@ bar {
 # No window titles
 new_window 1pixel
 
-font pango:Hack 10
+font pango:Roboto Regular 10
 floating_modifier Mod4
 
 # Keybindings
