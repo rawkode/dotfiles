@@ -115,8 +115,10 @@ rofi.opacity: 80
 rofi.fake-transparency: false
 rofi.location: 0
 rofi.width: 50
+! 4kFilterRofi
 rofi.font: Hack-Regular 12
-rofi.lines: 15
+! /4kFilterRofi
+rofi.lines: 4
 
 xscreensaver.splash: false
 xscreensaver.Dialog.foreground: r_fg

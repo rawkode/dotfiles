@@ -6,6 +6,14 @@
         - content: 'Xft.dpi: 220'
         - show_changes: True
 
+4k-xresources-rofi:
+    file.blockreplace:
+        - name: {{ grains.homedir }}/.Xresources
+        - marker_start: "! 4kFilterRofi"
+        - marker_end: "! /4kFilterRofi"
+        - content: 'rofi.font: Hack-Regular 24'
+        - show_changes: True
+
 4k-i3-config-i3bar:
     file.blockreplace:
         - name: {{ grains.homedir }}/.config/i3/config
