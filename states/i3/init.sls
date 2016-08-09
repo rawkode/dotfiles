@@ -58,6 +58,7 @@ i3-gaps:
     git.latest:
         - name: https://github.com/Airblader/i3.git
         - target: /opt/i3-gaps
+        - force_reset: True
         - require:
             - pkg: i3-dependencies
             - cmd: xcb-util-xrm-make
