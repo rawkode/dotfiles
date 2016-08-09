@@ -22,7 +22,8 @@ set $base0E #cc99cc
 set $base0F #d27b53
 
 client.focused $base0D $base0D $base00 $base01
-client.focused_inactive $base02 $base02 $base03 $base01
+client.focused_inactive $base02 $base02 $base03 $base01active-text-color #676E7D
+set $urgent-bg-color     #E53935
 client.unfocused $base01 $base01 $base03 $base01
 client.urgent $base02 $base08 $base07 $base08
 
@@ -36,7 +37,7 @@ bar {
     position top
     # 4kFilterBar
     height 24
-    font pango:Roboto Regular 10
+    font pango:Roboto 10
     # /4kFilterBar
     tray_output none
 
@@ -56,15 +57,17 @@ bar {
 # new_window 1pixel
 
 # 4kFilterFont
-font pango:Roboto Regular 10
+font pango:Roboto 10
 # /4kFilterFont
 floating_modifier Mod4
 
 # Keybindings
 bindsym $mod+Return exec xfce4-terminal
+bindsym Pause exec i3lock --color ab4642
+bindsym $mod+Shift+l exec i3lock --color ab4642
 bindsym $mod+q kill
 
-bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Roboto 18"
 bindsym Control+Down exec --no-startup-id rofi -show window
 
 bindsym $mod+Left focus left

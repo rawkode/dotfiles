@@ -81,6 +81,7 @@ rofi:
         - name: https://github.com/DaveDavenport/rofi.git
         - target: /opt/rofi
         - submodules: True
+        - force_reset: True
 
 rofi-autoreconf:
     cmd.run:
@@ -138,4 +139,3 @@ i3-configuration-dunst:
         - source: salt://i3/dunstrc
         - user: {{ grains.user }}
         - group: {{ grains.user }}
-
