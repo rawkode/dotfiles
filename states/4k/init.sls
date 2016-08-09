@@ -21,3 +21,11 @@
         - marker_end: "# /4kFilterFont"
         - content: "\tfont pango:Hack 10"
         - show_changes: True
+
+4k-i3-config-dpi:
+    file.blockreplace:
+        - name: {{ grains.homedir }}/.config/i3/config
+        - marker_start: "# 4kFilterDPI"
+        - marker_end: "# /4kFilterDPI"
+        - content: "exec --no-startup-id xrandr --dpi 220"
+        - show_changes: True

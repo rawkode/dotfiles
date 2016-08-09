@@ -185,6 +185,8 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst -config ~/.config/.i3/dunstrc
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-clipman
+# 4kFilterDPI
+# /4kFilterDPI
 
 # i3 gaps only
 ##
