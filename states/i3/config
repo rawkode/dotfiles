@@ -67,7 +67,7 @@ bindsym Pause exec i3lock --color ab4642
 bindsym $mod+Shift+l exec i3lock --color ab4642
 bindsym $mod+q kill
 
-bindsym $mod+space exec rofi -show run -lines 3 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Roboto 18"
+bindsym $mod+space exec rofi -show run
 bindsym Control+Down exec --no-startup-id rofi -show window
 
 bindsym $mod+Left focus left
