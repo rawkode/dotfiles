@@ -5,7 +5,7 @@ i3-dependencies:
             - nitrogen
             - dunst
             - compton
-            - volumeicon-alsa
+            - volti
             - libtool
             - libxcb1-dev
             - libxcb-keysyms1-dev
