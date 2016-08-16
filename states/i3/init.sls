@@ -83,6 +83,7 @@ rofi:
         - target: /opt/rofi
         - submodules: True
         - force_reset: True
+        - force_fetch: True
 
 rofi-autoreconf:
     cmd.run:
