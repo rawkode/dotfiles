@@ -1,0 +1,8 @@
+file_roots:
+  base:
+    - ./states/agnostic
+  arch:
+    - ./states/arch
+  debian:
+    - ./states/debian
+

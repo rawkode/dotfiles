@@ -23,24 +23,24 @@ else
 	command -v salt-call > /dev/null 2>&1
 	if [ $? -ne 0 ];
 	then
+		echo "We need SaltStack ..."
 		# Linux (Hopefully ...): SaltStack Bootstrap one-liner
-		wget -qO- https://bootstrap.saltstack.com | sudo sh -s -- -P git develop
+		# -d Don't enable salt-minion autostart
+		# -P Allow pip based installations
+		wget -qO- https://bootstrap.saltstack.com | sudo sh -s -- -P -d git develop
 	fi
 fi
 
-DIR=$(pwd)
 HOMEDIR=$HOME
 USERNAME=$(whoami)
 
 # Set the user, home-directory, and state root
-sudo salt-call --local --file-root=$DIR/states/ --state-output=changes grains.setval user "$USERNAME"
-sudo salt-call --local --file-root=$DIR/states/ --state-output=changes grains.setval homedir "$HOMEDIR"
-sudo salt-call --local --file-root=$DIR/states/ --state-output=changes grains.setval stateroot "$DIR/states"
+sudo salt-call --local --config=./ --state-output=changes grains.setvals "{ \"user\": \"$USERNAME\", \"homedir\": \"$HOMEDIR\" }"
 
 # Apply the high state
 if [[ ! $1 ]];
 then
-	sudo salt-call --local --file-root=$DIR/states/ --state-output=changes  --log-level=quiet state.highstate
+	sudo salt-call --local --config=./ --state-output=changes  --log-level=quiet state.highstate
 else
-	sudo salt-call --local --file-root=$DIR/states/ --state-output=changes  --log-level=quiet state.sls $1
+	sudo salt-call --local --config=./ --state-output=changes  --log-level=quiet state.sls $1
 fi
