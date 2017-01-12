@@ -6,22 +6,9 @@ base:
     - zsh
     - git
     - vim
-
-#    'G@os_family:Arch':
-    #     - arch/terminal
-    #     - arch/docker
-    #
-    # '*':
-    #     - agnostic/git
-    #
-    # 'G@os_family:Debian':
-    #     - debian/docker
-    #     - debian/X11
-    #     - debian/i3
-    #     - debian/xfce4
-    #     - debian/GTK
-    #     - debian/keybase
-    #     - debian.htop
-    #
-    # 'G@os:MacOS':
-    #     - osx
+    - GTK
+    - fonts
+    - atom
+    - X11
+    - xfce4
+    - i3

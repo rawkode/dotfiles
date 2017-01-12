@@ -3,6 +3,7 @@ gtk-dependencies:
         - pkgs:
             - libgtk-3-dev
             - lxappearance
+            - arandr
 
 iris-theme:
     git.latest:
@@ -49,4 +50,3 @@ arc-icon-theme-install:
         - cwd: /opt/arc/icon-theme
         - require:
             - cmd: arc-icon-theme-autogen
-
