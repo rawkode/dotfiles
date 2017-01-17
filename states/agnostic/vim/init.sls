@@ -1,22 +1,25 @@
+neovim-ppa:
+    pkgrepo.managed:
+        - humanname: NeoVim PPA
+        - name: ppa:neovim-ppa/unstable
+
 vim-install:
-  pkg.installed:
-    - pkgs:
-      - vim
-
-vim-vundle-checkout:
-  git.latest:
-    - name: https://github.com/VundleVim/Vundle.vim.git
-    - rev: master
-    - depth: 1
-    - user: {{ grains.user }}
-    - target: {{ grains.homedir }}/.vim/bundle/Vundle.vim
-
-vim-vimrc:
-  file.managed:
-    - name: {{ grains.homedir }}/.vimrc
-    - source: salt://vim/vimrc
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-    - template: jinja
+  pkg.latest:
+    - refresh: True
     - require:
-        - git: vim-vundle-checkout
+      - pkgrepo: neovim-ppa
+    - pkgs:
+      - neovim
+
+dein-install:
+  cmd.script:
+    - source: https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+    - args: ~/.dein
+
+vim-configuration:
+    file.managed:
+        - name: {{ grains.homedir }}/.config/nvim/init.vim
+        - source: salt://vim/init.vim
+        - user: {{ grains.user }}
+        - group: {{ grains.user }}
+

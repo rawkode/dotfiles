@@ -1,0 +1,78 @@
+set -sg escape-time 0
+set -g base-index 1
+set -g pane-base-index 1
+set -g renumber-windows on
+
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+set -g focus-events on
+
+set-option -g default-terminal "screen-256color"
+
+bind -n S-Left  previous-window
+bind -n S-Right next-window
+
+bind -n M-h select-pane -L
+bind -n M-j select-pane -D 
+bind -n M-k select-pane -U
+bind -n M-l select-pane -R
+
+# Use Alt-arrow keys without prefix key to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+set -g pane-border-fg black
+set -g pane-active-border-fg brightblue
+set -g display-panes-colour brightblue
+set -g display-panes-active-colour brightblue
+
+set -g status-justify right
+set -g status-bg black
+set -g status-fg default
+set -g message-fg black
+set -g message-bg brightwhite
+
+set -g status-interval 3
+set -g status-position bottom
+set -g window-status-separator ''
+set -g window-status-current-format '#[fg=green,bg=black]#[fg=brightwhite,bg=green] #I #[fg=black,bg=green]#[fg=green,bg=black] #W '
+set -g window-status-format '#[fg=brightblack,bg=black]#[fg=black,bg=brightblack] #I #[fg=black,bg=brightblack]#[fg=brightblack,bg=black] #W '
+
+
+set -g status-left-length 60
+set -g status-left "#{prefix_highlight}"
+set -g -a status-left "#[bg=black,fg=brightwhite] #S "
+set -g -a status-left "#[fg=black,bg=brightwhite]#[fg=brightblack] "
+set -g -a status-left "#I.#P#F "
+set -g -a status-left "#[fg=brightwhite,bg=blue]#[fg=black] "
+set -g -a status-left "#T "
+set -g -a status-left "#[fg=blue,bg=black]#[fg=brightblack] "
+
+set -g @batt_attached_icon " 🔌 "
+set -g @batt_discharging_icon "  "
+
+set -g status-right-length 60
+set -g status-right-bg black
+set -g status-right-fg brightwhite
+set -g status-right "#[bg=brightwhite,fg=brightmagenta] #{battery_icon} #{battery_percentage} "
+
+set -g @yank_selection 'primary'
+
+set -g @prefix_highlight_bg red
+set -g @prefix_highlight_fg brightwhite
+set -g @prefix_highlight_output_prefix " Prefix "
+set -g @prefix_highlight_output_suffix " #[bg=black]#[fg=red]"
+
+set -g @plugin "tmux-plugins/tpm"
+set -g @plugin "tmux-plugins/tmux-yank"
+set -g @plugin "tmux-plugins/tmux-copycat"
+set -g @plugin "tmux-plugins/tmux-pain-control"
+set -g @plugin "tmux-plugins/tmux-prefix-highlight"
+set -g @plugin 'tmux-plugins/tmux-battery'
+
+run-shell ~/.tmux/plugins/tpm/tpm
+
+# vim:ft=tmux:
+
