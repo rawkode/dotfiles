@@ -26,15 +26,15 @@ set incsearch     " show search matches as you type
 let g:netrw_liststyle = 3
 
 " Required:
-set runtimepath+=/home/rawkode/.dein/repos/github.com/Shougo/dein.vim
+set runtimepath+={{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/home/rawkode/.dein')
-  call dein#begin('/home/rawkode/.dein')
+if dein#load_state('{{ grains.homedir }}/.dein')
+  call dein#begin('{{ grains.homedir }}/.dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/rawkode/.dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('{{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -52,7 +52,7 @@ if dein#load_state('/home/rawkode/.dein')
   call dein#add('vim-airline/vim-airline-themes')
 
   " Finders
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 }) 
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 
   " Fluent Editing
@@ -63,7 +63,7 @@ if dein#load_state('/home/rawkode/.dein')
   " Git
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-fugitive')
-  
+
 
   " Elixir
   call dein#add('elixir-lang/vim-elixir')
