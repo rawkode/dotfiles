@@ -23,9 +23,9 @@ zsh-zshrc:
     - group: {{ grains.user }}
     - template: jinja
 
-zsh-zshrc.user:
+zsh-zshrc.antigen:
   file.managed:
-    - name: {{ grains.homedir }}/.zshrc.user
-    - source: salt:///zsh/zshrc.user
+    - name: {{ grains.homedir }}/.zshrc.antigen
+    - source: salt:///zsh/zshrc.antigen
     - user: {{ grains.user }}
     - group: {{ grains.user }}

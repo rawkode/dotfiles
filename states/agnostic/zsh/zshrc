@@ -1,12 +1,17 @@
-# Load antigen
 export PATH=$PATH:~/.composer/vendor/bin
 
+source /opt/base16-shell/scripts/base16-bright.sh
+
 source /opt/zsh-antigen/antigen.zsh
-source ~/.zshrc.user
+source ~/.zshrc.antigen
+
+#source /usr/share/zplug/init.zsh
+#source ~/.zshrc.zplug
 
 if [[ -f ~/.zshrc.local ]];
 then
     source ~/.zshrc.local
 fi
 
-source /opt/base16-shell/scripts/base16-eighties.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
