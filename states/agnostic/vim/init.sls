@@ -20,6 +20,7 @@ vim-configuration:
     file.managed:
         - name: {{ grains.homedir }}/.config/nvim/init.vim
         - source: salt://vim/init.vim
+        - makedirs: True
         - user: {{ grains.user }}
         - group: {{ grains.user }}
 
