@@ -46,3 +46,8 @@ yaourt-install:
     - cwd: /tmp/yaourt
     - user: {{ grains.user }}
 
+# Clean up
+remove-epiphany:
+  pkg.removed:
+    - name: epiphany
+
