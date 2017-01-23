@@ -12,14 +12,6 @@ gpg-agent-config:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
-pam-environment:
-  file.managed:
-    - name: {{ grains.homedir }}/.pam_environment
-    - source: salt://gpg/pam-environment
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-
-
 gpg-agent-service:
   file.managed:
     - name: {{ grains.homedir }}/.config/systemd/user/gpg-agent.service
