@@ -1,5 +1,11 @@
+include:
+  - {{ grains.os_family | lower }}: zsh
+
 zsh:
-  pkg.installed
+  pkg.installed:
+    - pkgs:
+      - bc
+      - zsh
 
 zsh-antigen-clone:
   git.latest:
@@ -7,6 +13,7 @@ zsh-antigen-clone:
     - rev: master
     - target: /opt/zsh-antigen
     - depth: 1
+    - force_reset: True
 
 zsh-base16-clone:
   git.latest:

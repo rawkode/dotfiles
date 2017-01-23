@@ -1,0 +1,2 @@
+ttf-hack:
+  pkg.installed

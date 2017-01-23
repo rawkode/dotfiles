@@ -8,6 +8,9 @@
   'gnome-shell-extension-dynamic-top-bar',
   'gnome-shell-extension-gravatar',
   'gnome-shell-extension-docker-integration-git',
+  'gnome-shell-extension-impatience-git',
+  'gnome-shell-extension-arch-update',
+  'gnome-shell-extension-stealmyfocus-git',
   'adapta-gtk-theme',
   'adapta-backgrounds',
   'paper-icon-theme-git',
@@ -18,4 +21,8 @@ install-aur-extension-{{ aur }}:
     - name: yaourt -S --noconfirm {{ aur }}
     - user: {{ grains.user }}
 {% endfor %}
+
+alt-tab-current-workspace:
+  cmd.run:
+    - name: gsettings set org.gnome.shell.app-switcher current-workspace-only true
 

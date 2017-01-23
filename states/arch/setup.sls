@@ -1,6 +1,7 @@
 packages-base:
   pkg.installed:
     - pkgs:
+      - base-devel
       - openssh
       - gnupg
 
@@ -10,6 +11,7 @@ packages-yubikey:
       - libusb-compat
       - pcsclite
       - ccid
+      - libu2f-host
 
 pcscd.socket:
   service.running:
