@@ -36,3 +36,12 @@ zsh-zshrc.antigen:
     - source: salt:///zsh/zshrc.antigen
     - user: {{ grains.user }}
     - group: {{ grains.user }}
+
+
+zsh-zshrc-common:
+  file.managed:
+    - name: {{ grains.homedir }}/.zshrc.common
+    - source: salt:///zsh/zshrc.common
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
+
