@@ -3,20 +3,6 @@ packages-base:
     - pkgs:
       - base-devel
       - openssh
-      - gnupg
-
-packages-yubikey:
-  pkg.installed:
-    - pkgs:
-      - libusb-compat
-      - pcsclite
-      - ccid
-      - libu2f-host
-
-pcscd.socket:
-  service.running:
-    - enable: True
-    - reload: True
 
 NetworkManager:
   service.running:
@@ -50,4 +36,3 @@ yaourt-install:
 remove-epiphany:
   pkg.removed:
     - name: epiphany
-

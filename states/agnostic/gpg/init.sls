@@ -1,3 +1,14 @@
+gnupg:
+  pkg.installed
+
+include:
+  - {{ grains.os_family | lower }}: gpg
+
+pcscd.socket:
+  service.running:
+    - enable: True
+    - reload: True
+
 gpg-config:
   file.managed:
     - name: {{ grains.homedir }}/.gnupg/gpg.conf
@@ -24,4 +35,3 @@ gpg-agent-enable:
   cmd.run:
     - name: systemctl enable --user gpg-agent
     - runas: {{ grains.user }}
-
