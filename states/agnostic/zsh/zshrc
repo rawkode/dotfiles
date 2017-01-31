@@ -18,10 +18,10 @@ then
 fi
 
 # GPG Agent for SSH
-SSH_AGENT_PID	DEFAULT=
-SSH_AUTH_SOCK	DEFAULT="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
-GSM_SKIP_SSH_AGENT_WORKAROUND	DEFAULT="true"
-GPG_TTY DEFAULT="$(tty)"
+SSH_AGENT_PID=
+SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+GSM_SKIP_SSH_AGENT_WORKAROUND="true"
+GPG_TTY="$(tty)"
 
 # Refresh gpg-agent tty in case user switches into an X session
 gpg-connect-agent updatestartuptty /bye >/dev/null
