@@ -1,5 +1,4 @@
 keybase:
   cmd.run:
-    - name: yaourt -S --noconfirm keybase-bin
+    - name: pacaur -S --noconfirm keybase-bin
     - user: {{ grains.user }}
-

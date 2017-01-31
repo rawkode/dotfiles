@@ -1,5 +1,4 @@
 wmail:
   cmd.run:
-    - name: yaourt -S --noconfirm wmail-bin
+    - name: pacaur -S --noconfirm wmail-bin
     - user: {{ grains.user }}
-
