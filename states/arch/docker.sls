@@ -1,3 +1,5 @@
 docker-install:
   pkg.installed:
-    - name: docker
+    - pkgs:
+      - docker
+      - docker-compose

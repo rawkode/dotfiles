@@ -27,4 +27,3 @@ GPG_TTY DEFAULT="$(tty)"
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-

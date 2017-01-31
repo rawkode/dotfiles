@@ -1,4 +1,5 @@
 {% for aur in [
+  'gnome-shell-extension-redshift-git',
   'gnome-shell-extension-dash-to-dock-git',
   'gnome-shell-extension-topicons-plus-git',
   'gnome-shell-extension-pixel-saver',
@@ -11,6 +12,8 @@
   'gnome-shell-extension-impatience-git',
   'gnome-shell-extension-arch-update',
   'gnome-shell-extension-stealmyfocus-git',
+  'flatplat-theme',
+  'gtk-theme-arc-git',
   'adapta-gtk-theme',
   'adapta-backgrounds',
   'paper-icon-theme-git',
@@ -18,11 +21,10 @@
 ] %}
 install-aur-extension-{{ aur }}:
   cmd.run:
-    - name: yaourt -S --noconfirm {{ aur }}
+    - name: pacaur -S --noconfirm {{ aur }}
     - user: {{ grains.user }}
 {% endfor %}
 
 alt-tab-current-workspace:
   cmd.run:
     - name: gsettings set org.gnome.shell.app-switcher current-workspace-only true
-

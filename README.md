@@ -13,4 +13,3 @@ You must have `wget` installed. Everybody has that installed though, right?
 ```
 ./init.sh <state-name>
 ```
-
