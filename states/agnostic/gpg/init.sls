@@ -23,6 +23,11 @@ gpg-agent-config:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
+disable-ssh-agent:
+  file.comment:
+    - name: /etc/X11/Xsession.options
+    - regex: ^use-ssh-agent
+
 gpg-agent-service:
   file.managed:
     - name: {{ grains.homedir }}/.config/systemd/user/gpg-agent.service
