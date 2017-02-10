@@ -5,12 +5,12 @@ source /opt/base16-shell/scripts/base16-materia.sh
 source ~/.zshrc.common
 
 # Antigen
-source /opt/zsh-antigen/antigen.zsh
-source ~/.zshrc.antigen
+# source /opt/zsh-antigen/antigen.zsh
+# source ~/.zshrc.antigen
 
 # Zplug
-#source /usr/share/zplug/init.zsh
-#source ~/.zshrc.zplug
+source ~/.zplug/init.zsh
+source ~/.zshrc.zplug
 
 if [[ -f ~/.zshrc.local ]];
 then

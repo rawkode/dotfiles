@@ -37,6 +37,12 @@ zsh-zshrc.antigen:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
+zsh-zshrc.zplug:
+  file.managed:
+    - name: {{ grains.homedir }}/.zshrc.zplug
+    - source: salt:///zsh/zshrc.zplug
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
 
 zsh-zshrc-common:
   file.managed:
@@ -45,3 +51,20 @@ zsh-zshrc-common:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
+fzf-clone:
+  git.latest:
+    - name: https://github.com/junegunn/fzf.git
+    - rev: master
+    - target: /opt/fzf
+    - depth: 1
+    - force_reset: True
+
+fzf-install:
+  cmd.run:
+    - name: sudo /opt/fzf/install --all --64
+    - runas: {{ grains.user }}
+
+zplug-install:
+  cmd.run:
+    - name:  curl -sL zplug.sh/installer | zsh
+    - runas: {{ grains.user }}

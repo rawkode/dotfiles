@@ -11,19 +11,7 @@ antigen bundle git-flow
 antigen bundle osx
 antigen bundle brew
 antigen bundle sroze/docker-compose-zsh-plugin
-antigen bundle b4b4r07/emoji-cli
-
-#POWERLEVEL9K_MODE='awesome-patched'
-
-POWERLEVEL9K_OK_ICON='✓'
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load time)
 
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
 antigen apply
-

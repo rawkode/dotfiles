@@ -1,6 +1,10 @@
 export TERM="xterm-256color"
 export EMOJI_CLI_KEYBIND="^e"
 
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+
 ## Neovim
 alias vi='nvim'
 alias vim='nvim'
@@ -49,3 +53,16 @@ chpwd() {
 
 # Remove 0.4 second delay between vi modes and have a 0.1 delay
 export KEYTIMEOUT=1
+
+# Powerlevel9k
+#POWERLEVEL9K_MODE='awesome-patched'
+
+POWERLEVEL9K_OK_ICON='✓'
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load time)
+
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
