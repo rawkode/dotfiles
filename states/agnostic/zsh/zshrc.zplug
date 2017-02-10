@@ -6,7 +6,7 @@ zplug "plugins/git",                  from:oh-my-zsh
 zplug "plugins/command-not-found",    from:oh-my-zsh
 
 zplug "sroze/docker-compose-zsh-plugin"
-#zplug "Valiev/almostonto"
+zplug "Valiev/almostontop"
 
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
