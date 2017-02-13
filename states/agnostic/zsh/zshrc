@@ -18,3 +18,10 @@ then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Start or re-use a gpg-agent.
+gpgconf --launch gpg-agent
+
+# Ensure that GPG Agent is used as the SSH agent
+export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+
