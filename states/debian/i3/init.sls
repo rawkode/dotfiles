@@ -1,32 +1,41 @@
+getdebs--key:
+  cmd.run:
+    - name: wget -q -O - http://archive.getdeb.net/getdeb-archive.key | apt-key add -
+
+getdebs-source:
+  cmd.run:
+    - name: sh -c 'echo "deb http://archive.getdeb.net/ubuntu yakkety-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
+
 i3-dependencies:
-    pkg.installed:
-        - pkgs:
-            - fonts-font-awesome
-            - nitrogen
-            - dunst
-            - compton
-            - volti
-            - libtool
-            - libxcb1-dev
-            - libxcb-keysyms1-dev
-            - libpango1.0-dev
-            - libxcb-util0-dev
-            - libyajl-dev
-            - libstartup-notification0-dev
-            - libxcb-randr0-dev
-            - libev-dev
-            - libxcb-cursor-dev
-            - libxcb-ewmh-dev
-            - libxcb-xinerama0-dev
-            - libxcb-xkb-dev
-            - libxcb-icccm4-dev
-            - libxkbcommon-dev
-            - libxkbcommon-x11-dev
-            - libxinerama-dev
-            - autoconf
-            - ruby-ronn
-            - libyajl-dev
-            - xutils-dev
+  pkg.installed:
+    - pkgs:
+      - polybar
+      - fonts-font-awesome
+      - nitrogen
+      - dunst
+      - compton
+      - volti
+      - libtool
+      - libxcb1-dev
+      - libxcb-keysyms1-dev
+      - libpango1.0-dev
+      - libxcb-util0-dev
+      - libyajl-dev
+      - libstartup-notification0-dev
+      - libxcb-randr0-dev
+      - libev-dev
+      - libxcb-cursor-dev
+      - libxcb-ewmh-dev
+      - libxcb-xinerama0-dev
+      - libxcb-xkb-dev
+      - libxcb-icccm4-dev
+      - libxkbcommon-dev
+      - libxkbcommon-x11-dev
+      - libxinerama-dev
+      - autoconf
+      - ruby-ronn
+      - libyajl-dev
+      - xutils-dev
 
 xcb-util-xrm:
     git.latest:
@@ -114,3 +123,13 @@ rofi-make:
         - cwd: /opt/rofi/build
         - require:
             - cmd: rofi-configure
+
+
+vim-install:
+  pkg.latest:
+    - refresh: True
+    - require:
+      - pkgrepo: neovim-ppa
+    - pkgs:
+      - neovim
+

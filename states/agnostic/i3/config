@@ -30,29 +30,6 @@ client.urgent $base02 $base08 $base07 $base08
 # Mouse
 focus_follows_mouse no
 
-# i3 status bar
-##
-bar {
-    i3bar_command i3bar -t
-    position top
-    # 4kFilterBar
-    height 24
-    font pango:Roboto 10
-    # /4kFilterBar
-    tray_output none
-
-    colors {
-    separator $base03
-    background $base01
-    statusline $base05
-    focused_workspace $base0C $base0D $base00
-    active_workspace $base02 $base02 $base07
-    inactive_workspace $base01 $base01 $base03
-    urgent_workspace $base08 $base08 $base07
-}
-
-}
-
 # No window titles
 # new_window 1pixel
 
@@ -64,7 +41,8 @@ floating_modifier Mod4
 # Keybindings
 bindsym $mod+Return exec xfce4-terminal
 bindsym Pause exec i3lock --color ab4642
-bindsym $mod+Shift+l exec i3lock --color ab4642
+bindsym $mod+Pause exec i3-msg exit
+bindsym $mod+l exec i3lock --color ab4642
 bindsym $mod+q kill
 
 bindsym $mod+space exec rofi -show run
@@ -180,13 +158,10 @@ bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5- unmute"
 # Autostart
 ##
 exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id nm-applet
+exec --no-startup-id polybar top
+exec --no-startup-id wicd-client -t
 exec --no-startup-id volti
-exec --no-startup-id dunst -config ~/.config/i3/dunstrc
-exec --no-startup-id compton -b --config ~/.config/i3/compton.conf
 exec --no-startup-id nitrogen --restore
-# 4kFilterDPI
-# /4kFilterDPI
 
 # i3 gaps only
 ##

@@ -16,14 +16,15 @@ i3-configuration:
 
 i3-configuration-compton:
     file.managed:
-        - name: {{ grains.homedir }}/.config/i3/compton.conf
+        - name: {{ grains.homedir }}/.config/compton.conf
         - source: salt://i3/compton.conf
         - user: {{ grains.user }}
         - group: {{ grains.user }}
 
 i3-configuration-dunst:
     file.managed:
-        - name: {{ grains.homedir }}/.config/i3/dunstrc
+        - name: {{ grains.homedir }}/.config/dunst/dunstrc
         - source: salt://i3/dunstrc
         - user: {{ grains.user }}
         - group: {{ grains.user }}
+        - makedirs: True
