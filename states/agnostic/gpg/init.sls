@@ -28,15 +28,3 @@ disable-ssh-agent:
     - name: /etc/X11/Xsession.options
     - regex: ^use-ssh-agent
 
-gpg-agent-service:
-  file.managed:
-    - name: {{ grains.homedir }}/.config/systemd/user/gpg-agent.service
-    - source: salt://gpg/gpg-agent.service
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-    - makedirs: True
-
-gpg-agent-enable:
-  cmd.run:
-    - name: systemctl enable --user gpg-agent
-    - runas: {{ grains.user }}
