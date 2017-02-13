@@ -1,7 +1,5 @@
 ! urxvt
-! 4kFilter
-Xft.dpi: 96
-! /4kFilter
+Xft.dpi: 166
 Xft.lcdfilter: lcddefault
 Xft.hinting: 1
 Xft.hintstyle: hintfull
@@ -115,9 +113,7 @@ rofi.opacity: 80
 rofi.fake-transparency: false
 rofi.location: 0
 rofi.width: 50
-! 4kFilterRofi
 rofi.font: Hack-Regular 12
-! /4kFilterRofi
 rofi.lines: 4
 
 xscreensaver.splash: false
