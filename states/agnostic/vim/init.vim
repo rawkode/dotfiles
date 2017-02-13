@@ -1,29 +1,54 @@
-"dein Scripts-----------------------------
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
 
 let mapleader=","
-set nowrap        " don't wrap lines
-set tabstop=4     " a tab is four spaces
-set backspace=indent,eol,start
-                    " allow backspacing over everything in insert mode
-set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
-set number        " always show line numbers
-set relativenumber
-set shiftwidth=4  " number of spaces to use for autoindenting
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch     " set show matching parenthesis
-set ignorecase    " ignore case when searching
-set smartcase     " ignore case if search pattern is all lowercase,
-                    "    case-sensitive otherwise
-set smarttab      " insert tabs on the start of a line according to
-                    "    shiftwidth, not tabstop
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
 
-let g:netrw_liststyle = 3
+set mouse=""
+set encoding=utf-8
+
+set title
+set nowrap
+
+set cursorline
+set cursorcolumn
+
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set softtabstop=2
+set expandtab
+
+set backspace=indent,eol,start
+
+set autoindent
+set copyindent
+
+set number
+set relativenumber
+
+set showmatch
+set ignorecase
+set smartcase
+set smarttab
+set hlsearch
+set incsearch
+
+map <CR> :nohl<cr>
+
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
+"augroup ProjectDrawer
+""  autocmd!
+""  autocmd VimEnter * :Vexplore
+"augroup END
+
+nmap <leader>t :NERDTree<cr>
+map <silent> <C-n> :NERDTreeFocus<CR>
+
 
 " Required:
 set runtimepath+={{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim
@@ -50,6 +75,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('chriskempson/base16-vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('scrooloose/nerdtree')
 
   " Finders
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -59,18 +85,58 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Raimondi/delimitMate')
   call dein#add('scrooloose/nerdcommenter')
 
-
   " Git
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-fugitive')
 
+  " Only load language files when inside a file of that language
+  call dein#add('sheerun/vim-polyglot')
+
+  " Neomake
+  call dein#add('neomake/neomake')
+  " Run Neomake when I save any buffer
+  augroup localneomake
+    autocmd! BufWritePost * Neomake
+  augroup END
+  let g:neomake_markdown_enabled_makers = []
+
 
   " Elixir
+  let g:neomake_elixir_enabled_makers = ['dccredo']
+  function! NeomakeCredoErrorType(entry)
+    if a:entry.type ==# 'F'
+      let l:type = 'W'
+    elseif a:entry.type ==# 'D'
+      let l:type = 'I'
+    elseif a:entry.type ==# 'W'
+      let l:type = 'W'
+    elseif a:entry.type ==# 'R'
+      let l:type = 'I'
+    elseif a:entry.type ==# 'C'
+      let l:type = 'W'
+    else
+      let l:type = 'M'
+    endif
+    let a:entry.type = l:type
+  endfunction
+
+  let g:neomake_elixir_dccredo_maker = {
+        \ 'exe': 'docker-compose',
+        \ 'args': ['run', '--rm', 'api', 'credo', 'list', '%:p', '--format=oneline'],
+        \ 'errorformat': '[%t] %. %f:%l:%c %m,[%t] %. %f:%l %m',
+        \ 'postprocess': function('NeomakeCredoErrorType')
+        \ }
+
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('slashmili/alchemist.vim')
+  call dein#add('c-brenn/phoenix.vim')
+  call dein#add('tpope/vim-projectionist')
 
   " SaltStack
   call dein#add('saltstack/salt-vim')
+
+  "
+  call dein#add('powerman/vim-plugin-AnsiEsc')
 
   " Required:
   call dein#end()
@@ -86,9 +152,11 @@ if dein#check_install()
 endif
 
 let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
+
 " let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
@@ -138,5 +206,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-"End dein Scripts-------------------------
+let base16colorspace=256
+set background=dark
+syntax enable
+colorscheme base16-materia
 
