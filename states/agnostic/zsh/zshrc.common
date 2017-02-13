@@ -1,13 +1,13 @@
 export TERM="xterm-256color"
-export EMOJI_CLI_KEYBIND="^e"
 
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
 
 ## Neovim
-alias vi='nvim'
-alias vim='nvim'
+alias vi=' nvim'
+alias vim=' nvim'
+alias nvim=' nvim'
 
 ## Don't store these commands in history
 alias ls=' ls'
@@ -40,6 +40,14 @@ bindkey '^[[B' down-line-or-search
 #
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt ALWAYS_TO_END
+setopt AUTO_MENU
+setopt AUTO_NAME_DIRS
+setopt COMPLETE_IN_WORD
 
 DIRSTACKSIZE=9
 DIRSTACKFILE=~/.zdirs
@@ -66,3 +74,4 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load time)
 
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
+
