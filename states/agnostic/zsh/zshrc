@@ -19,9 +19,12 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Start or re-use a gpg-agent.
-gpgconf --launch gpg-agent
+# GPG Agent for SSH
+SSH_AGENT_PID=
+SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+GSM_SKIP_SSH_AGENT_WORKAROUND="true"
+GPG_TTY="$(tty)"
 
-# Ensure that GPG Agent is used as the SSH agent
-export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+# Refresh gpg-agent tty in case user switches into an X session
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
