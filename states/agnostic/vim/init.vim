@@ -36,19 +36,8 @@ set incsearch
 
 map <CR> :nohl<cr>
 
-"let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-"let g:netrw_browse_split = 4
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 25
-"augroup ProjectDrawer
-""  autocmd!
-""  autocmd VimEnter * :Vexplore
-"augroup END
-
 nmap <leader>t :NERDTree<cr>
 map <silent> <C-n> :NERDTreeFocus<CR>
-
 
 " Required:
 set runtimepath+={{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim
@@ -64,7 +53,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('Shougo/denite.nvim')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/unite-outline')
+  call dein#add('Shougo/neomru.vim')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -76,6 +67,14 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('scrooloose/nerdtree')
+
+  let NERDTreeQuitOnOpen = 0
+  let NERDTreeAutoDeleteBuffer = 1
+  let NERDTreeMinimalUI = 1
+  let NERDTreeDirArrows = 1
+  let NERDTreeMapActivateNode='<space>'
+
+  call dein#add('Xuyuanp/nerdtree-git-plugin')
 
   " Finders
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -131,6 +130,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('slashmili/alchemist.vim')
   call dein#add('c-brenn/phoenix.vim')
   call dein#add('tpope/vim-projectionist')
+
+  " GraphQL
+  call dein#add('jparise/vim-graphql')
 
   " SaltStack
   call dein#add('saltstack/salt-vim')
@@ -188,6 +190,14 @@ let g:airline_theme='base16_eighties'
 map <C-p> :Files<cr>
 nmap <C-p> :Files<cr>
 
+map <C-e> :Unite file_mru<cr>
+nmap <C-e> :Unite file_mru<cr>
+
+map <C-r> :Unite outline<cr>
+nmap <C-r> :Unite outline<cr>
+
+nnoremap <C-/> :Unite grep:.<cr>
+
 " View commits in fzf
 nmap <Leader>c :Commits<cr>
 " Complete from open tmux panes (from @junegunn)
@@ -203,6 +213,7 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
@@ -210,4 +221,8 @@ let base16colorspace=256
 set background=dark
 syntax enable
 colorscheme base16-materia
+
+" Spelling
+setlocal spell spelllang=en_gb
+set complete+=kspell
 
