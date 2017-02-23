@@ -61,13 +61,8 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Shougo/unite-outline')
   call dein#add('Shougo/neomru.vim')
 
+  " VimFiler
   call dein#add('Shougo/vimfiler.vim')
-	let g:loaded_netrwPlugin = 1
-  autocmd VimEnter * if !argc() | VimFiler | endif
-  autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
-
-  nmap <Leader>t :VimFilerExplorer<CR>
-	nmap <Leader>f :VimFilerExplorer -find<CR>
 
   call dein#add('Shougo/vimshell')
   call dein#add('Shougo/deoplete.nvim')
@@ -231,3 +226,7 @@ colorscheme base16-materia
 setlocal spell spelllang=en_gb
 set complete+=kspell
 
+" VimFiler
+let g:loaded_netrwPlugin = 1
+nnoremap <leader>t :VimFilerExplorer -winwidth=60<CR>
+nnoremap <leader>f :VimFilerExplorer -find -winwidth=60<CR>
