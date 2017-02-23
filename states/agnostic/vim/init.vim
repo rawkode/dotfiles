@@ -60,16 +60,15 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/unite-outline')
   call dein#add('Shougo/neomru.vim')
+  call dein#add('Shougo/deoplete.nvim')
 
   " VimFiler
   call dein#add('Shougo/vimfiler.vim')
 
-  call dein#add('Shougo/vimshell')
-  call dein#add('Shougo/deoplete.nvim')
-
   "
   " UI
   "
+  call dein#add('mhinz/vim-startify')
   call dein#add('chriskempson/base16-vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
@@ -81,15 +80,24 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 
   " Fluent Editing
+  call dein#add('editorconfig/editorconfig-vim')
   call dein#add('Raimondi/delimitMate')
-  call dein#add('scrooloose/nerdcommenter')
+  call dein#add('tpope/vim-commentary')
 
   " Git
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-fugitive')
+  call dein#add('mattn/gist-vim')
 
   " Only load language files when inside a file of that language
   call dein#add('sheerun/vim-polyglot')
+
+  "
+  call dein#add('rizzatti/dash.vim')
+
+  "
+  call dein#add('xolox/vim-misc')
+  call dein#add('xolox/vim-easytags')
 
   " Neomake
   call dein#add('neomake/neomake')
@@ -130,6 +138,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('slashmili/alchemist.vim')
   call dein#add('c-brenn/phoenix.vim')
   call dein#add('tpope/vim-projectionist')
+
+  " Docker
+  call dein#add('ekalinin/dockerfile.vim')
 
   " GraphQL
   call dein#add('jparise/vim-graphql')
