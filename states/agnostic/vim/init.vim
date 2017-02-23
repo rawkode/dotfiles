@@ -7,6 +7,8 @@ let mapleader=","
 set mouse=""
 set encoding=utf-8
 
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
+
 set title
 set nowrap
 
@@ -34,10 +36,12 @@ set smarttab
 set hlsearch
 set incsearch
 
-map <CR> :nohl<cr>
+" Stop creating backup and swap files
+set noswapfile
+set nobackup
+set nowb
 
-nmap <leader>t :NERDTree<cr>
-map <silent> <C-n> :NERDTreeFocus<CR>
+map <CR> :nohl<cr>
 
 " Required:
 set runtimepath+={{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim
@@ -50,31 +54,32 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   " Required:
   call dein#add('{{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim')
 
-  " Add or remove your plugins here:
+  " The Shougo collection
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/unite-outline')
   call dein#add('Shougo/neomru.vim')
 
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  call dein#add('Shougo/vimfiler.vim')
+	let g:loaded_netrwPlugin = 1
+  autocmd VimEnter * if !argc() | VimFiler | endif
+  autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 
+  nmap <Leader>t :VimFilerExplorer<CR>
+	nmap <Leader>f :VimFilerExplorer -find<CR>
+
+  call dein#add('Shougo/vimshell')
   call dein#add('Shougo/deoplete.nvim')
 
+  "
   " UI
+  "
   call dein#add('chriskempson/base16-vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('scrooloose/nerdtree')
-
-  let NERDTreeQuitOnOpen = 0
-  let NERDTreeAutoDeleteBuffer = 1
-  let NERDTreeMinimalUI = 1
-  let NERDTreeDirArrows = 1
-  let NERDTreeMapActivateNode='<space>'
-
   call dein#add('Xuyuanp/nerdtree-git-plugin')
+  call dein#add('ntpeters/vim-better-whitespace')
 
   " Finders
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
