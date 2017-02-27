@@ -63,7 +63,8 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Shougo/deoplete.nvim')
 
   " VimFiler
-  call dein#add('Shougo/vimfiler.vim')
+  " call dein#add('Shougo/vimfiler.vim')
+  " let g:vimfiler_safe_mode_by_default = 0
 
   "
   " UI
@@ -72,8 +73,12 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('chriskempson/base16-vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('Xuyuanp/nerdtree-git-plugin')
   call dein#add('ntpeters/vim-better-whitespace')
+  call dein#add('junegunn/goyo.vim')
+  call dein#add('junegunn/limelight.vim')
+
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('Xuyuanp/nerdtree-git-plugin')
 
   " Finders
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -83,6 +88,11 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('editorconfig/editorconfig-vim')
   call dein#add('Raimondi/delimitMate')
   call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-repeat')
+  call dein#add('junegunn/vim-easy-align')
+  call dein#add('Yggdroot/indentLine')
+  call dein#add('Valloric/MatchTagAlways')
 
   " Git
   call dein#add('airblade/vim-gitgutter')
@@ -90,7 +100,8 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('mattn/gist-vim')
 
   " Only load language files when inside a file of that language
-  call dein#add('sheerun/vim-polyglot')
+  "   - This causes random no syntax colouring
+  " call dein#add('sheerun/vim-polyglot')
 
   "
   call dein#add('rizzatti/dash.vim')
@@ -150,6 +161,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   "
   call dein#add('powerman/vim-plugin-AnsiEsc')
+
+  " This must come after most other plugins
+  call dein#add('ryanoasis/vim-devicons')
 
   " Required:
   call dein#end()
@@ -238,6 +252,19 @@ setlocal spell spelllang=en_gb
 set complete+=kspell
 
 " VimFiler
-let g:loaded_netrwPlugin = 1
-nnoremap <leader>t :VimFilerExplorer -winwidth=60<CR>
-nnoremap <leader>f :VimFilerExplorer -find -winwidth=60<CR>
+" call vimfiler#custom#profile('default', 'context', { 'safe' : 0 })
+" let g:loaded_netrwPlugin = 1
+" nnoremap <leader>t :VimFilerExplorer -winwidth=60<CR>
+" nnoremap <leader>f :VimFilerExplorer -find -winwidth=60<CR>
+
+" NERDTree
+let NERDTreeQuitOnOpen = 0
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let NERDTreeMapActivateNode='<space>'
+
+" Goyo
+let g:goyo_width="60%"
+let g:goyo_height="80%"
+

@@ -8,7 +8,7 @@ bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
 set -g focus-events on
 
-set-option -g default-terminal "screen-256color"
+set -g default-terminal screen-256color
 
 bind -n S-Left  previous-window
 bind -n S-Right next-window

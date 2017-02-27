@@ -15,13 +15,6 @@ zsh-antigen-clone:
     - depth: 1
     - force_reset: True
 
-zsh-base16-clone:
-  git.latest:
-    - name: https://github.com/chriskempson/base16-shell.git
-    - rev: master
-    - target: /opt/base16-shell
-    - depth: 1
-
 zsh-zshrc:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc
@@ -48,6 +41,13 @@ zsh-zshrc-common:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc.common
     - source: salt:///zsh/zshrc.common
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
+
+zsh-zshrc-keybindings:
+  file.managed:
+    - name: {{ grains.homedir }}/.zshrc.keybindings
+    - source: salt:///zsh/zshrc.keybindings
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 

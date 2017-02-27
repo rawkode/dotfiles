@@ -3,6 +3,7 @@ export PATH=$PATH:~/.composer/vendor/bin
 source /opt/base16-shell/scripts/base16-materia.sh
 
 source ~/.zshrc.common
+source ~/.zshrc.keybindings
 
 # Antigen
 # source /opt/zsh-antigen/antigen.zsh

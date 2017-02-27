@@ -1,5 +1,3 @@
-export TERM="xterm-256color"
-
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
@@ -22,8 +20,10 @@ alias mix='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID eli
 alias iex='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest iex'
 
 # Useful aliases
-alias dc='docker-compose'
 alias dps='docker ps --format="table {{ .ID }}\t{{ .Names }}\t{{ .Image }}\t{{ .Status }}\t{{ .Ports }}\t{{ .Command }}"'
+
+alias dc='docker-compose'
+alias dcr='docker-compose run --rm'
 
 alias tree='tree -d -I "vendor|cache|log|logs"'
 
@@ -49,6 +49,22 @@ setopt AUTO_MENU
 setopt AUTO_NAME_DIRS
 setopt COMPLETE_IN_WORD
 
+export BROWSER=google-chrome-stable
+export PAGER=less
+export MANPAGER=less
+export MANWIDTH=${MANWIDTH:-80}
+export COLORTERM="yes"
+
+# enable caching
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
+
+# complete proc-ids with menu
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
+
+
 DIRSTACKSIZE=9
 DIRSTACKFILE=~/.zdirs
 if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
@@ -72,6 +88,4 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load time)
-
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
 
