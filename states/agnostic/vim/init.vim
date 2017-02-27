@@ -78,7 +78,10 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('junegunn/limelight.vim')
 
   call dein#add('scrooloose/nerdtree')
-  call dein#add('Xuyuanp/nerdtree-git-plugin')
+  
+  "call dein#add('Xuyuanp/nerdtree-git-plugin')
+  "robinfehr version colours the filename, instead of inserting a symbol
+  call dein#add('robinfehr/nerdtree-git-plugin')
 
   " Finders
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -258,11 +261,18 @@ set complete+=kspell
 " nnoremap <leader>f :VimFilerExplorer -find -winwidth=60<CR>
 
 " NERDTree
+nmap <leader>t :NERDTree<CR>
+nmap <leader>f :NERDTreeFind<CR>
+map <silent> <C-n> :NERDTreeFocus<CR>
+
 let NERDTreeQuitOnOpen = 0
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
 let NERDTreeMapActivateNode='<space>'
+
+" DevIcons
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 
 " Goyo
 let g:goyo_width="60%"
