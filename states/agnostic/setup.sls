@@ -3,6 +3,8 @@ global-base-packages:
     - pkgs:
       - gnome-tweak-tool
       - jq
+      - asciinema
+      - yank
 
 include:
   - {{ grains.os_family | lower }}: setup
