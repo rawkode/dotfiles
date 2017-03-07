@@ -1,19 +1,8 @@
-include:
-  - {{ grains.os_family | lower }}: zsh
-
 zsh:
   pkg.installed:
     - pkgs:
       - bc
       - zsh
-
-zsh-antigen-clone:
-  git.latest:
-    - name: https://github.com/zsh-users/antigen.git
-    - rev: master
-    - target: /opt/zsh-antigen
-    - depth: 1
-    - force_reset: True
 
 zsh-zshrc:
   file.managed:
@@ -22,13 +11,6 @@ zsh-zshrc:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
     - template: jinja
-
-zsh-zshrc.antigen:
-  file.managed:
-    - name: {{ grains.homedir }}/.zshrc.antigen
-    - source: salt:///zsh/zshrc.antigen
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
 
 zsh-zshrc.zplug:
   file.managed:

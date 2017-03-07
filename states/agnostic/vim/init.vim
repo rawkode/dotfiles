@@ -165,9 +165,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   "
   call dein#add('powerman/vim-plugin-AnsiEsc')
 
-  " This must come after most other plugins
-  call dein#add('ryanoasis/vim-devicons')
-
   " Required:
   call dein#end()
   call dein#save_state()
@@ -269,10 +266,6 @@ let NERDTreeQuitOnOpen = 0
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeMapActivateNode='<space>'
-
-" DevIcons
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
 
 " Goyo
 let g:goyo_width="60%"

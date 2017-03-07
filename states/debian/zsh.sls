@@ -1,2 +1,0 @@
-fonts-hack:
-  pkg.installed

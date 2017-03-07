@@ -1,6 +1,10 @@
 include:
   - {{ grains.os_family | lower }}: vim
 
+ctags:
+  pkg.latest:
+    - name: exuberant-ctags
+
 dein-install:
   cmd.script:
     - source: https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
