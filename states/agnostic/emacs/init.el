@@ -1,3 +1,4 @@
+(setq auto-save-default nil)
 (setq make-backup-files nil)
 
 (setq linum-format " %03d ")
@@ -35,7 +36,6 @@
   "f" 'neotree-find
   "r" 'helm-gtags-find-tag
   "e" 'find-file
-  "p" 'helm-projectile
   "b" 'switch-to-buffer
   "k" 'kill-buffer
   "s" 'helm-find
@@ -44,6 +44,7 @@
 (projectile-global-mode)
 (setq projectile-switch-project-action 'helm-projectile-find-file)
 (helm-projectile-on)
+(helm-autoresize-mode 1)
 
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
@@ -120,4 +121,7 @@
         (switch-to-prev-buffer (get-buffer-window buf) 'kill))
  buffer)))
 (add-hook 'compilation-finish-functions 'bury-compile-buffer-if-successful)
+
+(define-key evil-normal-state-map (kbd "C-p") 'helm-projectile)
+(global-set-key (kbd "C-p") 'helm-projectile)
 
