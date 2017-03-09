@@ -1,5 +1,7 @@
 (setq make-backup-files nil)
 
+(setq linum-format " %03d ")
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
@@ -13,12 +15,78 @@
 (unless package-archive-contents (package-refresh-contents))
 (package-install-selected-packages)
 
+(add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
+
+(require 'neotree)
+(setq neo-smart-open t)
+
+(require 'expand-region)
+(global-set-key (kbd "M-2") 'er/expand-region)
+
 (require 'evil)
 (evil-mode 1)
 
-(use-package base16-theme
-  :init
-  (load-theme 'base16-eighties))
+(require 'smartparens-config)
+
+(require 'general)
+(setq general-default-keymaps 'evil-normal-state-map)
+(setq leader ",")
+(general-define-key :prefix leader "f" 'neotree-toggle)
+
+(setq sml/theme 'dark)
+(sml/setup)
+
+(require 'rainbow-delimiters)
+
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+;; Helm
+(require 'helm)
+(require 'helm-config)
+
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) 
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-z") 'helm-select-action)
+
+(when (executable-find "curl")
+  (setq helm-google-suggest-use-curl-p t))
+
+(setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
+      helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
+      helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
+      helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
+      helm-ff-file-name-history-use-recentf t
+      helm-echo-input-in-header-line t)
+
+(setq helm-autoresize-max-height 0)
+(setq helm-autoresize-min-height 20)
+(helm-autoresize-mode 1)
+
+(helm-mode 1)
+
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
+(add-hook 'asm-mode-hook 'helm-gtags-mode)
+(add-hook 'elixir-mode-hook 'helm-gtags-mode)
+
+(custom-set-variables
+ '(helm-gtags-prefix-key "\C-t")
+ '(helm-gtags-suggested-key-mapping t))
+
+(with-eval-after-load 'helm-gtags
+  (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+  (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+  (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+  (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+  (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+  (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+  (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
+
+;;
+(load-theme 'base16-eighties t)
 
 (defun bury-compile-buffer-if-successful (buffer string)
   "Bury a compilation buffer if succeeded without warnings "

@@ -57,14 +57,15 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   " The Shougo collection
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('Shougo/unite.vim')
-  call dein#add('Shougo/unite-outline')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/deoplete.nvim')
 
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/unite-outline')
+
   " VimFiler
-  " call dein#add('Shougo/vimfiler.vim')
-  " let g:vimfiler_safe_mode_by_default = 0
+  call dein#add('Shougo/vimfiler.vim')
+  let g:vimfiler_safe_mode_by_default = 0
 
   "
   " UI
@@ -78,7 +79,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('junegunn/limelight.vim')
 
   call dein#add('scrooloose/nerdtree')
-  
+
   "call dein#add('Xuyuanp/nerdtree-git-plugin')
   "robinfehr version colours the filename, instead of inserting a symbol
   call dein#add('robinfehr/nerdtree-git-plugin')
@@ -252,20 +253,20 @@ setlocal spell spelllang=en_gb
 set complete+=kspell
 
 " VimFiler
-" call vimfiler#custom#profile('default', 'context', { 'safe' : 0 })
-" let g:loaded_netrwPlugin = 1
-" nnoremap <leader>t :VimFilerExplorer -winwidth=60<CR>
-" nnoremap <leader>f :VimFilerExplorer -find -winwidth=60<CR>
+call vimfiler#custom#profile('default', 'context', { 'safe' : 0 })
+let g:loaded_netrwPlugin = 1
+nnoremap <leader>t :VimFilerExplorer -winwidth=60<CR>
+nnoremap <leader>f :VimFilerExplorer -find -winwidth=60<CR>
 
 " NERDTree
-nmap <leader>t :NERDTree<CR>
-nmap <leader>f :NERDTreeFind<CR>
-map <silent> <C-n> :NERDTreeFocus<CR>
+"nmap <leader>t :NERDTree<CR>
+"nmap <leader>f :NERDTreeFind<CR>
+"map <silent> <C-n> :NERDTreeFocus<CR>
 
-let NERDTreeQuitOnOpen = 0
-let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeMapActivateNode='<space>'
+"let NERDTreeQuitOnOpen = 0
+"let NERDTreeAutoDeleteBuffer = 1
+"let NERDTreeMinimalUI = 1
+"let NERDTreeMapActivateNode='<space>'
 
 " Goyo
 let g:goyo_width="60%"
