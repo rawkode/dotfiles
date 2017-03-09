@@ -23,25 +23,39 @@
 (require 'expand-region)
 (global-set-key (kbd "M-2") 'er/expand-region)
 
+(global-evil-leader-mode)
+(global-evil-surround-mode 1)
+(require 'evil-surround)
+
 (require 'evil)
 (evil-mode 1)
+(evil-leader/set-leader ",")
+(evil-leader/set-key
+  "t" 'neotree-toggle
+  "f" 'neotree-find
+  "r" 'helm-gtags-find-tag
+  "e" 'find-file
+  "p" 'helm-projectile
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer
+  "s" 'helm-find
+)
+
+(projectile-global-mode)
+(setq projectile-switch-project-action 'helm-projectile-find-file)
+(helm-projectile-on)
+
+(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
 
 (require 'smartparens-config)
-
-(require 'general)
-(setq general-default-keymaps 'evil-normal-state-map)
-(setq leader ",")
-(general-define-key :prefix leader "f" 'neotree-toggle)
 
 (setq sml/theme 'dark)
 (sml/setup)
 
 (require 'rainbow-delimiters)
-
-(require 'org)
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
 
 ;; Helm
 (require 'helm)
@@ -71,6 +85,8 @@
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 (add-hook 'elixir-mode-hook 'helm-gtags-mode)
+
+(setq projectile-switch-project-action 'neotree-projectile-action)
 
 (custom-set-variables
  '(helm-gtags-prefix-key "\C-t")
