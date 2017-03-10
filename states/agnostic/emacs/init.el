@@ -19,6 +19,7 @@
 (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
 
 (require 'neotree)
+(add-hook 'after-init-hook #'neotree-startup)
 (setq neo-smart-open t)
 
 (require 'expand-region)

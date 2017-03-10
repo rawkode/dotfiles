@@ -25,6 +25,3 @@ install-aur-extension-{{ aur }}:
     - user: {{ grains.user }}
 {% endfor %}
 
-alt-tab-current-workspace:
-  cmd.run:
-    - name: gsettings set org.gnome.shell.app-switcher current-workspace-only true
