@@ -72,17 +72,20 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   "
   call dein#add('mhinz/vim-startify')
   call dein#add('chriskempson/base16-vim')
+  call dein#add('kien/rainbow_parentheses.vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
+  set noshowmode
+  set laststatus=2
+  let g:airline#extensions#tabline#enabled = 0
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme = "base16_eighties"
+
   call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('junegunn/goyo.vim')
   call dein#add('junegunn/limelight.vim')
 
   call dein#add('scrooloose/nerdtree')
-
-  "call dein#add('Xuyuanp/nerdtree-git-plugin')
-  "robinfehr version colours the filename, instead of inserting a symbol
-  call dein#add('robinfehr/nerdtree-git-plugin')
 
   " Finders
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -98,10 +101,16 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Yggdroot/indentLine')
   call dein#add('Valloric/MatchTagAlways')
 
+  call dein#add('elzr/vim-json')
+  " Disable JSON hiding quotes
+  let g:vim_json_syntax_conceal = 0
+
   " Git
   call dein#add('airblade/vim-gitgutter')
   call dein#add('tpope/vim-fugitive')
   call dein#add('mattn/gist-vim')
+  call dein#add('jreybert/vimagit')
+  call dein#add('mhinz/vim-signify')
 
   " Only load language files when inside a file of that language
   "   - This causes random no syntax colouring
@@ -112,6 +121,8 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   "
   call dein#add('xolox/vim-misc')
+
+  call dein#add('craigemery/vim-autotag')
   call dein#add('xolox/vim-easytags')
 
   " Neomake
@@ -162,6 +173,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   " SaltStack
   call dein#add('saltstack/salt-vim')
+  call dein#add('lepture/vim-jinja')
 
   "
   call dein#add('powerman/vim-plugin-AnsiEsc')
@@ -246,7 +258,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 let base16colorspace=256
 set background=dark
 syntax enable
-colorscheme base16-materia
+colorscheme base16-oceanicnext
 
 " Spelling
 setlocal spell spelllang=en_gb
@@ -255,20 +267,25 @@ set complete+=kspell
 " VimFiler
 call vimfiler#custom#profile('default', 'context', { 'safe' : 0 })
 let g:loaded_netrwPlugin = 1
-nnoremap <leader>t :VimFilerExplorer -winwidth=60<CR>
-nnoremap <leader>f :VimFilerExplorer -find -winwidth=60<CR>
+nnoremap <leader>t :VimFilerExplorer -winwidth=45<CR>
+nnoremap <leader>f :VimFilerExplorer -find -winwidth=45<CR>
 
-" NERDTree
-"nmap <leader>t :NERDTree<CR>
-"nmap <leader>f :NERDTreeFind<CR>
-"map <silent> <C-n> :NERDTreeFocus<CR>
-
-"let NERDTreeQuitOnOpen = 0
-"let NERDTreeAutoDeleteBuffer = 1
-"let NERDTreeMinimalUI = 1
-"let NERDTreeMapActivateNode='<space>'
+let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_file_icon = '-'
+let g:vimfiler_marked_file_icon = '✓'
+let g:vimfiler_readonly_file_icon = '✗'
+ 
+autocmd! FileType vimfiler call s:my_vimfiler_settings()
+function! s:my_vimfiler_settings()
+	nmap <buffer> <CR>    <Plug>(vimfiler_expand_or_edit)
+	nmap <buffer> <SPACE> <Plug>(vimfiler_expand_or_edit)
+endfunction
 
 " Goyo
 let g:goyo_width="60%"
 let g:goyo_height="80%"
+
+nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
 
