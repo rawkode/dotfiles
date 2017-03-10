@@ -35,7 +35,7 @@ requirements:
       && cp -r caffeine@patapon.info ~/.local/share/gnome-shell/extensions"
   },
   {
-    "uuid: "gravatar@jr.rlabs.io",
+    "uuid": "gravatar@jr.rlabs.io",
     "repository": "https://github.com/jrouleau/gnome-shell-extension-gravatar.git",
     "command": "npm install && npm run install-extension"
   }

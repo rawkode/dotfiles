@@ -1,13 +1,21 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-materia.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-eighties.sh"
 
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+
+# Enable "recent-dir" above
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+zplug "Seinh/git-prune"
+zplug "supercrabtree/k"
 
 zplug "plugins/git",                  from:oh-my-zsh
 zplug "plugins/command-not-found",    from:oh-my-zsh
 
 zplug "sroze/docker-compose-zsh-plugin"
+
 zplug "Valiev/almostontop"
 
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme

@@ -3,27 +3,22 @@ export PATH=$PATH:~/.composer/vendor/bin
 source ~/.zshrc.common
 source ~/.zshrc.keybindings
 
-# Antigen
-# source /opt/zsh-antigen/antigen.zsh
-# source ~/.zshrc.antigen
-
-# Zplug
 source ~/.zplug/init.zsh
 source ~/.zshrc.zplug
 
+# fzf Fuzzy Finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Ensure gpg-agent handles GPG and SSH
+export SSH_AGENT_PID=
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+export GSM_SKIP_SSH_AGENT_WORKAROUND="true"
+export GPG_TTY="$(tty)"
+
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+# Load local overrides last
 if [[ -f ~/.zshrc.local ]];
 then
     source ~/.zshrc.local
 fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# GPG Agent for SSH
-SSH_AGENT_PID=
-SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
-GSM_SKIP_SSH_AGENT_WORKAROUND="true"
-GPG_TTY="$(tty)"
-
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null
-

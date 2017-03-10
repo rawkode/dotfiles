@@ -3,21 +3,24 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 ## Neovim
-alias vi=' nvim'
-alias vim=' nvim'
-alias nvim=' nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias nvim='nvim'
 
 ## Don't store these commands in history
-alias ls=' ls'
+alias l=' k --human'
+alias ll=' k --human'
+alias ls=' k --human'
+alias lss=' ls --color=auto'
 alias cd=' cd'
 
 # I hate all these applications
-alias composer='docker run -it --rm -v $HOME:$HOME -e COMPOSER_HOME="$HOME/.composer" -u $UID -w `pwd` composer/composer:latest'
-alias node='docker run -it --rm -v $HOME:$HOME -u $UID -w `pwd` --entrypoint=node node:latest'
-alias npm='docker run -it --rm -v $HOME:$HOME -u $UID -w `pwd` --entrypoint=npm node:latest'
-alias elixir='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest elixir'
-alias mix='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest mix'
-alias iex='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest iex'
+#alias composer='docker run -it --rm -v $HOME:$HOME -e COMPOSER_HOME="$HOME/.composer" -u $UID -w `pwd` composer/composer:latest'
+#alias node='docker run -it --rm -v $HOME:$HOME -u $UID -w `pwd` --entrypoint=node node:latest'
+#alias npm='docker run -it --rm -v $HOME:$HOME -u $UID -w `pwd` --entrypoint=npm node:latest'
+#alias elixir='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest elixir'
+#alias mix='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest mix'
+#alias iex='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest iex'
 
 # Useful aliases
 alias dps='docker ps --format="table {{ .ID }}\t{{ .Names }}\t{{ .Image }}\t{{ .Status }}\t{{ .Ports }}\t{{ .Command }}"'
@@ -83,9 +86,8 @@ export KEYTIMEOUT=1
 
 POWERLEVEL9K_OK_ICON='✓'
 
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(load time)
-
