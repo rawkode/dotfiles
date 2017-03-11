@@ -2,7 +2,7 @@ if &compatible
   set nocompatible
 endif
 
-let mapleader=","
+let mapleader="\<Space>"
 
 set mouse=""
 set encoding=utf-8

@@ -1,14 +1,22 @@
 # source /usr/share/powerline/bindings/tmux/powerline.conf
+
+set -g prefix C-a
+unbind C-b
+
 set -sg escape-time 0
 set -g base-index 1
 set -g pane-base-index 1
 set -g renumber-windows on
+
+bind | split-window -h
+bind - split-window -v
 
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
 set -g focus-events on
 
 set -g default-terminal screen-256color
+set-window-option -g xterm-keys on
 
 bind -n S-Left  previous-window
 bind -n S-Right next-window
