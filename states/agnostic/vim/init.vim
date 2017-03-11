@@ -2,7 +2,7 @@ if &compatible
   set nocompatible
 endif
 
-let mapleader="\<Space>"
+let mapleader=","
 
 set mouse=""
 set encoding=utf-8
@@ -297,15 +297,9 @@ set splitbelow
 set splitright
 
 let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <M-Left> :TmuxNavigateLeft<cr>
-nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <M-Down> :TmuxNavigateDown<cr>
-nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <M-Up>   :TmuxNavigateUp<cr>
-nnoremap <silent> <M-k>   :TmuxNavigateUp<cr>
-nnoremap <silent> <M-Right> :TmuxNavigateRight<cr>
-nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-Up>   :TmuxNavigateUp<cr>
+nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
 "nnoremap <silent> C-:TmuxNavigatePrevious<cr>
-
-:tnoremap <Esc> <C-\><C-N><C-w>
 

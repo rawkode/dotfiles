@@ -8,8 +8,10 @@ set -g base-index 1
 set -g pane-base-index 1
 set -g renumber-windows on
 
-bind | split-window -h
-bind - split-window -v
+bind Up split-window -v
+bind Down split-window -v
+bind Left split-window -h
+bind Right split-window -h
 
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
@@ -20,12 +22,6 @@ set-window-option -g xterm-keys on
 
 bind -n S-Left  previous-window
 bind -n S-Right next-window
-
-# Use Alt-arrow keys without prefix key to switch panes
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
 
 set -g pane-border-fg black
 set -g pane-active-border-fg brightblue
@@ -79,14 +75,17 @@ set -g @plugin "tmux-plugins/tmux-pain-control"
 set -g @plugin "tmux-plugins/tmux-prefix-highlight"
 set -g @plugin 'tmux-plugins/tmux-battery'
 
+run-shell ~/.tmux/plugins/tpm/tpm
+
+# Smart pane switching with awareness of Vim splits.
+# See: https://github.com/christoomey/vim-tmux-navigator
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
-bind-key -n M-left if-shell "$is_vim" "send-keys M-left"  "select-pane -L"
-bind-key -n M-down if-shell "$is_vim" "send-keys M-down"  "select-pane -D"
-bind-key -n M-up if-shell "$is_vim" "send-keys M-up"  "select-pane -U"
-bind-key -n M-right if-shell "$is_vim" "send-keys M-right"  "select-pane -R"
-
-run-shell ~/.tmux/plugins/tpm/tpm
+bind-key -n C-Left if-shell "$is_vim" "send-keys C-Left"  "select-pane -L"
+bind-key -n C-Down if-shell "$is_vim" "send-keys C-Down"  "select-pane -D"
+bind-key -n C-Up if-shell "$is_vim" "send-keys C-Up"  "select-pane -U"
+bind-key -n C-Right if-shell "$is_vim" "send-keys C-Right"  "select-pane -R"
+bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 
 # vim:ft=tmux:
 
