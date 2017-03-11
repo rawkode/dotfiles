@@ -231,8 +231,8 @@ let g:airline_theme='base16_eighties'
 map <C-p> :Files<cr>
 nmap <C-p> :Files<cr>
 
-map <C-e> :Unite file_mru<cr>
-nmap <C-e> :Unite file_mru<cr>
+map <C-e> :Buffers<cr>
+nmap <C-e> :Buffers<cr>
 
 map <C-r> :Unite outline<cr>
 nmap <C-r> :Unite outline<cr>
@@ -297,11 +297,14 @@ set splitbelow
 set splitright
 
 let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> M-left :TmuxNavigateLeft<cr>
-nnoremap <silent> M-down :TmuxNavigateDown<cr>
-nnoremap <silent> M-up :TmuxNavigateUp<cr>
-nnoremap <silent> M-down :TmuxNavigateRight<cr>
+nnoremap <silent> <M-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <M-Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <M-Up>   :TmuxNavigateUp<cr>
+nnoremap <silent> <M-k>   :TmuxNavigateUp<cr>
+nnoremap <silent> <M-Right> :TmuxNavigateRight<cr>
+nnoremap <silent> <M-l> :TmuxNavigateRight<cr>
 "nnoremap <silent> C-:TmuxNavigatePrevious<cr>
 
 :tnoremap <Esc> <C-\><C-N><C-w>
