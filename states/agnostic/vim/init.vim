@@ -54,6 +54,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   " Required:
   call dein#add('{{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim')
 
+  " Tabs & Panes
+  call dein#add('christoomey/vim-tmux-navigator')
+
   " The Shougo collection
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
@@ -239,7 +242,7 @@ nnoremap <C-/> :Unite grep:.<cr>
 " View commits in fzf
 nmap <Leader>c :Commits<cr>
 " Complete from open tmux panes (from @junegunn)
-inoremap <expr> <C-x><C-t> fzf#complete( 'tmuxwords.rb -all-but-current --scroll 499 --min 5')
+inoremap <expr> <C-x><C-t> fzf#complete( 'tmuxwords.rb -all-but-current --scroll 498 --min 5')
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -288,4 +291,18 @@ let g:goyo_width="60%"
 let g:goyo_height="80%"
 
 nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
+
+" Better Splits
+set splitbelow
+set splitright
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> M-left :TmuxNavigateLeft<cr>
+nnoremap <silent> M-down :TmuxNavigateDown<cr>
+nnoremap <silent> M-up :TmuxNavigateUp<cr>
+nnoremap <silent> M-down :TmuxNavigateRight<cr>
+"nnoremap <silent> C-:TmuxNavigatePrevious<cr>
+
+:tnoremap <Esc> <C-\><C-N><C-w>
 

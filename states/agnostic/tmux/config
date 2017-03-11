@@ -13,11 +13,6 @@ set -g default-terminal screen-256color
 bind -n S-Left  previous-window
 bind -n S-Right next-window
 
-bind -n M-h select-pane -L
-bind -n M-j select-pane -D 
-bind -n M-k select-pane -U
-bind -n M-l select-pane -R
-
 # Use Alt-arrow keys without prefix key to switch panes
 bind -n M-Left select-pane -L
 bind -n M-Right select-pane -R
@@ -75,6 +70,13 @@ set -g @plugin "tmux-plugins/tmux-copycat"
 set -g @plugin "tmux-plugins/tmux-pain-control"
 set -g @plugin "tmux-plugins/tmux-prefix-highlight"
 set -g @plugin 'tmux-plugins/tmux-battery'
+
+is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+    | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+bind-key -n M-left if-shell "$is_vim" "send-keys M-left"  "select-pane -L"
+bind-key -n M-down if-shell "$is_vim" "send-keys M-down"  "select-pane -D"
+bind-key -n M-up if-shell "$is_vim" "send-keys M-up"  "select-pane -U"
+bind-key -n M-right if-shell "$is_vim" "send-keys M-right"  "select-pane -R"
 
 run-shell ~/.tmux/plugins/tpm/tpm
 
