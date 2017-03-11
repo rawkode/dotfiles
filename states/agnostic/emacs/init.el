@@ -103,7 +103,6 @@
   (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
   (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
 
-;;
 (load-theme 'base16-eighties t)
 
 (defun bury-compile-buffer-if-successful (buffer string)
