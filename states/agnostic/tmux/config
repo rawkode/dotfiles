@@ -8,9 +8,9 @@ set -g base-index 1
 set -g pane-base-index 1
 set -g renumber-windows on
 
-bind Up split-window -v
+bind Up split-window -b -v
 bind Down split-window -v
-bind Left split-window -h
+bind Left split-window -b -h
 bind Right split-window -h
 
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
