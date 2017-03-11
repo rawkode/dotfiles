@@ -1,4 +1,4 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-oceanicnext.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-materia.sh"
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
