@@ -63,8 +63,8 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/deoplete.nvim')
 
-  call dein#add('Shougo/unite.vim')
-  call dein#add('Shougo/unite-outline')
+  " call dein#add('Shougo/unite.vim')
+  " call dein#add('Shougo/unite-outline')
 
   " VimFiler
   call dein#add('Shougo/vimfiler.vim')
@@ -75,20 +75,19 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   "
   call dein#add('mhinz/vim-startify')
   call dein#add('chriskempson/base16-vim')
-  call dein#add('kien/rainbow_parentheses.vim')
+  call dein#add('morhetz/gruvbox')
+
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
   set noshowmode
   set laststatus=2
   let g:airline#extensions#tabline#enabled = 0
   let g:airline_powerline_fonts = 1
-  let g:airline_theme = "base16_eighties"
+  let g:airline_theme = "base16_materia"
 
   call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('junegunn/goyo.vim')
   call dein#add('junegunn/limelight.vim')
-
-  call dein#add('scrooloose/nerdtree')
 
   " Finders
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
@@ -101,8 +100,8 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('tpope/vim-surround')
   call dein#add('tpope/vim-repeat')
   call dein#add('junegunn/vim-easy-align')
-  call dein#add('Yggdroot/indentLine')
   call dein#add('Valloric/MatchTagAlways')
+  call dein#add('kien/rainbow_parentheses.vim')
 
   call dein#add('elzr/vim-json')
   " Disable JSON hiding quotes
@@ -117,7 +116,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   " Only load language files when inside a file of that language
   "   - This causes random no syntax colouring
-  " call dein#add('sheerun/vim-polyglot')
+  call dein#add('sheerun/vim-polyglot')
 
   "
   call dein#add('rizzatti/dash.vim')
@@ -130,38 +129,11 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   " Neomake
   call dein#add('neomake/neomake')
-  " Run Neomake when I save any buffer
-  augroup localneomake
+  let g:neomake_markdown_enabled_makers = []
+  let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+  augroup neomake
     autocmd! BufWritePost * Neomake
   augroup END
-  let g:neomake_markdown_enabled_makers = []
-
-
-  " Elixir
-  let g:neomake_elixir_enabled_makers = ['dccredo']
-  function! NeomakeCredoErrorType(entry)
-    if a:entry.type ==# 'F'
-      let l:type = 'W'
-    elseif a:entry.type ==# 'D'
-      let l:type = 'I'
-    elseif a:entry.type ==# 'W'
-      let l:type = 'W'
-    elseif a:entry.type ==# 'R'
-      let l:type = 'I'
-    elseif a:entry.type ==# 'C'
-      let l:type = 'W'
-    else
-      let l:type = 'M'
-    endif
-    let a:entry.type = l:type
-  endfunction
-
-  let g:neomake_elixir_dccredo_maker = {
-        \ 'exe': 'docker-compose',
-        \ 'args': ['run', '--rm', 'api', 'credo', 'list', '%:p', '--format=oneline'],
-        \ 'errorformat': '[%t] %. %f:%l:%c %m,[%t] %. %f:%l %m',
-        \ 'postprocess': function('NeomakeCredoErrorType')
-        \ }
 
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('slashmili/alchemist.vim')
@@ -228,14 +200,29 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_eighties'
 
 " Fuzzy-find with fzf
-map <C-p> :Files<cr>
-nmap <C-p> :Files<cr>
+"""
+" fzf
+"""
+let g:fzf_files_options =
+  \ '--preview "(highlight -O ansi {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R --exclude deps,vendor,_build'
+
+map <C-p> :GFiles<cr>
+nmap <C-p> :GFiles<cr>
 
 map <C-e> :Buffers<cr>
 nmap <C-e> :Buffers<cr>
 
-map <C-r> :Unite outline<cr>
-nmap <C-r> :Unite outline<cr>
+map <C-r> :BTags<cr>
+nmap <C-r> :BTags<cr>
 
 nnoremap <C-/> :Unite grep:.<cr>
 
@@ -261,7 +248,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 let base16colorspace=256
 set background=dark
 syntax enable
-colorscheme base16-oceanicnext
+colorscheme base16-materia
 
 " Spelling
 setlocal spell spelllang=en_gb
@@ -279,11 +266,11 @@ let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '✓'
 let g:vimfiler_readonly_file_icon = '✗'
- 
+
 autocmd! FileType vimfiler call s:my_vimfiler_settings()
 function! s:my_vimfiler_settings()
-	nmap <buffer> <CR>    <Plug>(vimfiler_expand_or_edit)
 	nmap <buffer> <SPACE> <Plug>(vimfiler_expand_or_edit)
+	nmap <buffer> <Right> <Plug>(vimfiler_expand_or_edit)
 endfunction
 
 " Goyo
