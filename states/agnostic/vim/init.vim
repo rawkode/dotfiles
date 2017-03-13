@@ -63,8 +63,8 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/deoplete.nvim')
 
-  " call dein#add('Shougo/unite.vim')
-  " call dein#add('Shougo/unite-outline')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/unite-outline')
 
   " VimFiler
   call dein#add('Shougo/vimfiler.vim')
