@@ -36,12 +36,15 @@ set smarttab
 set hlsearch
 set incsearch
 
+"
+set wildmenu
+
 " Stop creating backup and swap files
 set noswapfile
 set nobackup
 set nowb
 
-map <CR> :nohl<cr>
+nnoremap <esc> :noh<return>
 
 " Required:
 set runtimepath+={{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim
@@ -199,6 +202,26 @@ autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_eighties'
 
+" GitGutter
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
+let g:gitgutter_max_signs = 1500
+let g:gitgutter_diff_args = '-w'
+
+" custom symbols
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = ':'
+
+" color overrrides
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green ctermbg=237
+highlight GitGutterChange ctermfg=yellow ctermbg=237
+highlight GitGutterDelete ctermfg=red ctermbg=237
+highlight GitGutterChangeDelete ctermfg=red ctermbg=237
+
 " Fuzzy-find with fzf
 """
 " fzf
@@ -290,3 +313,5 @@ nnoremap <silent> <C-Up>   :TmuxNavigateUp<cr>
 nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
 "nnoremap <silent> C-:TmuxNavigatePrevious<cr>
 
+" Startify
+let g:startify_list_order = ['dir', 'commands']
