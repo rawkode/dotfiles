@@ -1,5 +1,4 @@
-#!/bin/bash
-##
+#!/usr/bin/env bash
 
 # Are we on OSX and do we need homebrew?
 if [[ `uname` == 'Darwin' ]];
@@ -27,20 +26,26 @@ else
 		# Linux (Hopefully ...): SaltStack Bootstrap one-liner
 		# -d Don't enable salt-minion autostart
 		# -P Allow pip based installations
-		wget -qO- https://bootstrap.saltstack.com | sudo sh -s -- -P -d git develop
+		wget -qO- https://bootstrap.saltstack.com | sudo sh -s -- -P -d git v2016.11.3
 	fi
 fi
 
 HOMEDIR=$HOME
 USERNAME=$(whoami)
 
+USE_SUDO=''
+if [ $USERNAME != "root" ];
+then
+  USE_SUDO="sudo "
+fi
+
 # Set the user, home-directory, and state root
-sudo salt-call --local --config=./ --state-output=changes grains.setvals "{ \"user\": \"$USERNAME\", \"homedir\": \"$HOMEDIR\" }"
+$USE_SUDO salt-call --local --config=./ --state-output=changes grains.setvals "{ \"user\": \"$USERNAME\", \"homedir\": \"$HOMEDIR\" }"
 
 # Apply the high state
 if [[ ! $1 ]];
 then
-	sudo salt-call --local --config=./ --state-output=changes  --log-level=quiet state.highstate
+	$USE_SUDO salt-call --local --config=./ --state-output=changes  --log-level=quiet state.highstate
 else
-	sudo salt-call --local --config=./ --state-output=changes  --log-level=quiet state.sls $1
+	$USE_SUDO salt-call --local --config=./ --state-output=changes  --log-level=quiet state.sls $1
 fi
