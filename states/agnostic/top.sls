@@ -4,5 +4,4 @@ base:
     # before we configure our user account with the group :)
     - docker
     - setup
-    - zsh
-    - fish
+    - cli
