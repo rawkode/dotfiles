@@ -5,6 +5,7 @@ root:
     - name: root
     - empty_password: True
 
+{% if grains.user != 'root' %}
 {{ grains.user }}:
   user.present:
     - name: {{ grains.user }}
@@ -12,4 +13,4 @@ root:
     - remove_groups: False
     - groups:
       - docker
-
+{% endif %}
