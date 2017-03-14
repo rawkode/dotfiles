@@ -4,5 +4,6 @@ include:
   - git
   - zsh
   - fish
+  - tmux
   - vim
   - emacs

@@ -1,4 +1,4 @@
-tmux-install:
+tmux:
   pkg.installed
 
 tmux-config:
