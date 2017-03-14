@@ -1,0 +1,9 @@
+stages:
+  - test
+
+ubuntu:
+  stage: test
+  image: ubuntu:16.04
+  script:
+    - ./init.sh
+
