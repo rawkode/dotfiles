@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+HOMEDIR=$HOME
+USERNAME=$(whoami)
+
+USE_SUDO=''
+if [ $USERNAME != "root" ];
+then
+  USE_SUDO="sudo "
+fi
 
 # Are we on OSX and do we need homebrew?
 if [[ `uname` == 'Darwin' ]];
@@ -26,17 +34,8 @@ else
 		# Linux (Hopefully ...): SaltStack Bootstrap one-liner
 		# -d Don't enable salt-minion autostart
 		# -P Allow pip based installations
-		wget -qO- https://bootstrap.saltstack.com | sudo sh -s -- -P -d git v2016.11.3
+		wget -qO- https://bootstrap.saltstack.com | $USE_SUDO sh -s -- -P -d git v2016.11.3
 	fi
-fi
-
-HOMEDIR=$HOME
-USERNAME=$(whoami)
-
-USE_SUDO=''
-if [ $USERNAME != "root" ];
-then
-  USE_SUDO="sudo "
 fi
 
 # Set the user, home-directory, and state root
