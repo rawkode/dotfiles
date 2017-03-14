@@ -1,8 +1,8 @@
-requirements:
+gnome-shell-requirements:
   pkg.installed:
     - pkgs:
       - gnome-common
-        
+
 {% for extension in [
   { "uuid": "TopIcons@phocean.net",
     "repository": "https://github.com/phocean/TopIcons-plus.git",
@@ -41,7 +41,7 @@ requirements:
   }
 ] %}
 
-{{ extension.uuid }}-clone:
+gnome-shell-extension-{{ extension.uuid }}-clone:
   git.latest:
     - name: {{ extension.repository }}
     - target: {{ grains.homedir }}/.gnome-shell-extensions/{{ extension.uuid }}
@@ -49,27 +49,26 @@ requirements:
     - force_reset: True
     - user: {{ grains.user }}
 
-{{ extension.uuid }}-install:
+gnome-shell-extension-{{ extension.uuid }}-install:
   cmd.run:
     - name: {{ extension.command }}
     - user: {{ grains.user }}
     - cwd: {{ grains.homedir }}/.gnome-shell-extensions/{{ extension.uuid }}
 
-{{ extension.uuid }}-enable:
+gnome-shell-extension-{{ extension.uuid }}-enable:
   cmd.run:
     - name: gnome-shell-extension-tool -e {{ extension.uuid }}
     - user: {{ grains.user }}
     - onfail:
-      - cmd: skip
-
+      - cmd: gnome-shell-extsnion-skip
 {% endfor %}
 
-enable-user-themes:
+gnome-shell-extsnion-enable-user-themes:
   cmd.run:
     - name: gnome-shell-extension-tool -e 'user-theme@gnome-shell-extensions.gcampax.github.com'
     - onfail:
       - cmd: skip
 
-skip:
+gnome-shell-extsnion-skip:
   cmd.run:
     - name: echo "Already enabled"

@@ -1,7 +1,10 @@
 [user]
 	name = David McKay
 	email = david@rawkode.com
-	signingkey = 80883F4DD6C4885631AF70F4FF11CE4277725496
+	signingkey = FF11CE4277725496
+
+[gpg]
+  program = gpg2
 
 [color]
   diff = auto

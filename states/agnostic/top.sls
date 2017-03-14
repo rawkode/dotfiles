@@ -1,12 +1,8 @@
 base:
   '*':
-    # Install Docker first, so we can add the group to the user
+    # We run Docker before 'setup', because we need the 'docker' group to exist
+    # before we configure our user account with the group :)
     - docker
-    - users
-    - tmux
+    - setup
     - zsh
-    - git
-    - vim
-    - GTK
-    - fonts
-
+    - fish

@@ -1,4 +1,4 @@
-smart-card-packages:
+gpg-smart-card-packages-install:
   pkg.installed:
     - pkgs:
       - libusb-1.0-0

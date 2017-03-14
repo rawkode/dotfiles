@@ -5,8 +5,7 @@ wmail-ppa:
 
 wmail-install:
   pkg.latest:
-    - name: wmail
-    - refresh: True
     - require:
       - pkgrepo: wmail-ppa
-
+    - name: wmail
+    - refresh: True

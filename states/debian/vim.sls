@@ -1,17 +1,18 @@
-neovim-ppa:
-    pkgrepo.managed:
-        - humanname: NeoVim PPA
-        - name: ppa:neovim-ppa/unstable
+vim-add-ppa:
+  pkgrepo.managed:
+    - humanname: NeoVim PPA
+    - name: ppa:neovim-ppa/stable
+    - keyid: 8231B6DD
+    - keyserver: keyserver.ubuntu.com
 
 vim-install:
-  pkg.latest:
-    - refresh: True
+  pkg.installed:
     - require:
-      - pkgrepo: neovim-ppa
+      - pkgrepo: vim-add-ppa
+    - refresh: True
     - pkgs:
       - neovim
       - python-dev
       - python-pip
       - python3-dev
       - python3-pip
-

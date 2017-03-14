@@ -1,4 +1,4 @@
-gnupg:
+gnupg2:
   pkg.installed
 
 include:
@@ -23,8 +23,7 @@ gpg-agent-config:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
-disable-ssh-agent:
+gpg-disable-ssh-agent:
   file.comment:
     - name: /etc/X11/Xsession.options
     - regex: ^use-ssh-agent
-

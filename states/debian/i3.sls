@@ -132,4 +132,3 @@ vim-install:
       - pkgrepo: neovim-ppa
     - pkgs:
       - neovim
-

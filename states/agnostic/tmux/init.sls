@@ -1,4 +1,4 @@
-tmux:
+tmux-install:
   pkg.installed
 
 tmux-config:
@@ -7,5 +7,3 @@ tmux-config:
     - source: salt:///tmux/config
     - user: {{ grains.user }}
     - group: {{ grains.user }}
-    - force: True
-

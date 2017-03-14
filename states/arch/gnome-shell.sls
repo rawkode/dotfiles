@@ -19,7 +19,7 @@
   'paper-icon-theme-git',
   'capitaine-cursors'
 ] %}
-install-aur-extension-{{ aur }}:
+gnome-shell-install-extension-{{ aur }}:
   cmd.run:
     - name: pacaur -S --noconfirm {{ aur }}
     - user: {{ grains.user }}

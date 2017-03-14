@@ -11,7 +11,7 @@ source ~/.zshrc.zplug
 
 # Ensure gpg-agent handles GPG and SSH
 export SSH_AGENT_PID=
-export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+#export SSH_AUTH_SOCK="{{ grains.homedir }}/.gnupg/S.gpg-agent.ssh"
 export GSM_SKIP_SSH_AGENT_WORKAROUND="true"
 export GPG_TTY="$(tty)"
 
