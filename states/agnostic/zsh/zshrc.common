@@ -7,12 +7,18 @@ alias vi='nvim'
 alias vim='nvim'
 alias nvim='nvim'
 
-## Don't store these commands in history
-alias l=' k --human'
-alias ll=' k --human'
-alias ls=' k --human'
-alias lss=' ls --color=auto'
-alias cd=' cd'
+# gpg2
+alias gpg='gpg2'
+
+# Set GPG TTY
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ];
+then
+  export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+fi
 
 # I hate all these applications
 #alias composer='docker run -it --rm -v $HOME:$HOME -e COMPOSER_HOME="$HOME/.composer" -u $UID -w `pwd` composer/composer:latest'
@@ -41,6 +47,7 @@ bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
 #
+export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:zh"
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 setopt HIST_IGNORE_DUPS
@@ -52,11 +59,17 @@ setopt AUTO_MENU
 setopt AUTO_NAME_DIRS
 setopt COMPLETE_IN_WORD
 
+export EDITOR="vi"
+export USE_EDITOR=$EDITOR
+export VISUAL=$EDITOR
 export BROWSER=google-chrome-stable
 export PAGER=less
 export MANPAGER=less
 export MANWIDTH=${MANWIDTH:-80}
 export COLORTERM="yes"
+
+# Sanity checks
+setopt RM_STAR_WAIT
 
 # Add slash as word delimeter for Control-W on paths
 backward-kill-dir () {
@@ -66,15 +79,42 @@ backward-kill-dir () {
 zle -N backward-kill-dir
 bindkey '^W' backward-kill-dir
 
-# enable caching
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.cache/zsh
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|?=** r:|?=**'
+# Report how long a command took, if it took more than a second
+export REPORTTIME=1
 
-# complete proc-ids with menu
+# Enable color support of ls
+if [[ "$TERM" != "dumb" ]]; then
+  if [[ -x `which dircolors 2> /dev/null` ]]; then
+    eval `dircolors -b`
+    alias 'ls=ls --color=auto'
+  fi
+fi
+
+zstyle ':completion:*' completer _complete _match
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' glob 0
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list '+m:{a-z}={A-Z} r:|[._-]=** r:|=**' '' '' '+m:{a-z}={A-Z} r:|[._-]=** r:|=**'
+zstyle ':completion:*' max-errors 1 numeric
+zstyle ':completion:*' substitute 0
+zstyle :compinstall filename "$HOME/.zshrc"
+
+autoload -Uz compinit
+compinit
+
+# No completion for backup files
+zstyle ':completion:*:complete:-command-::*' ignored-patterns '*\~'
+
+# Completion selection by menu for kill
 zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*'   force-list always
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 
+## Use cache
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
 DIRSTACKSIZE=9
 DIRSTACKFILE=~/.zdirs

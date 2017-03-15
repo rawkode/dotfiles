@@ -9,13 +9,7 @@ source ~/.zshrc.zplug
 # fzf Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Ensure gpg-agent handles GPG and SSH
-export SSH_AGENT_PID=
-#export SSH_AUTH_SOCK="{{ grains.homedir }}/.gnupg/S.gpg-agent.ssh"
-export GSM_SKIP_SSH_AGENT_WORKAROUND="true"
-export GPG_TTY="$(tty)"
-
-gpg-connect-agent updatestartuptty /bye >/dev/null
+source ~/.zshrc.gpg-agent
 
 # Load local overrides last
 if [[ -f ~/.zshrc.local ]];
