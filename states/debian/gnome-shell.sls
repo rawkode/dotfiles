@@ -2,6 +2,9 @@ gnome-shell-requirements:
   pkg.installed:
     - pkgs:
       - gnome-common
+      - nodejs
+      - nodejs-legacy
+      - npm
 
 {% for extension in [
   { "uuid": "TopIcons@phocean.net",
@@ -60,15 +63,15 @@ gnome-shell-extension-{{ extension.uuid }}-enable:
     - name: gnome-shell-extension-tool -e {{ extension.uuid }}
     - user: {{ grains.user }}
     - onfail:
-      - cmd: gnome-shell-extsnion-skip
+      - cmd: gnome-shell-extension-skip
 {% endfor %}
 
-gnome-shell-extsnion-enable-user-themes:
+gnome-shell-extension-enable-user-themes:
   cmd.run:
     - name: gnome-shell-extension-tool -e 'user-theme@gnome-shell-extensions.gcampax.github.com'
     - onfail:
-      - cmd: skip
+      - cmd: gnome-shell-extension-skip
 
-gnome-shell-extsnion-skip:
+gnome-shell-extension-skip:
   cmd.run:
     - name: echo "Already enabled"
