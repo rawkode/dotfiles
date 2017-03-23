@@ -1,3 +1,13 @@
+neovim-install-pip:
+  pkg.installed:
+    - name: python-pip
+
+neovim-pip-neovim:
+  pip.installed:
+    - name: neovim
+    - require:
+      - pkg: neovim-install-pip
+
 include:
   - {{ grains.os_family | lower }}: vim
 
