@@ -12,3 +12,4 @@ x11-touchpad:
     - source: salt://x11/xorg.conf.d/20-natural-scrolling.conf
     - user: root
     - group: root
+    - makedirs: True
