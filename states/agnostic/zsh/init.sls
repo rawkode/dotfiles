@@ -59,8 +59,11 @@ zsh-zplug-installed?:
     - name: {{ grains.homedir }}/.zplug
 
 zsh-zplug-install:
-  cmd.script:
-    - name: https://zplug.sh/installer
-    - runas: {{ grains.user }}
+  git.latest:
+    - name: https://github.com/zplug/zplug
+    - target: {{ grains.homedir }}/.zplug
+    - depth: 1
+    - force_reset: True
+    - user: {{ grains.user }}
     - onfail:
       - file: zsh-zplug-installed?
