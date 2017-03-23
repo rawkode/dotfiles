@@ -9,8 +9,6 @@ source ~/.zshrc.zplug
 # fzf Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/.zshrc.gpg-agent
-
 # Load local overrides last
 if [[ -f ~/.zshrc.local ]];
 then
