@@ -1,6 +1,10 @@
 gnupg2:
   pkg.installed
 
+gpg-rawkode:
+  cmd.run:
+    - name: "curl https://keybase.io/rawkode/pgp_keys.asc | gpg --import"
+
 include:
   - {{ grains.os_family | lower }}: gpg
 

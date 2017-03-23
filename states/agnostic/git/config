@@ -1,10 +1,13 @@
 [user]
 	name = David McKay
 	email = david@rawkode.com
-	signingkey = FF11CE4277725496
+	signingkey = 80883F4DD6C4885631AF70F4FF11CE4277725496
 
 [gpg]
   program = gpg2
+
+[commit]
+  gpgsign = true
 
 [color]
   diff = auto
