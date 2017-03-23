@@ -5,6 +5,7 @@ neovim-install-pip:
 neovim-pip-neovim:
   pip.installed:
     - name: neovim
+    - bin_env: /usr/bin/pip3
     - require:
       - pkg: neovim-install-pip
 

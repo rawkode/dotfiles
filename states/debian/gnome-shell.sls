@@ -2,6 +2,7 @@ gnome-shell-requirements:
   pkg.installed:
     - pkgs:
       - gnome-common
+      - gnome-shell-extensions
       - nodejs
       - nodejs-legacy
       - npm
@@ -60,18 +61,15 @@ gnome-shell-extension-{{ extension.uuid }}-install:
 
 gnome-shell-extension-{{ extension.uuid }}-enable:
   cmd.run:
-    - name: gnome-shell-extension-tool -e {{ extension.uuid }}
+    - name: gnome-shell-extension-tool -e {{ extension.uuid }} || exit 0
     - user: {{ grains.user }}
-    - onfail:
-      - cmd: gnome-shell-extension-skip
 {% endfor %}
 
 gnome-shell-extension-enable-user-themes:
   cmd.run:
-    - name: gnome-shell-extension-tool -e 'user-theme@gnome-shell-extensions.gcampax.github.com'
-    - onfail:
-      - cmd: gnome-shell-extension-skip
+    - name: gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com || exit 0
+    - user: {{ grains.user }}
 
-gnome-shell-extension-skip:
+gnome-shell-set-theme:
   cmd.run:
-    - name: echo "Already enabled"
+    - name: gsettings set org.gnome.shell.extensions.user-theme name "Arc"
