@@ -44,32 +44,22 @@ gnome-shell-requirements:
     "command": "npm install && npm run install-extension"
   }
 ] %}
-
 gnome-shell-extension-{{ extension.uuid }}-clone:
   git.latest:
-    - name: {{ extension.repository }}
-    - target: {{ grains.homedir }}/.gnome-shell-extensions/{{ extension.uuid }}
-    - depth: 1
-    - force_reset: True
-    - user: {{ grains.user }}
+   - name: {{ extension.repository }}
+   - target: {{ grains.homedir }}/.gnome-shell-extensions/{{ extension.uuid }}
+   - depth: 1
+   - force_reset: True
+   - user: {{ grains.user }}
 
 gnome-shell-extension-{{ extension.uuid }}-install:
   cmd.run:
     - name: {{ extension.command }}
-    - user: {{ grains.user }}
+    - runas: {{ grains.user }}
     - cwd: {{ grains.homedir }}/.gnome-shell-extensions/{{ extension.uuid }}
 
 gnome-shell-extension-{{ extension.uuid }}-enable:
   cmd.run:
-    - name: "gnome-shell-extension-tool -e {{ extension.uuid }} || exit 0"
-    - user: {{ grains.user }}
+    - name: dbus-launch --exit-with-session gnome-shell-extension-tool -e '{{ extension.uuid }}' || exit 0
+    - runas: {{ grains.user }}
 {% endfor %}
-
-gnome-shell-extension-enable-user-themes:
-  cmd.run:
-    - name: "gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com || exit 0"
-    - user: {{ grains.user }}
-
-gnome-shell-set-theme:
-  cmd.run:
-    - name: "gsettings set org.gnome.shell.extensions.user-theme name 'Arc'"
