@@ -61,15 +61,15 @@ gnome-shell-extension-{{ extension.uuid }}-install:
 
 gnome-shell-extension-{{ extension.uuid }}-enable:
   cmd.run:
-    - name: gnome-shell-extension-tool -e {{ extension.uuid }} || exit 0
+    - name: "gnome-shell-extension-tool -e {{ extension.uuid }} || exit 0"
     - user: {{ grains.user }}
 {% endfor %}
 
 gnome-shell-extension-enable-user-themes:
   cmd.run:
-    - name: gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com || exit 0
+    - name: "gnome-shell-extension-tool -e user-theme@gnome-shell-extensions.gcampax.github.com || exit 0"
     - user: {{ grains.user }}
 
 gnome-shell-set-theme:
   cmd.run:
-    - name: gsettings set org.gnome.shell.extensions.user-theme name "Arc"
+    - name: "gsettings set org.gnome.shell.extensions.user-theme name 'Arc'"
