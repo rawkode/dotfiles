@@ -1,7 +1,7 @@
 vim-add-ppa:
   pkgrepo.managed:
     - humanname: NeoVim PPA
-    - name: ppa:neovim-ppa/stable
+    - name: ppa:neovim-ppa/unstable
     - keyid: 8231B6DD
     - keyserver: keyserver.ubuntu.com
 
