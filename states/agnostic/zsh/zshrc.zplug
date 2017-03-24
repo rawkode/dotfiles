@@ -12,6 +12,7 @@ zplug "Seinh/git-prune"
 zplug "supercrabtree/k"
 
 zplug "plugins/git",                  from:oh-my-zsh
+zplug "plugins/tmux",                 from:oh-my-zsh
 zplug "plugins/command-not-found",    from:oh-my-zsh
 
 zplug "sroze/docker-compose-zsh-plugin"
