@@ -78,6 +78,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   "
   call dein#add('mhinz/vim-startify')
   call dein#add('chriskempson/base16-vim')
+  call dein#add('dracula/vim')
   call dein#add('morhetz/gruvbox')
 
   call dein#add('vim-airline/vim-airline')
@@ -130,14 +131,10 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('craigemery/vim-autotag')
   call dein#add('xolox/vim-easytags')
 
-  " Neomake
-  call dein#add('neomake/neomake')
-  let g:neomake_markdown_enabled_makers = []
-  let g:neomake_elixir_enabled_makers = ['mix', 'credo']
-  augroup neomake
-    autocmd! BufWritePost * Neomake
-  augroup END
+  " Ale
+  call dein#add('w0rp/ale')
 
+  " Elixir
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('slashmili/alchemist.vim')
   call dein#add('c-brenn/phoenix.vim')
