@@ -1,5 +1,12 @@
+gnome3-ppa:
+  pkgrepo.managed:
+    - ppa: gnome3-team/gnome3-staging
+    - keyid: 3B1510FD
+    - keyserver: keyserver.ubuntu.com
+
 gnome-shell-requirements:
-  pkg.installed:
+  pkg.latest:
+    - refresh: True
     - pkgs:
       - gnome-common
       - gnome-shell-extensions
