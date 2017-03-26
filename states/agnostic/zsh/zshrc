@@ -1,3 +1,6 @@
+# I'm not sure why I need this at the moment, but vi-mode has taken over!
+bindkey -e
+
 export PATH=$PATH:~/.composer/vendor/bin
 
 source ~/.zshrc.common
