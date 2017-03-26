@@ -20,14 +20,6 @@ then
   export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 fi
 
-# I hate all these applications
-#alias composer='docker run -it --rm -v $HOME:$HOME -e COMPOSER_HOME="$HOME/.composer" -u $UID -w `pwd` composer/composer:latest'
-#alias node='docker run -it --rm -v $HOME:$HOME -u $UID -w `pwd` --entrypoint=node node:latest'
-#alias npm='docker run -it --rm -v $HOME:$HOME -u $UID -w `pwd` --entrypoint=npm node:latest'
-#alias elixir='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest elixir'
-#alias mix='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest mix'
-#alias iex='docker run -it --rm -v $HOME:$HOME -e HOME=$HOME -w `pwd` -u $UID elixir:latest iex'
-
 # Useful aliases
 alias dps='docker ps --format="table {{ .ID }}\t{{ .Names }}\t{{ .Image }}\t{{ .Status }}\t{{ .Ports }}\t{{ .Command }}"'
 
@@ -38,13 +30,6 @@ alias tree='tree -d -I "vendor|cache|log|logs"'
 
 # Arch
 alias pacman='pacaur'
-
-# Globbing history searches
-#bindkey -M vicmd '?' history-incremental-pattern-search-backward
-#bindkey -M vicmd '/' history-incremental-pattern-search-forward
-
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
 
 #
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:zh"
@@ -59,19 +44,14 @@ setopt AUTO_MENU
 setopt AUTO_NAME_DIRS
 setopt COMPLETE_IN_WORD
 
-export EDITOR="vi"
-export USE_EDITOR=$EDITOR
-export VISUAL=$EDITOR
+export EDITOR="nvim"
 export BROWSER=google-chrome-stable
 export PAGER=less
 export MANPAGER=less
 export MANWIDTH=${MANWIDTH:-80}
 export COLORTERM="yes"
 
-# Sanity checks
-setopt RM_STAR_WAIT
-
-# Add slash as word delimeter for Control-W on paths
+# Additional characters to respect as word delimeter
 backward-kill-dir () {
     local WORDCHARS=${WORDCHARS/\/}
     zle backward-kill-word
@@ -80,7 +60,7 @@ zle -N backward-kill-dir
 bindkey '^W' backward-kill-dir
 
 # Report how long a command took, if it took more than a second
-export REPORTTIME=1
+export REPORTTIME=5
 
 # Enable color support of ls
 if [[ "$TERM" != "dumb" ]]; then
@@ -115,12 +95,6 @@ fi
 chpwd() {
   print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
 }
-
-# Remove 0.4 second delay between vi modes and have a 0.1 delay
-export KEYTIMEOUT=1
-
-# Powerlevel9k
-#POWERLEVEL9K_MODE='awesome-patched'
 
 POWERLEVEL9K_OK_ICON='✓'
 
