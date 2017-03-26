@@ -268,7 +268,7 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 let base16colorspace=256
 set background=dark
 syntax enable
-colorscheme base16-materia
+colorscheme base16-phd
 
 " Spelling
 setlocal spell spelllang=en_gb
