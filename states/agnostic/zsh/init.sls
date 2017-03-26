@@ -42,6 +42,7 @@ zsh-fzf-clone:
     - name: https://github.com/junegunn/fzf.git
     - rev: master
     - target: /opt/fzf
+    - user: {{ grains.user }}
     - depth: 1
     - force_reset: True
     - onfail:

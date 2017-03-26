@@ -1,5 +1,4 @@
-# source /usr/share/powerline/bindings/tmux/powerline.conf
-
+# vi:syntax=tmux
 set -sg escape-time 0
 set -g base-index 1
 set -g pane-base-index 1
@@ -20,47 +19,8 @@ set-window-option -g xterm-keys on
 bind -n S-Left  previous-window
 bind -n S-Right next-window
 
-set -g pane-border-fg black
-set -g pane-active-border-fg brightblue
-set -g display-panes-colour brightblue
-set -g display-panes-active-colour brightblue
-
-set -g status-justify right
-set -g status-bg black
-set -g status-fg default
-set -g message-fg black
-set -g message-bg brightwhite
-
 set -g status-interval 3
-set -g status-position bottom
-set -g window-status-separator ''
-
-set -g window-status-current-format '#[fg=green,bg=black]#[fg=brightwhite,bg=green] #I #[fg=black,bg=green]#[fg=green,bg=black] #W '
-set -g window-status-format '#[fg=brightblack]#[fg=black,bg=brightblack] #{?window_activity_flag,#[bg=brightred],#[fg=white]}#I #[fg=black,bg=brightblack]#[fg=brightblack,bg=black] #W '
-
-set -g status-left-length 255
-set -g status-left "#{prefix_highlight}"
-set -g -a status-left "#[bg=black,fg=brightwhite] #S "
-set -g -a status-left "#[fg=black,bg=brightwhite]#[fg=brightblack] "
-set -g -a status-left "#I.#P#F "
-set -g -a status-left "#[fg=brightwhite,bg=blue]#[fg=black] "
-set -g -a status-left "#T "
-set -g -a status-left "#[fg=blue,bg=black]#[fg=brightblack] "
-
-set -g @batt_attached_icon " 🔌 "
-set -g @batt_discharging_icon "  "
-
-set -g status-right-length 60
-set -g status-right-bg black
-set -g status-right-fg brightwhite
-set -g status-right "#[bg=brightwhite,fg=brightmagenta] #{battery_icon} #{battery_percentage} "
-
 set -g @yank_selection 'primary'
-
-set -g @prefix_highlight_bg red
-set -g @prefix_highlight_fg brightwhite
-set -g @prefix_highlight_output_prefix " Prefix "
-set -g @prefix_highlight_output_suffix " #[bg=black]#[fg=red]"
 
 set -g monitor-activity on
 set -g visual-activity off
@@ -71,6 +31,10 @@ set -g @plugin "tmux-plugins/tmux-copycat"
 set -g @plugin "tmux-plugins/tmux-pain-control"
 set -g @plugin "tmux-plugins/tmux-prefix-highlight"
 set -g @plugin 'tmux-plugins/tmux-battery'
+
+# Themes
+set -g @plugin "jimeh/tmux-themepack"
+set -g @plugin "odedlaz/tmux-onedark-theme"
 
 run-shell ~/.tmux/plugins/tpm/tpm
 
@@ -83,6 +47,4 @@ bind-key -n C-Down if-shell "$is_vim" "send-keys C-Down"  "select-pane -D"
 bind-key -n C-Up if-shell "$is_vim" "send-keys C-Up"  "select-pane -U"
 bind-key -n C-Right if-shell "$is_vim" "send-keys C-Right"  "select-pane -R"
 bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
-
-# vim:ft=tmux:
 

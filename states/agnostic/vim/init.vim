@@ -87,7 +87,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   set laststatus=2
   let g:airline#extensions#tabline#enabled = 0
   let g:airline_powerline_fonts = 1
-  let g:airline_theme = "base16_materia"
+  let g:airline_theme = "base16_phd"
 
   call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('junegunn/goyo.vim')
@@ -99,13 +99,12 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   " Fluent Editing
   call dein#add('editorconfig/editorconfig-vim')
-  call dein#add('Raimondi/delimitMate')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-surround')
   call dein#add('tpope/vim-repeat')
-  call dein#add('junegunn/vim-easy-align')
   call dein#add('Valloric/MatchTagAlways')
   call dein#add('kien/rainbow_parentheses.vim')
+  call dein#add('jiangmiao/auto-pairs')
 
   call dein#add('elzr/vim-json')
   " Disable JSON hiding quotes
@@ -293,9 +292,34 @@ function! s:my_vimfiler_settings()
 	nmap <buffer> <Right> <Plug>(vimfiler_expand_or_edit)
 endfunction
 
-" Goyo
+" Goyo & Limelight
 let g:goyo_width="60%"
 let g:goyo_height="80%"
+let g:limelight_paragraph_span = 0
+
+autocmd! User GoyoEnter Limelight
+
+function! s:goyo_enter()
+  Limelight
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
 
 nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
 
@@ -312,3 +336,4 @@ nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
 
 " Startify
 let g:startify_list_order = ['dir', 'commands']
+
