@@ -25,19 +25,6 @@ set -g @yank_selection 'primary'
 set -g monitor-activity on
 set -g visual-activity off
 
-set -g @plugin "tmux-plugins/tpm"
-set -g @plugin "tmux-plugins/tmux-yank"
-set -g @plugin "tmux-plugins/tmux-copycat"
-set -g @plugin "tmux-plugins/tmux-pain-control"
-set -g @plugin "tmux-plugins/tmux-prefix-highlight"
-set -g @plugin 'tmux-plugins/tmux-battery'
-
-# Themes
-set -g @plugin "jimeh/tmux-themepack"
-set -g @plugin "odedlaz/tmux-onedark-theme"
-
-run-shell ~/.tmux/plugins/tpm/tpm
-
 # Smart pane switching with awareness of Vim splits.
 # See: https://github.com/christoomey/vim-tmux-navigator
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
@@ -48,3 +35,21 @@ bind-key -n C-Up if-shell "$is_vim" "send-keys C-Up"  "select-pane -U"
 bind-key -n C-Right if-shell "$is_vim" "send-keys C-Right"  "select-pane -R"
 bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 
+
+# List of plugins
+#set -g @plugin "jimeh/tmux-themepack"
+set -g @tpm_plugins '                \
+    caiogondim/maglev                \
+    tmux-plugins/tpm                 \
+    tmux-plugins/tmux-sensible       \
+    tmux-plugins/tmux-resurrect      \
+    tmux-plugins/tmux-continuum      \
+    tmux-plugins/tmux-yank           \
+    tmux-plugins/tmux-pain-control   \
+    tmux-plugins/tmux-copycat        \
+    tmux-plugins/tmux-open           \
+    tmux-plugins/tmux-battery        \
+    tmux-plugins/tmux-cpu            \
+'
+
+run-shell ~/.tmux/plugins/tpm/tpm

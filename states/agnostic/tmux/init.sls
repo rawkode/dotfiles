@@ -3,7 +3,7 @@ tmux:
 
 tmux-tpm:
   git.latest:
-    - name: https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    - name: https://github.com/tmux-plugins/tpm
     - target: {{ grains.homedir }}/.tmux/plugins/tpm
     - rev: master
     - user: {{ grains.user }}
