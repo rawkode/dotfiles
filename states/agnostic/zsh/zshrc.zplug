@@ -19,9 +19,13 @@ zplug "sroze/docker-compose-zsh-plugin"
 
 zplug "Valiev/almostontop"
 
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug mafredri/zsh-async, from:github
+#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+
+#zplug "robbyrussell/oh-my-zsh"
+#zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"*.zsh-theme"
+#zplug "caiogondim/bullet-train.zsh", as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
