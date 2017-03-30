@@ -40,6 +40,7 @@ bind-key -n C-\ if-shell "$is_vim" "send-keys C-\\" "select-pane -l"
 #set -g @plugin "jimeh/tmux-themepack"
 set -g @tpm_plugins '                \
     caiogondim/maglev                \
+    Morantron/tmux-fingers           \
     tmux-plugins/tpm                 \
     tmux-plugins/tmux-sensible       \
     tmux-plugins/tmux-resurrect      \
