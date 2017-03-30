@@ -78,6 +78,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   "
   call dein#add('mhinz/vim-startify')
   call dein#add('chriskempson/base16-vim')
+  call dein#add('altercation/vim-colors-solarized')
   call dein#add('dracula/vim')
   call dein#add('morhetz/gruvbox')
 
@@ -105,6 +106,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Valloric/MatchTagAlways')
   call dein#add('kien/rainbow_parentheses.vim')
   call dein#add('jiangmiao/auto-pairs')
+  call dein#add('tpope/vim-endwise')
 
   call dein#add('elzr/vim-json')
   " Disable JSON hiding quotes
