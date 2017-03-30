@@ -107,6 +107,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('kien/rainbow_parentheses.vim')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('tpope/vim-endwise')
+  call dein#add('easymotion/vim-easymotion')
+  call dein#add('haya14busa/incsearch.vim')
+  call dein#add('haya14busa/incsearch-easymotion.vim')
 
   call dein#add('elzr/vim-json')
   " Disable JSON hiding quotes
@@ -172,6 +175,9 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
+
+" Automatically strip trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
 
 " let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -325,6 +331,7 @@ autocmd! User GoyoLeave call <SID>goyo_leave()
 
 nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
 
+
 " Better Splits
 set splitbelow
 set splitright
@@ -339,3 +346,17 @@ nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
 " Startify
 let g:startify_list_order = ['dir', 'commands']
 
+" IncSearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+
+map / <Plug>(incsearch-forward)
+map ? <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
