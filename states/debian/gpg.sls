@@ -11,6 +11,7 @@ gpg-smart-card-packages-install:
       - pkgrepo: yubico-ppa
     - refresh: True
     - pkgs:
+      - gnupg2
       - libusb-1.0-0
       - pcscd
       - libccid

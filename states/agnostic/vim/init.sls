@@ -12,10 +12,6 @@ neovim-pip-neovim:
 include:
   - {{ grains.os_family | lower }}: vim
 
-vim-install-exuberant-ctags:
-  pkg.latest:
-    - name: exuberant-ctags
-
 vim-dein-installed?:
   file.exists:
     - name: {{ grains.homedir }}/.dein

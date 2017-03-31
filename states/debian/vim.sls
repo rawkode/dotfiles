@@ -11,6 +11,7 @@ vim-install:
       - pkgrepo: vim-add-ppa
     - refresh: True
     - pkgs:
+      - exuberant-ctags
       - neovim
       - python-dev
       - python-pip

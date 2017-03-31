@@ -3,4 +3,3 @@ include:
   - gtk
   - gnome-shell
   - google-chrome
-  - wmail

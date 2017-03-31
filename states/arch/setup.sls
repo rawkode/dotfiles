@@ -1,36 +1,54 @@
 packages-base:
   pkg.installed:
     - pkgs:
-      - base-devel
+      - networkmanager
       - openssh
+      - expac
+      - yajl
 
 NetworkManager:
   service.running:
     - enable: True
     - reload: True
 
-https://aur.archlinux.org/package-query.git:
-  git.latest:
-    - target: /tmp/package-query
-    - user: {{ grains.user }}
-
-package-query-install:
+pacaur-cower-gpg-key:
   cmd.run:
-    - name: makepkg -sirc --force --noconfirm
-    - cwd: /tmp/package-query
+    - name: gpg --recv-keys --keyserver http://pgp.mit.edu 1EB2638FF56C0C53
+    - runas: {{ grains.user }}
+
+pacaur-cower-dir:
+  file.directory:
+    - name: /tmp/cower
     - user: {{ grains.user }}
 
-
-https://aur.archlinux.org/yaourt.git:
-  git.latest:
-    - target: /tmp/yaourt
-    - user: {{ grains.user }}
-
-yaourt-install:
+pacaur-cower-download-installer:
   cmd.run:
-    - name: makepkg -sirc --force --noconfirm
-    - cwd: /tmp/yaourt
+    - name: curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
+    - runas: {{ grains.user }}
+    - cwd: /tmp/cower
+
+pacaur-cower-makepkg:
+  cmd.run:
+    - name: makepkg -i PKGBUILD --noconfirm 
+    - runas: {{ grains.user }}
+    - cwd: /tmp/cower
+
+pacaur-dir:
+  file.directory:
+    - name: /tmp/pacaur
     - user: {{ grains.user }}
+
+pacaur-download-installer:
+  cmd.run:
+    - name: curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
+    - runas: {{ grains.user }}
+    - cwd: /tmp/pacaur
+
+pacaur-makepkg:
+  cmd.run:
+    - name: makepkg -i PKGBUILD --noconfirm
+    - runas: {{ grains.user }}
+    - cwd: /tmp/pacaur
 
 # Clean up
 remove-epiphany:

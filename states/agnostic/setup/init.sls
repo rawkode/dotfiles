@@ -10,5 +10,3 @@ install-base-packages:
       - jq
       - asciinema
       - yank
-      - uuid-runtime
-

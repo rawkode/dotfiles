@@ -1,5 +1,5 @@
-gnupg2:
-  pkg.installed
+include:
+  - {{ grains.os_family | lower }}: gpg
 
 gnupg-directory:
   file.directory:
@@ -10,10 +10,7 @@ gnupg-directory:
 gpg-rawkode:
   cmd.run:
     - name: "curl https://keybase.io/rawkode/pgp_keys.asc | gpg --import"
-    - user: {{ grains.user }}
-
-include:
-  - {{ grains.os_family | lower }}: gpg
+    - runas: {{ grains.user }}
 
 pcscd.socket:
   service.running:
