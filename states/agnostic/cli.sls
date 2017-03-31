@@ -6,4 +6,3 @@ include:
   - fish
   - tmux
   - vim
-  - emacs

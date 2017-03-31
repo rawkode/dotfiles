@@ -1,9 +1,16 @@
 gnupg2:
   pkg.installed
 
+gnupg-directory:
+  file.directory:
+    - name: {{ grains.homedir }}/.gnupg
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
+
 gpg-rawkode:
   cmd.run:
     - name: "curl https://keybase.io/rawkode/pgp_keys.asc | gpg --import"
+    - user: {{ grains.user }}
 
 include:
   - {{ grains.os_family | lower }}: gpg

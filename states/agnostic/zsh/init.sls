@@ -35,13 +35,13 @@ zsh-zshrc-keybindings:
 
 zsh-fzf-installed?:
   file.exists:
-    - name: /opt/fzf
+    - name: {{ grains.homedir }}/.fzf
 
 zsh-fzf-clone:
   git.latest:
     - name: https://github.com/junegunn/fzf.git
     - rev: master
-    - target: /opt/fzf
+    - target: {{ grains.homedir }}/.fzf
     - user: {{ grains.user }}
     - depth: 1
     - force_reset: True
@@ -50,8 +50,10 @@ zsh-fzf-clone:
 
 zsh-fzf-install:
   cmd.run:
-    - name: sudo /opt/fzf/install --all --64
+    - name: sudo {{ grains.homedir }}/.fzf/install --all --64
     - runas: {{ grains.user }}
+    - require:
+      - git: zsh-fzf-clone
     - onfail:
       - file: zsh-fzf-installed?
 
