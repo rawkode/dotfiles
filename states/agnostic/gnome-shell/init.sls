@@ -40,7 +40,7 @@ gnome-shell-vimix-theme:
   git.latest:
     - name: https://github.com/vinceliuice/vimix-gtk-themes.git
     - target: {{ grains.homedir }}/.gnome-shell-themes/vimix
-    - runas: {{ grains.user }}
+    - user: {{ grains.user }}
 
 gnome-shell-extension-enable-user-themes:
   cmd.run:
