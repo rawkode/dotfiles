@@ -10,3 +10,4 @@ install-base-packages:
       - jq
       - asciinema
       - yank
+      - xclip

@@ -82,6 +82,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('mhinz/vim-janah')
   call dein#add('dracula/vim')
   call dein#add('morhetz/gruvbox')
+  call dein#add('romainl/flattened')
 
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
@@ -105,7 +106,10 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('tpope/vim-surround')
   call dein#add('tpope/vim-repeat')
   call dein#add('Valloric/MatchTagAlways')
-  call dein#add('kien/rainbow_parentheses.vim')
+
+  call dein#add('luochen1990/rainbow')
+  let g:rainbow_active = 1
+
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('tpope/vim-endwise')
   call dein#add('easymotion/vim-easymotion')
@@ -126,8 +130,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   "   - This causes random no syntax colouring
   call dein#add('sheerun/vim-polyglot')
 
-  "
+  " Documentation
   call dein#add('rizzatti/dash.vim')
+  call dein#add('KabbAmine/zeavim.vim')
 
   "
   call dein#add('xolox/vim-misc')
@@ -307,33 +312,6 @@ endfunction
 let g:goyo_width="60%"
 let g:goyo_height="80%"
 let g:limelight_paragraph_span = 0
-
-autocmd! User GoyoEnter Limelight
-
-function! s:goyo_enter()
-  Limelight
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
-
-function! s:goyo_leave()
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd! User GoyoEnter call <SID>goyo_enter()
-autocmd! User GoyoLeave call <SID>goyo_leave()
-
-nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
-
 
 " Better Splits
 set splitbelow
