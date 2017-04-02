@@ -90,7 +90,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   set laststatus=2
   let g:airline#extensions#tabline#enabled = 0
   let g:airline_powerline_fonts = 1
-  let g:airline_theme = "base16_phd"
+  let g:airline_theme = "base16_oceanicnext"
 
   call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('junegunn/goyo.vim')
@@ -208,9 +208,6 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " tern
 autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme='base16_eighties'
-
 " GitGutter
 let g:gitgutter_realtime = 1
 let g:gitgutter_eager = 1
@@ -280,13 +277,13 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 let base16colorspace=256
 set background=dark
 syntax enable
-" colorscheme base16-phd
+colorscheme base16-oceanicnext
 
 " autocmd ColorScheme janah highlight Normal ctermbg=235
-colorscheme janah
+" colorscheme janah
 
 " Spelling
-setlocal spell spelllang=en_gb
+set spell spelllang=en_gb
 set complete+=kspell
 
 " VimFiler
@@ -322,7 +319,6 @@ nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-Up>   :TmuxNavigateUp<cr>
 nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
-"nnoremap <silent> C-:TmuxNavigatePrevious<cr>
 
 " Startify
 let g:startify_list_order = ['dir', 'commands']
