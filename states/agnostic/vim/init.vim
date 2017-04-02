@@ -79,6 +79,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('mhinz/vim-startify')
   call dein#add('chriskempson/base16-vim')
   call dein#add('altercation/vim-colors-solarized')
+  call dein#add('mhinz/vim-janah')
   call dein#add('dracula/vim')
   call dein#add('morhetz/gruvbox')
 
@@ -116,8 +117,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   let g:vim_json_syntax_conceal = 0
 
   " Git
-  call dein#add('airblade/vim-gitgutter')
-  call dein#add('tpope/vim-fugitive')
+  call dein#add('lambdalisue/gina.vim')
   call dein#add('mattn/gist-vim')
   call dein#add('jreybert/vimagit')
   call dein#add('mhinz/vim-signify')
@@ -275,7 +275,10 @@ inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 let base16colorspace=256
 set background=dark
 syntax enable
-colorscheme base16-phd
+" colorscheme base16-phd
+
+" autocmd ColorScheme janah highlight Normal ctermbg=235
+colorscheme janah
 
 " Spelling
 setlocal spell spelllang=en_gb
