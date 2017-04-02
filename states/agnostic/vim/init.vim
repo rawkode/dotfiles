@@ -71,7 +71,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   " VimFiler
   call dein#add('Shougo/vimfiler.vim')
-  let g:vimfiler_safe_mode_by_default = 0
 
   "
   " UI
@@ -103,7 +102,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Valloric/MatchTagAlways')
 
   call dein#add('luochen1990/rainbow')
-  let g:rainbow_active = 1
 
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('tpope/vim-endwise')
@@ -112,8 +110,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('haya14busa/incsearch-easymotion.vim')
 
   call dein#add('elzr/vim-json')
-  " Disable JSON hiding quotes
-  let g:vim_json_syntax_conceal = 0
 
   " Git
   call dein#add('lambdalisue/gina.vim')
@@ -122,7 +118,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('mhinz/vim-signify')
 
   " Only load language files when inside a file of that language
-  "   - This causes random no syntax colouring
   call dein#add('sheerun/vim-polyglot')
 
   " Documentation
@@ -338,3 +333,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "base16_oceanicnext"
+
+let g:vimfiler_safe_mode_by_default = 0
+let g:rainbow_active = 1
+let g:vim_json_syntax_conceal = 0
