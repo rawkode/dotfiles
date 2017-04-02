@@ -86,11 +86,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
-  set noshowmode
-  set laststatus=2
-  let g:airline#extensions#tabline#enabled = 0
-  let g:airline_powerline_fonts = 1
-  let g:airline_theme = "base16_oceanicnext"
 
   call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('junegunn/goyo.vim')
@@ -337,3 +332,9 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+set noshowmode
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_powerline_fonts = 1
+let g:airline_theme = "base16_oceanicnext"
