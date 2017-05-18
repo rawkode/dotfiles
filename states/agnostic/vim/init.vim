@@ -265,11 +265,11 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-" let base16colorspace=256
 set background=dark
 syntax enable
-colorscheme nord
-" colorscheme base16-oceanicnext
+" Only turn this on for base16 themes
+let base16colorspace=256
+colorscheme base16-materia
 
 " autocmd ColorScheme janah highlight Normal ctermbg=235
 " colorscheme janah
@@ -334,7 +334,7 @@ set noshowmode
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "nord"
+let g:airline_theme = "base16-materia"
 
 let g:vimfiler_safe_mode_by_default = 0
 let g:rainbow_active = 1
