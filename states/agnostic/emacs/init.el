@@ -1,8 +1,6 @@
 (setq auto-save-default nil)
 (setq make-backup-files nil)
 
-(setq linum-format " %03d ")
-
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
@@ -125,3 +123,11 @@
 (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile)
 (global-set-key (kbd "C-p") 'helm-projectile)
 
+(defun relative-abs-line-numbers-format (offset)
+  "The default formatting function. Return the absolute value of OFFSET, converted to string."
+  (if (= 0 offset)
+    (format " %3d " (line-number-at-pos))
+    (format " %2d " (abs offset))))
+
+(setq relative-line-numbers-format 'relative-abs-line-numbers-format)
+(global-relative-line-numbers-mode)

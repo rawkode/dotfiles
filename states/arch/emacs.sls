@@ -1,3 +1,4 @@
 emacs-install:
   pkg.latest:
-    - emacs-nox
+    - pkgs:
+      - emacs-nox

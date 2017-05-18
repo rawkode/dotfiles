@@ -32,6 +32,7 @@ alias tree='tree -d -I "vendor|cache|log|logs"'
 alias pacman='pacaur'
 
 #
+setopt share_history
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:zh"
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
@@ -53,7 +54,7 @@ export COLORTERM="yes"
 
 # Additional characters to respect as word delimeter
 backward-kill-dir () {
-    local WORDCHARS=${WORDCHARS/\/}
+    local WORDCHARS=${WORDCHARS/\/\.}
     zle backward-kill-word
 }
 zle -N backward-kill-dir
@@ -69,22 +70,6 @@ if [[ "$TERM" != "dumb" ]]; then
     alias 'ls=ls --color=auto'
   fi
 fi
-
-autoload -Uz compinit
-compinit
-
-# No completion for backup files
-zstyle ':completion:*:complete:-command-::*' ignored-patterns '*\~'
-
-# Completion selection by menu for kill
-zstyle ':completion:*:*:kill:*' menu yes select
-zstyle ':completion:*:kill:*' force-list always
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-
-## Use cache
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
 
 DIRSTACKSIZE=9
 DIRSTACKFILE=~/.zdirs
@@ -110,11 +95,16 @@ DEFAULT_USER="rawkode"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
-POWERLEVEL9K_TIME_FORMAT="%D{%d/%m/%Y %H:%M:%S}"
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S %d/%m/%Y}"
 
-BULLETTRAIN_PROMPT_ORDER=(
-  time
-  dir
-  git
-)
+# No completion for backup files
+zstyle ':completion:*:complete:-command-::*' ignored-patterns '*\~'
 
+# Fuzzy completion
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
+
+autoload -Uz compinit
+compinit -u

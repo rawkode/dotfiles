@@ -1,31 +1,22 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-oceanicnext.sh"
+# zplug "chriskempson/base16-shell", use:"scripts/base16-onedark.sh"
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 
-# Enable "recent-dir" above
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-
-zplug "Seinh/git-prune"
-zplug "supercrabtree/k"
-
 zplug "plugins/git",                  from:oh-my-zsh
 zplug "plugins/tmux",                 from:oh-my-zsh
 zplug "plugins/command-not-found",    from:oh-my-zsh
+zplug "plugins/colored-man-pages",    from:oh-my-zsh
 
 zplug "sroze/docker-compose-zsh-plugin"
 
 zplug "Valiev/almostontop"
 
-#zplug mafredri/zsh-async, from:github
-#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-
-#zplug "robbyrussell/oh-my-zsh"
-#zplug "caiogondim/bullet-train-oh-my-zsh-theme", use:"*.zsh-theme"
-#zplug "caiogondim/bullet-train.zsh", as:theme
+zplug "frmendes/geometry"
+# zplug "mafredri/zsh-async", from:github
+# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+# zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

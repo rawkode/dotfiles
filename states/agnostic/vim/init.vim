@@ -77,6 +77,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   "
   call dein#add('mhinz/vim-startify')
   call dein#add('chriskempson/base16-vim')
+  call dein#add('arcticicestudio/nord-vim')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('mhinz/vim-janah')
   call dein#add('dracula/vim')
@@ -264,10 +265,11 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
-let base16colorspace=256
+" let base16colorspace=256
 set background=dark
 syntax enable
-colorscheme base16-oceanicnext
+colorscheme nord
+" colorscheme base16-oceanicnext
 
 " autocmd ColorScheme janah highlight Normal ctermbg=235
 " colorscheme janah
@@ -332,7 +334,7 @@ set noshowmode
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "base16_oceanicnext"
+let g:airline_theme = "nord"
 
 let g:vimfiler_safe_mode_by_default = 0
 let g:rainbow_active = 1
