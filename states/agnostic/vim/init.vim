@@ -224,7 +224,7 @@ highlight GitGutterChangeDelete ctermfg=red ctermbg=237
 " fzf
 """
 let g:fzf_files_options =
-  \ '--preview "(highlight -O ansi {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+      \ '--preview "(highlight -O ansi {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
@@ -293,8 +293,8 @@ let g:vimfiler_readonly_file_icon = '✗'
 
 autocmd! FileType vimfiler call s:my_vimfiler_settings()
 function! s:my_vimfiler_settings()
-	nmap <buffer> <SPACE> <Plug>(vimfiler_expand_or_edit)
-	nmap <buffer> <Right> <Plug>(vimfiler_expand_or_edit)
+  nmap <buffer> <SPACE> <Plug>(vimfiler_expand_or_edit)
+  nmap <buffer> <Right> <Plug>(vimfiler_expand_or_edit)
 endfunction
 
 " Goyo & Limelight
@@ -334,7 +334,7 @@ set noshowmode
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "base16-materia"
+let g:airline_theme = "base16-eighties"
 
 let g:vimfiler_safe_mode_by_default = 0
 let g:rainbow_active = 1

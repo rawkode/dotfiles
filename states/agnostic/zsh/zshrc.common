@@ -97,6 +97,8 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S %d/%m/%Y}"
 
+SPACESHIP_DOCKER_SHOW=false
+
 # No completion for backup files
 zstyle ':completion:*:complete:-command-::*' ignored-patterns '*\~'
 

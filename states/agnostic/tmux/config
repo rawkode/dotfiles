@@ -51,6 +51,5 @@ set -g @tpm_plugins '                \
     tmux-plugins/tmux-open           \
     tmux-plugins/tmux-battery        \
     tmux-plugins/tmux-cpu            \
-    arcticicestudio/nord-tmux
 '
 run-shell ~/.tmux/plugins/tpm/tpm
