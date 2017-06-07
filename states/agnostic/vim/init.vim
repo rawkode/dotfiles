@@ -112,6 +112,8 @@ if dein#load_state('{{ grains.homedir }}/.dein')
 
   call dein#add('elzr/vim-json')
 
+  call dein#add('mileszs/ack.vim')
+
   " Git
   call dein#add('lambdalisue/gina.vim')
   call dein#add('mattn/gist-vim')
@@ -149,6 +151,11 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   " SaltStack
   call dein#add('saltstack/salt-vim')
   call dein#add('lepture/vim-jinja')
+
+  " PHP / Symfony
+  call dein#add('StanAngeloff/php.vim')
+  call dein#add('lumiliet/vim-twig')
+  call dein#add('Glench/Vim-Jinja2-Syntax')
 
   "
   call dein#add('powerman/vim-plugin-AnsiEsc')
@@ -302,6 +309,11 @@ let g:goyo_width="60%"
 let g:goyo_height="80%"
 let g:limelight_paragraph_span = 0
 
+" Ag / Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " Better Splits
 set splitbelow
 set splitright
@@ -334,7 +346,7 @@ set noshowmode
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "base16-eighties"
+let g:airline_theme = "base16"
 
 let g:vimfiler_safe_mode_by_default = 0
 let g:rainbow_active = 1

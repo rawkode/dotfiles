@@ -5,6 +5,7 @@ packages-base:
       - openssh
       - expac
       - yajl
+      - the_silver_searcher
 
 NetworkManager:
   service.running:
@@ -29,7 +30,7 @@ pacaur-cower-download-installer:
 
 pacaur-cower-makepkg:
   cmd.run:
-    - name: makepkg -i PKGBUILD --noconfirm 
+    - name: makepkg -i PKGBUILD --noconfirm
     - runas: {{ grains.user }}
     - cwd: /tmp/cower
 

@@ -4,6 +4,7 @@ bindkey -e
 export PATH=$PATH:~/.composer/vendor/bin
 
 source ~/.zshrc.common
+source ~/.zshrc.docker
 source ~/.zshrc.keybindings
 
 source ~/.zplug/init.zsh

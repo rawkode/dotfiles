@@ -17,6 +17,13 @@ zsh-zshrc:
     - group: {{ grains.user }}
     - template: jinja
 
+zsh-docker:
+  file.managed:
+    - name: {{ grains.homedir }}/.zshrc.docker
+    - source: salt://zsh/zshrc.docker
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
+
 zsh-dircolors:
   file.managed:
     - name: {{ grains.homedir }}/.dir_colors
