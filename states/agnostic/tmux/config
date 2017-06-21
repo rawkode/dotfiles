@@ -25,6 +25,9 @@ set -g @yank_selection 'primary'
 set -g monitor-activity on
 set -g visual-activity off
 
+# Start copy mode when scrolling up
+bind -n WheelUpPane copy-mode
+
 # Smart pane switching with awareness of Vim splits.
 # See: https://github.com/christoomey/vim-tmux-navigator
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \

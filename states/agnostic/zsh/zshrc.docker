@@ -1,0 +1,48 @@
+function docker_compose_file_exists() {
+  if [ -f "docker-compose.yml" ]; then
+    true
+  else
+    false
+  fi
+}
+
+function can_be_run_through_docker_compose_service() {
+  # Look for a service using the image $1 inside docker-compose.yml
+  # grep -B1 -A0 "image: elixir" docker-compose.yml | head -n1 | awk -F ":" '{print $1}' | tr -d '[:space:]'
+}
+
+function docker_run() {
+  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox --entrypoint=$3 $1:$2 $4
+}
+
+function docker_compose_run() {
+  docker-compose run --rm -u $UID --entrypoint=$1 $2
+}
+
+function elixir() {
+  if docker_compose_file_exists; then
+    docker_compose_run "elixir" $@
+  else
+    docker_run "elixir" "latest" "elixir" $@
+  fi
+}
+
+function iex() {
+  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it --entrypoint=iex elixir:latest $@
+}
+
+function mix() {
+  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it --entrypoint=mix elixir:latest $@
+}
+
+function php() {
+  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it --entrypoint=php php:7-alpine $@
+}
+
+function node() {
+  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it --entrypoint=node node:7-alpine $@
+}
+
+function mdv() {
+  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it rawkode/mdv:latest $@
+}

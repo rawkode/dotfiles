@@ -9,7 +9,7 @@ root:
 {{ grains.user }}:
   user.present:
     - name: {{ grains.user }}
-    - shell: /usr/bin/zsh
+    - shell: /usr/bin/fish
     - remove_groups: False
     - groups:
       - docker

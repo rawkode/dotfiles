@@ -54,10 +54,12 @@ export COLORTERM="yes"
 
 # Additional characters to respect as word delimeter
 backward-kill-dir () {
-    local WORDCHARS=${WORDCHARS/\/\.}
+    local WORDCHARS=${WORDCHARS:s,/,,}
+    WORDCHARS=${WORDCHARS:s,\.,,}
     zle backward-kill-word
 }
 zle -N backward-kill-dir
+bindkey '^[^?' backward-kill-dir
 bindkey '^W' backward-kill-dir
 
 # Report how long a command took, if it took more than a second
