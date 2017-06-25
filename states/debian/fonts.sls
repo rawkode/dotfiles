@@ -3,3 +3,4 @@ fonts-requirements-install:
     - pkgs:
       - xfonts-utils
       - fonts-roboto
+      - fonts-hack-ttf
