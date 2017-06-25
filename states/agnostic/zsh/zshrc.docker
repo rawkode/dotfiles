@@ -1,48 +1,55 @@
-function docker_compose_file_exists() {
-  if [ -f "docker-compose.yml" ]; then
-    true
-  else
-    false
-  fi
-}
-
 function can_be_run_through_docker_compose_service() {
   # Look for a service using the image $1 inside docker-compose.yml
-  # grep -B1 -A0 "image: elixir" docker-compose.yml | head -n1 | awk -F ":" '{print $1}' | tr -d '[:space:]'
+  image_name=''
+  if [ -f "docker-compose.yml" ];
+  then
+    image_name=$(grep -B1 -A0 "image: $1" docker-compose.yml | head -n1 | awk -F ":" '{print $1}' | tr -d '[:space:]')
+  fi
 }
 
 function docker_run() {
-  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox --entrypoint=$3 $1:$2 $4
+  docker run --rm -u $UID -v $PWD:/sandbox -v $HOME:$HOME -w /sandbox --entrypoint=$3 $1:$2 ${@:4}
 }
 
 function docker_compose_run() {
-  docker-compose run --rm -u $UID --entrypoint=$1 $2
+  docker-compose run --rm -u $UID --entrypoint=$1 ${@:2}
 }
 
-function elixir() {
-  if docker_compose_file_exists; then
-    docker_compose_run "elixir" $@
+function run_with_docker() {
+  can_be_run_through_docker_compose_service $1
+
+  if [[ ! -z "${image_name// }" ]];
+  then
+    docker_compose_run $3 $image_name ${@:4}
   else
-    docker_run "elixir" "latest" "elixir" $@
+    docker_run $1 $2 $3 ${@:4}
   fi
 }
 
+function elixir() {
+  run_with_docker "elixir" "latest" "elixir" $@
+}
+
 function iex() {
-  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it --entrypoint=iex elixir:latest $@
+  run_with_docker "elixir" "latest" "iex" $@
 }
 
 function mix() {
-  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it --entrypoint=mix elixir:latest $@
+  run_with_docker "elixir" "latest" "mix" $@
 }
 
 function php() {
-  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it --entrypoint=php php:7-alpine $@
+  run_with_docker "php" "7-cli" "php" $@
 }
 
 function node() {
-  docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it --entrypoint=node node:7-alpine $@
+  run_with_docker "node" "latest" "node" $@
 }
 
 function mdv() {
   docker run --rm -u $UID -v $PWD:/sandbox -w /sandbox -it rawkode/mdv:latest $@
+}
+
+function plantuml() {
+  cat $@ | docker run --rm -u $UID -i think/plantuml -tpng
 }
