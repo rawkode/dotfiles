@@ -9,6 +9,5 @@ install-base-packages:
       - gnome-tweak-tool
       - jq
       - asciinema
-      - yank
       - xclip
       - fish

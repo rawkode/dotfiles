@@ -1,5 +1,7 @@
 zplug "chriskempson/base16-shell", use:"scripts/base16-dracula.sh"
 
+zplug "rawkode/zsh-docker-run"
+
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"

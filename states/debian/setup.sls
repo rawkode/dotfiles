@@ -4,6 +4,7 @@ packages-base:
       - build-essential
       - uuid-runtime
       - curl
+      - yank
 
 packages-useless:
   pkg.purged:
