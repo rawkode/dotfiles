@@ -300,8 +300,9 @@ let g:vimfiler_readonly_file_icon = '✗'
 
 autocmd! FileType vimfiler call s:my_vimfiler_settings()
 function! s:my_vimfiler_settings()
-  nmap <buffer> <SPACE> <Plug>(vimfiler_expand_or_edit)
+  nmap <buffer> <Space> <Plug>(vimfiler_expand_tree)
   nmap <buffer> <Right> <Plug>(vimfiler_expand_or_edit)
+  nmap <buffer> `       <Plug>(vimfiler_toggle_mark_current_line)
 endfunction
 
 " Goyo & Limelight

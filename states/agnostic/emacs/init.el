@@ -6,8 +6,7 @@
 
 (require 'package)
 
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 (package-initialize)
@@ -61,7 +60,7 @@
 (require 'helm)
 (require 'helm-config)
 
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) 
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-z") 'helm-select-action)
 

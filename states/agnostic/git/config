@@ -5,6 +5,9 @@
 [gpg]
   program = gpg2
 
+[core]
+	autocrlf = input
+
 [commit]
   gpgsign = true
 

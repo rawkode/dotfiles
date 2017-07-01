@@ -15,9 +15,10 @@ zplug "sroze/docker-compose-zsh-plugin"
 
 zplug "Valiev/almostontop"
 
+zplug "mafredri/zsh-async", from:github
+
+# zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 # zplug "frmendes/geometry"
-# zplug "mafredri/zsh-async", from:github
-# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 # zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 

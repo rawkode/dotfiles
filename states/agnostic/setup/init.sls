@@ -11,3 +11,4 @@ install-base-packages:
       - asciinema
       - xclip
       - fish
+      - weechat
