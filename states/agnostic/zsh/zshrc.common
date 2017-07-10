@@ -11,7 +11,6 @@ alias nvim='nvim'
 
 # ls
 alias ll='ls -l'
-alias tree='ls -L 1'
 
 # gpg2
 alias gpg='gpg2'
@@ -32,7 +31,7 @@ alias dps='docker ps --format="table {{ .ID }}\t{{ .Names }}\t{{ .Image }}\t{{ .
 alias dc='docker-compose'
 alias dcr='docker-compose run --rm'
 
-alias tree='tree -d -I "vendor|cache|log|logs"'
+alias tree='tree -L 3 -d -I "vendor|cache|log|logs"'
 
 # Arch
 alias pacman='pacaur --color=always'
