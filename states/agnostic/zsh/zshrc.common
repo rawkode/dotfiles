@@ -7,6 +7,9 @@ alias vi='nvim'
 alias vim='nvim'
 alias nvim='nvim'
 
+# ls
+alias ll='ls -l'
+
 # gpg2
 alias gpg='gpg2'
 
@@ -29,7 +32,7 @@ alias dcr='docker-compose run --rm'
 alias tree='tree -d -I "vendor|cache|log|logs"'
 
 # Arch
-alias pacman='pacaur'
+alias pacman='pacaur --color=always'
 
 #
 setopt share_history
@@ -95,11 +98,13 @@ POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND="008"
 POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND="007"
 DEFAULT_USER="rawkode"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir dir_writable)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S %d/%m/%Y}"
 
-SPACESHIP_DOCKER_SHOW=false
+POWERLEVEL9K_DISABLE_RPROMPT=true
+
+POWERLEVEL9K_MODE="nerdfont-complete"
 
 # No completion for backup files
 zstyle ':completion:*:complete:-command-::*' ignored-patterns '*\~'
