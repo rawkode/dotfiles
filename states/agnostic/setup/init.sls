@@ -12,3 +12,4 @@ install-base-packages:
       - xclip
       - fish
       - weechat
+      - tilix
