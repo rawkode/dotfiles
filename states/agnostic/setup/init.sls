@@ -13,3 +13,4 @@ install-base-packages:
       - fish
       - weechat
       - tilix
+      - tree

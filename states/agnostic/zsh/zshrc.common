@@ -11,6 +11,7 @@ alias nvim='nvim'
 
 # ls
 alias ll='ls -l'
+alias tree='ls -L 1'
 
 # gpg2
 alias gpg='gpg2'
