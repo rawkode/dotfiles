@@ -4,10 +4,6 @@ zsh-install:
       - bc
       - zsh
 
-nord-gnome-terminal:
-  cmd.script:
-    - source: https://raw.githubusercontent.com/arcticicestudio/nord-gnome-terminal/develop/src/sh/nord.sh
-    - runas: {{ grains.user }}
 
 zsh-zshrc:
   file.managed:
@@ -28,13 +24,6 @@ zsh-docker:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc.docker
     - source: salt://zsh/zshrc.docker
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-
-zsh-dircolors:
-  file.managed:
-    - name: {{ grains.homedir }}/.dir_colors
-    - source: salt://zsh/dir_colors
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
