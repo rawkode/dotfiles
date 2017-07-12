@@ -100,7 +100,7 @@
   (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
   (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
 
-(load-theme 'base16-eighties t)
+(load-theme 'nord t)
 
 (defun bury-compile-buffer-if-successful (buffer string)
   "Bury a compilation buffer if succeeded without warnings "
@@ -127,6 +127,3 @@
   (if (= 0 offset)
     (format " %3d " (line-number-at-pos))
     (format " %2d " (abs offset))))
-
-(setq relative-line-numbers-format 'relative-abs-line-numbers-format)
-(global-relative-line-numbers-mode)

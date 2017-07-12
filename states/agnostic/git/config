@@ -1,40 +1,40 @@
 [user]
-	name = David McKay
-	email = david.andrew.mckay@gmail.com
+name = David McKay
+email = david.andrew.mckay@gmail.com
 
 [gpg]
-  program = gpg2
+program = gpg2
 
 [core]
-	autocrlf = input
+autocrlf = input
 
 [commit]
-  gpgsign = true
+gpgsign = true
 
 [color]
-  diff = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui = auto
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = auto
 
 [push]
-	default = current
+default = current
 
 [pull]
-	default = current
+default = current
 
 [alias]
-  cm = commit -v
-  co = checkout
-	pl = pull --ff-only
-  ps = push
-  st = status
+cm = commit -v
+co = checkout
+pl = pull --ff-only
+ps = push
+st = status
 
 [rerere]
-  enabled = true
+enabled = true
 
 [diff]
-  algorithm = minimal
-  compactionHeuristic = true
-  renames = true
+algorithm = minimal
+compactionHeuristic = true
+renames = true
