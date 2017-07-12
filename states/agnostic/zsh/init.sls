@@ -17,6 +17,13 @@ zsh-zshrc:
     - group: {{ grains.user }}
     - template: jinja
 
+zsh-paths:
+  file.managed:
+    - name: {{ grains.homedir }}/.zshrc.paths
+    - source: salt://zsh/zshrc.paths
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
+
 zsh-docker:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc.docker

@@ -142,6 +142,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('c-brenn/phoenix.vim')
   call dein#add('tpope/vim-projectionist')
 
+  " Go
+  call dein#add('fatih/vim-go')
+
   " Docker
   call dein#add('ekalinin/dockerfile.vim')
 
