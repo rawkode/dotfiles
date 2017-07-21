@@ -309,6 +309,10 @@ function! s:my_vimfiler_settings()
   nmap <buffer> `       <Plug>(vimfiler_toggle_mark_current_line)
 endfunction
 
+" Gina
+nnoremap <buffer> <leader>gs :Gina status<cr>
+nnoremap <buffer> <leader>gc :Gina commit<cr>
+
 " Goyo & Limelight
 let g:goyo_width="60%"
 let g:goyo_height="80%"
