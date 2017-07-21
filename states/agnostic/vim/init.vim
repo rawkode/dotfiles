@@ -279,7 +279,7 @@ set background=dark
 syntax enable
 " Only turn this on for base16 themes
 let base16colorspace=256
-colorscheme base16-oceanicnext
+colorscheme base16-materia
 
 " autocmd ColorScheme janah highlight Normal ctermbg=235
 " colorscheme janah
@@ -295,9 +295,9 @@ nnoremap <leader>t :VimFilerExplorer -winwidth=45<CR>
 nnoremap <leader>f :VimFilerExplorer -find -winwidth=45<CR>
 
 let g:vimfiler_tree_leaf_icon = ' '
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_file_icon = '-'
+let g:vimfiler_tree_opened_icon = '↯'
+let g:vimfiler_tree_closed_icon = '➟'
+let g:vimfiler_file_icon = '•'
 let g:vimfiler_marked_file_icon = '✓'
 let g:vimfiler_readonly_file_icon = '✗'
 
@@ -305,6 +305,7 @@ autocmd! FileType vimfiler call s:my_vimfiler_settings()
 function! s:my_vimfiler_settings()
   nmap <buffer> <Space> <Plug>(vimfiler_expand_tree)
   nmap <buffer> <Right> <Plug>(vimfiler_expand_or_edit)
+  nmap <buffer> <Cr>    <Plug>(vimfiler_expand_or_edit)
   nmap <buffer> `       <Plug>(vimfiler_toggle_mark_current_line)
 endfunction
 
