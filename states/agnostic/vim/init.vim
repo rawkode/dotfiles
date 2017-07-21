@@ -312,6 +312,7 @@ endfunction
 " Gina
 nnoremap <buffer> <leader>gs :Gina status<cr>
 nnoremap <buffer> <leader>gc :Gina commit<cr>
+nnoremap <buffer> <leader>gp :Gina push<cr>
 
 " Goyo & Limelight
 let g:goyo_width="60%"
