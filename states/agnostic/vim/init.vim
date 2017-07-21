@@ -305,7 +305,7 @@ autocmd! FileType vimfiler call s:my_vimfiler_settings()
 function! s:my_vimfiler_settings()
   nmap <buffer> <Space> <Plug>(vimfiler_expand_tree)
   nmap <buffer> <Right> <Plug>(vimfiler_expand_or_edit)
-  nmap <buffer> <Cr>    <Plug>(vimfiler_expand_or_edit)
+  nmap <buffer> <Left>  <Plug>(vimfiler_smart_h)
   nmap <buffer> `       <Plug>(vimfiler_toggle_mark_current_line)
 endfunction
 

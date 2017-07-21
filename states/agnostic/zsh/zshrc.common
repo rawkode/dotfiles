@@ -35,6 +35,7 @@ alias tree='tree -L 3 -d -I "vendor|cache|log|logs"'
 
 # Arch
 alias pacman='pacaur --color=always'
+alias pacmanc='pacman -Rns $(pacman -Qtdq)'
 
 #
 setopt share_history
