@@ -123,10 +123,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   " Only load language files when inside a file of that language
   call dein#add('sheerun/vim-polyglot')
 
-  " Documentation
-  call dein#add('rizzatti/dash.vim')
-  call dein#add('KabbAmine/zeavim.vim')
-
   "
   call dein#add('xolox/vim-misc')
 
@@ -336,3 +332,4 @@ let g:airline_theme = "base16"
 let g:vimfiler_safe_mode_by_default = 0
 let g:rainbow_active = 1
 let g:vim_json_syntax_conceal = 0
+" Neovim's Terminal Mode
