@@ -347,5 +347,4 @@ nmap <C-S-left> :tabprevious<cr>
 nmap <C-S-right> :tabnext<cr>
 
 " Neovim's Terminal Mode
-tnoremap <Esc> <C-\><C-n>
 nmap <leader>z :below 10sp term://$SHELL<cr>i
