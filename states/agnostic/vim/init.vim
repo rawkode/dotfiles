@@ -65,9 +65,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/deoplete.nvim')
-
   call dein#add('Shougo/unite.vim')
-  call dein#add('Shougo/unite-outline')
 
   " VimFiler
   call dein#add('Shougo/vimfiler.vim')
@@ -115,10 +113,12 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('mileszs/ack.vim')
 
   " Git
+  call dein#add('tpope/vim-fugitive')
   call dein#add('lambdalisue/gina.vim')
-  call dein#add('mattn/gist-vim')
   call dein#add('jreybert/vimagit')
+
   call dein#add('mhinz/vim-signify')
+  call dein#add('mattn/gist-vim')
 
   " Only load language files when inside a file of that language
   call dein#add('sheerun/vim-polyglot')
@@ -233,47 +233,22 @@ highlight GitGutterChangeDelete ctermfg=red ctermbg=237
 """
 " fzf
 """
-let g:fzf_files_options =
-      \ '--preview "(highlight -O ansi {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+let $FZF_DEFAULT_COMMAND= 'ag -g ""'
 
-" [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
+nnoremap <Leader><TAB> :Buffers<CR>
 
-" [[B]Commits] Customize the options used by 'git log':
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+nmap <Leader>c  :Commits<cr>
+nmap <Leader>bc :BCommits<cr>
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(blue)%C(bold)%cr%C(white)"'
 
-" [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -R --exclude deps,vendor,_build'
 
 map <C-p> :GFiles<cr>
 nmap <C-p> :GFiles<cr>
 
-map <C-e> :Buffers<cr>
-nmap <C-e> :Buffers<cr>
-
 map <C-r> :BTags<cr>
 nmap <C-r> :BTags<cr>
-
-nnoremap <C-/> :Unite grep:.<cr>
-
-" View commits in fzf
-nmap <Leader>c :Commits<cr>
-" Complete from open tmux panes (from @junegunn)
-inoremap <expr> <C-x><C-t> fzf#complete( 'tmuxwords.rb -all-but-current --scroll 498 --min 5')
-
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-" Advanced customization using autoload functions
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 
 set background=dark
 syntax enable
