@@ -334,14 +334,14 @@ let g:rainbow_active = 1
 let g:vim_json_syntax_conceal = 0
 
 " tmux like commands
-nmap <C-b>n :tabnew term://$SHELL<cr>i
+nmap <C-a>n :tabnew term://$SHELL<cr>i
 nmap <leader>n :tabnew<cr>
 
 nmap <leader><right> :vs<cr>
 nmap <leader><down> :sp<cr>
 
-nmap <C-b><right> :vs term://$SHELL<cr>i
-nmap <C-b><down> :sp term://$SHELL<cr>i
+nmap <C-a><right> :vs term://$SHELL<cr>i
+nmap <C-a><down> :sp term://$SHELL<cr>i
 
 nmap <C-S-left> :tabprevious<cr>
 nmap <C-S-right> :tabnext<cr>
