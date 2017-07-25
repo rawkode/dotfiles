@@ -333,6 +333,14 @@ let g:vimfiler_safe_mode_by_default = 0
 let g:rainbow_active = 1
 let g:vim_json_syntax_conceal = 0
 
+" tmux like commands
+nmap <C-b>n :tabnew<cr>
+
+nmap <leader><right> :vs<cr>
+nmap <leader><down> :sp<cr>
+
+nmap <C-b><right> :vs term://$SHELL<cr>
+nmap <C-b><down> :sp term://$SHELL<cr>
 
 " Neovim's Terminal Mode
 tnoremap <Esc> <C-\><C-n>
