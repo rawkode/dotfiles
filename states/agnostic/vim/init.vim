@@ -245,8 +245,8 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -R --exclude deps,vendor,_build'
 
-map <C-p> :Files<cr>
-nmap <C-p> :Files<cr>
+map <C-p> :GFiles<cr>
+nmap <C-p> :GFiles<cr>
 
 map <C-e> :Buffers<cr>
 nmap <C-e> :Buffers<cr>
