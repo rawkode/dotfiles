@@ -57,9 +57,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   " Required:
   call dein#add('{{ grains.homedir }}/.dein/repos/github.com/Shougo/dein.vim')
 
-  " Tabs & Panes
-  call dein#add('christoomey/vim-tmux-navigator')
-
   " The Shougo collection
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
@@ -70,9 +67,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   " VimFiler
   call dein#add('Shougo/vimfiler.vim')
 
-  "
   " UI
-  "
   call dein#add('mhinz/vim-startify')
   call dein#add('chriskempson/base16-vim')
   call dein#add('arcticicestudio/nord-vim')
@@ -99,9 +94,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('tpope/vim-surround')
   call dein#add('tpope/vim-repeat')
   call dein#add('Valloric/MatchTagAlways')
-
-  call dein#add('luochen1990/rainbow')
-
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('tpope/vim-endwise')
   call dein#add('easymotion/vim-easymotion')
@@ -136,7 +128,6 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('elixir-lang/vim-elixir')
   call dein#add('slashmili/alchemist.vim')
   call dein#add('c-brenn/phoenix.vim')
-  call dein#add('tpope/vim-projectionist')
 
   " Go
   call dein#add('fatih/vim-go')
@@ -155,9 +146,7 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('StanAngeloff/php.vim')
   call dein#add('lumiliet/vim-twig')
   call dein#add('Glench/Vim-Jinja2-Syntax')
-
-  "
-  call dein#add('powerman/vim-plugin-AnsiEsc')
+  call dein#add('2072/PHP-Indenting-for-VIm')
 
   " Required:
   call dein#end()
@@ -250,7 +239,7 @@ set background=dark
 syntax enable
 " Only turn this on for base16 themes
 let base16colorspace=256
-colorscheme base16-materia
+colorscheme base16-oceanicnext
 
 " autocmd ColorScheme janah highlight Normal ctermbg=235
 " colorscheme janah
@@ -345,6 +334,11 @@ nmap <C-a><down> :sp term://$SHELL<cr>i
 
 nmap <C-S-left> :tabprevious<cr>
 nmap <C-S-right> :tabnext<cr>
+
+" Neosnippets
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " Neovim's Terminal Mode
 nmap <leader>z :below 10sp term://$SHELL<cr>i
