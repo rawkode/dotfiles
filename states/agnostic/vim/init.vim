@@ -245,7 +245,7 @@ set background=dark
 syntax enable
 " Only turn this on for base16 themes
 let base16colorspace=256
-colorscheme base16-oceanicnext
+colorscheme base16-dracula
 
 " autocmd ColorScheme janah highlight Normal ctermbg=235
 " colorscheme janah

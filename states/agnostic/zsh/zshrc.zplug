@@ -1,4 +1,4 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-oceanicnext.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-dracula.sh"
 
 zplug "rawkode/zsh-docker-run"
 
@@ -9,7 +9,6 @@ zplug "zsh-users/zsh-completions"
 zplug 'desyncr/auto-ls'
 
 zplug "plugins/git",                  from:oh-my-zsh
-zplug "plugins/tmux",                 from:oh-my-zsh
 zplug "plugins/command-not-found",    from:oh-my-zsh
 zplug "plugins/colored-man-pages",    from:oh-my-zsh
 
