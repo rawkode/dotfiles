@@ -132,6 +132,9 @@ if dein#load_state('{{ grains.homedir }}/.dein')
   call dein#add('slashmili/alchemist.vim')
   call dein#add('c-brenn/phoenix.vim')
 
+  " Pony
+  call dein#add('jakwings/vim-pony')
+
   " Go
   call dein#add('fatih/vim-go')
 
