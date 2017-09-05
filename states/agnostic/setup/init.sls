@@ -6,11 +6,11 @@ include:
 install-base-packages:
   pkg.installed:
     - pkgs:
+      - asciinema
+      - fish
       - gnome-tweak-tool
       - jq
-      - asciinema
-      - xclip
-      - fish
-      - weechat
       - tilix
       - tree
+      - weechat
+      - xclip
