@@ -39,4 +39,3 @@ fish-functions:
     - name: {{ grains.homedir }}/.config/fish/functions/
     - user: {{ grains.user }}
     - group: {{ grains.user }}
-    - clean: True
