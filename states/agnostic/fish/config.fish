@@ -4,7 +4,4 @@ if status --is-interactive
   # Set GPG TTY
   set -x GPG_TTY (tty)
   set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
-
-  gpg-connect-agent killagent /bye
-  gpg-connect-agent /bye
 end
