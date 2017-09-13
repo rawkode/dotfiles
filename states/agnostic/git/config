@@ -7,6 +7,8 @@
 
 [core]
   autocrlf = input
+  whitespace = trailing-space,space-before-tab
+  editor = code --wait
 
 [commit]
   gpgsign = true
@@ -30,6 +32,8 @@
   pl = pull --ff-only
   ps = push
   st = status
+  prune = fetch --prune
+  log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 
 [branch]
   autosetuprebase = always
@@ -40,4 +44,11 @@
 [diff]
   algorithm = minimal
   compactionHeuristic = true
-  renames = true
+  renames = copies
+  tool = default-difftool
+
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[advice]
+  statusHints = false
