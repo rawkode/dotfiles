@@ -14,7 +14,7 @@ NetworkManager:
 
 pacaur-cower-gpg-key:
   cmd.run:
-    - name: gpg --recv-keys --keyserver http://pgp.mit.edu 1EB2638FF56C0C53
+    - name: gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
     - runas: {{ grains.user }}
 
 pacaur-cower-dir:

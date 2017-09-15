@@ -47,17 +47,7 @@ gnome-shell-extension-enable-user-themes:
     - name: dbus-launch --exit-with-session gnome-shell-extension-tool -e 'user-theme@gnome-shell-extensions.gcampax.github.com' || exit 0
     - runas: {{ grains.user }}
 
-gnome-shell-workspace-specific-app-switcher:
-  cmd.run:
-    - name: dbus-launch --exit-with-session gsettings set org.gnome.shell.app-switcher current-workspace-only true
-    - runas: {{ grains.user }}
-
 gnome-shell-set-favourite-apps:
   cmd.run:
     - name: dbus-launch --exit-with-session gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'slack.desktop', 'org.gnome.Nautilus.desktop']"
-    - runas: {{ grains.user }}
-
-gnome-shell-set-theme:
-  cmd.run:
-    - name: dbus-launch --exit-with-session gsettings set org.gnome.shell.extensions.user-theme name Arc
     - runas: {{ grains.user }}
