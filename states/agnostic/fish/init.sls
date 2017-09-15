@@ -23,7 +23,12 @@ fish-fishfile:
     - source: salt://fish/fishfile
     - user: {{ grains.user }}
     - group: {{ grains.user }}
-    - template: jinja
+
+fisher-install:
+  cmd.run:
+    - name: fisher install
+    - shell: /usr/bin/fish
+    - runas: {{ grains.user }}
 
 fish-confd:
   file.recurse:
