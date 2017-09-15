@@ -6,11 +6,16 @@ root:
     - empty_password: True
 
 {% if grains.user != 'root' %}
-{{ grains.user }}:
+group-{{ grains.user }}:
+  group.present:
+    - name: {{ grains.user }}
+
+user-{{ grains.user }}:
   user.present:
     - name: {{ grains.user }}
     - shell: /usr/bin/zsh
     - remove_groups: False
     - groups:
+      - {{ grains.user }}
       - docker
 {% endif %}
