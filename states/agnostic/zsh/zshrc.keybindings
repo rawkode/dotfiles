@@ -1,3 +1,7 @@
+#
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 # Rebind HOME and END to do the decent thing:
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
