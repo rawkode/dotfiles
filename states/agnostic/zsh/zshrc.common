@@ -5,7 +5,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 # Lockscreen
-alias alokc="alock -auth pam -bg shade:color=white,blur=75,mono"
+alias lock="dm-tool lock"
 
 ## Neovim
 alias vi='nvim'
