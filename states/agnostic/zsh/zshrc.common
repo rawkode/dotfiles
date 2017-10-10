@@ -4,6 +4,9 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
 
+# Lockscreen
+alias alokc="alock -auth pam -bg shade:color=white,blur=75,mono"
+
 ## Neovim
 alias vi='nvim'
 alias vim='nvim'
