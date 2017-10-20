@@ -8,7 +8,7 @@ zsh-install:
 zsh-zshrc:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc
-    - source: salt:///zsh/zshrc
+    - source: salt:///zsh/zshrc.zsh
     - user: {{ grains.user }}
     - group: {{ grains.user }}
     - template: jinja
@@ -16,35 +16,35 @@ zsh-zshrc:
 zsh-paths:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc.paths
-    - source: salt://zsh/zshrc.paths
+    - source: salt://zsh/zshrc.paths.zsh
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
 zsh-docker:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc.docker
-    - source: salt://zsh/zshrc.docker
+    - source: salt://zsh/zshrc.docker.zsh
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
 zsh-zshrc.zplug:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc.zplug
-    - source: salt:///zsh/zshrc.zplug
+    - source: salt:///zsh/zshrc.zplug.zsh
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
 zsh-zshrc-common:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc.common
-    - source: salt:///zsh/zshrc.common
+    - source: salt:///zsh/zshrc.common.zsh
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
 zsh-zshrc-keybindings:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc.keybindings
-    - source: salt:///zsh/zshrc.keybindings
+    - source: salt:///zsh/zshrc.keybindings.zsh
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
