@@ -12,10 +12,13 @@ export SAVEHIST=10000
 # Lockscreen
 alias lock="dm-tool lock"
 
-## Neovim
-alias vi='nvim'
-alias vim='nvim'
-alias nvim='nvim'
+# Development aliases
+alias dev='cd ~/Development/src/'
+
+## Visual Studio Code Adoption
+alias vi='code'
+alias vim='code'
+alias nvim='code'
 
 # ls
 alias ll='ls -l'
