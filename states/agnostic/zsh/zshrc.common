@@ -1,5 +1,10 @@
 source /etc/profile.d/vte.sh
 
+export LANGUAGE=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+export LC_CTYPE=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000
 export SAVEHIST=10000
