@@ -1,4 +1,4 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-material-darker.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-eighties.sh"
 #zplug "carloscuesta/materialshell", use:"zsh/materialshell.zsh-theme"
 
 zplug "rawkode/zsh-docker-run"
@@ -21,9 +21,9 @@ zplug "sroze/docker-compose-zsh-plugin"
 
 zplug "Valiev/almostontop"
 
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug mafredri/zsh-async, from:github
+#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
