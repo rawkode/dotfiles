@@ -15,6 +15,9 @@ alias lock="dm-tool lock"
 # Development aliases
 alias dev='cd ~/Development/src/'
 
+# Fuck typing xdg-open
+alias open='xdg-open'
+
 ## Visual Studio Code Adoption
 alias vi='code'
 alias vim='code'
