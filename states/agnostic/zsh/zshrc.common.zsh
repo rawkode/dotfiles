@@ -65,7 +65,7 @@ setopt AUTO_MENU
 setopt AUTO_NAME_DIRS
 setopt COMPLETE_IN_WORD
 
-export EDITOR="nvim"
+export EDITOR="code"
 export BROWSER=google-chrome-stable
 export PAGER=less
 export MANPAGER=less
@@ -78,6 +78,7 @@ backward-kill-dir () {
     WORDCHARS=${WORDCHARS:s,\.,,}
     zle backward-kill-word
 }
+
 zle -N backward-kill-dir
 bindkey '^[^?' backward-kill-dir
 bindkey '^W' backward-kill-dir

@@ -1,3 +1,12 @@
+## Terraform
+function tf7() {
+  run_with_docker "hashicorp/terraform" "0.10.7" "terraform" $@
+}
+
+function tf() {
+  run_with_docker "hashicorp/terraform" "latest" "terraform" $@
+}
+
 ## Elixir
 function elixir() {
   run_with_docker "elixir" "latest" "elixir" $@

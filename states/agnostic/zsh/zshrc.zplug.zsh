@@ -1,5 +1,4 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-eighties.sh"
-#zplug "carloscuesta/materialshell", use:"zsh/materialshell.zsh-theme"
+zplug "chriskempson/base16-shell", use:"scripts/base16-chalk.sh"
 
 zplug "rawkode/zsh-docker-run"
 
