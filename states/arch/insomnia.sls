@@ -1,4 +1,3 @@
-insomnia-install:
-  cmd.run:
-    - name: pacaur -S --noconfirm --noedit insomnia
-    - runas: {{ grains.user }}
+{% from './aur.sls' import aur with context %}
+
+{{ aur('insomnia') }}

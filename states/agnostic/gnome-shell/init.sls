@@ -49,5 +49,5 @@ gnome-shell-extension-enable-user-themes:
 
 gnome-shell-set-favourite-apps:
   cmd.run:
-    - name: dbus-launch --exit-with-session gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Terminal.desktop', 'slack.desktop', 'org.gnome.Nautilus.desktop']"
+    - name: dbus-launch --exit-with-session gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'com.gexperts.Tilix.desktop', 'visual-studio-code.desktop', 'wavebox.desktop', 'slack.desktop', 'keybase.desktop']"
     - runas: {{ grains.user }}

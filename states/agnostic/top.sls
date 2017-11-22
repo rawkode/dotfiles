@@ -4,5 +4,6 @@ base:
     # before we configure our user account with the group :)
     - docker
     - setup
+    - fonts
     - cli
     - desktop

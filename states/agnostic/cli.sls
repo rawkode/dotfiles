@@ -1,8 +1,6 @@
 include:
-  - gpg
-  - ssh
+  - ctop
   - git
-  - zsh
-  - fish
-  - tmux
+  - gpg
   - vim
+  - zsh

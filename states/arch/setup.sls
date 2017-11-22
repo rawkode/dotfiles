@@ -1,11 +1,12 @@
 packages-base:
   pkg.installed:
     - pkgs:
+      - expac
+      - htop
       - networkmanager
       - openssh
-      - expac
-      - yajl
       - the_silver_searcher
+      - yajl
 
 NetworkManager:
   service.running:
@@ -55,3 +56,6 @@ pacaur-makepkg:
 remove-epiphany:
   pkg.removed:
     - name: epiphany
+
+include:
+  - .aur

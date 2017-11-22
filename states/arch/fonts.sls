@@ -1,4 +1,7 @@
-roboto-install:
-  cmd.run:
-    - name: pacaur -S --noconfirm ttf-roboto ttf-roboto-mono ttf-roboto-slab ttf-hack-powerline-git ttf-fira-code
-    - runas: {{ grains.user }}
+{% from './aur.sls' import aur with context %}
+
+{{ aur('ttf-fira-code') }}
+{{ aur('ttf-hack-powerline-git') }}
+{{ aur('ttf-roboto') }}
+{{ aur('ttf-roboto-mono') }}
+{{ aur('ttf-roboto-slab') }}
