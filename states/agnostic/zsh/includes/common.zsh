@@ -39,9 +39,6 @@ then
   export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 fi
 
-# Useful aliases
-alias dps='docker ps --format="table {{ .ID }}\t{{ .Names }}\t{{ .Image }}\t{{ .Status }}\t{{ .Ports }}\t{{ .Command }}"'
-
 alias dc='docker-compose'
 alias dcr='docker-compose run --rm'
 

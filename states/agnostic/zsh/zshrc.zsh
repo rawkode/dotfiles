@@ -1,10 +1,10 @@
 # I'm not sure why I need this at the moment, but vi-mode has taken over!
 bindkey -e
 
-source ~/.zshrc.paths
-source ~/.zshrc.common
-source ~/.zshrc.docker
-source ~/.zshrc.keybindings
+source ~/.zsh/paths.zsh
+source ~/.zsh/common.zsh
+source ~/.zsh/docker.zsh
+source ~/.zsh/keybindings.zsh
 
 source ~/.zplug/init.zsh
 source ~/.zshrc.zplug

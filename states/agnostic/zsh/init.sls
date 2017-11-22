@@ -1,50 +1,21 @@
 zsh-install:
   pkg.installed:
     - pkgs:
-      - bc
       - zsh
-
 
 zsh-zshrc:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc
-    - source: salt:///zsh/zshrc.zsh
+    - source: salt://zsh/zshrc.zsh
     - user: {{ grains.user }}
     - group: {{ grains.user }}
     - template: jinja
 
-zsh-paths:
-  file.managed:
-    - name: {{ grains.homedir }}/.zshrc.paths
-    - source: salt://zsh/zshrc.paths.zsh
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-
-zsh-docker:
-  file.managed:
-    - name: {{ grains.homedir }}/.zshrc.docker
-    - source: salt://zsh/zshrc.docker.zsh
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-
-zsh-zshrc.zplug:
-  file.managed:
-    - name: {{ grains.homedir }}/.zshrc.zplug
-    - source: salt:///zsh/zshrc.zplug.zsh
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-
-zsh-zshrc-common:
-  file.managed:
-    - name: {{ grains.homedir }}/.zshrc.common
-    - source: salt:///zsh/zshrc.common.zsh
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-
-zsh-zshrc-keybindings:
-  file.managed:
-    - name: {{ grains.homedir }}/.zshrc.keybindings
-    - source: salt:///zsh/zshrc.keybindings.zsh
+zsh-zshrc-includes:
+  file.recurse:
+    - name: {{ grains.homedir }}/.zsh
+    - source: salt://zsh/includes/
+    - clean: True
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
