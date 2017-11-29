@@ -10,7 +10,7 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 # Lockscreen
-alias lock="dm-tool lock"
+alias lock="xsecurelock"
 
 # Development aliases
 alias dev='cd ~/Development/src/'

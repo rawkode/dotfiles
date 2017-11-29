@@ -51,3 +51,23 @@ gnome-shell-set-favourite-apps:
   cmd.run:
     - name: dbus-launch --exit-with-session gsettings set org.gnome.shell favorite-apps "['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'com.gexperts.Tilix.desktop', 'visual-studio-code.desktop', 'wavebox.desktop', 'slack.desktop', 'keybase.desktop']"
     - runas: {{ grains.user }}
+
+# gnome-shell-set-lock-shortcut-name:
+#   cmd.run:
+#     - name: dbus-launch --exit-with-session gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0 name "Lock Screen"
+#     - runas: {{ grains.user }}
+
+# gnome-shell-set-lock-shortcut-binding:
+#   cmd.run:
+#     - name: dbus-launch --exit-with-session gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0 binding "Pause"
+#     - runas: {{ grains.user }}
+
+# gnome-shell-set-lock-shortcut-command:
+#   cmd.run:
+#     - name: dbus-launch --exit-with-session gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0 command "xsecurelock"
+#     - runas: {{ grains.user }}
+
+# gnome-shell-set-custom-shortcuts:
+#   cmd.run:
+#     - name: dbus-launch --exit-with-session gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings ['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+#     - runas: {{ grains.user }}

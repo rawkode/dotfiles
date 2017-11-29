@@ -5,4 +5,5 @@ include:
   - insomnia
   - keybase
   - wavebox
+  - xsecurelock
   - zeal

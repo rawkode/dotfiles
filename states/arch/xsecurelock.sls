@@ -1,3 +1,3 @@
 {% from './aur.sls' import aur with context %}
 
-{{ aur('google-chrome') }}
+{{ aur('xsecurelock-git') }}
