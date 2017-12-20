@@ -1,7 +1,5 @@
 {% from './aur.sls' import aur with context %}
 
-{{ aur('ttf-fira-code') }}
-{{ aur('ttf-hack-powerline-git') }}
-{{ aur('ttf-roboto') }}
-{{ aur('ttf-roboto-mono') }}
-{{ aur('ttf-roboto-slab') }}
+{{ aur('ttf-google-fonts-typewolf') }}
+{{ aur('ttf-fira-mono') }}
+{{ aur('noto-fonts-emoji') }}
