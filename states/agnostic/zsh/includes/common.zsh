@@ -53,16 +53,18 @@ setopt share_history
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:zh"
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
-setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
-setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt ALWAYS_TO_END
 setopt AUTO_MENU
 setopt AUTO_NAME_DIRS
 setopt COMPLETE_IN_WORD
 
-export EDITOR="code"
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+
+export EDITOR="code --wait"
 export BROWSER=google-chrome-stable
 export PAGER=less
 export MANPAGER=less

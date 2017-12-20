@@ -7,7 +7,7 @@ source ~/.zsh/docker.zsh
 source ~/.zsh/keybindings.zsh
 
 source ~/.zplug/init.zsh
-source ~/.zshrc.zplug
+source ~/.zsh/zplug.zsh
 
 # fzf Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
