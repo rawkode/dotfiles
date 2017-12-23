@@ -5,10 +5,6 @@ export LC_ALL=en_GB.UTF-8
 export LC_CTYPE=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
-export HISTFILE=~/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=10000
-
 # Lockscreen
 alias lock="xsecurelock"
 
@@ -49,20 +45,12 @@ alias pacman='pacaur --color=always'
 alias pacmanc='pacman -Rns $(pacman -Qtdq)'
 
 #
-setopt share_history
-export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:zh"
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_REDUCE_BLANKS
 setopt ALWAYS_TO_END
 setopt AUTO_MENU
 setopt AUTO_NAME_DIRS
 setopt COMPLETE_IN_WORD
-
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_DUPS
-setopt HIST_FIND_NO_DUPS
 
 export EDITOR="code --wait"
 export BROWSER=google-chrome-stable
