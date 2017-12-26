@@ -1,6 +1,8 @@
 zplug "chriskempson/base16-shell", use:"scripts/base16-chalk.sh"
 
 zplug "rawkode/zsh-docker-run"
+zplug "rawkode/zsh-kubectl-context-switcher", from:gitlab
+zplug "rawkode/zsh-gcloud-context-switcher", from:gitlab
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
