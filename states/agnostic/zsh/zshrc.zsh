@@ -3,11 +3,11 @@ bindkey -e
 
 source ~/.zsh/kubectl.zsh
 source ~/.zsh/gcloud.zsh
-source ~/.zsh/history.zsh
 source ~/.zsh/paths.zsh
 source ~/.zsh/common.zsh
 source ~/.zsh/docker.zsh
 source ~/.zsh/keybindings.zsh
+source ~/.zsh/history.zsh
 
 source ~/.zplug/init.zsh
 source ~/.zsh/zplug.zsh

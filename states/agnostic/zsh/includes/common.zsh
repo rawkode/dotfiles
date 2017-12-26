@@ -44,14 +44,6 @@ alias tree='tree -L 3 -d -I "vendor|cache|log|logs"'
 alias pacman='pacaur --color=always'
 alias pacmanc='pacman -Rns $(pacman -Qtdq)'
 
-#
-setopt AUTO_PUSHD
-setopt PUSHD_IGNORE_DUPS
-setopt ALWAYS_TO_END
-setopt AUTO_MENU
-setopt AUTO_NAME_DIRS
-setopt COMPLETE_IN_WORD
-
 export EDITOR="code --wait"
 export BROWSER=google-chrome-stable
 export PAGER=less
@@ -110,6 +102,19 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S %d/%m/%Y}"
 POWERLEVEL9K_DISABLE_RPROMPT=true
 
 POWERLEVEL9K_MODE="nerdfont-complete"
+
+setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
+setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.
+setopt PATH_DIRS           # Perform path search even on command names with slashes.
+setopt AUTO_MENU           # Show completion menu on a successive tab press.
+setopt AUTO_LIST           # Automatically list choices on ambiguous completion.
+setopt AUTO_PARAM_SLASH    # If completed parameter is a directory, add a trailing slash.
+unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
+unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor
+
+setopt AUTOCD
+setopt autopushd pushdignoredups PUSHD_SILENT PUSHD_TO_HOME
+setopt AUTO_NAME_DIRS
 
 # No completion for backup files
 zstyle ':completion:*:complete:-command-::*' ignored-patterns '*\~'

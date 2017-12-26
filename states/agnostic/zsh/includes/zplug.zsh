@@ -1,4 +1,4 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-chalk.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-oceanicnext.sh"
 
 zplug "rawkode/zsh-docker-run"
 zplug "rawkode/zsh-kubectl-context-switcher", from:gitlab
@@ -9,8 +9,6 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 
-zplug 'desyncr/auto-ls'
-
 zplug "plugins/git",                    from:oh-my-zsh
 zplug "plugins/z",                      from:oh-my-zsh
 zplug "plugins/command-not-found",      from:oh-my-zsh
@@ -18,13 +16,14 @@ zplug "plugins/colored-man-pages",      from:oh-my-zsh
 zplug "plugins/per-directory-history",  from:oh-my-zsh
 zplug "plugins/sudo",                   from:oh-my-zsh
 
-zplug "sroze/docker-compose-zsh-plugin"
-
+zplug 'desyncr/auto-ls'
+zplug "hlissner/zsh-autopair"
 zplug "Valiev/almostontop"
 
-#zplug mafredri/zsh-async, from:github
-#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+#zplug "themes/agnoster", from:oh-my-zsh, as:theme
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
