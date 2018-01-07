@@ -4,3 +4,7 @@ include:
   - gpg
   - vim
   - zsh
+  - google-cloud-sdk
+  - aws
+  - kubectl
+  - terraform

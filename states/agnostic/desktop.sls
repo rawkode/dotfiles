@@ -1,6 +1,8 @@
 include:
   - gnome-shell
   - google-chrome
+  - slack
+  - vscode
   - gtk
   - insomnia
   - keybase
