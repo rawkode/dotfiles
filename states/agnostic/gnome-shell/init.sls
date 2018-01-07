@@ -1,6 +1,11 @@
 include:
   - {{ grains.os_family | lower }}: gnome-shell
 
+gnome-shell-static-workspaces:
+  cmd.run:
+    - name: dbus-launch --exit-with-session gsettings set org.gnome.shell.overrides dynamic-workspaces false
+    - runas: {{ grains.user }}
+
 gnome-shell-number-of-workspaces:
   cmd.run:
     - name: dbus-launch --exit-with-session gsettings set org.gnome.desktop.wm.preferences num-workspaces "5"
