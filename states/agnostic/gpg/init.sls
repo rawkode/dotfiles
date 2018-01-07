@@ -35,3 +35,5 @@ gpg-disable-ssh-agent:
   file.comment:
     - name: /etc/X11/Xsession.options
     - regex: ^use-ssh-agent
+    - onlyif:
+      - ls /etc/X11/Xsession.options
