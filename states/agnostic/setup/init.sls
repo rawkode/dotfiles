@@ -13,7 +13,6 @@ install-base-packages:
       - asciinema
       - gnome-tweak-tool
       - jq
-      - tilix
       - tree
       - weechat
       - xclip
