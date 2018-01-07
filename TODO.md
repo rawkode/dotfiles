@@ -5,7 +5,7 @@ This is a list of things I've not automated yet:
 - Nautilus:
   - Sidebar Shortcuts
 - GNOME:
-  - Enable chrome host extension
+  - Force apps to specific desktops
   - Cursor
   - Theme / Shell Theme
   - Icons

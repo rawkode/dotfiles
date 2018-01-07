@@ -16,3 +16,4 @@ install-base-packages:
       - tree
       - weechat
       - xclip
+      - gnome-tweak-tool
