@@ -1,6 +1,7 @@
 include:
   - gnome-shell
   - google-chrome
+  - tilix
   - slack
   - vscode
   - gtk
