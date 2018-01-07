@@ -5,4 +5,4 @@ kubectl-from-gcloud:
   cmd.run:
     - name: gcloud components install kubectl
     - require:
-      - sls: .google-cloud-sdk
+      - sls: google-cloud-sdk
