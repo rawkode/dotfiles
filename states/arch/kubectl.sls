@@ -3,6 +3,6 @@ include:
 
 kubectl-from-gcloud:
   cmd.run:
-    - name: gcloud components install kubectl
+    - name: gcloud components install kubectl --quiet
     - require:
       - sls: google-cloud-sdk

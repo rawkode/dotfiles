@@ -2,7 +2,7 @@
 # Thanks for the Cnchi though!
 remove-antergos-components:
   cmd.run:
-    - name: pacman -Rd $(paclist antergos | awk '{print $1}')
+    - name: pacman -Rd --noconfirm $(paclist antergos | awk '{print $1}')
     - onlyif:
       - ls /etc/pacman.d/antergos-mirrorlist
 
