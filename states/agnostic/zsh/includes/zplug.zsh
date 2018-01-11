@@ -1,4 +1,4 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-dracula.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-zenburn.sh"
 
 zplug "rawkode/zsh-docker-run"
 zplug "rawkode/zsh-kubectl-context-switcher", from:gitlab
