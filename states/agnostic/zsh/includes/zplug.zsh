@@ -1,4 +1,6 @@
-zplug "chriskempson/base16-shell", use:"scripts/base16-zenburn.sh"
+# Favourites
+# bespin, brewer, bright, chalk, dracula, eighties, gnome-dark, gruvbox-dark, monokao, nord, seti, tomorrow-night
+zplug "chriskempson/base16-shell", use:"scripts/base16-default-dark-gnome.sh"
 
 zplug "rawkode/zsh-docker-run"
 zplug "rawkode/zsh-kubectl-context-switcher", from:gitlab
@@ -23,6 +25,7 @@ zplug "Valiev/almostontop"
 #zplug mafredri/zsh-async, from:github
 #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 #zplug "themes/agnoster", from:oh-my-zsh, as:theme
+#zplug "eendroroy/alien"
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
