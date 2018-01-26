@@ -22,6 +22,12 @@ function gt8() {
   cd ~/Development/src/code.devtech.gt8.online/$1
 }
 
+function bitbucket() {
+  cd ~/Development/src/bitbucket.org/$1
+}
+
+alias bb="bitbucket"
+
 # Lockscreen
 alias lock="xsecurelock"
 
