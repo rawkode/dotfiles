@@ -6,33 +6,42 @@ export LC_CTYPE=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
 # Development Aliases
+alias dc='docker-compose'
+alias dcr='docker-compose run --rm'
+
+alias tree='tree -L 3 -d -I "vendor|cache|log|logs"'
+
+# Arch
+alias pacman='pacaur --color=always'
+alias pacmanc='pacman -Rns $(pacman -Qtdq)'
+
 function github() {
   cd ~/Development/src/github.com/$1
 }
 
-alias gh="github"
+alias gh=" github"
 
 function gitlab() {
   cd ~/Development/src/gitlab.com/$1
 }
 
-alias gl="gitlab"
+alias gl=" gitlab"
 
 function gt8() {
   cd ~/Development/src/code.devtech.gt8.online/$1
 }
 
+alias bb=" bitbucket"
+
 function bitbucket() {
   cd ~/Development/src/bitbucket.org/$1
 }
-
-alias bb="bitbucket"
 
 # Lockscreen
 alias lock="xsecurelock"
 
 # Development aliases
-alias dev='cd ~/Development/src/'
+alias dev=' cd ~/Development/src/'
 
 # Fuck typing xdg-open
 alias open='xdg-open'
@@ -58,15 +67,6 @@ then
   export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 fi
 
-alias dc='docker-compose'
-alias dcr='docker-compose run --rm'
-
-alias tree='tree -L 3 -d -I "vendor|cache|log|logs"'
-
-# Arch
-alias pacman='pacaur --color=always'
-alias pacmanc='pacman -Rns $(pacman -Qtdq)'
-
 export EDITOR="code --wait"
 export BROWSER=google-chrome-stable
 export PAGER=less
@@ -78,6 +78,7 @@ export COLORTERM="yes"
 backward-kill-dir () {
     local WORDCHARS=${WORDCHARS:s,/,,}
     WORDCHARS=${WORDCHARS:s,\.,,}
+    WORDCHARS=${WORDCHARS:s,_,,}
     zle backward-kill-word
 }
 
