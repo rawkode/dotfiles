@@ -5,4 +5,5 @@ gpg-smart-card-packages-install:
       - libusb-compat
       - pcsclite
       - ccid
+      - opensc
       - libu2f-host
