@@ -16,6 +16,7 @@ zplug "plugins/command-not-found",      from:oh-my-zsh
 zplug "plugins/colored-man-pages",      from:oh-my-zsh
 zplug "plugins/per-directory-history",  from:oh-my-zsh
 zplug "plugins/sudo",                   from:oh-my-zsh
+zplug "plugins/kubectl",                from:oh-my-zsh
 
 zplug 'desyncr/auto-ls'
 zplug "hlissner/zsh-autopair"

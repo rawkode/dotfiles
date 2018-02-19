@@ -1,0 +1,3 @@
+include:
+    - slack
+    - wavebox

@@ -20,6 +20,11 @@ function mix() {
   run_with_docker "elixir" "latest" "mix" $@
 }
 
+## Go
+function go() {
+  docker run --rm -u $UID -e GOPATH -v $GOPATH:/$GOPATH -v $PWD:$PWD -w $PWD -it golang:1.10 go $@
+}
+
 ## PHP
 function php() {
   run_with_docker "php" "7-cli" "php" $@

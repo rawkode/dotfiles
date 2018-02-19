@@ -6,4 +6,6 @@ base:
     - setup
     - fonts
     - cli
+    - communication
     - desktop
+    - developer

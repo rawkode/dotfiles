@@ -1,12 +1,6 @@
 include:
   - gnome-shell
   - google-chrome
-  - tilix
-  - slack
-  - vscode
   - gtk
-  - insomnia
   - keybase
-  - wavebox
   - xsecurelock
-  - zeal
