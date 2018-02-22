@@ -3,20 +3,21 @@
 zplug "chriskempson/base16-shell", use:"scripts/base16-eighties.sh"
 
 zplug "rawkode/zsh-docker-run"
-zplug "rawkode/zsh-kubectl-context-switcher", from:gitlab
 zplug "rawkode/zsh-gcloud-context-switcher", from:gitlab
+zplug "rawkode/zsh-kubectl-context-switcher", from:gitlab
 
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting"
 
-zplug "plugins/z",                      from:oh-my-zsh
 zplug "plugins/command-not-found",      from:oh-my-zsh
 zplug "plugins/colored-man-pages",      from:oh-my-zsh
+zplug "plugins/dotenv",                 from:oh-my-zsh
+zplug "plugins/kubectl",                from:oh-my-zsh
 zplug "plugins/per-directory-history",  from:oh-my-zsh
 zplug "plugins/sudo",                   from:oh-my-zsh
-zplug "plugins/kubectl",                from:oh-my-zsh
+zplug "plugins/z",                      from:oh-my-zsh
 
 zplug 'desyncr/auto-ls'
 zplug "hlissner/zsh-autopair"
