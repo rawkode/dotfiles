@@ -68,7 +68,6 @@ then
 fi
 
 export EDITOR="code --wait"
-export BROWSER=google-chrome-stable
 export PAGER=less
 export MANPAGER=less
 export MANWIDTH=${MANWIDTH:-80}
