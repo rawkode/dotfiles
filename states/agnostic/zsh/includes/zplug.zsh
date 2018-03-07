@@ -27,8 +27,8 @@ zplug "Valiev/almostontop"
 #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 #zplug "themes/agnoster", from:oh-my-zsh, as:theme
 #zplug "eendroroy/alien"
-#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-zplug "geometry-zsh/geometry"
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug "geometry-zsh/geometry"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

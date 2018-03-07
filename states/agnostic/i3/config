@@ -31,9 +31,9 @@ client.urgent $base02 $base08 $base07 $base08
 focus_follows_mouse no
 
 # No window titles
-# new_window 1pixel
+#new_window 1pixel
 
-font pango:Fira Mono 13
+font pango:Fira Mono Regular 11
 floating_modifier Mod4
 
 # Keybindings
@@ -150,17 +150,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Volume
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 5+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 5- unmute"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%; notify-send Raising Volume 5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%; notify-send Lowering Volume 5%"
 
 # Autostart
 ##
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id wicd-client -t
-exec --no-startup-id volti
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id polybar top
+exec --no-startup-id xfce4-panel --disable-wm-check
 
 # i3 gaps only
 ##
@@ -172,4 +171,3 @@ gaps outer 10
 
 
 exec notify-send -a i3 "loaded" "Welcome to i3."
-

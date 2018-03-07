@@ -21,6 +21,14 @@ i3-compton:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
+i3-polybar:
+  file.managed:
+    - name: {{ grains.homedir }}/.config/polybar/config
+    - source: salt://i3/polybar
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
+    - makedirs: True
+
 i3-dunst:
   file.managed:
     - name: {{ grains.homedir }}/.config/dunst/dunstrc
