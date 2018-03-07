@@ -1,6 +1,6 @@
 # Favourites
 # bespin, brewer, bright, chalk, dracula, eighties, gnome-dark, gruvbox-dark, monokao, nord, seti, tomorrow-night
-zplug "chriskempson/base16-shell", use:"scripts/base16-eighties.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-default-dark.sh"
 
 zplug "rawkode/zsh-docker-run"
 zplug "rawkode/zsh-gcloud-context-switcher", from:gitlab
@@ -27,7 +27,8 @@ zplug "Valiev/almostontop"
 #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 #zplug "themes/agnoster", from:oh-my-zsh, as:theme
 #zplug "eendroroy/alien"
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "geometry-zsh/geometry"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
