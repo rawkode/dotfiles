@@ -74,16 +74,15 @@ export MANWIDTH=${MANWIDTH:-80}
 export COLORTERM="yes"
 
 # Additional characters to respect as word delimeter
-backward-kill-dir () {
+backward-kill-not-greedy () {
     local WORDCHARS=${WORDCHARS:s,/,,}
     WORDCHARS=${WORDCHARS:s,\.,,}
     WORDCHARS=${WORDCHARS:s,_,,}
     zle backward-kill-word
 }
 
-zle -N backward-kill-dir
-bindkey '^[^?' backward-kill-dir
-bindkey '^W' backward-kill-dir
+zle -N backward-kill-not-greedy
+bindkey '^[w' backward-kill-not-greedy
 
 # Report how long a command took, if it took more than a second
 export REPORTTIME=5
