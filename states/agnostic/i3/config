@@ -66,16 +66,16 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# workspace 1 output HDMI2
-# workspace 2 output HDMI2
-# workspace 3 output HDMI2
-# workspace 4 output HDMI2
-# workspace 5 output HDMI2
-# workspace 6 output VGA1
-# workspace 7 output VGA1
-# workspace 8 output VGA1
-# workspace 9 output VGA1
-# workspace 10 output VGA1
+workspace 1 output DP-1
+workspace 2 output DP-1
+workspace 3 output DP-1
+workspace 4 output DP-1
+workspace 5 output DP-1
+workspace 6 output DP-1
+workspace 7 output DP-1
+workspace 8 output DP-1
+workspace 9 output DP-1
+workspace 10 output eDP-1
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2

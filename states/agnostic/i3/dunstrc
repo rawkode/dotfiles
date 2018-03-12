@@ -1,7 +1,7 @@
 # <- this tricks vim into using syntax highlighting
 [global]
     # font = Tewi 8
-    font = "FontAwesome, Noto Sans 11"
+    font = "Fira Mono Regular 11"
 
     # allow a small subset of html markup:
     # <b>bold</b>
@@ -119,11 +119,8 @@
     # automatically after a crash.
     startup_notification = true
 
-    # dmenu path
-    dmenu = /usr/bin/dmenu -p dunst:
-
     # browser for opening urls in context menu
-    browser = /usr/bin/firefox -new-tab
+    browser = /bin/google-chrome-stable
 
 [frame]
     width = 2
@@ -143,10 +140,10 @@
 
     # redisplay last message(s)
     # On the US keyboard layout 'grave' is normally above TAB and left of '1'.
-    history = ctrl+grave
+    #history = ctrl+esc
 
     # context menu
-    context = ctrl+shift+period
+    #context = ctrl+shift+esc
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
