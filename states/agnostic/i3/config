@@ -43,7 +43,7 @@ bindsym $mod+Pause exec i3-msg exit
 bindsym $mod+l exec i3lock --color ab4642
 bindsym $mod+q kill
 
-bindsym $mod+space exec rofi -show run
+bindsym $mod+space exec rofi -show drun -modi drun
 bindsym Control+Down exec --no-startup-id rofi -show window
 
 bindsym $mod+Left focus left
@@ -155,6 +155,7 @@ bindsym XF86AudioLowerVolume exec "pactl set-sink-mute @DEFAULT_SINK@ false ; pa
 
 # Autostart
 ##
+exec --no-startup-id xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --primary --refresh 120 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output DP-2 --off
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
