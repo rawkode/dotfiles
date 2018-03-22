@@ -1,5 +1,5 @@
 ! urxvt
-Xft.dpi: 166
+Xft.dpi: 96
 Xft.lcdfilter: lcddefault
 Xft.hinting: 1
 Xft.hintstyle: hintfull
@@ -7,103 +7,76 @@ Xft.autohint: 0
 Xft.rgba: rgb
 Xft.antialias: 1
 
-URxvt.perl-ext-common: default,url-select,font-size
+! urxvt
 
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+URxvt*scrollBar:         true
+URxvt*scrollBar_right:   true
 
-URxvt.keysym.M-Up:     perl:font-size:increase
-URxvt.keysym.M-Down:   perl:font-size:decrease
-URxvt.keysym.M-S-Up:   perl:font-size:incglobal
-URxvt.keysym.M-S-Down: perl:font-size:decglobal
+URxvt*transparent:       false
 
-URxvt.colorUL: #98971a
-URxvt.matcher.button: 1
+URxvt*depth: 32
+URxvt.background: [80]Background
+
+URxvt.font: xft:FuraMono NF:pixelsize=12
+URxvt.letterSpace: 0
+
+*antialias:  true
+*autohint:   false
+
+URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.keysym.M-u: perl:url-select:select_next
 
-URxvt.font:         xft:Hack-Regular:pixelsize=14,xft:Symbola
-URxvt.boldFont:     xft:Hack-Bold:pixelsize=14:weight=bold,xft:Symbola
-URxvt.italicFont:   xft:Hack-RegularOblique:pixelsize=14:slant=italic,xft:Symbola
+URxvt.matcher.button: 1
 
-URxvt.urgentOnBell: true
-URxvt.cursorBlink: false
-URxvt.scrollBar:        false
-URxvt.saveLines:        4096
-URxvt.mouseWheelScrollPage: true
+! Base16 Material Darker
+! Scheme: Nate Peterson
 
-urxvt*background:       rgba:0000/0000/0000/cccc
+#define base00 #212121
+#define base01 #303030
+#define base02 #353535
+#define base03 #4a4a4a
+#define base04 #b2ccd6
+#define base05 #eeffff
+#define base06 #eeffff
+#define base07 #ffffff
+#define base08 #f07178
+#define base09 #f78c6c
+#define base0A #ffcb6b
+#define base0B #c3e88d
+#define base0C #89ddff
+#define base0D #82aaff
+#define base0E #c792ea
+#define base0F #ff5370
 
-URxvt.transparent:   true
-URxvt.tintColor:     white
-URxvt.shading:       20
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
-ratmenu.style: dreary
-ratmenu.font: fixed
-ratmenu.bgcolor: #222222
-ratmenu.fgcolor: #99ff00
-/* dzen2 */
-dzen2.font: xft:M+ 1m regular:size=11
-! Base16 Eighties
-! Scheme: Chris Kempson (http://chriskempson.com)
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
 
-#define base00 #2d2d2d
-#define base01 #393939
-#define base02 #515151
-#define base03 #747369
-#define base04 #a09f93
-#define base05 #d3d0c8
-#define base06 #e8e6df
-#define base07 #f2f0ec
-#define base08 #f2777a
-#define base09 #f99157
-#define base0A #ffcc66
-#define base0B #99cc99
-#define base0C #66cccc
-#define base0D #6699cc
-#define base0E #cc99cc
-#define base0F #d27b53
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
 
-*.foreground:   base05
-*.background:   base00
-*.cursorColor:  base05
+! Rofi
 
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color9:       base08
-*.color10:      base0B
-*.color11:      base0A
-*.color12:      base0D
-*.color13:      base0E
-*.color14:      base0C
-*.color15:      base07
-
-! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
-! use 'shell' template to set these if necessary
-*.color16:      base09
-*.color17:      base0F
-*.color18:      base01
-*.color19:      base02
-*.color20:      base04
-*.color21:      base06
-
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-rofi.color-enabled: true
-rofi.color-window: #393939, #393939, #268bd2
-rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
-rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
-rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
-
-! rofi.sidebar-mode: true
+rofi.sidebar-mode: true
 rofi.bw: 1
 rofi.columns: 1
 rofi.padding: 16
@@ -113,8 +86,9 @@ rofi.opacity: 80
 rofi.fake-transparency: false
 rofi.location: 0
 rofi.width: 50
-rofi.font: Hack-Regular 12
 rofi.lines: 4
+
+! xscreensaver
 
 xscreensaver.splash: false
 xscreensaver.Dialog.foreground: r_fg
@@ -128,54 +102,3 @@ xscreensaver.Dialog.internalBorderWidth: 0
 xscreensaver.passwd.thermometer.background: r_bg
 xscreensaver.passwd.thermometer.foreground: r_hlfg
 xscreensaver.passwd.thermometer.width: 8
-
-! Nord
-! +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-! title      Nord XResources                                    +
-! project    nord-xresources                                    +
-! version    0.1.0                                              +
-! repository https://github.com/arcticicestudio/nord-xresources +
-! author     Arctic Ice Studio                                  +
-! email      development@arcticicestudio.com                    +
-! copyright  Copyright (C) 2016                                 +
-! +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
-
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
-
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
-

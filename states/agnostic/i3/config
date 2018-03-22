@@ -4,28 +4,30 @@ set $mod Mod4
 # Editor
 set $editor atom
 
-set $base00 #2d2d2d
-set $base01 #393939
-set $base02 #515151
-set $base03 #747369
-set $base04 #a09f93
-set $base05 #d3d0c8
-set $base06 #e8e6df
-set $base07 #f2f0ec
-set $base08 #f2777a
-set $base09 #f99157
-set $base0A #ffcc66
-set $base0B #99cc99
-set $base0C #66cccc
-set $base0D #6699cc
-set $base0E #cc99cc
-set $base0F #d27b53
+# Base16 Material Darker
+set $base00 #212121
+set $base01 #303030
+set $base02 #353535
+set $base03 #4a4a4a
+set $base04 #b2ccd6
+set $base05 #eeffff
+set $base06 #eeffff
+set $base07 #ffffff
+set $base08 #f07178
+set $base09 #f78c6c
+set $base0A #ffcb6b
+set $base0B #c3e88d
+set $base0C #89ddff
+set $base0D #82aaff
+set $base0E #c792ea
+set $base0F #ff5370
 
-client.focused $base0D $base0D $base00 $base01
-client.focused_inactive $base02 $base02 $base03 $base01active-text-color #676E7D
-set $urgent-bg-color     #E53935
-client.unfocused $base01 $base01 $base03 $base01
-client.urgent $base02 $base08 $base07 $base08
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
 
 # Mouse
 focus_follows_mouse no
@@ -38,12 +40,12 @@ floating_modifier Mod4
 
 # Keybindings
 bindsym $mod+Return exec gnome-terminal
-bindsym Pause exec i3lock --color ab4642
+bindsym Pause exec i3lock --color $base03
 bindsym $mod+Pause exec i3-msg exit
-bindsym $mod+l exec i3lock --color ab4642
+bindsym $mod+l exec i3lock --color $base03
 bindsym $mod+q kill
 
-bindsym $mod+space exec rofi -show drun -modi drun
+bindsym $mod+space exec "rofi -show drun -modi drun,run"
 bindsym Control+Down exec --no-startup-id rofi -show window
 
 bindsym $mod+Left focus left
@@ -66,16 +68,17 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-workspace 1 output DP-1
-workspace 2 output DP-1
-workspace 3 output DP-1
-workspace 4 output DP-1
-workspace 5 output DP-1
-workspace 6 output DP-1
-workspace 7 output DP-1
-workspace 8 output DP-1
-workspace 9 output DP-1
-workspace 10 output eDP-1
+# I only work with one monitor, these aren't important
+# workspace 1 output DP-1
+# workspace 2 output DP-1
+# workspace 3 output DP-1
+# workspace 4 output DP-1
+# workspace 5 output DP-1
+# workspace 6 output DP-1
+# workspace 7 output DP-1
+# workspace 8 output DP-1
+# workspace 9 output DP-1
+# workspace 10 output DP-1
 
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -105,9 +108,6 @@ bindsym $mod+Shift+space floating toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -150,8 +150,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Volume
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%; notify-send Raising Volume 5%"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%; notify-send Lowering Volume 5%"
+bindsym XF86AudioRaiseVolume exec pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ +5% && V=`pamixer --get-volume` && notify-send "Raising Volume to ${V}%"
+bindsym XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ -5% && V=`pamixer --get-volume` && notify-send "Lowering Volume to ${V}%"
 
 # Autostart
 ##
@@ -160,7 +160,9 @@ exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id xfce4-panel --disable-wm-check
+exec --no-startup-id polybar top
+
+#exec --no-startup-id xfce4-panel --disable-wm-check
 
 # i3 gaps only
 ##
@@ -169,6 +171,5 @@ smart_borders on
 
 gaps inner 10
 gaps outer 10
-
 
 exec notify-send -a i3 "loaded" "Welcome to i3."

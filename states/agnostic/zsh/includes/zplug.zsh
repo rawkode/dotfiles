@@ -1,6 +1,6 @@
 # Favourites
 # bespin, brewer, bright, chalk, dracula, eighties, gnome-dark, gruvbox-dark, monokao, nord, seti, tomorrow-night
-zplug "chriskempson/base16-shell", use:"scripts/base16-default-dark.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-material-darker.sh"
 
 zplug "rawkode/zsh-docker-run"
 zplug "rawkode/zsh-gcloud-context-switcher", from:gitlab
