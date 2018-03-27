@@ -6,5 +6,4 @@
 {{ aur('polybar') }}
 {{ aur('volti') }}
 {{ aur('nitrogen') }}
-#{{ aur('wicd') }}
-#{{ aur('wicd-gtk') }}
+
