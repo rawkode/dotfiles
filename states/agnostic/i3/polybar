@@ -22,17 +22,14 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 5
-padding-right = 5
+padding-left = 2
+padding-right = 2
 
 module-margin-left = 5
 module-margin-right = 5
 
-font-0 = roboto:pixelsize=13
-font-1 = fontawesome:pixelsize=13
-font-2 = dejavusans:pixelsize=13
-font-3 = unifont:pixelsize=13
-font-4 = Noto Color Emoji;0
+font-0 = roboto:pixelsize=11
+font-1 = Noto Color Emoji:pixelsize=11
 
 modules-left = i3
 modules-center = date
@@ -104,14 +101,14 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = 🔊
+label-volume = Volume:
+; 🔈
 label-volume-foreground = ${root.foreground}
 
-# format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
-bar-volume-width = 35
+bar-volume-width = 20
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -132,7 +129,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 95
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
@@ -140,7 +137,7 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+;format-full-prefix = "Full "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -149,9 +146,9 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 0
+animation-charging-1 = 1
+animation-charging-2 = 2
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -162,7 +159,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = User
+label-open = rawkode
 label-open-foreground = ${colors.secondary}
 label-close = Cancel
 label-close-foreground = ${colors.secondary}
