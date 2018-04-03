@@ -11,9 +11,7 @@ install-base-packages:
   pkg.installed:
     - pkgs:
       - asciinema
-      - gnome-tweak-tool
       - jq
       - tree
       - weechat
       - xclip
-      - gnome-tweak-tool
