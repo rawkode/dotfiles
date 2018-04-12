@@ -27,16 +27,21 @@
   default = current
 
 [alias]
-  pull = pull --ff-only
+  pl = pull --ff-only
   cm = commit -v
   co = checkout
-  pl = pull --ff-only
   ps = push
   st = status
   cane = commit --amend --no-edit
   prune = fetch --prune
-  log = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  logp = log --pretty=shortlog
   clean-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+[log]
+    date = relative
+
+[pretty]
+    shortlog = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,cyan)%>(12,trunc)%ad%C(auto,green) %aN %C(auto,reset)%s%C(auto,red)% gD% D
 
 [branch]
   autosetuprebase = always
