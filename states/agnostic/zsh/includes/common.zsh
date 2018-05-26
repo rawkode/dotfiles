@@ -37,6 +37,15 @@ function bitbucket() {
   cd ~/Development/src/bitbucket.org/$1
 }
 
+# Kubernetes
+alias k='kubectl'
+alias ka='kubectl apply'
+alias kp='kubectl get pods'
+alias kd='kubectl get deploy'
+alias kl='kubectl logs'
+alias kcx='kubectl config get-contexts'
+alias ksx='kubectl config use-context'
+
 # Lockscreen
 alias lock="xsecurelock"
 
