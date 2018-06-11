@@ -1,19 +1,3 @@
-{% if grains['os'] == 'Antergos' %}
-# Thanks for the Cnchi though!
-remove-antergos-components:
-  cmd.run:
-    - name: pacman -Rd --noconfirm $(paclist antergos | awk '{print $1}')
-    - onlyif:
-      - ls /etc/pacman.d/antergos-mirrorlist
-
-remove-antergos-repository:
-  file.line:
-    - name: /etc/pacman.conf
-    - match: antergos
-    - mode: delete
-    - content:
-{% endif %}
-
 /etc/pacman.conf:
   file.uncomment:
     - regex: Color
@@ -47,6 +31,3 @@ yay-makepkg:
 remove-epiphany:
   pkg.removed:
     - name: epiphany
-
-include:
-  - .aur

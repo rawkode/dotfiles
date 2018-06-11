@@ -1,3 +1,2 @@
 include:
-    - slack
-    - wavebox
+  - {{ grains.os_family | lower }}: communication

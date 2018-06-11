@@ -39,10 +39,11 @@ font pango:Fira Mono Regular 11
 floating_modifier Mod4
 
 # Keybindings
-bindsym $mod+Return exec gnome-terminal
-bindsym Pause exec i3lock --color $base03
-bindsym $mod+Pause exec i3-msg exit
-bindsym $mod+l exec i3lock --color $base03
+bindsym $mod+Return exec xfce4-terminal
+#bindsym Pause exec i3lock --color $base03
+#bindsym $mod+Pause exec i3-msg exit
+bindsym $mod-Shift+e exec xfce4-session-logout
+#bindsym $mod+l exec i3lock --color $base03
 bindsym $mod+q kill
 
 bindsym $mod+space exec "rofi -show drun -modi drun,run"
@@ -68,6 +69,18 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+# I only work with one monitor, these aren't important
+# workspace 1 output DP-1
+# workspace 2 output DP-1
+# workspace 3 output DP-1
+# workspace 4 output DP-1
+# workspace 5 output DP-1
+# workspace 6 output DP-1
+# workspace 7 output DP-1
+# workspace 8 output DP-1
+# workspace 9 output DP-1
+# workspace 10 output DP-1
+
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -77,7 +90,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 0
+bindsym $mod+0 workspace 10
 
 bindsym $mod+Tab workspace back_and_forth
 
@@ -90,7 +103,7 @@ bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 0
+bindsym $mod+Shift+0 move container to workspace number 10
 
 bindsym $mod+Shift+space floating toggle
 
@@ -143,7 +156,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ false && pa
 
 # Autostart
 ##
-#exec --no-startup-id xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --primary --refresh 120 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output DP-2 --off
+exec --no-startup-id xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --primary --refresh 120 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output DP-2 --off
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
@@ -161,3 +174,4 @@ gaps inner 10
 gaps outer 10
 
 exec notify-send -a i3 "loaded" "Welcome to i3."
+

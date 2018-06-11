@@ -1,7 +1,7 @@
 base-packages:
   pkg.installed:
     - pkgs:
-      - - git
+      - git
       
 include:
   - ./users

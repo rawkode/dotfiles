@@ -1,3 +1,3 @@
 go:
-    pkg.installed:
-        - name: go
+  pkg.installed:
+    - name: golang

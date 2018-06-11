@@ -1,14 +1,16 @@
 include:
-  - aws
+  - {{ grains.os_family | lower }}: developer
+
+include:
   #- draft
-  - go
-  - google-cloud-sdk
-  - helm
-  - insomnia
+  #- go
+  #- google-cloud-sdk
+  #- helm
+  #- insomnia
   #- ksonnet
-  - kubectl
+  #- kubectl
   #- terraform
-  - tilix
-  - vagrant
-  - vscode
-  - zeal
+  #- tilix
+  #- vagrant
+  #- vscode
+  #- zeal

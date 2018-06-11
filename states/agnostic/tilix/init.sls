@@ -1,3 +1,2 @@
-{% from './snap/init.sls' import snap with context %}
-
-{{ snap('tilix', '') }}
+tilix:
+    pkg.installed
