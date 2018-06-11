@@ -3,3 +3,4 @@ vagrant-packages:
         - pkgs:
             - virtualbox
             - vagrant
+            - vagrant-libvirt

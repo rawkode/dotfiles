@@ -1,2 +1,1 @@
-include:
-  - {{ grains.os_family | lower }}: helm
+{{ snap('helm', '') }}

@@ -1,15 +1,13 @@
 include:
   - aws
-  - ctop
-  - draft
-  - git
+  #- draft
   - go
   - google-cloud-sdk
   - helm
   - insomnia
-  - ksonnet
+  #- ksonnet
   - kubectl
-  - terraform
+  #- terraform
   - tilix
   - vagrant
   - vscode

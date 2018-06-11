@@ -1,2 +1,3 @@
-include:
-  - {{ grains.os_family | lower }}: tilix
+{% from './snap/init.sls' import snap with context %}
+
+{{ snap('tilix', '') }}

@@ -1,2 +1,3 @@
-include:
-  - {{ grains.os_family | lower }}: slack
+{% from './snap/init.sls' import snap with context %}
+
+{{ snap('slack', '') }}

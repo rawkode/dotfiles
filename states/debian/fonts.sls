@@ -1,6 +1,8 @@
 fonts-requirements-install:
   pkg.installed:
     - pkgs:
-      - xfonts-utils
-      - fonts-roboto
+      - fonts-firacode
       - fonts-hack-ttf
+      - fonts-noto
+      - fonts-roboto
+      - xfonts-utils

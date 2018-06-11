@@ -1,2 +1,3 @@
-include:
-  - {{ grains.os_family | lower }}: insomnia
+{% from './snap/init.sls' import snap with context %}
+
+{{ snap('insomnia', '') }}

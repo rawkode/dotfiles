@@ -1,5 +1,6 @@
-include:
-  - {{ grains.os_family | lower }}: vscode
+{% from './snap/init.sls' import snap with context %}
+
+{{ snap('vscode', '--classic') }}
 
 vscode-sync-settings-ext:
   cmd.run:

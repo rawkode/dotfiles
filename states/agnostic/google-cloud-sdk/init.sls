@@ -1,2 +1,3 @@
-include:
-  - {{ grains.os_family | lower }}: google-cloud-sdk
+{% from './snap/init.sls' import snap with context %}
+
+{{ snap('google-cloud-sdk', '') }}

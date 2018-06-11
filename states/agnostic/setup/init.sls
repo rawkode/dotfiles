@@ -1,3 +1,8 @@
+base-packages:
+  pkg.installed:
+    - pkgs:
+      - - git
+      
 include:
   - ./users
   - {{ grains.os_family | lower }}: setup

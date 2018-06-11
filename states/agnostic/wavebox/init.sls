@@ -1,2 +1,3 @@
-include:
-  - {{ grains.os_family | lower }}: wavebox
+{% from './snap/init.sls' import snap with context %}
+
+{{ snap('wavebox', '') }}

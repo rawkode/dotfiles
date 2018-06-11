@@ -2,16 +2,16 @@ packages-base:
   pkg.installed:
     - pkgs:
       - build-essential
-      - uuid-runtime
+      - chrome-gnome-shell
       - curl
+      - uuid-runtime
       - yank
 
 packages-useless:
   pkg.purged:
     - pkgs:
-      - firefox
-      - rhythmbox
       - aisleriot
+      - gnome-mahjongg
       - gnome-mines
       - gnome-sudoku
-      - gnome-mahjongg
+      - rhythmbox
