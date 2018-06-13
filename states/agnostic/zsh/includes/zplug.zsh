@@ -14,6 +14,9 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug "plugins/command-not-found",      from:oh-my-zsh
 zplug "plugins/colored-man-pages",      from:oh-my-zsh
+zplug "plugins/colorize",               from:oh-my-zsh
+zplug "plugins/docker",                 from:oh-my-zsh, if:"(( $+commands[docker] ))"
+zplug "plugins/docker-compose",         from:oh-my-zsh, if:"(( $+commands[docker-compose] ))"
 zplug "plugins/dotenv",                 from:oh-my-zsh
 zplug "plugins/kubectl",                from:oh-my-zsh
 zplug "plugins/per-directory-history",  from:oh-my-zsh
@@ -24,12 +27,17 @@ zplug 'desyncr/auto-ls'
 zplug "hlissner/zsh-autopair"
 zplug "Valiev/almostontop"
 
+# Enhanced cd
+zplug "peco/peco",        as:command, from:gh-r
+zplug "b4b4r07/enhancd", use:init.sh
+
 #zplug mafredri/zsh-async, from:github
 #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 #zplug "themes/agnoster", from:oh-my-zsh, as:theme
 #zplug "eendroroy/alien"
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 #zplug "geometry-zsh/geometry"
+#zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

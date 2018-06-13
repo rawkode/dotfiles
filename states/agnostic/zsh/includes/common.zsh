@@ -37,6 +37,12 @@ function bitbucket() {
   cd ~/Development/src/bitbucket.org/$1
 }
 
+alias jo=" jaumo"
+
+function jaumo() {
+  cd ~/Development/src/gitlab.jaumo.com/$1
+}
+
 # Kubernetes
 alias k='kubectl'
 alias ka='kubectl apply'

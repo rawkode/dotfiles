@@ -12,6 +12,8 @@ source ~/.zsh/history.zsh
 source ~/.zplug/init.zsh
 source ~/.zsh/zplug.zsh
 
+source ~/.zsh/powerlevel9k.zsh
+
 # fzf Fuzzy Finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

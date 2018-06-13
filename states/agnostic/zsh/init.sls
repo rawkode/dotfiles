@@ -1,8 +1,3 @@
-vte-alias:
-  file.symlink:
-    - name: /etc/profile.d/vte.sh
-    - target: /etc/profile.d/vte-2.91.sh
-
 zsh-install:
   pkg.installed:
     - pkgs:
