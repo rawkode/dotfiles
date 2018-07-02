@@ -29,7 +29,6 @@ zplug "Valiev/almostontop"
 
 # Enhanced cd
 zplug "peco/peco",        as:command, from:gh-r
-zplug "b4b4r07/enhancd", use:init.sh
 
 #zplug mafredri/zsh-async, from:github
 #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
