@@ -12,6 +12,7 @@
 
 [commit]
   gpgsign = true
+  template = ~/.git/templates/commit
 
 [color]
   diff = auto
