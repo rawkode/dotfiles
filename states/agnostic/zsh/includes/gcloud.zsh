@@ -1,2 +1,0 @@
-export GCLOUD_CONTEXT_SWITCHER_GT8=code.devtech.gt8.online=gt8
-export GCLOUD_CONTEXT_SWITCHER_GLOFOX=bitbucket.org/glofox=glofox

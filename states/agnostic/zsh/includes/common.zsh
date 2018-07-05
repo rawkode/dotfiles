@@ -5,16 +5,6 @@ export LC_ALL=en_GB.UTF-8
 export LC_CTYPE=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
-# Development Aliases
-alias dc='docker-compose'
-alias dcr='docker-compose run --rm'
-
-alias tree='tree -L 3 -d -I "vendor|cache|log|logs"'
-
-# Arch
-alias pacman='pacaur --color=always'
-alias pacmanc='pacman -Rns $(pacman -Qtdq)'
-
 function github() {
   cd ~/Development/src/github.com/$1
 }
@@ -42,35 +32,6 @@ alias jo=" jaumo"
 function jaumo() {
   cd ~/Development/src/gitlab.jaumo.com/$1
 }
-
-# Kubernetes
-alias k='kubectl'
-alias ka='kubectl apply'
-alias kp='kubectl get pods'
-alias kd='kubectl get deploy'
-alias kl='kubectl logs'
-alias kcx='kubectl config get-contexts'
-alias ksx='kubectl config use-context'
-
-# Lockscreen
-alias lock="xsecurelock"
-
-# Development aliases
-alias dev=' cd ~/Development/src/'
-
-# Fuck typing xdg-open
-alias open='xdg-open'
-
-## Visual Studio Code Adoption
-alias vi='code'
-alias vim='code'
-alias nvim='code'
-
-# ls
-alias ll='ls -l'
-
-# gpg2
-alias gpg='gpg2'
 
 # Set GPG TTY
 export GPG_TTY=$(tty)
@@ -149,9 +110,9 @@ setopt AUTO_PARAM_SLASH    # If completed parameter is a directory, add a traili
 unsetopt MENU_COMPLETE     # Do not autoselect the first completion entry.
 unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor
 
+# You can cd into a directory by typing its name, no cd required
 setopt AUTOCD
 setopt autopushd pushdignoredups PUSHD_SILENT PUSHD_TO_HOME
-setopt AUTO_NAME_DIRS
 
 # No completion for backup files
 zstyle ':completion:*:complete:-command-::*' ignored-patterns '*\~'
