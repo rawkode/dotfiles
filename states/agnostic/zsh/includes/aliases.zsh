@@ -39,8 +39,8 @@ alias nvim=' code'
 alias cd=' cd'
 
 # ls
-alias ls=' ls'
-alias ll=' ls -l'
+alias ls=' ls --color=auto'
+alias ll=' ls -l --color=auto'
 
 # gpg2
 alias gpg='gpg2'

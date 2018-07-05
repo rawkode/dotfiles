@@ -67,7 +67,6 @@ export REPORTTIME=5
 if [[ "$TERM" != "dumb" ]]; then
   if [[ -x `which dircolors 2> /dev/null` ]]; then
     eval `dircolors -b`
-    alias 'ls=ls --color=auto'
   fi
 fi
 
