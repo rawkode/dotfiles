@@ -1,4 +1,0 @@
-include:
-  - gpg
-  - vim
-  - zsh

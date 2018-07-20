@@ -1,2 +1,0 @@
-tilix:
-    pkg.installed

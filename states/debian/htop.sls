@@ -1,2 +1,0 @@
-htop:
-    pkg.installed

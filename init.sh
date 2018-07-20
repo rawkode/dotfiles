@@ -44,7 +44,7 @@ $USE_SUDO salt-call --local --config=./ --state-output=changes grains.setvals "{
 # Apply the high state
 if [[ ! $1 ]];
 then
-	$USE_SUDO salt-call --local --config=./ --state_verbose=False --state-output=mixed --log-level=quiet --retcode-passthrough state.highstate
+	$USE_SUDO salt-call --local --config=./ --state-output=mixed --retcode-passthrough state.highstate
 else
-	$USE_SUDO salt-call --local --config=./ --state_verbose=False --state-output=mixed --log-level=quiet --retcode-passthrough state.sls $1
+	$USE_SUDO salt-call --local --config=./ --state-output=mixed --retcode-passthrough state.sls $1
 fi
