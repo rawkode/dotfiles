@@ -1,4 +1,4 @@
-source /etc/profile.d/vte.sh
+#source /etc/profile.d/vte.sh
 
 export LANGUAGE=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8

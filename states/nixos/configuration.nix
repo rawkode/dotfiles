@@ -25,11 +25,10 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    wget vim firefox chromium kubectl keybase kbfs google-cloud-sdk terraform kubernetes-helm slack zsh git gnupg minikube
+    wget vim firefox chromium kubectl keybase kbfs google-cloud-sdk terraform kubernetes-helm slack zsh git gnupg minikube rofi fzf nerdfonts alacritty i3lock docker-compose
   ];
 
   programs.bash.enableCompletion = true;
-  programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
 
   services.keybase.enable = true;
   services.kbfs.enable = true;
@@ -55,7 +54,10 @@
       };
     };
 
-    windowManager.i3.enable = true;
+    windowManager.i3 = {
+      enable = true;
+      package = pkgs.i3-gaps;
+    };
 
     libinput = {
       enable = true;
@@ -66,11 +68,13 @@
     allowUnfree = true;
   };
 
+  users.groups.rawkode = {};
+
   users.users.rawkode =
   { isNormalUser = true;
     home = "/home/rawkode";
     description = "David McKay";
-    extraGroups = [ "audio" "disk" "docker" "networkmanager" "plugdev" "wheel" ];
+    extraGroups = [ "rawkode" "audio" "disk" "docker" "networkmanager" "plugdev" "wheel" ];
     shell = "/run/current-system/sw/bin/zsh";
   };
 

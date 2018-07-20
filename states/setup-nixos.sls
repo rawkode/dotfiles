@@ -3,3 +3,7 @@ nixos-includes:
     - name: /etc/nixos
     - source: salt://nixos
     - clean: False
+
+nixos-rebuild:
+  cmd.run:
+    - name: nixos-rebuild switch
