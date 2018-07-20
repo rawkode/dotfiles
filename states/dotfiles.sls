@@ -1,4 +1,5 @@
 include:
+    - alacritty
     - git
     - gpg
     - gtk

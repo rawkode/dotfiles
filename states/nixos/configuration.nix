@@ -25,7 +25,28 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    wget vim firefox chromium kubectl keybase kbfs google-cloud-sdk terraform kubernetes-helm slack zsh git gnupg minikube rofi fzf nerdfonts alacritty i3lock docker-compose
+    wget
+    vim
+    firefox
+    chromium
+    kubectl
+    keybase
+    kbfs
+    google-cloud-sdk
+    terraform
+    kubernetes-helm
+    slack
+    zsh
+    git
+    gnupg
+    minikube
+    rofi
+    fzf
+    nerdfonts
+    alacritty
+    i3lock
+    docker_compose
+    pinentry_ncurses
   ];
 
   programs.bash.enableCompletion = true;

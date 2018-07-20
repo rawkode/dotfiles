@@ -1,0 +1,9 @@
+# Font configuration (changes require restart)
+font:
+  normal:
+    family: FuraCode Nerd Font
+    style: Regular
+  bold:
+    family: FuraCode Nerd Font
+  italic:
+    family: FuraCode Nerd Font

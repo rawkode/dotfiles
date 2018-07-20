@@ -1,3 +1,4 @@
+{% if grains['os_family'] != "NixOS" %}
 gnupg-directory:
   file.directory:
     - name: {{ grains.homedir }}/.gnupg
@@ -29,3 +30,4 @@ gpg-disable-ssh-agent:
     - regex: ^use-ssh-agent
     - onlyif:
       - ls /etc/X11/Xsession.options
+{% endif %}
