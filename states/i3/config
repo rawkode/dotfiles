@@ -39,11 +39,11 @@ font pango:Fira Mono Regular 11
 floating_modifier Mod4
 
 # Keybindings
-bindsym $mod+Return exec tilix
-bindsym Pause exec i3lock --color $base03
+bindsym $mod+Return exec gnome-terminal
+bindsym Pause exec i3lock --color 333333
 bindsym $mod+Pause exec i3-msg exit
 bindsym $mod-Shift+e exec i3-msg exit
-bindsym $mod+l exec i3lock --color $base03
+bindsym $mod+l exec i3lock --color 333333
 bindsym $mod+q kill
 
 bindsym $mod+space exec "rofi -show drun -modi drun,run"
@@ -159,13 +159,14 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ false && pa
 
 # Autostart
 ##
-exec --no-startup-id xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --primary --refresh 120 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output DP-2 --off
 exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
-exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id nitrogen --restore
+exec --no-startup-id dunst
+exec --no-startup-id nm-applet
 exec --no-startup-id polybar top
 
+#exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+#exec_always --no-startup-id gnome-power-manager
 #exec --no-startup-id xfce4-panel --disable-wm-check
 
 # i3 gaps only

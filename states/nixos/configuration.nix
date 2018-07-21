@@ -15,8 +15,16 @@
 
   boot.cleanTmpDir = true;
 
-  networking.hostName = "P4X-D-NixOS";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "P4X-D-NixOS";
+
+    networkmanager.enable = true;
+
+    nameservers = [
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
+  };
 
   nix.gc = {
     automatic = true;
@@ -40,14 +48,18 @@
     gnupg
     google-cloud-sdk
     i3lock
+    # This is required for i3 support in polybar
+    jsoncpp
     kbfs
     keybase
     kubectl
     kubernetes-helm
     minikube
     nerdfonts
+    networkmanagerapplet
     pamix
     pinentry_ncurses
+    polybar
     rofi
     slack
     terraform
@@ -98,6 +110,12 @@
 
   nixpkgs.config = {
     allowUnfree = true;
+
+    packageOverrides = pkgs: rec {
+      polybar = pkgs.polybar.override {
+        i3Support = true;
+      };
+    };
   };
 
   users.groups.rawkode = {};
@@ -106,7 +124,7 @@
   { isNormalUser = true;
     home = "/home/rawkode";
     description = "David McKay";
-    extraGroups = [ "rawkode" "audio" "disk" "docker" "networkmanager" "plugdev" "wheel" ];
+    extraGroups = [ "rawkode" "audio" "disk" "docker" "plugdev" "wheel" ];
     shell = "/run/current-system/sw/bin/zsh";
   };
 
