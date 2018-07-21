@@ -36,33 +36,22 @@
   time.timeZone = "Europe/London";
 
   # List packages installed in system profile.
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     ag
     alacritty
-    chromium
     docker_compose
-    firefox
+    exercism
     fzf
     git
     gnome3.dconf
     gnome3.vte
     gnupg
     google-cloud-sdk
-    i3lock
     jq
-    # This is required for i3 support in polybar
-    jsoncpp
-    kbfs
-    keybase
-    kubectl
-    kubernetes-helm
-    minikube
     nerdfonts
     networkmanagerapplet
+    nix-prefetch-git
     pamix
-    pinentry_ncurses
-    polybar
-    rofi
     slack
     terraform
     tilix
@@ -70,7 +59,37 @@
     vlc
     wget
     zsh
-  ];
+  ] ++ [
+    # Web Browsers
+    chromium
+    firefox
+  ] ++ [
+    # Kubernetes
+    kubectl
+    kubernetes-helm
+    minikube
+  ] ++ [
+    # Go
+    dep
+    go
+  ] ++ [
+    # Crystal Language
+    crystal
+    shards
+  ] ++ [
+    # Keybase
+    kbfs
+    keybase
+  ] ++ [
+    # i3
+    i3
+    i3lock
+    # This is required for i3 support in polybar
+    jsoncpp
+    pinentry
+    polybar
+    rofi
+  ]);
 
   programs.bash.enableCompletion = true;
 
