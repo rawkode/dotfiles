@@ -9,10 +9,12 @@
     ];
 
   fileSystems."/".options = [ "noatime" "nodiratime" ];
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.cleanTmpDir = true;
+
   networking.hostName = "P4X-D-NixOS";
   networking.networkmanager.enable = true;
 
@@ -27,28 +29,33 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    wget
-    vim
-    firefox
-    chromium
-    kubectl
-    keybase
-    kbfs
-    google-cloud-sdk
-    terraform
-    kubernetes-helm
-    slack
-    zsh
-    git
-    gnupg
-    minikube
-    rofi
-    fzf
-    nerdfonts
     alacritty
-    i3lock
+    chromium
     docker_compose
+    firefox
+    fzf
+    git
+    gnome3.dconf
+    gnome3.vte
+    gnupg
+    google-cloud-sdk
+    i3lock
+    kbfs
+    keybase
+    kubectl
+    kubernetes-helm
+    minikube
+    nerdfonts
+    pamix
     pinentry_ncurses
+    rofi
+    slack
+    terraform
+    tilix
+    vim
+    vlc
+    wget
+    zsh
   ];
 
   programs.bash.enableCompletion = true;
@@ -59,6 +66,8 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+
+  programs.gnupg.agent.enable = false;
 
   services.xserver = {
     enable = true;
