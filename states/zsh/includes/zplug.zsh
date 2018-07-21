@@ -27,15 +27,17 @@ zplug 'desyncr/auto-ls'
 zplug "hlissner/zsh-autopair"
 zplug "Valiev/almostontop"
 
-zplug "peco/peco",        as:command, from:gh-r
+zplug "junegunn/fzf", use:"shell/*.zsh", as:plugin
 
-#zplug mafredri/zsh-async, from:github
-#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug "b4b4r07/emoji-cli", as:command, if:"(( $+commands[jq] ))"
+
+zplug mafredri/zsh-async, from:github
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 #zplug "themes/agnoster", from:oh-my-zsh, as:theme
 #zplug "eendroroy/alien"
 #zplug "geometry-zsh/geometry"
 #zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then

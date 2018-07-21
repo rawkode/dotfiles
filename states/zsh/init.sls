@@ -23,6 +23,7 @@ zsh-zplug-install:
     - name: https://github.com/zplug/zplug
     - target: {{ grains.homedir }}/.zplug
     - depth: 1
+    - rev: master
     - force_reset: True
     - user: {{ grains.user }}
     - onfail:

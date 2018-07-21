@@ -37,6 +37,7 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
+    ag
     alacritty
     chromium
     docker_compose
@@ -48,6 +49,7 @@
     gnupg
     google-cloud-sdk
     i3lock
+    jq
     # This is required for i3 support in polybar
     jsoncpp
     kbfs
@@ -124,7 +126,7 @@
   { isNormalUser = true;
     home = "/home/rawkode";
     description = "David McKay";
-    extraGroups = [ "rawkode" "audio" "disk" "docker" "plugdev" "wheel" ];
+    extraGroups = [ "rawkode" "audio" "disk" "docker" "networkmanager" "plugdev" "wheel" ];
     shell = "/run/current-system/sw/bin/zsh";
   };
 
