@@ -6,3 +6,4 @@ include:
     - i3
     - vim
     - vscode
+    - zsh
