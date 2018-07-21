@@ -12,6 +12,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.cleanTmpDir = true;
   networking.hostName = "P4X-D-NixOS";
   networking.networkmanager.enable = true;
 
