@@ -8,6 +8,7 @@
       ./yubikey.nix
     ];
 
+  fileSystems."/".options = [ "noatime" "nodiratime" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
