@@ -94,6 +94,10 @@
     pinentry
     polybar
     rofi
+  ] ++ [
+    # Pony
+    ponyc
+    pony-stable
   ]);
 
   programs.bash.enableCompletion = true;
