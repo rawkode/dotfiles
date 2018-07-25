@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./glibc.nix
       ./hardware-configuration.nix
       ./fonts.nix
       ./yubikey.nix
@@ -14,6 +15,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.cleanTmpDir = true;
+
+  i18n = {
+    defaultLocale = "en_GB.UTF-8";
+  };
 
   networking = {
     hostName = "P4X-D-NixOS";
