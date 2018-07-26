@@ -69,6 +69,10 @@
     chromium
     firefox
   ] ++ [
+    # Standard Development Tooling
+    gnumake
+    stdenv
+  ] ++ [
     # Kubernetes
     kubectl
     kubernetes-helm
