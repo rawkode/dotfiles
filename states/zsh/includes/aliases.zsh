@@ -25,7 +25,7 @@ alias ksx='kubectl config use-context'
 alias lock=" xsecurelock"
 
 # Development aliases
-alias dev=' cd ~/Development/src/'
+alias dev=' cd /code/src/'
 
 # Fuck typing xdg-open
 alias open=' xdg-open'

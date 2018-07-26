@@ -4,31 +4,31 @@ export LC_CTYPE=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
 function github() {
-  cd ~/Development/src/github.com/$1
+  cd /code/src/github.com/$1
 }
 
 alias gh=" github"
 
 function gitlab() {
-  cd ~/Development/src/gitlab.com/$1
+  cd /code/src/gitlab.com/$1
 }
 
 alias gl=" gitlab"
 
 function gt8() {
-  cd ~/Development/src/code.devtech.gt8.online/$1
+  cd /code/src/code.devtech.gt8.online/$1
 }
 
 alias bb=" bitbucket"
 
 function bitbucket() {
-  cd ~/Development/src/bitbucket.org/$1
+  cd /code/src/bitbucket.org/$1
 }
 
 alias jo=" jaumo"
 
 function jaumo() {
-  cd ~/Development/src/gitlab.jaumo.com/$1
+  cd /code/src/gitlab.jaumo.com/$1
 }
 
 # Set GPG TTY
