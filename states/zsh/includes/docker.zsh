@@ -30,6 +30,10 @@ function php() {
   run_with_docker "php" "7-cli" "php" $@
 }
 
+function composer() {
+  run_with_docker "composer" "1-alpine" "composer" $@
+}
+
 ## JS/Node
 function node() {
   run_with_docker "node" "latest" "node" $@
