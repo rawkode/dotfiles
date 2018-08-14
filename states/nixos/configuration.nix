@@ -53,6 +53,7 @@
     gnupg
     google-cloud-sdk
     jq
+    kustomize
     nerdfonts
     networkmanagerapplet
     nix-prefetch-git
