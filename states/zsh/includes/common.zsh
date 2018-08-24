@@ -3,8 +3,6 @@ export LC_ALL=en_GB.UTF-8
 export LC_CTYPE=en_GB.UTF-8
 export LC_ALL=en_GB.UTF-8
 
-export BROWSER=/usr/bin/google-chrome-stable
-
 function github() {
   cd /code/src/github.com/$1
 }

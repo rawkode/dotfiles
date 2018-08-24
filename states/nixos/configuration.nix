@@ -52,12 +52,14 @@
     gnome3.vte
     gnupg
     google-cloud-sdk
+    insomnia
     jq
     kustomize
     nerdfonts
     networkmanagerapplet
     nix-prefetch-git
     pamix
+    riot-web
     slack
     terraform
     tilix
