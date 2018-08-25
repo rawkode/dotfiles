@@ -1,0 +1,4 @@
+# Hosted on DigitalOcean. Keys likely to differ
+Host *.rawkode.com
+   StrictHostKeyChecking no
+   UserKnownHostsFile=/dev/null

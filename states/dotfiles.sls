@@ -4,6 +4,7 @@ include:
     - gpg
     - gtk
     - i3
+    - ssh
     - vim
     - vscode
     - zsh
