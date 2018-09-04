@@ -1,6 +1,6 @@
 # Favourites
 # bespin, brewer, bright, chalk, dracula, eighties, gnome-dark, gruvbox-dark, monokao, nord, seti, tomorrow-night
-zplug "chriskempson/base16-shell", use:"scripts/base16-tomorrow-night.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-oceanicnext.sh"
 
 ## Can't decide if these are useful or annoying
 zplug "rawkode/zsh-docker-run"
