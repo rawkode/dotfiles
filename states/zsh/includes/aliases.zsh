@@ -26,6 +26,7 @@ alias lock=" xsecurelock"
 
 # Development aliases
 alias dev=' cd /code/src/'
+alias sand=' cd /code/sandbox/'
 
 # Fuck typing xdg-open
 alias open=' xdg-open'
