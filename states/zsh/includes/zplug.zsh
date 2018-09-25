@@ -1,6 +1,6 @@
 # Favourites
 # bespin, brewer, bright, chalk, dracula, eighties, gnome-dark, gruvbox-dark, monokao, nord, seti, tomorrow-night
-zplug "chriskempson/base16-shell", use:"scripts/base16-oceanicnext.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-chalk.sh"
 
 ## Can't decide if these are useful or annoying
 zplug "rawkode/zsh-docker-run"
@@ -14,7 +14,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug "plugins/command-not-found",      from:oh-my-zsh
 zplug "plugins/colored-man-pages",      from:oh-my-zsh
-#zplug "plugins/colorize",               from:oh-my-zsh
+zplug "plugins/colorize",               from:oh-my-zsh
 zplug "plugins/docker",                 from:oh-my-zsh, if:"(( $+commands[docker] ))"
 zplug "plugins/docker-compose",         from:oh-my-zsh, if:"(( $+commands[docker-compose] ))"
 zplug "plugins/dotenv",                 from:oh-my-zsh
@@ -23,13 +23,24 @@ zplug "plugins/per-directory-history",  from:oh-my-zsh
 zplug "plugins/sudo",                   from:oh-my-zsh
 zplug "plugins/z",                      from:oh-my-zsh
 
+zplug 'b4b4r07/enhancd', use:'init.sh'
+zplug 'b4b4r07/cli-finder', as:command, use:'bin/finder'
+zplug 'b4b4r07/easy-oneliner', on:'junegunn/fzf-bin'
+zplug 'b4b4r07/emoji-cli', on:'stedolan/jq'
+zplug "b4b4r07/git-conflict", as:command, use:'git-conflict'
+
+zplug 'stedolan/jq', from:gh-r, as:command
+zplug "mrowa44/emojify", as:command
+
+zplug 'direnv/direnv', as:command, from:gh-r, rename-to:direnv
+if (( $+commands[direnv] )); then eval "$(direnv hook zsh)"; fi
+
+zplug "djui/alias-tips"
 zplug 'desyncr/auto-ls'
-zplug "hlissner/zsh-autopair"
+zplug "hlissner/zsh-autopair", defer:2
 zplug "Valiev/almostontop"
 
 zplug "junegunn/fzf", use:"shell/*.zsh", as:plugin
-
-zplug "b4b4r07/emoji-cli", as:command, if:"(( $+commands[jq] ))"
 
 #zplug mafredri/zsh-async, from:github
 #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
