@@ -23,7 +23,7 @@ zplug "plugins/per-directory-history",  from:oh-my-zsh
 zplug "plugins/sudo",                   from:oh-my-zsh
 zplug "plugins/z",                      from:oh-my-zsh
 
-zplug 'b4b4r07/enhancd', use:'init.sh'
+#zplug 'b4b4r07/enhancd', use:'init.sh'
 zplug 'b4b4r07/cli-finder', as:command, use:'bin/finder'
 zplug 'b4b4r07/easy-oneliner', on:'junegunn/fzf-bin'
 zplug 'b4b4r07/emoji-cli', on:'stedolan/jq'
