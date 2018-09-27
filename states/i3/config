@@ -42,6 +42,7 @@ floating_modifier Mod4
 bindsym $mod+Return exec alacritty
 bindsym Pause exec i3lock --color 333333
 bindsym $mod+Pause exec i3-msg exit
+bindsym Print exec flameshot gui
 bindsym $mod-Shift+e exec i3-msg exit
 bindsym $mod+l exec i3lock --color 333333
 bindsym $mod+q kill
