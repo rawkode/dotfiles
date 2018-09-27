@@ -7,3 +7,5 @@ font:
     family: FuraCode Nerd Font
   italic:
     family: FuraCode Nerd Font
+
+background_opacity: 0.5

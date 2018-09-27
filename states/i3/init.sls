@@ -11,6 +11,14 @@ i3-configuration:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
+sway-configuration:
+  file.managed:
+    - name: {{ grains.homedir }}/.config/sway/config
+    - makedirs: True
+    - source: salt://i3/config
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
+
 i3-compton:
   file.managed:
     - name: {{ grains.homedir }}/.config/compton.conf
