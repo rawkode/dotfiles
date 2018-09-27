@@ -162,9 +162,9 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ false && pa
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id dunst
-exec --no-startup-id nm-applet
-exec --no-startup-id polybar top
 
+#exec --no-startup-id nm-applet
+#exec --no-startup-id polybar top
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 #exec_always --no-startup-id gnome-power-manager
 #exec --no-startup-id xfce4-panel --disable-wm-check
