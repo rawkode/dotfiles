@@ -54,9 +54,9 @@
     google-cloud-sdk
     insomnia
     jq
-    kustomize
     nerdfonts
     networkmanagerapplet
+    nitrogen
     nix-prefetch-git
     pamix
     riot-web
