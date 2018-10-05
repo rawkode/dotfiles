@@ -35,7 +35,6 @@ zplug "mrowa44/emojify", as:command
 zplug 'direnv/direnv', as:command, from:gh-r, rename-to:direnv
 if (( $+commands[direnv] )); then eval "$(direnv hook zsh)"; fi
 
-zplug "djui/alias-tips"
 zplug 'desyncr/auto-ls'
 zplug "hlissner/zsh-autopair", defer:2
 zplug "Valiev/almostontop"
