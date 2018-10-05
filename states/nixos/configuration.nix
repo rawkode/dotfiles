@@ -44,6 +44,7 @@
   environment.systemPackages = (with pkgs; [
     ag
     alacritty
+    arc-theme
     docker_compose
     exercism
     fzf
@@ -54,6 +55,7 @@
     google-cloud-sdk
     insomnia
     jq
+    lxappearance
     nerdfonts
     networkmanagerapplet
     nitrogen
