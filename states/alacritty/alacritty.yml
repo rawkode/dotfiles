@@ -35,7 +35,7 @@ window:
   # Values for `decorations`:
   #     - full: Borders and title bar
   #     - none: Neither borders nor title bar
-  decorations: full
+  decorations: none
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.

@@ -45,6 +45,7 @@
     ag
     alacritty
     arc-theme
+    compton
     docker_compose
     exercism
     fzf
