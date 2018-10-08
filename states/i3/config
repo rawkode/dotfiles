@@ -50,8 +50,8 @@ bindsym $mod-Shift+e exec i3-msg exit
 bindsym $mod+l exec i3lock --color 333333
 bindsym $mod+q kill
 
-bindsym $mod+space exec "rofi -show drun -modi drun,run"
-bindsym Control+Down exec --no-startup-id rofi -show window
+bindsym $mod+space exec "rofi -show drun"
+bindsym Control+Down exec --no-startup-id "rofi -show window"
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
