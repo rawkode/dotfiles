@@ -34,7 +34,7 @@ else
 		# Linux (Hopefully ...): SaltStack Bootstrap one-liner
 		# -d Don't enable salt-minion autostart
 		# -P Allow pip based installations
-		wget -qO- https://bootstrap.saltstack.com | $USE_SUDO sh -s -- -P -d git v2018.3
+		wget -qO- https://bootstrap.saltstack.com | $USE_SUDO sh -s -- -P -d git v2018.11
 	fi
 fi
 
