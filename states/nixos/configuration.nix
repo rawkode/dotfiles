@@ -31,6 +31,12 @@
     ];
   };
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.extraConfig = "
+    [General]
+    Enable=Source,Sink,Media,Socket
+  ";
+
   nix.gc = {
     automatic = true;
     dates = "daily";
@@ -45,6 +51,7 @@
     ag
     alacritty
     arc-theme
+    blueman
     compton
     docker_compose
     exercism
