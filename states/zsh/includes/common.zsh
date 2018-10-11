@@ -43,7 +43,7 @@ then
   export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 fi
 
-export EDITOR="code --wait"
+export EDITOR="code"
 export PAGER=less
 export MANPAGER=less
 export MANWIDTH=${MANWIDTH:-80}
