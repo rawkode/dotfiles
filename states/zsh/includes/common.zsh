@@ -49,6 +49,9 @@ export MANPAGER=less
 export MANWIDTH=${MANWIDTH:-80}
 export COLORTERM="yes"
 
+export NNN_DE_FILE_MANAGER="code"
+export NNN_BMS='c:/code/src;s:/code/sandbox;j:/code/src/gitlab.jaumo.com/;g:/code/src/code.devtech.gt8.online;gl:/code/src/gitlab.com;gh:/code/src/github.com'
+
 # Additional characters to respect as word delimeter
 backward-kill-not-greedy () {
     local WORDCHARS=${WORDCHARS:s,/,,}
