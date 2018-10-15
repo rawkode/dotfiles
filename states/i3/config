@@ -163,11 +163,20 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ false && pa
 
 # Autostart
 ##
+exec --no-startup-id dunst
+exec --no-startup-id nm-applet
+
+{% if i3 %}
+
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id dunst
 exec --no-startup-id polybar top
-exec --no-startup-id nm-applet
+
+{% else %}
+
+exec --no-startup-id waybar
+
+{% endif %}
 
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 #exec_always --no-startup-id gnome-power-manager
@@ -182,4 +191,3 @@ gaps inner 10
 gaps outer 10
 
 exec notify-send -a i3 "loaded" "Welcome to i3."
-

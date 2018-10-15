@@ -1,21 +1,22 @@
-i3-configuration-directory:
-  file.directory:
-    - name: {{ grains.homedir }}/.config/i3
-    - user: {{ grains.user }}
-    - group: {{ grains.user }}
-
 i3-configuration:
   file.managed:
     - name: {{ grains.homedir }}/.config/i3/config
     - source: salt://i3/config
+    - makedirs: True
+    - template: jinja
+    - context:
+      i3: True
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
 sway-configuration:
   file.managed:
     - name: {{ grains.homedir }}/.config/sway/config
-    - makedirs: True
     - source: salt://i3/config
+    - makedirs: True
+    - template: jinja
+    - context:
+      i3: False
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
