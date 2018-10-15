@@ -43,11 +43,7 @@ floating_modifier Mod4
 # Copy and paste support is awful with Alacritty
 bindsym $mod+Return exec xfce4-terminal
 
-bindsym Pause exec i3lock --color 333333
-bindsym $mod+Pause exec i3-msg exit
 bindsym Print exec flameshot gui
-bindsym $mod+Shift+e exec i3-msg exit
-bindsym $mod+l exec i3lock --color 333333
 bindsym $mod+q kill
 
 bindsym $mod+space exec "rofi -show drun"
@@ -168,12 +164,22 @@ exec --no-startup-id nm-applet
 
 {% if i3 %}
 
+bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Pause exec i3-msg exit
+bindsym Pause exec i3lock --color 333333
+bindsym $mod+l exec i3lock --color 333333
+
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id polybar top
 
 {% else %}
 output * bg "~/Pictures/Wallpapers/Out Of Focus.jpg" stretch
+
+bindsym $mod+Shift+e exec swaymsg exit
+bindsym $mod+Pause exec swaymsg exit
+bindsym Pause exec swaylock --color 333333
+bindsym $mod+l exec swaylock --color 333333
 
 exec --no-startup-id waybar
 
