@@ -27,6 +27,14 @@ i3-compton:
     - user: {{ grains.user }}
     - group: {{ grains.user }}
 
+sway-waybar:
+  file.managed:
+    - name: {{ grains.homedir }}/.config/waybar/config
+    - source: salt://i3/waybar.json
+    - makedirs: True
+    - user: {{ grains.user }}
+    - group: {{ grains.user }}
+
 i3-polybar:
   file.managed:
     - name: {{ grains.homedir }}/.config/polybar/config

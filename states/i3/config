@@ -46,7 +46,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym Pause exec i3lock --color 333333
 bindsym $mod+Pause exec i3-msg exit
 bindsym Print exec flameshot gui
-bindsym $mod-Shift+e exec i3-msg exit
+bindsym $mod+Shift+e exec i3-msg exit
 bindsym $mod+l exec i3lock --color 333333
 bindsym $mod+q kill
 
@@ -173,6 +173,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id polybar top
 
 {% else %}
+output * bg "~/Pictures/Wallpapers/Out Of Focus.jpg" stretch
 
 exec --no-startup-id waybar
 
