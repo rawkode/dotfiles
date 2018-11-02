@@ -5,7 +5,6 @@ source /etc/profile.d/vte.sh
 
 source ~/.zsh/aliases.zsh
 source ~/.zsh/common.zsh
-source ~/.zsh/docker.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/keybindings.zsh
 source ~/.zsh/kubesec.zsh
