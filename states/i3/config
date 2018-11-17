@@ -25,7 +25,7 @@ set_from_resource	$color15	color15
 # My colors
 client.background	$background
 
-client.focused         	$color15	$color6	        $color8         $color4		$color6
+client.focused         	$color12	$color4	        $color8         $color4		$color6
 client.unfocused       	$color0	        $background	$foreground     $color2		$color0
 client.focused_inactive	$color0	        $background	$foreground     $color2		$color0
 client.urgent		$color0	        $background	$foreground     $color1		$color0
