@@ -25,7 +25,7 @@ set_from_resource	$color15	color15
 # My colors
 client.background	$background
 
-client.focused         	$color12	$color4	        $color8         $color4		$color6
+client.focused         	$color12	$color4	        $color8         $color4		$color12
 client.unfocused       	$color0	        $background	$foreground     $color2		$color0
 client.focused_inactive	$color0	        $background	$foreground     $color2		$color0
 client.urgent		$color0	        $background	$foreground     $color1		$color0
@@ -33,9 +33,6 @@ client.placeholder	$color0	        $background	$foreground     $color2		$color0
 
 # Mouse
 focus_follows_mouse no
-
-# No window titles
-#new_window 1pixel
 
 font pango:Fira Mono Regular 11
 floating_modifier Mod4
@@ -191,7 +188,8 @@ exec --no-startup-id waybar
 
 # i3 gaps only
 ##
-smart_gaps on
+# Smart Gaps only shows gaps if there's multiple windows in a workspace.
+#smart_gaps on
 smart_borders on
 
 gaps inner 10
