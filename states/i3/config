@@ -1,33 +1,35 @@
 # Modifier key: Mod1 - Alt, Mod4 - Super/Windows/Cmd
 set $mod Mod4
 
-# Editor
-set $editor atom
+# Colors set from ~/.Xresources
+set_from_resource	$background	background
+set_from_resource	$foreground	foreground
+set_from_resource	$color0		color0
+set_from_resource 	$color1 	color1
+set_from_resource 	$color2 	color2
+set_from_resource 	$color3 	color3
+set_from_resource 	$color4 	color4
+set_from_resource 	$color5 	color5
+set_from_resource 	$color6		color6
+set_from_resource	$color7		color7
+set_from_resource	$color8		color8
+set_from_resource	$color9		color9
+set_from_resource	$color10	color10
+set_from_resource	$color11	color11
+set_from_resource	$color12	color12
+set_from_resource	$color13	color13
+set_from_resource	$color14	color14
+set_from_resource	$color15	color15
 
-# Base16 Material Darker
-set $base00 #212121
-set $base01 #303030
-set $base02 #353535
-set $base03 #4a4a4a
-set $base04 #b2ccd6
-set $base05 #eeffff
-set $base06 #eeffff
-set $base07 #ffffff
-set $base08 #f07178
-set $base09 #f78c6c
-set $base0A #ffcb6b
-set $base0B #c3e88d
-set $base0C #89ddff
-set $base0D #82aaff
-set $base0E #c792ea
-set $base0F #ff5370
+# class                 border  	backgr. 	text    	indic.  	child_border
+# My colors
+client.background	$background
 
-client.focused          $base05 $base0D $base00 $base0D $base0D
-client.focused_inactive $base01 $base01 $base05 $base03 $base01
-client.unfocused        $base01 $base00 $base05 $base01 $base01
-client.urgent           $base08 $base08 $base00 $base08 $base08
-client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background       $base07
+client.focused         	$color15	$color6	        $color8         $color4		$color6
+client.unfocused       	$color0	        $background	$foreground     $color2		$color0
+client.focused_inactive	$color0	        $background	$foreground     $color2		$color0
+client.urgent		$color0	        $background	$foreground     $color1		$color0
+client.placeholder	$color0	        $background	$foreground     $color2		$color0
 
 # Mouse
 focus_follows_mouse no
