@@ -40,13 +40,15 @@ floating_modifier Mod4
 # Keybindings
 
 # Copy and paste support is awful with Alacritty
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec alacritty
 
 bindsym Print exec flameshot gui
 bindsym $mod+q kill
 
-bindsym $mod+space exec "rofi -show drun"
-bindsym Control+Down exec --no-startup-id "rofi -show window"
+bindsym $mod+Home exec "rofi -show drun"
+bindsym $mod+End exec --no-startup-id "rofi -show window"
+bindsym $mod+Insert exec --no-startup-id "rofi -show emoji -modi emoji"
+bindsym $mod+Delete exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -93,7 +95,6 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
-
 bindsym $mod+Tab workspace back_and_forth
 
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -168,7 +169,8 @@ bindsym $mod+l exec i3lock --color 333333
 
 exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id polybar top
+exec --no-startup-id greenclip daemon
+#exec --no-startup-id polybar top
 
 {% else %}
 output * bg "~/Pictures/Wallpapers/Out Of Focus.jpg" stretch
@@ -192,7 +194,7 @@ exec --no-startup-id waybar
 #smart_gaps on
 smart_borders on
 
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 5
 
-exec notify-send -a i3 "loaded" "Welcome to i3."
+exec notify-send -a i3 "loaded" "👋 Welcome 👋"
