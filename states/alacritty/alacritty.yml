@@ -324,11 +324,12 @@ key_bindings:
   - { key: Insert, mods: Control, action: Copy }
   - { key: Paste, action: Paste }
   - { key: Copy, action: Copy }
-  - { key: Q, mods: Command, action: Quit }
+
   - { key: W, mods: Command, action: Quit }
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
   - { key: Subtract, mods: Control, action: DecreaseFontSize }
+
   - { key: Home, chars: "\x1bOH", mode: AppCursor }
   - { key: Home, chars: "\x1b[H", mode: ~AppCursor }
   - { key: End, chars: "\x1bOF", mode: AppCursor }
@@ -364,6 +365,7 @@ key_bindings:
   - { key: Down, mods: Alt, chars: "\x1b[1;3B" }
   - { key: Down, chars: "\x1b[B", mode: ~AppCursor }
   - { key: Down, chars: "\x1bOB", mode: AppCursor }
+
   - { key: F1, chars: "\x1bOP" }
   - { key: F2, chars: "\x1bOQ" }
   - { key: F3, chars: "\x1bOR" }
