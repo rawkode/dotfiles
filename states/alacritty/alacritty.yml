@@ -40,7 +40,7 @@ window:
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 10000
+  history: 2048
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
@@ -127,35 +127,6 @@ custom_cursor_colors: true
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Material)
-colors:
-  # Default colors
-  primary:
-    background: "0x1e282d"
-    foreground: "0xc4c7d1"
-
-  # Normal colors
-  normal:
-    black: "0x666666"
-    red: "0xeb606b"
-    green: "0xc3e88d"
-    yellow: "0xf7eb95"
-    blue: "0x80cbc4"
-    magenta: "0xff2f90"
-    cyan: "0xaeddff"
-    white: "0xffffff"
-
-  # Bright colors
-  bright:
-    black: "0xff262b"
-    red: "0xeb606b"
-    green: "0xc3e88d"
-    yellow: "0xf7eb95"
-    blue: "0x7dc6bf"
-    magenta: "0x6c71c4"
-    cyan: "0x35434d"
-    white: "0xffffff"
-
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -182,7 +153,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.85
+background_opacity: 0.90
 
 # Mouse bindings
 #
@@ -221,7 +192,7 @@ selection:
 
 dynamic_title: true
 
-hide_cursor_when_typing: false
+hide_cursor_when_typing: true
 
 # Cursor style
 #
@@ -229,7 +200,7 @@ hide_cursor_when_typing: false
 #   - Block
 #   - Underline
 #   - Beam
-cursor_style: Block
+cursor_style: Beam
 
 # If this is `true`, the cursor will be rendered as a hollow box when the
 # window is not focused.
