@@ -194,7 +194,7 @@ exec --no-startup-id waybar
 #smart_gaps on
 smart_borders on
 
-gaps inner 5
-gaps outer 5
+gaps inner 8
+gaps outer 8
 
 exec notify-send -a i3 "loaded" "👋 Welcome 👋"
