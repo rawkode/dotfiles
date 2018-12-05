@@ -45,8 +45,12 @@ bindsym $mod+Return exec alacritty
 bindsym Print exec flameshot gui
 bindsym $mod+q kill
 
+bindsym $mod+space exec "rofi -show drun"
 bindsym $mod+Home exec "rofi -show drun"
+
 bindsym $mod+End exec --no-startup-id "rofi -show window"
+bindsym Control+Down exec "rofi -show window"
+
 bindsym $mod+Insert exec --no-startup-id "rofi -show emoji -modi emoji"
 bindsym $mod+Delete exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 
@@ -171,6 +175,7 @@ exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id greenclip daemon
 #exec --no-startup-id polybar top
+exec --no-startup-id xfce4-panel --disable-wm-check
 
 {% else %}
 output * bg "~/Pictures/Wallpapers/Out Of Focus.jpg" stretch
@@ -183,10 +188,6 @@ bindsym $mod+l exec swaylock --color 333333
 exec --no-startup-id waybar
 
 {% endif %}
-
-#exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
-#exec_always --no-startup-id gnome-power-manager
-#exec --no-startup-id xfce4-panel --disable-wm-check
 
 # i3 gaps only
 ##
