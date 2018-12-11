@@ -5,6 +5,8 @@ export LC_ALL=en_GB.UTF-8
 
 export AUTOENV_FILE_ENTER=.env
 
+export DOCKER_BUILDKIT=1
+
 function github() {
   cd /code/src/github.com/$1
 }

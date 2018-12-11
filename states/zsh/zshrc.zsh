@@ -1,8 +1,6 @@
 # I'm not sure why I need this at the moment, but vi-mode has taken over!
 bindkey -e
 
-source /etc/profile.d/vte.sh
-
 source ~/.zsh/aliases.zsh
 source ~/.zsh/common.zsh
 source ~/.zsh/history.zsh

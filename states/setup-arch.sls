@@ -48,4 +48,5 @@ user-{{ grains.user }}:
     - groups:
       - {{ grains.user }}
       - docker
+      - libvirt
 {% endif %}

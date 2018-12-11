@@ -50,21 +50,31 @@
   environment.systemPackages = (with pkgs; [
     ag
     alacritty
+    androidsdk
     arc-theme
+    asciinema
+    autorandr
     blueman
+    clipit
     compton
+    dart
+    direnv
     docker_compose
+    dunst
     exercism
+    flameshot
     fzf
     git
     gnome3.dconf
     gnome3.vte
     gnupg
     google-cloud-sdk
+    haskellPackages.greenclip
     insomnia
     jq
     lxappearance
-    nerdfonts
+    materia-theme
+    material-icons
     networkmanagerapplet
     nitrogen
     nix-prefetch-git
@@ -73,9 +83,13 @@
     slack
     terraform
     tilix
+    tldr
     vim
     vlc
+    vscode
+    wavebox
     wget
+    yarn
     zsh
   ] ++ [
     # Web Browsers
@@ -102,6 +116,7 @@
     # Keybase
     kbfs
     keybase
+    keybase-gui
   ] ++ [
     # i3
     i3
@@ -115,7 +130,16 @@
     # Pony
     ponyc
     pony-stable
+  ] ++ [
+    # Rust
+    rustup
   ]);
+
+  environment.interactiveShellInit = ''
+    if [[ "$VTE_VERSION" > 3405 ]]; then
+      source "${pkgs.gnome3.vte}/etc/profile.d/vte.sh"
+    fi
+  '';
 
   programs.bash.enableCompletion = true;
 
@@ -132,8 +156,6 @@
     enable = true;
     layout = "us";
     xkbVariant = "altgr-intl";
-
-    videoDrivers = ["nvidia"];
 
     desktopManager = {
       default = "xfce";
@@ -157,6 +179,10 @@
 
   nixpkgs.config = {
     allowUnfree = true;
+
+    android_sdk = {
+      accept_license = true;
+    };
 
     packageOverrides = pkgs: rec {
       polybar = pkgs.polybar.override {
