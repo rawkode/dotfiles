@@ -69,7 +69,6 @@
     gnome3.vte
     gnupg
     google-cloud-sdk
-    haskellPackages.greenclip
     insomnia
     jq
     lxappearance
@@ -88,6 +87,7 @@
     vlc
     vscode
     wavebox
+    weechat
     wget
     yarn
     zsh
