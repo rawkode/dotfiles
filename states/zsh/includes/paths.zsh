@@ -1,4 +1,4 @@
-export GOPATH=/code
+export GOPATH=$HOME/Code
 
 export ANDROID_HOME=/opt/android-sdk
 export CARGO_PATH=$HOME/.cargo/bin

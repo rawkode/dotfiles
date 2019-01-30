@@ -8,31 +8,25 @@ export AUTOENV_FILE_ENTER=.env
 export DOCKER_BUILDKIT=1
 
 function github() {
-  cd /code/src/github.com/$1
+  cd ~/Code/src/github.com/$1
 }
 
 alias gh=" github"
 
 function gitlab() {
-  cd /code/src/gitlab.com/$1
+  cd ~/Code/src/gitlab.com/$1
 }
 
 alias gl=" gitlab"
 
 function gt8() {
-  cd /code/src/code.devtech.gt8.online/$1
+  cd ~/Code/src/code.devtech.gt8.online/$1
 }
 
 alias bb=" bitbucket"
 
 function bitbucket() {
-  cd /code/src/bitbucket.org/$1
-}
-
-alias jo=" jaumo"
-
-function jaumo() {
-  cd /code/src/gitlab.jaumo.com/$1
+  cd ~/Code/src/bitbucket.org/$1
 }
 
 # Set GPG TTY
