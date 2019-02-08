@@ -3,7 +3,6 @@ zsh-zshrc:
     - name: {{ grains.homedir }}/.zshrc
     - source: salt://zsh/zshrc.zsh
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
     - template: jinja
 
 zsh-zshrc-includes:
@@ -12,7 +11,6 @@ zsh-zshrc-includes:
     - source: salt://zsh/includes/
     - clean: True
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
 
 zsh-zplug-installed?:
   file.exists:

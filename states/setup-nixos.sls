@@ -14,7 +14,6 @@ nixos-user-configuration:
     - source: salt://nixos/user-configuration.nix
     - makedirs: True
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
 
 nixos-rebuild:
   cmd.run:

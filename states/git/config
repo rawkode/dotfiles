@@ -3,7 +3,7 @@
   email = david.andrew.mckay@gmail.com
 
 [gpg]
-  program = gpg2
+  program = gpg
 
 [core]
   autocrlf = input

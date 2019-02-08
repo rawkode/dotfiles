@@ -4,4 +4,3 @@ alacritty-config:
     - source: salt://alacritty/alacritty.yml
     - makedirs: True
     - user: {{ grains.user }}
-    - group: {{ grains.user }}

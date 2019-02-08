@@ -4,7 +4,6 @@ xresources:
     - source: salt://x11/Xresources
     - makedirs: True
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
 
 libinput:
   file.managed:
@@ -12,7 +11,6 @@ libinput:
     - source: salt://x11/libinput-gestures.conf
     - makedirs: True
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
 
 trackpad-cofig:
   file.managed:

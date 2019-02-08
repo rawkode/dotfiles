@@ -1,0 +1,51 @@
+cask_args appdir: '/Applications'
+
+brew "git"
+brew "mas"
+
+brew "exa"
+brew "gpg2"
+brew "ripgrep"
+brew "jq"
+brew "bat"
+brew "go"
+brew "bzr"
+brew "rustup"
+brew "npm"
+brew "yarn"
+brew "mdv"
+brew "pulumi"
+
+# Provided by Docker for Mac
+#brew "kubernetes-cli"
+brew "kubernetes-helm"
+brew "docker-compose"
+brew "docker-machine-driver-hyperkit"
+cask "minikube"
+# Doesn't exist yet
+#brew "flutter"
+
+tap "Homebrew/bundle"
+tap "caskroom/fonts"
+
+mas "1Password", id: 1333542190
+
+cask "google-chrome"
+cask "keybase"
+cask "visual-studio-code"
+
+cask "slack"
+
+cask "font-hack-nerd-font"
+cask "font-firacode-nerd-font-mono"
+
+cask "google-cloud-sdk"
+
+cask "alacritty"
+cask "docker"
+cask "iterm2"
+cask "seaglass"
+cask "signal"
+cask "typora"
+cask "virtualbox"
+cask "wavebox"

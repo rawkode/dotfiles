@@ -4,4 +4,3 @@ rofi-wifi-config:
     - source: salt://rofi/wifi
     - makedirs: True
     - user: {{ grains.user }}
-    - group: {{ grains.user }}

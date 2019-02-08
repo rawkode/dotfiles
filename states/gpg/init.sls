@@ -3,7 +3,6 @@ gnupg-directory:
   file.directory:
     - name: {{ grains.homedir }}/.gnupg
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
 
 gpg-rawkode:
   cmd.run:
@@ -15,14 +14,12 @@ gpg-config:
     - name: {{ grains.homedir }}/.gnupg/gpg.conf
     - source: salt://gpg/gpg.conf
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
 
 gpg-agent-config:
   file.managed:
     - name: {{ grains.homedir }}/.gnupg/gpg-agent.conf
     - source: salt://gpg/gpg-agent.conf
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
 
 gpg-disable-ssh-agent:
   file.comment:

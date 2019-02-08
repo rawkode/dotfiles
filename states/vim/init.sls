@@ -7,7 +7,6 @@ vim-install-dein:
     - name: https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
     - args: {{ grains.homedir }}/.dein
     - user: {{ grains.user }}
-    - group: {{ grains.user }}
     - onfail:
       - file: vim-dein-installed?
 
@@ -18,4 +17,3 @@ vim-configuration:
     - template: jinja
     - makedirs: True
     - user: {{ grains.user }}
-    - group: {{ grains.user }}

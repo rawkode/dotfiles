@@ -32,6 +32,8 @@ zplug "b4b4r07/git-conflict", as:command, use:'git-conflict'
 zplug 'stedolan/jq', from:gh-r, as:command
 #zplug "mrowa44/emojify", as:command
 
+zplug 'axtl/gpg-agent.zsh'
+
 #zplug 'direnv/direnv', as:command, from:gh-r, rename-to:direnv
 #if (( $+commands[direnv] )); then eval "$(direnv hook zsh)"; fi
 
