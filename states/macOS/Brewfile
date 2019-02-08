@@ -26,11 +26,14 @@ cask "minikube"
 #brew "flutter"
 
 tap "Homebrew/bundle"
+tap "Homebrew/cask-versions"
 tap "caskroom/fonts"
 
 mas "1Password", id: 1333542190
 
 cask "google-chrome"
+cask "firefox-developer-edition"
+
 cask "keybase"
 cask "visual-studio-code"
 
