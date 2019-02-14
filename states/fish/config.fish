@@ -11,9 +11,8 @@ set SPACEFISH_PROMPT_ORDER time user dir host git package kubecontext exec_time 
 # set SPACEFISH_RPROMPT_ORDER
 
 gpg-connect-agent killagent /bye
-gig-connect-agent /bye
+gpg-connect-agent /bye
 
 gpgconf --launch gpg-agent
 set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK ~/.gnupg/S.gpg-agent.ssh
-

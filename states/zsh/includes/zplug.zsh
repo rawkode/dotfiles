@@ -14,10 +14,10 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug "plugins/command-not-found",      from:oh-my-zsh
 zplug "plugins/colored-man-pages",      from:oh-my-zsh
-#zplug "plugins/colorize",               from:oh-my-zsh
+zplug "plugins/colorize",               from:oh-my-zsh
 zplug "plugins/docker",                 from:oh-my-zsh, if:"(( $+commands[docker] ))"
 zplug "plugins/docker-compose",         from:oh-my-zsh, if:"(( $+commands[docker-compose] ))"
-zplug "plugins/dotenv",                 from:oh-my-zsh
+# zplug "plugins/dotenv",                 from:oh-my-zsh
 zplug "plugins/minikube",               from:oh-my-zsh
 zplug "plugins/kubectl",                from:oh-my-zsh
 zplug "plugins/per-directory-history",  from:oh-my-zsh
@@ -28,9 +28,9 @@ zplug "plugins/sudo",                   from:oh-my-zsh
 #zplug 'b4b4r07/cli-finder', as:command, use:'bin/finder'
 #zplug 'b4b4r07/easy-oneliner', on:'junegunn/fzf-bin'
 #zplug 'b4b4r07/emoji-cli', on:'stedolan/jq'
-zplug "b4b4r07/git-conflict", as:command, use:'git-conflict'
+# zplug "b4b4r07/git-conflict", as:command, use:'git-conflict'
 
-zplug 'stedolan/jq', from:gh-r, as:command
+# zplug 'stedolan/jq', from:gh-r, as:command
 #zplug "mrowa44/emojify", as:command
 
 zplug 'axtl/gpg-agent.zsh'
