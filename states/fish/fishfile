@@ -4,7 +4,6 @@ matchai/spacefish
 # hauleth/agnoster
 
 # Plugins
-tuvistavie/fish-ssh-agent
 evanlucas/fish-kubectl-completions
 brgmnn/fish-docker-compose
 laughedelic/pisces
