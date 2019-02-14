@@ -43,7 +43,7 @@ group-docker:
 user-{{ grains.user }}:
   user.present:
     - name: {{ grains.user }}
-    - shell: /usr/bin/zsh
+    - shell: /usr/local/bin/fish
     - remove_groups: False
     - groups:
       - {{ grains.user }}

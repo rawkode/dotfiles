@@ -16,10 +16,10 @@ function __autols_hook --description "Auto ls" --on-event fish_prompt
     set -g __autols_last (pwd)
 end
 
-function dc --description 'docker-compose alias'
+function dc --wraps=docker-compose --description 'docker-compose alias'
     command docker-compose $argv
 end
 
-function k --description 'kubectl alias'
+function k --wraps=kubectl --description 'kubectl alias'
     command kubectl $argv
 end
