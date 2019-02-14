@@ -18,6 +18,7 @@ zplug "plugins/colored-man-pages",      from:oh-my-zsh
 zplug "plugins/docker",                 from:oh-my-zsh, if:"(( $+commands[docker] ))"
 zplug "plugins/docker-compose",         from:oh-my-zsh, if:"(( $+commands[docker-compose] ))"
 zplug "plugins/dotenv",                 from:oh-my-zsh
+zplug "plugins/minikube",               from:oh-my-zsh
 zplug "plugins/kubectl",                from:oh-my-zsh
 zplug "plugins/per-directory-history",  from:oh-my-zsh
 zplug "plugins/sudo",                   from:oh-my-zsh
@@ -34,8 +35,8 @@ zplug 'stedolan/jq', from:gh-r, as:command
 
 zplug 'axtl/gpg-agent.zsh'
 
-#zplug 'direnv/direnv', as:command, from:gh-r, rename-to:direnv
-#if (( $+commands[direnv] )); then eval "$(direnv hook zsh)"; fi
+zplug 'direnv/direnv', as:command, from:gh-r, rename-to:direnv
+if (( $+commands[direnv] )); then eval "$(direnv hook zsh)"; fi
 
 zplug 'desyncr/auto-ls'
 zplug "hlissner/zsh-autopair", defer:2

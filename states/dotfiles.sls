@@ -1,5 +1,6 @@
 include:
     - alacritty
+    - fish
     - git
     - gpg
     - gtk
