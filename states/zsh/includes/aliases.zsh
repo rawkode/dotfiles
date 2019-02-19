@@ -42,3 +42,7 @@ alias cd=' cd'
 # ls
 alias ls=' exa'
 alias ll=' ls -l'
+alias lt=' ls --tree -L 2'
+alias ltt=' ls --tree -L 3'
+alias lttt=' ls --tree -L 4'
+alias ltttt=' ls --tree -L 5'
