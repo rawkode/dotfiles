@@ -50,6 +50,9 @@ if zplug check "bhilburn/powerlevel9k"; then
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir_writable dir kubecontext vcs)
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs status time ssh)
 
+    POWERLEVEL9K_KUBECONTEXT_FOREGROUND='white'
+    POWERLEVEL9K_KUBECONTEXT_BACKGROUND='darkred'
+
     POWERLEVEL9K_VCS_CLEAN_BACKGROUND="green"
     POWERLEVEL9K_VCS_CLEAN_FOREGROUND="$DEFAULT_BACKGROUND"
     POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="yellow"
