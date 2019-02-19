@@ -4,7 +4,7 @@ if zplug check "bhilburn/powerlevel9k"; then
     DEFAULT_COLOR=$DEFAULT_FOREGROUND
 
     # powerlevel9k prompt theme
-    #DEFAULT_USER=$USER
+    DEFAULT_USER=$USER
 
     POWERLEVEL9K_MODE="nerdfont-complete"
     POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
@@ -47,7 +47,7 @@ if zplug check "bhilburn/powerlevel9k"; then
 
     #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context ssh root_indicator dir_writable dir )
     #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator context dir_writable dir vcs)
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir_writable dir vcs)
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir_writable dir kubecontext vcs)
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time background_jobs status time ssh)
 
     POWERLEVEL9K_VCS_CLEAN_BACKGROUND="green"
