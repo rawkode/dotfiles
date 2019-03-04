@@ -18,6 +18,7 @@ brew "npm"
 brew "yarn"
 brew "mdv"
 brew "pulumi"
+cask "android-sdk"
 
 # Provided by Docker for Mac
 #brew "kubernetes-cli"
@@ -48,6 +49,7 @@ cask "font-firacode-nerd-font-mono"
 cask "google-cloud-sdk"
 
 cask "alacritty"
+cask "kitty"
 cask "docker"
 cask "iterm2"
 cask "seaglass"
