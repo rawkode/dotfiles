@@ -10,7 +10,7 @@ alias pacmanc=' yay -Rns $(pacman -Qtdq)'
 alias yayc=' yay -Yc'
 
 # Git
-alias git=' git'
+alias git=' hub'
 
 # Kubernetes
 alias k='kubectl'
