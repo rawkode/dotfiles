@@ -5,13 +5,18 @@ end
 function __autols_hook --description "Auto ls" --on-event fish_prompt
     if test "$__autols_last" != (pwd)
         or test "$_empty_command" = yes
-
         clear
+
+        echo \n\n
         ls
+        echo \n\n
 
         # Show git information, and if it's not a git repo, throw error
         # into /dev/null. Simples
         git status 2>/dev/null
     end
+
+    #if test "$_empty_command" = yes
+
     set -g __autols_last (pwd)
 end

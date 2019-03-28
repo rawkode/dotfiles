@@ -7,12 +7,13 @@ if not functions -q fisher
     fish -c fisher
 end
 
-set SPACEFISH_PROMPT_ORDER time user dir host git package kubecontext exec_time line_sep battery jobs exit_code char
-# set SPACEFISH_RPROMPT_ORDER
+set -g ANDROID_SDK_ROOT "/usr/local/share/android-sdk"
+set -gx PATH $HOME/.cargo/bin $HOME/Code/bin $HOME/.composer/vendor/bin /usr/local/opt/flutter/bin $ANDROID_SDK_ROOT/tools/bin $PATH
 
 gpg-connect-agent killagent /bye
 gpg-connect-agent /bye
 
 gpgconf --launch gpg-agent
+
 set -x GPG_TTY (tty)
 set -x SSH_AUTH_SOCK ~/.gnupg/S.gpg-agent.ssh

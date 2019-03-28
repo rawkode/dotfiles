@@ -1,6 +1,6 @@
 # Favourites
 # bespin, brewer, bright, chalk, dracula, eighties, gnome-dark, gruvbox-dark, monokao, nord, seti, tomorrow-night
-zplug "chriskempson/base16-shell", use:"scripts/base16-brewer.sh"
+zplug "chriskempson/base16-shell", use:"scripts/base16-gruvbox-dark.sh"
 
 ## Can't decide if these are useful or annoying
 # zplug "rawkode/zsh-docker-run"
@@ -17,12 +17,10 @@ zplug "plugins/colored-man-pages",      from:oh-my-zsh
 zplug "plugins/colorize",               from:oh-my-zsh
 zplug "plugins/docker",                 from:oh-my-zsh, if:"(( $+commands[docker] ))"
 zplug "plugins/docker-compose",         from:oh-my-zsh, if:"(( $+commands[docker-compose] ))"
-# zplug "plugins/dotenv",                 from:oh-my-zsh
 zplug "plugins/minikube",               from:oh-my-zsh
 zplug "plugins/kubectl",                from:oh-my-zsh
 zplug "plugins/per-directory-history",  from:oh-my-zsh
 zplug "plugins/sudo",                   from:oh-my-zsh
-#zplug "plugins/z",                      from:oh-my-zsh
 
 #zplug 'b4b4r07/enhancd', use:'init.sh'
 #zplug 'b4b4r07/cli-finder', as:command, use:'bin/finder'
@@ -50,7 +48,7 @@ zplug "junegunn/fzf", use:"shell/*.zsh", as:plugin
 #zplug "eendroroy/alien"
 #zplug "geometry-zsh/geometry"
 #zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
