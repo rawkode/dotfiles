@@ -7,7 +7,7 @@ if not functions -q fisher
     fish -c fisher
 end
 
-set -x GOROOT "$HOME/Code"
+set -x GOPATH "$HOME/Code"
 set -x ANDROID_SDK_ROOT "/usr/local/share/android-sdk"
 set -gx PATH $HOME/.cargo/bin $HOME/Code/bin $HOME/.composer/vendor/bin /usr/local/opt/flutter/bin $ANDROID_SDK_ROOT/tools/bin $PATH
 
