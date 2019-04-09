@@ -2,48 +2,66 @@
 # Powerlevel9k
 ##
 zplugin ice from"gh"
-zplugin load bhilburn/powerlevel9k
+zplugin load "bhilburn/powerlevel9k"
 
 ##
 # Always Clear Screen & Run `ls`
 ##
-zplugin ice from"gh"
-zplugin load 'desyncr/auto-ls'
+zplugin ice wait"0" pick"auto-ls.zsh"
+zplugin load "desyncr/auto-ls"
+
 zplugin load "Valiev/almostontop"
-
-##
-# Docker
-##
-zplugin ice as"completion"
-zplugin snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
-zplugin snippet https://github.com/docker/compose/blob/master/contrib/completion/zsh/_docker-compose
-
-zplugin ice wait"0" lucid
-zplugin snippet OMZ::plugins/docker/_docker
-zplugin snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
-
-##
-# Kubernetes
-##
-zplugin ice wait"0" lucid
-zplugin snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
-
-##
-# ZINC Theme
-#
-# zinc has no need for completion symlinking
-##
-#zplugin ice nocompletions
-#zplugin load robobenklein/zinc
 
 ##
 # Search/AutoCompletion
 ##
 zplugin ice wait"0" blockf
-zplugin light zsh-users/zsh-completions
+zplugin light "zsh-users/zsh-completions"
+
+zplugin ice wait"0" pick"you-should-use.plugin.zsh"
+zplugin load "MichaelAquilina/zsh-you-should-use"
+
+zplugin ice wait"0" pick"autopair.zsh"
+zplugin load "hlissner/zsh-autopair"
+
+zplugin ice wait"0" pick"zsh-history-substring-search.zsh"
+zplugin load "zsh-users/zsh-history-substring-search"
 
 zplugin ice wait"0" atload"_zsh_autosuggest_start"
-zplugin light zsh-users/zsh-autosuggestions
+zplugin light "zsh-users/zsh-autosuggestions"
 
+zplugin ice wait"0"
+zplugin snippet "OMZ::plugins/fzf/fzf.plugin.zsh"
+
+##
+# Docker
+##
+zplugin ice as"completion"
+zplugin snippet "OMZ::plugins/docker/_docker"
+
+zplugin ice as"completion" wait"0" pick"docker-compose.plugin.zsh"
+zplugin snippet "OMZ::plugins/docker-compose/docker-compose.plugin.zsh"
+
+##
+# Kubernetes
+##
+zplugin snippet "OMZ::plugins/minikube/minikube.plugin.zsh"
+
+source <(kubectl completion zsh)
+
+##
+# ls
+##
+zplugin ice atclone"dircolors -b LS_COLORS > ls_colors.zsh" atpull"%atclone" pick"ls_colors.zsh"
+zplugin light trapd00r/LS_COLORS
+
+##
+# Syntax Higlighting
+##
 zplugin ice wait"0" atinit"zpcompinit; zpcdreplay"
-zplugin light zdharma/fast-syntax-highlighting
+zplugin load zdharma/fast-syntax-highlighting
+
+##
+# Direnv
+##
+#zplugin light "direnv/direnv"

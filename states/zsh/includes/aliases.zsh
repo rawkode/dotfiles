@@ -40,7 +40,8 @@ alias nvim=' code'
 alias cd=' cd'
 
 # ls
-alias ls=' exa'
+alias ls=' exa --group-directories-first'
+alias la=' ls -a'
 alias ll=' ls -l'
 alias lt=' ls --tree -L 2'
 alias ltt=' ls --tree -L 3'

@@ -6,13 +6,13 @@ export GOPATH=$HOME/Code
 # This makes the $path variable act like a set.
 typeset -U path
 
-path=("$ANDROID_HOME/tools/bin")
-path=("$ANDROID_HOME/tools")
-path=("$ANDROID_HOME/platform-tools")
-path=("$COMPOSER_HOME/vendor/bin")
+path=("$ANDROID_HOME/tools/bin" $path)
+path=("$ANDROID_HOME/tools" $path)
+path=("$ANDROID_HOME/platform-tools" $path)
+path=("$COMPOSER_HOME/vendor/bin" $path)
 path=("$GOPATH/bin" $path)
 path=("$HOME/.cargo/bin" $path)
-path=("/opt/flutter/bin")
+path=("/opt/flutter/bin" $path)
 
 # Using the (N-/) glob qualifier we can remove paths that do not exist.
 path=($^path(N-/))
