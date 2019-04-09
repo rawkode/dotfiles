@@ -1,3 +1,13 @@
+##
+# Aliases
+##
+alias dc='docker-compose'
+alias dcr='docker-compose run --rm'
+
+##
+# Run Things as Containers
+##
+
 ## Terraform
 function tf7() {
   run_with_docker "hashicorp/terraform" "0.10.7" "terraform" $@

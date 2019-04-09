@@ -1,7 +1,3 @@
-# Development Aliases
-alias dc='docker-compose'
-alias dcr='docker-compose run --rm'
-
 alias tree=' tree -L 3 -d -I "vendor|cache|log|logs"'
 
 # Arch
@@ -12,14 +8,7 @@ alias yayc=' yay -Yc'
 # Git
 alias git=' hub'
 
-# Kubernetes
-alias k='kubectl'
-alias ka='kubectl apply'
-alias kp='kubectl get pods'
-alias kd='kubectl get deploy'
-alias kl='kubectl logs'
-alias kcx='kubectl config get-contexts'
-alias ksx='kubectl config use-context'
+
 
 # Lockscreen
 alias lock=" xsecurelock"

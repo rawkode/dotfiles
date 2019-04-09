@@ -7,10 +7,18 @@ zsh-zshrc:
 
 zsh-zshrc-includes:
   file.recurse:
-    - name: {{ grains.homedir }}/.zsh
+    - name: {{ grains.homedir }}/.zsh/includes
+    - makedirs: True
     - source: salt://zsh/includes/
     - clean: True
     - user: {{ grains.user }}
+
+zsh-zplugin-config:
+  file.managed:
+    - name: {{ grains.homedir }}/.zsh/zplugin.zsh
+    - source: salt://zsh/zplugin.zsh
+    - user: {{ grains.user }}
+    - template: jinja
 
 zsh-zplugin-installed?:
   file.exists:
@@ -31,18 +39,3 @@ zsh-zplugin-compile:
   cmd.run:
     - name: zcompile {{ grains.homedir }}/.zplugin/bin/zplugin.zsh
     - runas: {{ grains.user }}
-
-zsh-zplug-installed?:
-  file.exists:
-    - name: {{ grains.homedir }}/.zplug
-
-zsh-zplug-install:
-  git.latest:
-    - name: https://github.com/zplug/zplug
-    - target: {{ grains.homedir }}/.zplug
-    - depth: 1
-    - rev: master
-    - force_reset: True
-    - user: {{ grains.user }}
-    - onfail:
-      - file: zsh-zplug-installed?
