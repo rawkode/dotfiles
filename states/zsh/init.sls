@@ -12,6 +12,26 @@ zsh-zshrc-includes:
     - clean: True
     - user: {{ grains.user }}
 
+zsh-zplugin-installed?:
+  file.exists:
+    - name: {{ grains.homedir }}/.zplugin/bin
+
+zsh-zplugin-install:
+  git.latest:
+    - name: https://github.com/zdharma/zplugin.git
+    - target: {{ grains.homedir }}/.zplugin/bin
+    - depth: 1
+    - rev: master
+    - force_reset: True
+    - user: {{ grains.user }}
+    - onfail:
+      - file: zsh-zplugin-installed?
+
+zsh-zplugin-compile:
+  cmd.run:
+    - name: zcompile {{ grains.homedir }}/.zplugin/bin/zplugin.zsh
+    - runas: {{ grains.user }}
+
 zsh-zplug-installed?:
   file.exists:
     - name: {{ grains.homedir }}/.zplug

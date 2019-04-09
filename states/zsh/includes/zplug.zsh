@@ -47,8 +47,8 @@ zplug "junegunn/fzf", use:"shell/*.zsh", as:plugin
 #zplug "themes/agnoster", from:oh-my-zsh, as:theme
 #zplug "eendroroy/alien"
 #zplug "geometry-zsh/geometry"
-#zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
-#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+# zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
