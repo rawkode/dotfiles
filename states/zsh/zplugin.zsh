@@ -16,7 +16,7 @@ zplugin load "bhilburn/powerlevel9k"
 ##
 # Always Clear Screen & Run `ls`
 ##
-zplugin ice wait"0" pick"auto-ls.zsh"
+zplugin ice silent wait"0" pick"auto-ls.zsh"
 zplugin load "desyncr/auto-ls"
 
 zplugin load "Valiev/almostontop"
@@ -24,22 +24,22 @@ zplugin load "Valiev/almostontop"
 ##
 # Search/AutoCompletion
 ##
-zplugin ice wait"0" blockf
+zplugin ice silent wait"0" blockf
 zplugin light "zsh-users/zsh-completions"
 
-zplugin ice wait"0" pick"you-should-use.plugin.zsh"
+zplugin ice silent wait"0" pick"you-should-use.plugin.zsh"
 zplugin load "MichaelAquilina/zsh-you-should-use"
 
-zplugin ice wait"0" pick"autopair.zsh"
+zplugin ice silent wait"0" pick"autopair.zsh"
 zplugin load "hlissner/zsh-autopair"
 
-zplugin ice wait"0" pick"zsh-history-substring-search.zsh"
+zplugin ice silent wait"0" pick"zsh-history-substring-search.zsh"
 zplugin load "zsh-users/zsh-history-substring-search"
 
-zplugin ice wait"0" atload"_zsh_autosuggest_start"
+zplugin ice silent wait"0" atload"_zsh_autosuggest_start"
 zplugin light "zsh-users/zsh-autosuggestions"
 
-zplugin ice wait"0"
+zplugin ice silent wait"0"
 zplugin snippet "OMZ::plugins/fzf/fzf.plugin.zsh"
 
 ##
@@ -48,7 +48,7 @@ zplugin snippet "OMZ::plugins/fzf/fzf.plugin.zsh"
 zplugin ice as"completion"
 zplugin snippet "OMZ::plugins/docker/_docker"
 
-zplugin ice as"completion" wait"0" pick"docker-compose.plugin.zsh"
+zplugin ice silent as"completion" wait"0" pick"docker-compose.plugin.zsh"
 zplugin snippet "OMZ::plugins/docker-compose/docker-compose.plugin.zsh"
 
 ##
@@ -67,10 +67,11 @@ zplugin light trapd00r/LS_COLORS
 ##
 # Syntax Higlighting
 ##
-zplugin ice wait"0" atinit"zpcompinit; zpcdreplay"
+zplugin ice silent wait"0" atinit"zpcompinit; zpcdreplay"
 zplugin load zdharma/fast-syntax-highlighting
 
 ##
 # Direnv
 ##
-#zplugin light "direnv/direnv"
+# zplugin ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick"direnv" src"zhook.zsh"
+# zplugin light direnv/direnv
