@@ -33,6 +33,9 @@ zplugin load "MichaelAquilina/zsh-you-should-use"
 zplugin ice silent wait"0" pick"autopair.zsh"
 zplugin load "hlissner/zsh-autopair"
 
+zplugin ice silent wait="0" pick="zsh-per-directory-history.zsh"
+zplugin load "jimhester/per-directory-history"
+
 zplugin ice silent wait"0" pick"zsh-history-substring-search.zsh"
 zplugin load "zsh-users/zsh-history-substring-search"
 
@@ -73,5 +76,5 @@ zplugin load zdharma/fast-syntax-highlighting
 ##
 # Direnv
 ##
-# zplugin ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick"direnv" src"zhook.zsh"
-# zplugin light direnv/direnv
+#zplugin ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick"direnv" src"zhook.zsh"
+#zplugin light direnv/direnv
