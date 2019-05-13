@@ -1,8 +1,3 @@
-go:
-  pkg.installed:
-    - pkgs:
-      - go
-
 yay-directory:
   file.directory:
     - name: /opt/yay
