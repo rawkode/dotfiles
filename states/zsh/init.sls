@@ -39,3 +39,4 @@ zsh-zplugin-compile:
   cmd.run:
     - name: zcompile {{ grains.homedir }}/.zplugin/bin/zplugin.zsh
     - runas: {{ grains.user }}
+    - shell: /usr/bin/zsh

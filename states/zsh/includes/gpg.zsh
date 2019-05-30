@@ -1,5 +1,5 @@
 export GPG_TTY=$(tty)
-export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 if _has gpg-agent; then
     eval "$(gpgconf --launch gpg-agent)"
     echo UPDATESTARTUPTTY | gpg-connect-agent 1>/dev/null
