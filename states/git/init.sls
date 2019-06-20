@@ -1,3 +1,6 @@
+include:
+    - ./{{ grains['os_family'] | lower }}
+
 git-config:
   file.managed:
     - name: {{ grains.homedir }}/.config/git/config

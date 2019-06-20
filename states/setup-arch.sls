@@ -17,31 +17,4 @@ yay-makepkg:
 /etc/pacman.conf:
   file.uncomment:
     - regex: Color
-
-# There's no point in ensuring that {{ grains.user }} has sudo access prior to removing
-# the root password ... because sudo is needed to run these states
-root:
-  user.present:
-    - name: root
-    - empty_password: True
-
-{% if grains.user != 'root' %}
-group-{{ grains.user }}:
-  group.present:
-    - name: {{ grains.user }}
-
-# Creating this saves us from having to install Docker before running setup state
-group-docker:
-  group.present:
-    - name: docker
-
-user-{{ grains.user }}:
-  user.present:
-    - name: {{ grains.user }}
-    - shell: /usr/local/bin/fish
-    - remove_groups: False
-    - groups:
-      - {{ grains.user }}
-      - docker
-      - libvirt
 {% endif %}

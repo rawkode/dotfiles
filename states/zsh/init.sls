@@ -1,3 +1,6 @@
+include:
+    - ./{{ grains['os_family'] | lower }}
+
 zsh-zshrc:
   file.managed:
     - name: {{ grains.homedir }}/.zshrc
@@ -38,5 +41,6 @@ zsh-zplugin-install:
 zsh-zplugin-compile:
   cmd.run:
     - name: zcompile {{ grains.homedir }}/.zplugin/bin/zplugin.zsh
+    - shell: /usr/bin/zsh
     - runas: {{ grains.user }}
     - shell: /usr/bin/zsh
