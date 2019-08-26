@@ -76,5 +76,5 @@ zplugin load zdharma/fast-syntax-highlighting
 ##
 # Direnv
 ##
-#zplugin ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick"direnv" src"zhook.zsh"
-#zplugin light direnv/direnv
+zplugin ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' pick"direnv" src"zhook.zsh"
+zplugin light direnv/direnv
