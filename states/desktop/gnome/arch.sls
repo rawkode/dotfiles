@@ -1,0 +1,2 @@
+gnome-desktop:
+  pkg.installed

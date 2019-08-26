@@ -1,3 +1,7 @@
+state_output: mixed
+
 file_roots:
   base:
+    - ./machines
+    - ./macros
     - ./states

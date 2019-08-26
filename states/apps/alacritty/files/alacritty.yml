@@ -1,0 +1,14 @@
+background_opacity: 0.95
+
+font:
+  size: 12.0
+  normal:
+    family: FuraCode Nerd Font
+  bold:
+    family: FuraCode Nerd Font
+  italic:
+    family: FuraCode Nerd Font
+
+key_bindings:
+  - { key: Insert, mods: Control, action: Copy }
+  - { key: Insert, mods: Shift, action: Paste }

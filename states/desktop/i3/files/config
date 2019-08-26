@@ -1,0 +1,204 @@
+# Modifier key: Mod1 - Alt, Mod4 - Super/Windows/Cmd
+set $mod Mod4
+
+# Colors set from ~/.Xresources
+set_from_resource	$background	background
+set_from_resource	$foreground	foreground
+set_from_resource	$color0		color0
+set_from_resource 	$color1 	color1
+set_from_resource 	$color2 	color2
+set_from_resource 	$color3 	color3
+set_from_resource 	$color4 	color4
+set_from_resource 	$color5 	color5
+set_from_resource 	$color6		color6
+set_from_resource	$color7		color7
+set_from_resource	$color8		color8
+set_from_resource	$color9		color9
+set_from_resource	$color10	color10
+set_from_resource	$color11	color11
+set_from_resource	$color12	color12
+set_from_resource	$color13	color13
+set_from_resource	$color14	color14
+set_from_resource	$color15	color15
+
+# class                 border  	backgr. 	text    	indic.  	child_border
+# My colors
+client.background	$background
+
+client.focused         	$color12	$color4	        $color8         $color4		$color12
+client.unfocused       	$color0	        $background	$foreground     $color2		$color0
+client.focused_inactive	$color0	        $background	$foreground     $color2		$color0
+client.urgent		$color0	        $background	$foreground     $color1		$color0
+client.placeholder	$color0	        $background	$foreground     $color2		$color0
+
+# Mouse
+focus_follows_mouse no
+
+font pango:Fira Mono Regular 11
+floating_modifier Mod4
+
+# Keybindings
+
+# Copy and paste support is awful with Alacritty
+bindsym $mod+Return exec alacritty
+
+bindsym Print exec flameshot gui
+bindsym $mod+q kill
+
+bindsym $mod+space exec "rofi -show drun"
+bindsym $mod+Home exec "rofi -show drun"
+
+bindsym $mod+End exec --no-startup-id "rofi -show window"
+bindsym Control+Down exec "rofi -show window"
+
+bindsym $mod+Insert exec --no-startup-id "rofi -show emoji -modi emoji"
+bindsym $mod+Delete exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+
+bindsym $mod+j workspace prev
+bindsym $mod+k workspace next
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen
+bindsym $mod+g fullscreen global
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Focus on active Windows
+focus_on_window_activation focus
+
+# I only work with one monitor, these aren't important
+# workspace 1 output DP-1
+# workspace 2 output DP-1
+# workspace 3 output DP-1
+# workspace 4 output DP-1
+# workspace 5 output DP-1
+# workspace 6 output DP-1
+# workspace 7 output DP-1
+# workspace 8 output DP-1
+# workspace 9 output DP-1
+# workspace 10 output DP-1
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+Shift+space floating toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j           resize shrink width 10 px or 10 ppt
+        bindsym k           resize grow height 10 px or 10 ppt
+        bindsym l           resize shrink height 10 px or 10 ppt
+        bindsym semicolon   resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Volume
+bindsym XF86AudioRaiseVolume exec pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ +5% && V=`pamixer --get-volume` && notify-send "Raising Volume to ${V}%"
+bindsym XF86AudioLowerVolume exec pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ -5% && V=`pamixer --get-volume` && notify-send "Lowering Volume to ${V}%"
+
+# Autostart
+##
+exec --no-startup-id dunst
+exec --no-startup-id nm-applet
+
+bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Pause exec i3-msg exit
+bindsym Pause exec i3lock --color 333333
+bindsym $mod+l exec i3lock --color 333333
+
+exec --no-startup-id libinput-gestures
+exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id greenclip daemon
+exec --no-startup-id polybar top
+#exec --no-startup-id xfce4-panel --disable-wm-check
+
+# Restart Polybar when systray crashes
+bindsym $mod+p exec --no-startup-id polybar-msg cmd restart
+# Fix Bluetooth after a sleep / suspend
+bindyms $mod+b exec --no-startup-id systemctl --user daemon-reload && systemctl --user restart pulseaudio
+
+exec --no-startup-id setxkbmap us -variant altgr-intl
+
+assign [class="chromium"] 1
+assign [class="code"] 2
+assign [class="wavebox"] 10
+assign [class="slack"] 10
+assign [class="signal"] 10
+
+# i3 gaps only
+##
+# Smart Gaps only shows gaps if there's multiple windows in a workspace.
+#smart_gaps on
+smart_borders on
+
+gaps inner 8
+gaps outer 8
+
+exec notify-send -a i3 "loaded" "👋 Welcome 👋"
