@@ -1,0 +1,2 @@
+ gst-libav:
+   pkg.installed
