@@ -49,7 +49,6 @@ bindsym $mod+space exec "rofi -show drun"
 bindsym $mod+Home exec "rofi -show drun"
 
 bindsym $mod+End exec --no-startup-id "rofi -show window"
-bindsym Control+Down exec "rofi -show window"
 
 bindsym $mod+Insert exec --no-startup-id "rofi -show emoji -modi emoji"
 bindsym $mod+Delete exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
