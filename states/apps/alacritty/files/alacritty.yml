@@ -1,13 +1,13 @@
-background_opacity: 0.95
+background_opacity: 0.90
 
 font:
   size: 11.00
   normal:
-    family: FuraCode Nerd Font
+    family: Cascadia Code
   bold:
-    family: FuraCode Nerd Font
+    family: Cascadio Code
   italic:
-    family: FuraCode Nerd Font
+    family: Cascadia Code
 
 key_bindings:
   - { key: Insert, mods: Control, action: Copy }
