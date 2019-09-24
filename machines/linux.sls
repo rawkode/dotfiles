@@ -1,13 +1,6 @@
 include:
-    - apps.alacritty
-    - apps.vim
-    - apps.vscode
-    - desktop.gnome
-    - desktop.gtk
-    - desktop.i3
-    - development.docker
-    - development.git
-    - development.go
+    - apps.*
+    - desktop.*
+    - development.*
     - shells.zsh
-    - system.bluetooth
-    - system.yubikey-gpg
+    - system.*

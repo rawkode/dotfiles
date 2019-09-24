@@ -4,15 +4,11 @@ My personal dotfiles, coordinated by SaltStack
 
 ## Prequisites
 
-* Install SaltStack
-
-## Configuration
-
-If you're not me, you'll need to modify the user information in the grains file.
+- Install SaltStack
 
 ## Setup
 
-`sudo salt-stack --local --config=. state.sls setup`
+`make setup`
 
 ## Install
 
@@ -20,16 +16,20 @@ If you're not me, you'll need to modify the user information in the grains file.
 
 This will install GUI applications, as Linux as limited support for these; but skips desktop experience.
 
-`sudo salt-stack --local --config=. state.sls chromebook`
+`make state=chromebook`
 
 ## Linux Machines
 
 This assumes it's a physical bare metal machine and provisions the desktop experience too.
 
-`sudo salt-stack --local --config=. state.sls linux`
+`make state=linux`
 
 ## Cloud VMs
 
 This will only install CLI development tooling.
 
-`sudo salt-stack --local --config=. state.sls server`
+`make state=server`
+
+## Running a Single State
+
+`make state=apps.alacritty`

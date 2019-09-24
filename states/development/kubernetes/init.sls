@@ -1,5 +1,5 @@
 include:
-    - ./{{ grains.os_family | lower }}
+    - .{{ grains.os_family | lower }}
 
 remove-gnome-boxes:
   pkg.removed:

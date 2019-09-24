@@ -1,3 +1,7 @@
+devel-deps:
+  pkg.installed:
+    - name: base-devel
+
 yay-directory:
   file.directory:
     - name: /opt/yay
@@ -17,4 +21,3 @@ yay-makepkg:
 /etc/pacman.conf:
   file.uncomment:
     - regex: Color
-{% endif %}

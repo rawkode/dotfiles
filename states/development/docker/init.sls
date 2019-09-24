@@ -1,5 +1,5 @@
 include:
-    - ./{{ grains.os_family | lower }}
+    - .{{ grains.os_family | lower }}
 
 docker/install:
   pkg.installed:
