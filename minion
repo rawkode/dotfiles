@@ -1,4 +1,4 @@
-state_output: terse
+state_output: mixed
 
 file_roots:
   base:

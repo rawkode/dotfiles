@@ -1,4 +1,7 @@
-rofi-wifi-config:
+rofi:
+  pkg.installed
+
+rofi/wifi-config:
   file.managed:
     - name: {{ grains.homedir }}/.config/rofi/wifi
     - source: salt://{{ slspath }}/files/wifi

@@ -46,9 +46,3 @@ group-libvirt:
     - system: True
     - addusers:
       - {{ grains.user }}
-
-pcscd:
-  service.running:
-    - enable: True
-    - reload: True
-    - user: True

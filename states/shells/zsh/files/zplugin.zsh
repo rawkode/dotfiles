@@ -10,8 +10,8 @@ zplugin load "chriskempson/base16-shell"
 ##
 # Powerlevel9k
 ##
-zplugin ice from"gh"
-zplugin load "bhilburn/powerlevel9k"
+# zplugin ice from"gh"
+# zplugin load "bhilburn/powerlevel9k"
 
 ##
 # Always Clear Screen & Run `ls`
@@ -19,6 +19,7 @@ zplugin load "bhilburn/powerlevel9k"
 zplugin ice silent wait"0" pick"auto-ls.zsh"
 zplugin load "desyncr/auto-ls"
 
+zplugin ice silent wait"0" pick"almostontop.plugin.zsh"
 zplugin load "Valiev/almostontop"
 
 ##

@@ -1,0 +1,2 @@
+ripgrep:
+  pkg.installed

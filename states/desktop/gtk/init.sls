@@ -1,3 +1,12 @@
+include:
+    - ../fonts
+
+arc-theme:
+  pkg.installed:
+    - pkgs:
+      - arc-gtk-theme
+      - arc-icon-theme
+
 gtk2:
   file.managed:
     - name: {{ grains.homedir }}/.gtkrc-2.0

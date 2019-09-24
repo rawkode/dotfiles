@@ -1,4 +1,9 @@
 include:
+  - desktop.fonts
+  - desktop.gtk
+  - desktop.polybar
+  - desktop.nitrogen
+  - desktop.rofi
   - desktop.x11
 
 i3/install:
@@ -7,6 +12,9 @@ i3/install:
       - compton
       - dunst
       - i3-gaps
+      - i3lock-color
+      - lxappearance-gtk3
+      - lxrandr-gtk3
 
 i3-configuration:
   file.managed:
@@ -23,13 +31,6 @@ i3-compton:
     - name: {{ grains.homedir }}/.config/compton.conf
     - source: salt://{{ slspath }}/files/compton.conf
     - user: {{ grains.user }}
-
-i3-polybar:
-  file.managed:
-    - name: {{ grains.homedir }}/.config/polybar/config
-    - source: salt://{{ slspath }}/files/polybar.ini
-    - user: {{ grains.user }}
-    - makedirs: True
 
 i3-dunst:
   file.managed:

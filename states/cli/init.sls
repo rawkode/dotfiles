@@ -1,0 +1,4 @@
+include:
+ - .bat
+ - .exa
+ - .ripgrep

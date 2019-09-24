@@ -1,11 +1,11 @@
-background_opacity: 0.90
+background_opacity: 0.80
 
 font:
-  size: 11.00
+  size: 9.0
   normal:
     family: Cascadia Code
   bold:
-    family: Cascadio Code
+    family: Cascadia Code
   italic:
     family: Cascadia Code
 
