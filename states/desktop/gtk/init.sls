@@ -1,11 +1,5 @@
 include:
-    - ../fonts
-
-arc-theme:
-  pkg.installed:
-    - pkgs:
-      - arc-gtk-theme
-      - arc-icon-theme
+    - .{{ grains.os_family | lower }}
 
 gtk2:
   file.managed:

@@ -1,10 +1,8 @@
 include:
-  - desktop.fonts
-  - desktop.gtk
-  - desktop.polybar
-  - desktop.nitrogen
-  - desktop.rofi
-  - desktop.x11
+  - .polybar
+  - .nitrogen
+  - .rofi
+  - .x11
 
 i3/install:
   pkg.installed:
