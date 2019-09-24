@@ -1,6 +1,5 @@
-{% from 'aur.sls' import aur with context %}
-
-{{ aur('starship-bin') }}
+include:
+  - .starship
 
 zsh-packages-install:
   pkg.installed:
