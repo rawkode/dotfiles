@@ -12,3 +12,10 @@ docker/service:
 
 docker-compose:
   pkg.installed
+
+user/{{ grains.user }}/groups/docker:
+  user.present:
+    - name: {{ grains.user }}
+    - remove_groups: False
+    - groups:
+      - docker

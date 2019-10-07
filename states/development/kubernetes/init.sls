@@ -5,7 +5,7 @@ remove-gnome-boxes:
   pkg.removed:
     - pkgs:
       - gnome-boxes
-      - qemnu
+      - qemu
 
 kubernetes-packages:
   pkg.installed:
