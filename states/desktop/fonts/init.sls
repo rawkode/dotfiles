@@ -3,3 +3,4 @@
 {{ aur('nerd-fonts-fira-code') }}
 {{ aur('noto-fonts-emoji') }}
 {{ aur('ttf-cascadia-code') }}
+{{ aur('ttf-google-fonts-typewolf') }}
