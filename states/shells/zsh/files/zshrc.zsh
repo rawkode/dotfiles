@@ -15,4 +15,4 @@ done
 source ~/.zplugin/bin/zplugin.zsh
 source ~/.zsh/zplugin.zsh
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
