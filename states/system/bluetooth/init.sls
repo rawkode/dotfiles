@@ -8,3 +8,8 @@ bluetooth-enable-on-boot:
 blueman:
   pkg.installed:
     - name: blueman
+
+bluetooth/service:
+  service.running:
+    - name: bluetooth
+    - enable: True
