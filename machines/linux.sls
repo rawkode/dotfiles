@@ -16,6 +16,7 @@ include:
     - development.docker
     - development.git
     - development.go
+    - development.google-cloud
     - development.kubernetes
     - development.podman
     - shells.zsh
