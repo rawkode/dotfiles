@@ -8,6 +8,7 @@ include:
     - cli.bat
     - cli.exa
     - cli.ripgrep
+    - cli.skim
     - desktop.flameshot
     - desktop.fonts
     - desktop.gnome

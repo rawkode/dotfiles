@@ -34,7 +34,7 @@ zplugin load "MichaelAquilina/zsh-you-should-use"
 zplugin ice silent wait"0" pick"autopair.zsh"
 zplugin load "hlissner/zsh-autopair"
 
-zplugin ice silent wait="0" pick="zsh-per-directory-history.zsh"
+zplugin ice silent wait"0" pick"zsh-per-directory-history.zsh"
 zplugin load "jimhester/per-directory-history"
 
 zplugin ice silent wait"0" pick"zsh-history-substring-search.zsh"
@@ -43,8 +43,11 @@ zplugin load "zsh-users/zsh-history-substring-search"
 zplugin ice silent wait"0" atload"_zsh_autosuggest_start"
 zplugin light "zsh-users/zsh-autosuggestions"
 
-zplugin ice silent wait"0"
-zplugin snippet "OMZ::plugins/fzf/fzf.plugin.zsh"
+zplugin ice silent wait"0" pick"shell/*.zsh"
+zplugin load "lotabout/skim"
+
+# zplugin ice silent wait"0"
+# zplugin snippet "OMZ::plugins/fzf/fzf.plugin.zsh"
 
 ##
 # Docker
