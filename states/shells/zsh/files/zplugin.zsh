@@ -8,10 +8,9 @@ zplugin ice pick"async.sh" src"scripts/base16-dracula.sh"
 zplugin load "chriskempson/base16-shell"
 
 ##
-# Powerlevel9k
+# Powerlevel10k
 ##
-zplugin ice from"gh"
-zplugin load "bhilburn/powerlevel9k"
+zplugin ice depth=1; zplugin light romkatv/powerlevel10k
 
 ##
 # Always Clear Screen & Run `ls`
@@ -34,9 +33,16 @@ zplugin load "MichaelAquilina/zsh-you-should-use"
 zplugin ice silent wait"0" pick"autopair.zsh"
 zplugin load "hlissner/zsh-autopair"
 
-zplugin ice silent wait"0" pick"zsh-per-directory-history.zsh"
-zplugin load "jimhester/per-directory-history"
-
+##
+# History Plugins
+##
+# History
+zplugin ice wait"0"
+zplugin snippet OMZ::plugins/history/history.plugin.zsh
+zplugin ice wait"0"
+zplugin snippet OMZ::plugins/per-directory-history/per-directory-history.zsh
+zplugin ice wait"0"
+zplugin light zdharma/history-search-multi-word
 zplugin ice silent wait"0" pick"zsh-history-substring-search.zsh"
 zplugin load "zsh-users/zsh-history-substring-search"
 
