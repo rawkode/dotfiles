@@ -1,11 +1,11 @@
 ##
 # Plugins
 ##
-zplugin ice wait"0"
+zplugin ice silent wait"0"
 zplugin snippet OMZ::plugins/history/history.plugin.zsh
-zplugin ice wait"0"
+zplugin ice silent wait"0"
 zplugin snippet OMZ::plugins/per-directory-history/per-directory-history.zsh
-zplugin ice wait"0"
+zplugin ice silent wait"0"
 zplugin light zdharma/history-search-multi-word
 zplugin ice silent wait"0" pick"zsh-history-substring-search.zsh"
 zplugin load "zsh-users/zsh-history-substring-search"
