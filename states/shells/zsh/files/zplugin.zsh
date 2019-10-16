@@ -1,17 +1,3 @@
-# Add 256color if terminal the current terminal supports it.
-zplugin load "chrissicool/zsh-256color"
-
-##
-# Base16
-##
-zplugin ice pick"async.sh" src"scripts/base16-dracula.sh"
-zplugin load "chriskempson/base16-shell"
-
-##
-# Powerlevel10k
-##
-zplugin ice depth=1; zplugin light romkatv/powerlevel10k
-
 ##
 # Always Clear Screen & Run `ls`
 ##
@@ -32,19 +18,6 @@ zplugin load "MichaelAquilina/zsh-you-should-use"
 
 zplugin ice silent wait"0" pick"autopair.zsh"
 zplugin load "hlissner/zsh-autopair"
-
-##
-# History Plugins
-##
-# History
-zplugin ice wait"0"
-zplugin snippet OMZ::plugins/history/history.plugin.zsh
-zplugin ice wait"0"
-zplugin snippet OMZ::plugins/per-directory-history/per-directory-history.zsh
-zplugin ice wait"0"
-zplugin light zdharma/history-search-multi-word
-zplugin ice silent wait"0" pick"zsh-history-substring-search.zsh"
-zplugin load "zsh-users/zsh-history-substring-search"
 
 zplugin ice silent wait"0" atload"_zsh_autosuggest_start"
 zplugin light "zsh-users/zsh-autosuggestions"

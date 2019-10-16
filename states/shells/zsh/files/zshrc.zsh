@@ -3,16 +3,15 @@ _has() {
 }
 
 ##
+# zplugin
+##
+source ~/.zplugin/bin/zplugin.zsh
+
+##
 # Customisations
 ##
 for file in ~/.zsh/includes/*; do
     source "$file"
 done
 
-##
-# zplugin
-##
-source ~/.zplugin/bin/zplugin.zsh
 source ~/.zsh/zplugin.zsh
-
-#eval "$(starship init zsh)"
