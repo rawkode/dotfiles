@@ -20,6 +20,7 @@ include:
     - development.google-cloud
     - development.kubernetes
     - development.podman
+    - development.zeal
     - shells.zsh
     - system.audio
     - system.bluetooth

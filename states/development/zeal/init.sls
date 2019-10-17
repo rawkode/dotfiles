@@ -1,0 +1,2 @@
+zeal:
+  pkg.installed
