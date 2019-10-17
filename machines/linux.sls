@@ -7,6 +7,7 @@ include:
     - apps.zoom
     - cli.bat
     - cli.exa
+    - cli.fw
     - cli.ripgrep
     - cli.skim
     - desktop.flameshot
