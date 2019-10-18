@@ -20,6 +20,8 @@ user-{{ grains.user }}:
     - remove_groups: False
     - groups:
       - {{ grains.user }}
+      - audio
+      - realtime
 {% endif %}
 
 include:
