@@ -21,6 +21,9 @@ alias vi=' code'
 alias vim=' code'
 alias nvim=' code'
 
+# Temp Sandbox
+alias tmp=' directory=$(mktemp -d) && cd $directory'
+
 # cd
 alias cd=' cd'
 
