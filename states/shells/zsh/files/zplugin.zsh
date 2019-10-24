@@ -1,11 +1,11 @@
 ##
 # Always Clear Screen & Run `ls`
 ##
+zplugin ice silent wait"0" pick"almostontop.plugin.zsh"
+zplugin load "Valiev/almostontop"
+
 zplugin ice silent wait"0" pick"auto-ls.zsh"
 zplugin load "desyncr/auto-ls"
-
-# zplugin ice silent wait"0" pick"almostontop.plugin.zsh" ver="ad80d3a0c9bb7d0a26dd786c7a60ea0298ae31b0"
-# zplugin load "Valiev/almostontop"
 
 ##
 # Search/AutoCompletion

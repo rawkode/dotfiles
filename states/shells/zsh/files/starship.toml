@@ -7,3 +7,8 @@ use_symbol_for_status = true
 
 [directory]
 truncation_length = 8
+
+[kubernetes]
+symbol = "🎡 "
+style = "dim green"
+disabled = false
