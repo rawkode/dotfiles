@@ -7,6 +7,12 @@ export AUTOENV_FILE_ENTER=.env
 
 export DOCKER_BUILDKIT=1
 
+function archrepos() {
+  cd ~/Code/src/aur.archlinux.org/$1
+}
+
+alias aur=" archrepos"
+
 function github() {
   cd ~/Code/src/github.com/$1
 }
