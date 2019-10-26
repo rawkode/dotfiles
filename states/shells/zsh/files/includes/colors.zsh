@@ -4,5 +4,5 @@ zplugin load "chrissicool/zsh-256color"
 ##
 # Base16
 ##
-zplugin ice pick"async.sh" src"scripts/base16-gruvbox-light-hard.sh"
+zplugin ice pick"async.sh" src"scripts/base16-gruvbox-dark-hard.sh"
 zplugin load "chriskempson/base16-shell"
