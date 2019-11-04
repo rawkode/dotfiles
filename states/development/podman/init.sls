@@ -27,3 +27,6 @@ podman/config/mount:
     - after: runtime =
     - content: mount_program = "/usr/bin/fuse-overlayfs"
     - user: {{ grains.user }}
+
+podman-compose:
+  pip.installed
