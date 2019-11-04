@@ -1,3 +1,10 @@
 {% from 'aur.sls' import aur with context %}
 
-{{ aur('podman') }}
+podman-tools:
+  pkg.installed:
+    - pkgs:
+      - buildah
+      - podman
+      - skopeo
+
+{{ aur('crun') }}
