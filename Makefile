@@ -1,4 +1,11 @@
-.PHONY: setup state
+.PHONY: setup state dotfiles
+
+dotfiles:
+	@find ./dotfiles -type f -name "Makefile" -execdir make \;
+
+nix-user:
+	@cd nix; ./install-user.sh
+
 .DEFAULT_GOAL := state
 state?=grains
 
