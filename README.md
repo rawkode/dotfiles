@@ -1,10 +1,33 @@
 # Dotfiles
 
-My personal dotfiles, coordinated by SaltStack
+My personal dotfiles, coordinated by Nix, Make, and SaltStack.
 
 ## Prequisites
 
+- Install Nix
 - Install SaltStack
+
+## Provisioning
+
+### Dotfiles
+
+I keep my dotfiles out of Nix and SaltStack, so that they can be used regardless of provisioning method.
+
+I may go back to this being entirely in Nix, but until I feel Nix Packages can compete with the AUR; I'll keep them separate.
+
+### Nix
+
+```shell
+# NixOS Only
+# Installs/Updates a NixOS machine
+make nix-system
+
+# Any OS
+# Installs/Maintains User Packages
+make nix-user
+```
+
+### SaltStack
 
 ## Setup
 

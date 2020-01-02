@@ -25,11 +25,4 @@ in {
       name = "Arc";
     };
   };
-
-  programs.termite = {
-    enable = true;
-    font = "Cascadia Code, 11";
-
-    backgroundColor = "rgba(63, 63, 63, 0.8)";
-  };
 }

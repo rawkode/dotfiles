@@ -19,6 +19,9 @@
     crystal
     shards
 
+    # Cue
+    cue
+
     # Dart
     dart
 

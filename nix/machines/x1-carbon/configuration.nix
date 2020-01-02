@@ -122,6 +122,8 @@
     xkbVariant = "altgr-intl";
 
     displayManager = {
+      defaultSession = "gnome";
+
       gdm = {
         enable = true;
         wayland = true;
@@ -129,7 +131,6 @@
     };
 
     desktopManager = {
-      default = "none";
       gnome3.enable = true;
     };
 
