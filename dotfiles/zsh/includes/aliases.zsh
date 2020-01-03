@@ -22,7 +22,7 @@ alias vim=' code'
 alias nvim=' code'
 
 # Temp Sandbox
-alias tmp=' directory=$(mktemp -d) && cd $directory'
+alias tmp=' cd $(mktemp -d)'
 
 # cd
 alias cd=' cd'
