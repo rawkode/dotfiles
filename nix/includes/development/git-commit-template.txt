@@ -1,17 +1,46 @@
-##
-# - Use Present / Imperative Tense
-##
-
-# Title (Summarise The Impact of This Commit)
-# Example: (Should fit after, "This commit will ... ")
-#   Add a New API Endpoint for Forgotten Password Requests
 
 
-# Why is this change required?
-# Example:
-#   This endpoint is being added to allow users to request their
-#   password when they forget them. Without this endpoint, users
-#   can very easily get locked out of their account.
 
+## Remember to follow: https://www.conventionalcommits.org/en/v1.0.0/#summary
+#
+# <type>[optional scope]: <description>
 
-# Add any relevant links
+# [optional body]
+
+# [optional footer(s)]
+
+## Examples
+## Commit message with description and breaking change footer
+#
+# feat: allow provided config object to extend other configs
+#
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+
+## Commit message with ! to draw attention to breaking change
+#
+# refactor!: drop support for Node 6
+
+## Commit message with both ! and BREAKING CHANGE footer
+#
+# refactor!: drop support for Node 6
+#
+# BREAKING CHANGE: refactor to use JavaScript features not available in Node 6.
+
+## Commit message with no body
+#
+# docs: correct spelling of CHANGELOG
+
+## Commit message with scope
+#
+# feat(lang): add polish language
+
+## Commit message with multi-paragraph body and multiple footers
+#
+# fix: correct minor typos in code
+#
+# see the issue for details
+#
+# on typos fixed.
+#
+# Reviewed-by: Z
+# Refs #133
