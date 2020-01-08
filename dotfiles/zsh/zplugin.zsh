@@ -1,11 +1,18 @@
 ##
 # Always Clear Screen & Run `ls`
 ##
-zplugin ice silent wait"0" pick"almostontop.plugin.zsh"
-zplugin load "Valiev/almostontop"
+AUTO_LS_COMMANDS=(exa git-status)
 
 zplugin ice silent wait"0" pick"auto-ls.zsh"
 zplugin load "desyncr/auto-ls"
+
+auto-ls-exa () {
+  exa
+  [[ $AUTO_LS_NEWLINE != false ]] && echo ""
+}
+
+zplugin ice silent wait"0" pick"almostontop.plugin.zsh"
+zplugin load "Valiev/almostontop"
 
 ##
 # Search/AutoCompletion

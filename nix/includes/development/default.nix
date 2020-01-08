@@ -50,6 +50,9 @@
     python
     pythonPackages.virtualenv
 
+    # Runfiles
+    run
+
     # Rust
     rustup
 

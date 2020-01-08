@@ -7,6 +7,7 @@
     exa
     fzf
     ripgrep
+    skim
     tldr
     unzip
     vim
