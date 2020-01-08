@@ -54,16 +54,9 @@ export COLORTERM="yes"
 export NNN_DE_FILE_MANAGER="code"
 export NNN_BMS='c:/code/src;s:/code/sandbox;j:/code/src/gitlab.jaumo.com/;g:/code/src/code.devtech.gt8.online;gl:/code/src/gitlab.com;gh:/code/src/github.com'
 
-# Additional characters to respect as word delimeter
-backward-kill-not-greedy () {
-    local WORDCHARS=${WORDCHARS:s,/,,}
-    WORDCHARS=${WORDCHARS:s,\.,,}
-    WORDCHARS=${WORDCHARS:s,_,,}
-    zle backward-kill-word
-}
-
-zle -N backward-kill-not-greedy
-bindkey '^[w' backward-kill-not-greedy
+# Treat pretty much everything as a word delimiter, which means Control-W stops on:
+#  - / . , ^ - _, et al
+WORDCHARS=''
 
 # Report how long a command took, if it took more than a second
 export REPORTTIME=5
