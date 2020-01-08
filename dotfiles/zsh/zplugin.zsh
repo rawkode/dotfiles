@@ -3,16 +3,16 @@
 ##
 AUTO_LS_COMMANDS=(exa git-status)
 
-zplugin ice silent wait"0" pick"auto-ls.zsh"
-zplugin load "desyncr/auto-ls"
+zplugin ice lucid pick"auto-ls.zsh"
+zplugin light "desyncr/auto-ls"
 
 auto-ls-exa () {
   exa
   [[ $AUTO_LS_NEWLINE != false ]] && echo ""
 }
 
-zplugin ice silent wait"0" pick"almostontop.plugin.zsh"
-zplugin load "Valiev/almostontop"
+# zplugin ice lucid pick"almostontop.plugin.zsh"
+# zplugin load "Valiev/almostontop"
 
 ##
 # Nice Things
@@ -41,8 +41,8 @@ zplugin light direnv/direnv
 # zplugin ice wait blockf atpull'zplugin creinstall -q .'
 # zplugin light zsh-users/zsh-completions
 
-zplugin ice wait atinit"zpcompinit; zpcdreplay"
+zplugin ice wait lucid atinit"zpcompinit; zpcdreplay"
 zplugin light zdharma/fast-syntax-highlighting
 
-zplugin ice wait atload"_zsh_autosuggest_start"
+zplugin ice wait lucid atload"_zsh_autosuggest_start"
 zplugin light zsh-users/zsh-autosuggestions
