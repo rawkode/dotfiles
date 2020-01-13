@@ -22,6 +22,6 @@ set -e
 
 sudo cp ./machines/${actual_machine}/configuration.nix /etc/nixos/
 
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-sudo nix-channel --update
-sudo nixos-rebuild switch --upgrade
+sudo -i nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+sudo -i nix-channel --update
+sudo -i nixos-rebuild switch --upgrade

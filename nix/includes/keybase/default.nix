@@ -21,7 +21,7 @@
     keybase = {
       enable = true;
     };
-      
+
     kbfs = {
       enable = true;
       mountPoint = "Keybase";

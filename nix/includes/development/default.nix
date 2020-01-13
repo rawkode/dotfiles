@@ -5,6 +5,7 @@
     [
       ./containers.nix
       ./git.nix
+      ./python.nix
       ./vscode.nix
     ];
 
@@ -51,10 +52,12 @@
     pythonPackages.virtualenv
 
     # Runfiles
-    run
+    #run
 
     # Rust
     rustup
+    binutils
+    gcc
 
     # Terraform
     terraform_0_12
