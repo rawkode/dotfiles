@@ -16,6 +16,9 @@
   };
 
   home.packages = (with pkgs; [
+    # CircleCI
+    circleci-cli
+
     # Crystal
     crystal
     shards
