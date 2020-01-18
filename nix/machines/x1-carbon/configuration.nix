@@ -107,6 +107,7 @@ SUBSYSTEM=="hidraw", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="8acf", TAG+="ua
       cascadia-code
       corefonts
       emojione
+      font-awesome
       google-fonts
       noto-fonts
       noto-fonts-cjk
@@ -155,6 +156,14 @@ SUBSYSTEM=="hidraw", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="8acf", TAG+="ua
 
     desktopManager = {
       gnome3.enable = true;
+    };
+
+    windowManager = {
+      awesome.enable = true;
+      i3 = {
+        enable = true;
+        package = pkgs.i3-gaps;
+      };
     };
 
     libinput = {

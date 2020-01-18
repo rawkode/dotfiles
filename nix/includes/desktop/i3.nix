@@ -5,6 +5,7 @@ let
   theme = (import ./themes/brewer.nix).theme;
 in {
   home.packages = (with pkgs; [
+    arandr
     compton
     dunst
     i3lock
@@ -47,7 +48,7 @@ in {
     urxvt = {
       enable = true;
       fonts = [
-        "xft:FuraCode Nerd Font:size=11"
+        "xft:Cascadia Code:size=11"
       ];
     };
   };
@@ -64,7 +65,7 @@ in {
         };
 
         fonts = [
-          "FuraCode Nerd Font 9"
+          "Cascadia Code 9"
         ];
 
         modifier = modifier;
@@ -200,7 +201,7 @@ in {
 
             "XF86AudioLowerVolume" = "exec  --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ -5% && V=`pamixer --get-volume` && notify-send \"Lowering Volume to \${V}%\"";
 
-            "${modifier}+Return" = "exec  --no-startup-id termite";
+            "${modifier}+Return" = "exec  --no-startup-id alacritty";
 
             "${modifier}+space" = "exec --no-startup-id rofi -show drun";
             "${modifier}+Home" = "exec --no-startup-id rofi -show drun";
@@ -381,7 +382,7 @@ services = {
           background = theme.background;
           foreground = theme.foreground;
 
-          font-0 = "FuraCode NerdFont:size=11";
+          font-0 = "Cascadia Code:size=11";
           font-1 = "Noto Color Emoji:scale=11";
           font-2 = "Font Awesome 5 Free:style=Solid:size=10;1";
           font-3 = "Font Awesome 5 Brands:size=10;1";

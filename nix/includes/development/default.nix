@@ -47,7 +47,7 @@
     pony-stable
 
     # Pulumi
-    pulumi-bin
+    #pulumi-bin
 
     # Python
     pipenv
