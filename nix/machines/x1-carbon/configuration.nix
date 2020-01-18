@@ -67,10 +67,13 @@
   environment.gnome3.excludePackages = with pkgs.gnome3; [ gnome-software ];
 
   environment.systemPackages = (with pkgs; [
+    blueman
     gnome3.dconf
     gnome3.vte
+    networkmanagerapplet
   ]);
 
+  services.blueman.enable = true;
   services.udev.packages = [ pkgs.libu2f-host ];
   services.udev.extraRules = ''
 # Notify ModemManager this device should be ignored
