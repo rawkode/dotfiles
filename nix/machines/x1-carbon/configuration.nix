@@ -61,7 +61,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "Europe/London";
+  time.timeZone = "Europe/Berlin";
 
   # List packages installed in system profile.
   environment.gnome3.excludePackages = with pkgs.gnome3; [ gnome-software ];

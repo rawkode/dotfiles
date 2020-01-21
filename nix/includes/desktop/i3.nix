@@ -132,8 +132,8 @@ in {
           lib.mkOptionDefault {
             "${modifier}+Shift+e" = "exec --no-startup-id i3-msg exit";
             "${modifier}+Pause" = "exec --no-startup-id i3-msg exit";
-            "${modifier}+l" = "exec i3lock --color '${theme.background}'";
-            "Pause" = "exec i3lock --color '${theme.background}'";
+            "${modifier}+l" = "exec i3lock --color '${theme.foreground}'";
+            "Pause" = "exec i3lock --color '${theme.foreground}'";
 
 
             "${modifier}+1" = "workspace 1";
@@ -195,6 +195,7 @@ in {
             "${modifier}+b" = "exec --no-startup-id systemctl --user daemon-reload && systemctl --user restart pulseaudio";
 
             "${modifier}+q" = "kill";
+            "${modifier}+backspace" = "kill";
             "${modifier}+r" = "mode \"resize\"";
 
             "XF86AudioRaiseVolume" = "exec  --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ +5% && V=`pamixer --get-volume` && notify-send \"Raising Volume to \${V}%\"";

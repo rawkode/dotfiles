@@ -19,4 +19,4 @@ cp -R includes $HOME/.config/nixpkgs/
 
 nix-channel --update
 
-home-manager switch
+home-manager switch --show-trace
