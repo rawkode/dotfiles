@@ -27,7 +27,7 @@
     cue
 
     # Dart
-    dart
+    #dart
 
     # Flutter
     # flutter
@@ -61,6 +61,11 @@
     rustup
     binutils
     gcc
+
+    # Scala
+    scala
+    scalafix
+    scalafmt
 
     # Terraform
     terraform_0_12
