@@ -36,6 +36,11 @@
   networking = {
     hostName = "nixos";
 
+    extraHosts =
+    ''
+    127.0.0.1 localhost myapp
+    '';
+
     networkmanager = {
       enable = true;
     };
@@ -61,7 +66,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "Europe/London";
 
   # List packages installed in system profile.
   environment.gnome3.excludePackages = with pkgs.gnome3; [ gnome-software ];
@@ -126,6 +131,8 @@ SUBSYSTEM=="hidraw", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="8acf", TAG+="ua
     };
   };
 
+  services.logind.lidSwitch = "suspend-then-hibernate";
+
   services.printing.enable = true;
   services.pcscd.enable = true;
 
@@ -172,8 +179,6 @@ SUBSYSTEM=="hidraw", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="8acf", TAG+="ua
     libinput = {
       enable = true;
 
-      # This only applies to the trackpad, need to check if we
-      # can find a way to do this for mice too.
       naturalScrolling = true;
       scrollMethod = "twofinger";
       tapping = true;

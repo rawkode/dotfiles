@@ -1,6 +1,6 @@
-polybar/install:
-    pkg.installed:
-      - name: polybar
+{% from 'aur.sls' import aur with context %}
+
+{{ aur('polybar') }}
 
 polybar/config:
   file.managed:

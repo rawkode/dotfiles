@@ -2,6 +2,6 @@ state_output: mixed
 
 file_roots:
   base:
-    - ./machines
-    - ./macros
-    - ./states
+    - ./salt-stack/machines
+    - ./salt-stack/macros
+    - ./salt-stack/states

@@ -1,2 +1,2 @@
-include:
-    - .{{ grains.os_family | lower }}
+tig:
+  pkg.installed

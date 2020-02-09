@@ -7,7 +7,6 @@ include:
     - apps.zoom
     - cli.bat
     - cli.exa
-    - cli.fw
     - cli.pazi
     - cli.ripgrep
     - cli.skim
