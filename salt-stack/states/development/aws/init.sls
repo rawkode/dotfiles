@@ -1,0 +1,2 @@
+aws-cli:
+  pkg.installed

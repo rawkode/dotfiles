@@ -16,12 +16,14 @@ include:
     - desktop.gnome
     - desktop.gtk
     - desktop.i3
+    - development.aws
     - development.docker
     - development.git
     - development.go
     - development.google-cloud
     - development.kubernetes
     - development.podman
+    - development.pulumi
     - development.zeal
     - shells.zsh
     - system.audio
