@@ -57,11 +57,6 @@
     # Runfiles
     #run
 
-    # Rust
-    rustup
-    binutils
-    gcc
-
     # Scala
     scala
     scalafix
