@@ -1,3 +1,2 @@
-git-hub-install:
-  pkg.installed:
-    - name: hub
+include:
+    - .{{ grains.os_family | lower }}
