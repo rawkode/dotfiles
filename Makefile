@@ -4,7 +4,7 @@ dotfiles:
 	@find ./dotfiles -type f -name "Makefile" -execdir make \;
 
 nix-system:
-	@cd nix; ./install-system.sh
+	@cd ni; ./install-system.sh
 
 nix-user:
 	@cd nix; ./install-user.sh
