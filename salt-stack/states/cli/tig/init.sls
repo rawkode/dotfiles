@@ -1,2 +1,0 @@
-tig:
-  pkg.installed

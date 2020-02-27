@@ -1,7 +1,0 @@
-state_output: mixed
-
-file_roots:
-  base:
-    - ./salt-stack/machines
-    - ./salt-stack/macros
-    - ./salt-stack/states

@@ -1,2 +1,0 @@
-exa:
-  pkg.installed

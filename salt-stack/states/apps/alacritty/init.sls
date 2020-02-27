@@ -1,2 +1,0 @@
-alacritty:
-  pkg.installed

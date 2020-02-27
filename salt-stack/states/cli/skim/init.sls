@@ -1,2 +1,0 @@
-skim:
-  pkg.installed

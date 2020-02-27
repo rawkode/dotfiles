@@ -1,0 +1,114 @@
+managers:
+  arch:
+    command: yay
+    install: -Sy --noconfirm --needed
+    uninstall: -Rd --noconfirm
+  debian:
+    command: apt
+    install: install -y
+    uninstall: uninstall -y
+  nix:
+    command: nix-env
+    install: -i
+    uninstall: -e
+
+packages:
+  # CLI, Shells, and Terminals
+  - dist:
+      arch:
+        - alacritty
+        - bat
+        - exa
+        - jq
+        - keybase
+        - kbfs
+        - ripgrep
+        - skim
+        - zsh
+
+  # Desktop
+  - name: i3
+    dist:
+      arch:
+        - arandr
+        - i3-gaps
+        - i3lock
+        - nitrogen
+        - pasystray
+        - polybar
+        - rofi
+
+  - name: fonts
+    dist:
+      arch:
+        - noto-fonts-emoji
+        - ttf-cascadia-code
+        - ttf-google-fonts-typewolf
+
+  # Web Browsers
+  - name: google-chrome
+
+  # Communications
+  - dist:
+      arch:
+        - slack-desktop
+        - zoom
+
+  # Yubikey
+  - dist:
+      arch:
+        - ccid
+        - gnupg
+        - pcsclite
+        - pcsc-tools
+        - yubikey-personalization
+
+  # Development
+  - name: Editors & Tooling
+    dist:
+      arch:
+        - github-cli
+        - visual-studio-code-bin
+
+  - name: Crystal
+    dist:
+      arch:
+        - crystal
+        - shards
+
+  - name: Containers
+    dist:
+      arch:
+        - buildah
+        - crun
+        - podman
+        - skopeo
+
+  - name: kvm2 (for minikube)
+    dist:
+      arch:
+        - gnome-boxes!
+        - qemu!
+        - dnsmasq
+        - ebtables
+        - libvirt
+        - qemu-headless
+
+  - name: Kubernetes
+    dist:
+      arch:
+        - kind-bin
+        - kubectl
+        - minikube
+
+scripts:
+  - curl https://keybase.io/rawkode/pgp_keys.asc | gpg --import
+  - sudo systemctl start pcscd.service
+  - sudo systemctl start pcscd.socket
+  - sudo usermod -a -G libvirt $(whoami)
+  - sudo systemctl enable libvirtd virtlogd
+  - sudo systemctl start libvirtd virtlogd
+  - sudo virsh net-autostart default
+  - sudo virsh net-start default
+  - keybase config set mountdir ${HOME}/Keybase
+  - keybase ctl autostart --enable

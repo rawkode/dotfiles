@@ -1,2 +1,0 @@
-jq:
-  pkg.installed
