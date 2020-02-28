@@ -89,6 +89,8 @@ packages:
       arch:
         - google-cloud-sdk
 
+  - name: jsonnet
+
   - name: Kubernetes
     dist:
       arch:
