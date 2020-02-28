@@ -112,3 +112,4 @@ scripts:
   - sudo virsh net-start default
   - keybase config set mountdir ${HOME}/Keybase
   - keybase ctl autostart --enable
+  - mkdir -p ${HOME}/Code/src/{aur.arhclinux.org,bitbucket.org,github.com,gitlab.com}
