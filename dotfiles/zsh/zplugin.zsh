@@ -4,7 +4,7 @@
 AUTO_LS_COMMANDS=(exa git-status)
 
 zplugin ice lucid pick"auto-ls.zsh"
-zplugin light "desyncr/auto-ls"
+zplugin load "desyncr/auto-ls"
 
 auto-ls-exa () {
   exa
