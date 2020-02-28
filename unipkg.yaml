@@ -84,6 +84,19 @@ packages:
         - podman
         - skopeo
 
+  - name: Google Cloud
+    dist:
+      arch:
+        - google-cloud-sdk
+
+  - name: Kubernetes
+    dist:
+      arch:
+        - kind-bin
+        - kubectl
+        - kubernetes-helm-bin
+        - minikube
+
   - name: kvm2 (for minikube)
     dist:
       arch:
@@ -93,13 +106,6 @@ packages:
         - ebtables
         - libvirt
         - qemu-headless
-
-  - name: Kubernetes
-    dist:
-      arch:
-        - kind-bin
-        - kubectl
-        - minikube
 
 scripts:
   - curl https://keybase.io/rawkode/pgp_keys.asc | gpg --import
@@ -113,3 +119,5 @@ scripts:
   - keybase config set mountdir ${HOME}/Keybase
   - keybase ctl autostart --enable
   - mkdir -p ${HOME}/Code/src/{aur.arhclinux.org,bitbucket.org,github.com,gitlab.com}
+  - mkdir -p ${HOME}/Pictures/Wallpapers
+  - curl https://rawkode.keybase.pub/pictures/wallpapers/Stargate/Stargate%205.jpg -o ${HOME}/Pictures/Wallpapers/Stargate.jpg
