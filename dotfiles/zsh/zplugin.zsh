@@ -16,9 +16,6 @@ auto-ls-exa () {
 
 ##
 # Nice Things
-zplugin ice silent wait"0" pick"you-should-use.plugin.zsh"
-zplugin load "MichaelAquilina/zsh-you-should-use"
-
 zplugin ice silent wait"0" pick"autopair.zsh"
 zplugin load "hlissner/zsh-autopair"
 
