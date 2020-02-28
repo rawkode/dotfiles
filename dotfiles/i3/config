@@ -34,7 +34,7 @@ client.placeholder	$color0	        $background	$foreground     $color2		$color0
 # Mouse
 focus_follows_mouse no
 
-font pango:Fira Mono Regular 11
+font pango:Cascadia Code 11
 floating_modifier Mod4
 
 # Keybindings
