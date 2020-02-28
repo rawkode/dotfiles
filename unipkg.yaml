@@ -81,6 +81,7 @@ packages:
       arch:
         - buildah
         - crun
+        - docker
         - podman
         - skopeo
 
@@ -130,3 +131,6 @@ scripts:
   - mkdir -p ${HOME}/Code/src/{aur.arhclinux.org,bitbucket.org,github.com,gitlab.com}
   - mkdir -p ${HOME}/Pictures/Wallpapers
   - curl https://rawkode.keybase.pub/pictures/wallpapers/Stargate/Stargate%205.jpg -o ${HOME}/Pictures/Wallpapers/Stargate.jpg
+  - sudo usermod -a -G docker $(whoami)
+  - sudo systemctl enable docker
+  - sudo systemctl start docker
