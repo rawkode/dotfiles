@@ -107,6 +107,13 @@ packages:
         - libvirt
         - qemu-headless
 
+  - name: Scala
+    dist:
+      arch:
+        - sbt
+        - scala
+        - scalafmt
+
 scripts:
   - curl https://keybase.io/rawkode/pgp_keys.asc | gpg --import
   - sudo systemctl start pcscd.service
