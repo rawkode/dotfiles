@@ -23,11 +23,11 @@ GOPATH=${HOME}/Code
 typeset -U path
 
 ##
-# zplugin
+# zinit
 ##
-source ${HOME}/.zplugin/bin/zplugin.zsh
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
+source ${HOME}/.zinit/bin/zinit.zsh
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
 ##
 # My zsh configurations
@@ -36,8 +36,8 @@ for file in ~/.zsh/includes/*; do
 done
 
 ##
-# Load zplugins plugins that haven't been put into files above (yet)
-source ~/.zsh/zplugin.zsh
+# Load zinits plugins that haven't been put into files above (yet)
+source ~/.zsh/zinit.zsh
 
 ##
 # Using the (N-/) glob qualifier we can remove paths that do not exist.
