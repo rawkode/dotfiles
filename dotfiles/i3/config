@@ -172,7 +172,7 @@ bindsym Pause exec i3lock --color 333333
 bindsym $mod+l exec i3lock --color 333333
 
 exec --no-startup-id libinput-gestures
-exec --no-startup-id compton --config ~/.config/compton.conf -b
+exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id greenclip daemon
 exec --no-startup-id polybar top
