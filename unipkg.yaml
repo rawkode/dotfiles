@@ -38,6 +38,7 @@ packages:
         - pasystray
         - polybar
         - rofi
+        - rofi-emoji
 
   - name: fonts
     dist:

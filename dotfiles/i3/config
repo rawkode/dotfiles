@@ -38,8 +38,6 @@ font pango:Cascadia Code 11
 floating_modifier Mod4
 
 # Keybindings
-
-# Copy and paste support is awful with Alacritty
 bindsym $mod+Return exec alacritty
 
 bindsym Print exec flameshot gui
