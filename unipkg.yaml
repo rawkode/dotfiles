@@ -40,6 +40,14 @@ packages:
         - rofi
         - rofi-emoji
 
+  - name: Gnome / GTK Extensions & Themes
+    dist:
+      arch:
+        - arc-gtk-theme
+        - bibata-cursor-translucent
+        - chrome-gnome-shell
+        - vimix-gtk-theme
+
   - name: fonts
     dist:
       arch:
