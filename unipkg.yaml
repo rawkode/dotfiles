@@ -61,6 +61,7 @@ packages:
   # Communications
   - dist:
       arch:
+        - discord
         - slack-desktop
         - zoom
 
