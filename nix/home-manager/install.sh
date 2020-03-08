@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-mkdir -p $HOME/.config/nixpkgs
+mkdir -p ${HOME}/.config/nixpkgs
 
 if ! [ -x "$(command -v home-manager)" ]; then
     nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
@@ -9,14 +9,16 @@ if ! [ -x "$(command -v home-manager)" ]; then
     nix-shell '<home-manager>' -A install
 fi
 
-if [[ ! -d $HOME/.zplug ]]; then
-    export ZPLUG_HOME=$HOME/.zplug
-    git clone https://github.com/zplug/zplug $ZPLUG_HOME
+if [ ! -d "${HOME}/.zinit/bin" ];
+then
+    git clone https://github.com/zdharma/zinit.git ~/.zinit/bin;
 fi
 
-cp ./user.nix $HOME/.config/nixpkgs/home.nix
-cp -R includes $HOME/.config/nixpkgs/
+rm -rf ${HOME}/.config/nixpkgs/home.nix ${HOME}/.config/nixpkgs/includes
+
+cp ./user.nix ${HOME}/.config/nixpkgs/home.nix
+cp -R includes ${HOME}/.config/nixpkgs/
 
 nix-channel --update
 
-home-manager switch --show-trace
+home-manager switch

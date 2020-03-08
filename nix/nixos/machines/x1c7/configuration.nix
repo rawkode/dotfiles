@@ -5,13 +5,19 @@
     ./hardware-configuration.nix
   ];
 
+  nixpkgs.overlays = [ (import ./overlays/fingerprint-reader.nix) ];
+
   fileSystems."/".options = [ "noatime" "nodiratime" ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" ];
   boot.kernelModules = [ "kvm-intel" ];
 
+
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+
+    # Activate acpi_call module for TLP ThinkPad features
+    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
 
     loader = {
       systemd-boot = {
@@ -26,8 +32,21 @@
     cleanTmpDir = true;
   };
 
+  hardware.cpu.intel.updateMicrocode = true;
+
+  # Enable TLP Power Management
+  services.tlp = {
+    enable = true;
+    extraConfig = ''
+      START_CHARGE_THRESH_BAT0=85
+      STOP_CHARGE_THRESH_BAT0=90
+    '';
+  };
+
+  # Enable fprintd
+  services.fprintd.enable = true;
+
   services.hardware.bolt.enable = true;
-  services.tlp.enable = true;
 
   i18n = {
     defaultLocale = "en_GB.UTF-8";
@@ -35,11 +54,6 @@
 
   networking = {
     hostName = "nixos";
-
-    extraHosts =
-    ''
-    127.0.0.1 localhost myapp
-    '';
 
     networkmanager = {
       enable = true;
@@ -73,11 +87,17 @@
 
   environment.systemPackages = (with pkgs; [
     blueman
+    fprintd
+    libfprint
+    fwupd
     gnome3.dconf
     gnome3.vte
     networkmanagerapplet
+    pipewire
+    xdg-desktop-portal
   ]);
 
+  services.fwupd.enable = true;
   services.blueman.enable = true;
   services.udev.packages = [ pkgs.libu2f-host ];
   services.udev.extraRules = ''
@@ -191,6 +211,7 @@ SUBSYSTEM=="hidraw", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="8acf", TAG+="ua
     allowUnfree = true;
   };
 
+  programs.zsh.enable = true;
   users.groups.rawkode = {};
 
   users.users.rawkode = {

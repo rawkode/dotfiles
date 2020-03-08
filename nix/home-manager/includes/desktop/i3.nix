@@ -21,7 +21,6 @@ in {
     "Xft.hintstyle" = "hintfull";
     "Xft.lcdfilter" = "lcddefault";
 
-    "Xcursor.theme" = "Bibata Oil";
 
     "*.foreground"  = theme.foreground;
     "*.background"  = theme.background;
