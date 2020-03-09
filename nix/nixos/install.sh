@@ -25,7 +25,7 @@ sudo rm -rf /etc/nixos/{overlays,packages}
 sudo cp ./machines/${actual_machine}/configuration.nix /etc/nixos/
 sudo cp -r ./machines/${actual_machine}/{overlays,packages} /etc/nixos/
 
-sudo -i nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+sudo -i nix-channel --add https://nixos.org/channels/nixos-20.03 nixos
 sudo -i nix-channel --update
 
 sudo -i nixos-rebuild switch --upgrade

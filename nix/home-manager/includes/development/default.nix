@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./aws.nix
       ./containers.nix
       ./git.nix
       ./vscode.nix
@@ -15,6 +16,9 @@
   };
 
   home.packages = (with pkgs; [
+    # AWS
+    awscli
+
     # CircleCI
     circleci-cli
 
@@ -46,7 +50,7 @@
     pony-stable
 
     # Pulumi
-    #pulumi-bin
+    pulumi-bin
 
     # Python
     pipenv

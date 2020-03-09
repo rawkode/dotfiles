@@ -75,8 +75,6 @@
     };
 
     useSandbox = true;
-
-    package = pkgs.nixUnstable;
   };
 
   # Set your time zone.
@@ -95,6 +93,11 @@
     networkmanagerapplet
     pipewire
     xdg-desktop-portal
+    arc-icon-theme
+    arc-theme
+    bibata-cursors-translucent
+    gnome3.gnome-tweaks
+    materia-theme
   ]);
 
   services.fwupd.enable = true;

@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = (with pkgs; [
-    gitAndTools.hub
-  ]);
+  # home.packages = (with pkgs; [
+  #   gitAndTools.gitFull
+  # ]);
 
   programs.git = {
     enable = true;

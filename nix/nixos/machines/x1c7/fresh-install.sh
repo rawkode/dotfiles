@@ -31,5 +31,5 @@ nixos-generate-config --root /mnt
 
 cp ./configuration.nix /mnt/etc/nixos/configuration.nix
 
-nixos-enter -c "nix-channel --add https://nixos.org/channels/nixos-unstable nixos"
+nixos-enter -c "nix-channel --add https://nixos.org/channels/nixos-20.03 nixos"
 nixos-install
