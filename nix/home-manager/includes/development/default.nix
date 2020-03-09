@@ -30,7 +30,7 @@
     cue
 
     # Dart
-    #dart
+    dart
 
     # Flutter
     # flutter
@@ -40,6 +40,9 @@
 
     # Google Cloud
     google-cloud-sdk
+
+    # Make
+    gnumake
 
     # JavaScript
     nodejs
@@ -58,7 +61,7 @@
     pythonPackages.virtualenv
 
     # Runfiles
-    #run
+    run
 
     # Scala
     scala
