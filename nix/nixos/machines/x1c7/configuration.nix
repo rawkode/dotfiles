@@ -81,7 +81,8 @@
   time.timeZone = "Europe/London";
 
   # List packages installed in system profile.
-  environment.gnome3.excludePackages = with pkgs.gnome3; [ gnome-software ];
+  environment.gnome3.excludePackages =
+    [ pkgs.gnome3.geary pkgs.gnome3.epiphany pkgs.gnome3.gnome-software ];
 
   environment.systemPackages = (with pkgs; [
     blueman
@@ -97,7 +98,7 @@
     arc-theme
     bibata-cursors-translucent
     gnome3.gnome-tweaks
-    materia-theme
+    nordic
   ]);
 
   services.fwupd.enable = true;
