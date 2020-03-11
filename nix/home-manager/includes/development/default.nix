@@ -5,7 +5,9 @@
     [
       ./aws.nix
       ./containers.nix
+      ./elixir.nix
       ./git.nix
+      ./go.nix
       ./vscode.nix
     ];
 
