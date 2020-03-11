@@ -24,7 +24,7 @@ in {
     };
 
     theme = {
-      name = "Arc-Darker";
+      name = "Nordic-blue";
     };
 
     iconTheme = {
