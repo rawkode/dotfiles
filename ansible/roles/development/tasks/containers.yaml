@@ -1,0 +1,33 @@
+- name: "containers/install"
+  aur:
+    name:
+      - "buildah"
+      - "docker"
+      - "docker-compose"
+      - "docker-machine-driver-kvm2"
+      - "draft-bin"
+      - "jsonnet"
+      - "k9s"
+      - "kaniko"
+      - "kubectl"
+      - "kubernetes-helm-bin"
+      - "minikube"
+      - "podman"
+      - "skaffold-bin"
+      - "skopeo"
+    skip_installed: yes
+
+
+- name: "development/containers/docker/user-group"
+  become: yes
+  user: name={{ username }}
+      groups=docker
+      append=yes
+
+- name: "development/containers/docker/service"
+  become: yes
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
+    daemon_reload: yes

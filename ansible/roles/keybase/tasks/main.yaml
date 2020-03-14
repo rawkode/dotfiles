@@ -1,0 +1,17 @@
+- name: "keybase/install"
+  aur:
+    name:
+      - kbfs
+      - keybase
+    skip_installed: yes
+
+- name: "keybase/kbfs/configure"
+  command: keybase config set mountdir ~/Keybase
+
+- name: "keybase/kbfs/service"
+  systemd:
+    name: kbfs
+    scope: user
+    state: started
+    enabled: yes
+    daemon_reload: yes

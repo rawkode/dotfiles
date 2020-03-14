@@ -1,0 +1,3 @@
+- name: mkinitcpio
+  command: mkinitcpio -p linux
+  become: yes

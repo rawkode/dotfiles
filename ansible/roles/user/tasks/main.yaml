@@ -1,0 +1,22 @@
+- name: "{{ username }}/configure"
+  become: yes
+  user:
+    name: "{{ username }}"
+    shell: "/usr/bin/zsh"
+    append: yes
+
+- name: "{{ username }}/subuid"
+  become: yes
+  lineinfile:
+    create: yes
+    path: "/etc/subuid"
+    regexp: "^{{ username }}:"
+    line: "{{ username }}:100000:65536"
+
+- name: "{{ username }}/subgid"
+  become: yes
+  lineinfile:
+    create: yes
+    path: "/etc/subgid"
+    regexp: "^{{ username }}:"
+    line: "{{ username }}:100000:65536"

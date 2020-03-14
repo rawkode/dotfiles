@@ -1,0 +1,21 @@
+- name: "git/install"
+  aur:
+    name: "git"
+    skip_installed: yes
+
+- name: "git/directory"
+  file:
+    path: ~/.config/git
+    state: directory
+
+- name: "git/config"
+  copy:
+    src: ./files/git.config
+    dest: ~/.config/git/config
+    mode: '0644'
+
+- name: "git/ignore"
+  copy:
+    src: ./files/git.ignores
+    dest: ~/.config/git/ignores
+    mode: '0644'

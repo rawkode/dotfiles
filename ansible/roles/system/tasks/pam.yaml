@@ -1,0 +1,25 @@
+- aur:
+    name:
+      - "fprintd"
+    skip_installed: yes
+
+- name: "pam/fprintd/user-group"
+  user: name={{ username }}
+        groups=input
+        append=yes
+
+- name: "pam/system-local-login/fprint"
+  pamd:
+    name: system-local-login
+    type: auth
+    control: required
+    module_path: pam_fprintd.so
+    new_control: sufficient
+
+- name: "pam/sudo/fprint"
+  pamd:
+    name: sudo
+    type: auth
+    control: required
+    module_path: pam_fprintd.so
+    new_control: sufficient

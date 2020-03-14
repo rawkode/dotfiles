@@ -1,3 +1,14 @@
+## Fresh Machine
+
+- ansible
+- base-devel
+- git
+- go
+- make
+
+---
+
+
 Change Lock Screen Colour
 Start nm-applet
 Start Blueman

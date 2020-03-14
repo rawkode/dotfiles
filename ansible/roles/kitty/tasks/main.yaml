@@ -1,0 +1,10 @@
+- name: "kitty/install"
+  aur:
+    name: "kitty"
+    skip_installed: yes
+
+- name: "kitty/config"
+  copy:
+    src: ./files/kitty.conf
+    dest: ~/.config/kitty/kitty.conf
+    mode: '0644'

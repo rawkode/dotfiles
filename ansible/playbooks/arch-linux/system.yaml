@@ -1,0 +1,6 @@
+- name: "system"
+  hosts: "all"
+  roles:
+    - { role: "../../roles/aur" }
+    - { role: "../../roles/system" }
+    - { role: "../../roles/user" }

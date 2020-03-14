@@ -1,0 +1,19 @@
+- name: "web/chromium/install"
+  aur:
+    name: "chromium"
+    skip_installed: yes
+
+- name: "web/firefox/install"
+  aur:
+    name: "firefox-developer-edition"
+    skip_installed: yes
+
+- name: "web/brave/install"
+  aur:
+    name: "brave-bin"
+    skip_installed: yes
+
+- name: "web/vivaldi/install"
+  aur:
+    name: "vivaldi"
+    skip_installed: yes

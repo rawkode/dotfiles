@@ -1,0 +1,6 @@
+- name: "system/pacman/color"
+  become: yes
+  replace:
+    path: "/etc/pacman.conf"
+    regexp: "^#Color$"
+    replace: "Color"

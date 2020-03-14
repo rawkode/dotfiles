@@ -1,0 +1,11 @@
+- include_tasks:
+    file: "kernel.yaml"
+
+- include_tasks:
+    file: "pacman.yaml"
+
+- include_tasks:
+    file: "pam.yaml"
+
+- include_tasks:
+    file: "plymouth.yaml"

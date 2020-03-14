@@ -1,0 +1,22 @@
+- aur:
+    name:
+      - plymouth
+      - plymouth-theme-arch-logo      
+    skip_installed: yes
+
+
+- name: "plymouth/mkinitcpio.conf/hooks"
+  become: yes
+  notify: mkinitcpio
+  lineinfile:
+    path: "/etc/mkinitcpio.conf"
+    regexp: "^HOOKS=(.*sd-plymouth.*)"
+    line: "HOOKS=(base systemd sd-plymouth udev autodetect keyboard sd-vconsole modconf block sd-encrypt filesystems keyboard fsck)"
+
+- name: "plymouth/mkinitcpio.conf/modules"
+  become: yes
+  notify: mkinitcpio
+  lineinfile:
+    path: "/etc/mkinitcpio.conf"
+    regexp: "^MODULES=(i915)"
+    line: "MODULES=(i915)"

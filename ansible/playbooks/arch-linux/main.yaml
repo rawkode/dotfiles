@@ -1,0 +1,7 @@
+- import_playbook: system.yaml
+- import_playbook: cli.yaml
+- import_playbook: desktop.yaml
+
+- hosts: "all"
+  roles:
+    - { role: "../../roles/development" }

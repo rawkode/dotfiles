@@ -1,0 +1,9 @@
+- name: "desktop"
+  hosts: "all"
+  roles:
+    - { role: "../../roles/fonts" }
+    - { role: "../../roles/gnome" }
+    - { role: "../../roles/kitty" }
+    - { role: "../../roles/slack" }
+    - { role: "../../roles/web" }
+    - { role: "../../roles/zoom" }

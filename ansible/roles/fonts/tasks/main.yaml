@@ -1,0 +1,5 @@
+- name: "fonts/install"
+  aur:
+    name:
+    - ttf-cascadia-code
+    skip_installed: yes

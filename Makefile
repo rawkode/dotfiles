@@ -11,3 +11,9 @@ nix-system:
 
 nix-user:
 	@cd nix; ./install-user.sh
+
+ansible-playbook:
+	@ansible-playbook -i ./ansible/hosts ./ansible/playbooks/$(PLAYBOOK).yaml
+
+ansible-role:
+	@ansible -i ansible/hosts localhost --playbook-dir ./ansible -m include_role -a name=$(ROLE)

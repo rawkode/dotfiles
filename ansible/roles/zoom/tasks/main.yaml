@@ -1,0 +1,3 @@
+- aur:
+    name: "zoom"
+    skip_installed: "yes"
