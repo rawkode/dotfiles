@@ -1,2 +1,17 @@
 - include_tasks:
     file: containers.yaml
+
+- name: "code/github.com"
+  file:
+    path: ~/Code/src/github.com
+    state: directory
+
+- name: "code/github.com"
+  file:
+    path: ~/Code/src/github.com
+    state: directory
+
+- name: "code/gitlab.com"
+  file:
+    path: ~/Code/src/gitlab.com
+    state: directory
