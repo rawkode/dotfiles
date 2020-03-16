@@ -4,9 +4,11 @@
     skip_installed: yes
 
 - name: "pam/fprintd/user-group"
-  user: name={{ username }}
-        groups=input
-        append=yes
+  user:
+    name: "{{ username }}"
+    groups:
+      - "input"
+    append: yes
 
 - name: "pam/system-local-login/fprint"
   pamd:
