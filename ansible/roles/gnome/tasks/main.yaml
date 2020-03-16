@@ -8,3 +8,27 @@
       - gnome-shell-extension-paperwm-git
       - suru-plus-git
     skip_installed: yes
+
+- name: "gnome/screensharing"
+  aur:
+    name:
+      - pipewire
+      - pipewire-jack
+      - pipewire-pulse
+      - xdg-desktop-portal
+      - xdg-desktop-portal-gtk
+    skip_installed: yes
+
+- name: "gnome/screensharing/socket"
+  systemd:
+    name: pipewire.socket
+    state: started
+    scope: user
+    enabled: yes
+
+- name: "gnome/screensharing/service"
+  systemd:
+    name: pipewire.service
+    scope: user
+    state: started
+    enabled: yes
