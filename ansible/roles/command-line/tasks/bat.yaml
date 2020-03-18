@@ -1,0 +1,4 @@
+- name: "bat/install"
+  aur:
+    name: "bat"
+    skip_installed: yes

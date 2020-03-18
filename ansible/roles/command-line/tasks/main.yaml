@@ -1,0 +1,3 @@
+- include_tasks: bat.yaml
+- include_tasks: exa.yaml
+- include_tasks: jq.yaml

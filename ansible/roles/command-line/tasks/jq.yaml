@@ -1,0 +1,4 @@
+- name: "jq/install"
+  aur:
+    name: "jq"
+    skip_installed: yes
