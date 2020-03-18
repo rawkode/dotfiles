@@ -3,9 +3,10 @@
     name:
       - arc-gtk-theme
       - bibata-cursor-translucent
-      - gnome-shell-extension-sound-output-device-chooser-git
       - gnome-shell-extension-dash-to-panel
+      - gnome-shell-extension-emoji-selector-git
       - gnome-shell-extension-paperwm-git
+      - gnome-shell-extension-sound-output-device-chooser-git
       - suru-plus-git
     skip_installed: yes
 
