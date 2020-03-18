@@ -2,6 +2,7 @@
   aur:
     name:
       - "buildah"
+      - "crun"
       - "docker"
       - "docker-compose"
       - "docker-machine-driver-kvm2"
@@ -62,3 +63,10 @@
     state: "started"
     enabled: yes
     daemon_reload: yes
+
+- name: "containers/podman/runtime"
+  lineinfile:
+    create: yes
+    path: "~/.config/containers/libpod.conf"
+    regexp: ".*runtime =.*"
+    line: "runtime = 'crun'"
