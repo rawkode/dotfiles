@@ -1,7 +1,7 @@
 - name: "gnome/install"
   aur:
     name:
-      - arc-gtk-theme
+      - arc-gtk-theme-jnsh-git
       - bibata-cursor-translucent
       - gnome-shell-extension-dash-to-panel
       - gnome-shell-extension-emoji-selector-git

@@ -1,0 +1,10 @@
+state_output: all
+
+file_roots:
+  base:
+    - ./machines
+    - ./macros
+    - ./states
+
+states_dirs:
+  - ./modules

@@ -1,0 +1,2 @@
+rustup:
+  aur.install

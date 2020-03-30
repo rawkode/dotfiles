@@ -1,0 +1,2 @@
+pulumi-bin:
+  aur.install
