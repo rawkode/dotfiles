@@ -1,2 +1,0 @@
-aws-cli:
-  aur.install

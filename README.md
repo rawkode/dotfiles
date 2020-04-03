@@ -10,8 +10,6 @@ My personal dotfiles, coordinated by SaltStack.
 
 ### SaltStack
 
-From inside the `saltstack` directory ...
-
 ## Running a Single State
 
 `make state=apps.alacritty`

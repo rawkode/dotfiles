@@ -1,0 +1,15 @@
+include:
+  - development.aws
+  - development.containers
+  - development.crystal
+  - development.git
+  - development.go
+  - development.google-cloud
+  - development.javascript
+  - development.jsonnet
+  - development.kubernetes
+  - development.pulumi
+  - development.python
+  - development.rust
+  - development.vscode
+  - development.zeal
