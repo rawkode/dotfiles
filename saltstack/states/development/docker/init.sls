@@ -1,6 +1,3 @@
-include:
-    - .{{ grains.os_family | lower }}
-
 docker/install:
   pkg.installed:
     - name: docker

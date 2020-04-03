@@ -1,2 +1,0 @@
-flameshot:
-  pkg.installed

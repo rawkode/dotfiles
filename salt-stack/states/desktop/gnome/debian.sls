@@ -1,2 +1,0 @@
-gnome:
-  pkg.installed

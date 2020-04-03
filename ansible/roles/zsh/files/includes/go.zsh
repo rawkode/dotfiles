@@ -1,1 +1,0 @@
-path=("${GOPATH}/bin" $path)

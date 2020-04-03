@@ -1,5 +1,5 @@
 vim/install:
-  pkg.installed:
+  aur.install:
     - name: neovim
 
 vim/dein/install:
