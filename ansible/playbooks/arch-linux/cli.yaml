@@ -1,9 +1,0 @@
-- name: "cli"
-  hosts: "all"
-  roles:
-    - { role: "../../roles/command-line" }
-    - { role: "../../roles/fonts" }
-    - { role: "../../roles/git" }
-    - { role: "../../roles/gpg" }
-    - { role: "../../roles/keybase" }
-    - { role: "../../roles/zsh" }

@@ -11,3 +11,10 @@ gtk/v3/config:
     - source: salt://{{ slspath }}/files/3.ini
     - user: {{ grains.user }}
     - makedirs: True
+
+gtk/themes:
+  pkg.installed:
+    - pkgs:
+      - arc-gtk-theme-jnsh-git
+      - bibata-cursor-translucent
+      - suru-plus-git

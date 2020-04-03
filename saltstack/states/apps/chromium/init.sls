@@ -1,2 +1,2 @@
-go:
+chromium:
   pkg.installed

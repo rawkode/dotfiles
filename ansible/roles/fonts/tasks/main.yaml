@@ -1,7 +1,0 @@
-- name: "fonts/install"
-  aur:
-    name:
-    - noto-fonts
-    - noto-fonts-emoji
-    - ttf-cascadia-code
-    skip_installed: yes

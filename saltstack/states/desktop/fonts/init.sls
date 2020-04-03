@@ -1,6 +1,9 @@
-fonts/emoji/install:
+fonts/install:
   pkg.installed:
-    - name: noto-fonts-emoji
+    - pkgs:
+      - noto-fonts
+      - noto-fonts-emoji
+      - ttf-cascadia-code
 
 # Raise priority of Noto Color Emoji
 fonts/emoji/config:

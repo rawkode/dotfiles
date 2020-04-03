@@ -1,2 +1,2 @@
-jsonnet:
+slack-desktop:
   aur.installed

@@ -1,4 +1,0 @@
-- name: "exa/install"
-  aur:
-    name: "exa"
-    skip_installed: yes

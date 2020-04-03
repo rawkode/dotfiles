@@ -32,3 +32,8 @@ terminal/zsh/includes:
     - clean: True
     - user: {{ grains.user }}
 
+
+terminal/zsh/rawkode:
+  user.present:
+    - name: rawkode
+    - shell: /usr/bin/zsh
