@@ -2,7 +2,7 @@ include:
     - .zsh
 
 terminal/tools:
-  aur.install:
+  pkg.installed:
     - names:
       - broot
       - fd

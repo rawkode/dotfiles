@@ -1,5 +1,5 @@
 fonts/emoji/install:
-  aur.install:
+  pkg.installed:
     - name: noto-fonts-emoji
 
 # Raise priority of Noto Color Emoji

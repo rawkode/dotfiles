@@ -1,8 +1,8 @@
-import pprint
+from salt.exceptions import CommandExecutionError, CommandNotFoundError
 import subprocess
 
 
-def install(name, aur_tool="yay"):
+def installed(name, aur_tool="yay"):
     p = subprocess.Popen(
         ["pacman", "-Qi", name],
         shell=False,
@@ -21,11 +21,7 @@ def install(name, aur_tool="yay"):
         }
 
     command = "{0} -S --noconfirm {1}".format(aur_tool, name)
-    result = __salt__['cmd.run'](command, runas=__grains__['user'])
 
-    return {
-        "name": name,
-        "changes": {"new_install": True},
-        "result": True,
-        "comment": "Done",
-    }
+    ret = __salt__['state.single'](fun='cmd.run', name=command, runas=__grains__["user"])
+
+    return ret.items()[0][1]

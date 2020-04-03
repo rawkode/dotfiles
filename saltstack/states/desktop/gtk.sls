@@ -1,2 +1,2 @@
 arc-gtk-theme-jnsh-git:
-  aur.install
+  aur.installed

@@ -1,5 +1,5 @@
 terminal/zsh/install:
-  aur.install:
+  pkg.installed:
     - name: zsh
 
 terminal/zsh/zshrc:
