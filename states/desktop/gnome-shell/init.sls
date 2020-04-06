@@ -29,6 +29,7 @@ gnome/wayland/pipewire/service:
 gnome/extensions:
   pkg.installed:
     - pkgs:
+      - gnome-shell-extension-dash-to-dock
       - gnome-shell-extension-dash-to-panel
       - gnome-shell-extension-emoji-selector-git
       - gnome-shell-extension-paperwm-git
