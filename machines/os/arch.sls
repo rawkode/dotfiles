@@ -21,3 +21,9 @@ rawkode:
     - groups:
       - input
       - users
+      - wheel
+
+bluetooth:
+  service.running:
+    - enable: True
+    - reload: True

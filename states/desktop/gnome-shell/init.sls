@@ -27,8 +27,8 @@ gnome/wayland/pipewire/service:
     # - reload: True
 
 gnome/extensions:
-  pkg.installed:
-    - pkgs:
+  aur.installed:
+    - names:
       - gnome-shell-extension-dash-to-dock
       - gnome-shell-extension-dash-to-panel
       - gnome-shell-extension-emoji-selector-git

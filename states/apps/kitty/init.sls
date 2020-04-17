@@ -4,3 +4,7 @@ kitty/config:
     - source: salt://{{ slspath }}/files/kitty.conf
     - user: {{ grains.user }}
     - makedirs: True
+
+kitty/install:
+  pkg.installed:
+    - name: kitty

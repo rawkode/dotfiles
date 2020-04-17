@@ -1,0 +1,2 @@
+include:
+  - desktop.gnome-shell

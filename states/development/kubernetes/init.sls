@@ -5,9 +5,9 @@ kubernetes/packages:
   aur.installed:
     - names:
       - draft-bin
+      - helm
       - k9s
       - kind-bin
       - kubectl
-      - kubernetes-helm-bin
       - minikube
       - skaffold

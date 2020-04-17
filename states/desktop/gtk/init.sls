@@ -13,8 +13,8 @@ gtk/v3/config:
     - makedirs: True
 
 gtk/themes:
-  pkg.installed:
-    - pkgs:
+  aur.installed:
+    - names:
       - arc-gtk-theme-jnsh-git
       - bibata-cursor-translucent
       - suru-plus-git
