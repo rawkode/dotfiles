@@ -6,7 +6,12 @@ gpg/install:
       - pcsclite
       - pcsc-tools
 
-gpg/pcscd/service:
-  cmd.run:
-    - name: systemctl --user enable pcscd
-    - user: {{ grains.user }}
+pcscd.service:
+  service.running:
+    - enable: True
+    - reload: True
+
+pcscd.socket:
+  service.running:
+    - enable: True
+    - reload: True
