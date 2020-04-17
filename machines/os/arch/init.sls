@@ -1,3 +1,6 @@
+include:
+  - os.arch.plymouth
+
 go:
   pkg.installed
 

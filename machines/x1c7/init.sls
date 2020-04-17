@@ -1,4 +1,5 @@
 include:
+  - x1c7.audio
   - os.arch
   - apps
   - desktop
