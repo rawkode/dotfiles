@@ -4,6 +4,7 @@ fonts/install:
       - noto-fonts
       - noto-fonts-emoji
       - ttf-cascadia-code
+      - ttf-google-fonts-typewolf
 
 # Raise priority of Noto Color Emoji
 fonts/emoji/config:
